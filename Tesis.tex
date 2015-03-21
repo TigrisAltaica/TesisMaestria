@@ -1,0 +1,259 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{colortbl}
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
+\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+
+
+% Title Page
+\title{Tesis de Maestría}
+\author{Pablo Yanes}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\chapter{Sistemas Cuánticos Abiertos y Ecuaciones Maestras}
+
+El objetivo es encontrar la evolución temporal de un sistema cuántico abierto, los cuales son modelados por ecuaciones del tipo:
+
+\begin{equation}\label{MasterEq}
+\dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L\rho
+\end{equation}
+
+Donde $\rho$ es la matriz densidad del sistema, $H$ es el Hamiltoniano que modela las partes del sistema donde no hay pérdidas de energía y $L$ es el operador de Lindblat, el cual corresponde a la parte abierta del sistema. En la mecánica cuántica cerrada, el análisis se limíta al operador Hamiltoniano el cual es un operador auto adjunto. En ese caso, es suficiente resolver la ecuación de Schröedinger estacionaria:
+
+\begin{equation}
+H\Psi = E\Psi
+\end{equation}
+
+cuya solución formal es:
+
+\begin{equation}
+\Psi(t) = e^{\frac{-iHt}{\hbar}}\Psi(0)
+\end{equation}
+
+La función $\Psi(0)$ puede expresarse como una  combinación lineal de las funciones propias de $H$. Al hacer esto, la ecuación anterior toma la forma:
+
+\begin{equation}
+\Psi(t) = \sum_j c_j e^{\frac{-iE_jt}{\hbar}}\phi_j(0)
+\end{equation}
+
+Los coeficientes $c_j$ son las proyecciones de la función $\Psi(0)$ sobre las funciones propias de $H$
+
+Se busca una solución equivalente para la ecuación \eqref{MasterEq}. Es posible transformar dicha ecuación al cuadro de interacción, donde solo importa la parte abierta del problema. En este cuadro, se busca una solución del tipo:
+
+\begin{equation}
+\rho(t) = \sum_{\Gamma} c_{\Gamma} e^{\Gamma t}P_{\Gamma} 
+\end{equation}
+
+Los coeficientes ahora son respecto a las funciones propias de $L$. Es importante notar que $L$ no es necesariamente un operador autoadjunto, por lo que no se puede garantizar que sus funciones propias formen una base completa del espacio ni que sus valores propios sean reales. También es importante notar  que $Psi$ es un vector de estado que pertenece al espacio de Hilbert mientras que $rho$ es un operador que pertenece al espacio de Liouville. Por esto, se dice que $L$ es un superoperador. La base que se obtiene de esta forma se conoce como \textit{damping base}. Una de las diferencias importantes con el caso de mecánica cuántica estandard es que como $L$ no es autoadjunto, los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza:
+
+\begin{equation}
+Tr\{\check{P_{\Gamma'}}P_\Gamma\} = \delta_{\Gamma'\Gamma}
+\end{equation}
+
+Esto se puede emplear para obtener las constantes de la expansión.
+
+\section{Ejemplo: Átomo de dos Niveles}
+
+Antes de intentar resolver sistemas más complejos, es ilustrativo tratar el caso relativamente sencillo del átomo de niveles. A este sistema le corresponde el operador de Linblad:
+
+\begin{align}\label{TwoLevel}
+ L_{\sigma}\rho = 
+ &-\frac{B}{2}(1-s)[\sigma_+\sigma_-\rho + \rho\sigma_+\sigma_--2\sigma_-\rho\sigma_+ ]\nonumber\\
+ &-\frac{B}{2}s[\sigma_-\sigma_+\rho + \rho\sigma_-\sigma_+-2\sigma_+\rho\sigma_- ]\nonumber\\
+ &-\frac{2C-B}{4}[\rho - \sigma_z\rho\sigma_z]
+\end{align}
+
+Es convenitente utilizar notación de Dirac en este tratamiento. Todos los operadores involucrados pueden verse como matrices de dos por dos. $\sigma_z$ es la matriz de Pauli correspondiente al eje z y:
+
+\begin{equation}
+\sigma_{\pm} = \sigma_x \pm \sigma_y = (\sigma_{\mp}) ^\dagger
+\end{equation}
+
+El método para encontrar los vectores y valores propios de $L$ consiste en proponer una forma adecuada para los vectores, aplicar $L$ a la propuesta y resolver las ecuaciones resultantes. En este caso se propone:
+
+\begin{equation}
+\rho_\sigma = \alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}+\delta\Ket{-}\Bra{-}
+\end{equation}
+
+Ya que se conoce la forma en la cual las matrcies $\sigma$ operan sobre estos elementos:
+
+\begin{align*}
+&&\sigma_{+}\Bra{-} =& \Bra{+} \quad \sigma_{+}\Bra{+} = 0 \\
+&&\sigma_{-}\Bra{+} =& \Bra{-} \quad \sigma_{-}\Bra{-} = 0 \\
+&&\sigma_{z}\Bra{+} =& \Bra{+} \quad \sigma_{z}\Bra{-} = -\Bra{-}
+\end{align*}
+
+Al sustituir $\rho_{\sigma}$ en \eqref{TwoLevel} se obtiene, para el primer término de $L$:
+
+\begin{equation}
+-\frac{B}{2}(1-s)[2\alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}-2\alpha\Ket{-}\Bra{-}]
+\end{equation}
+
+El segundo término es:
+
+\begin{equation}
+-\frac{B}{2}(s)[2\delta\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}-2\delta\Ket{-}\Bra{-}]
+\end{equation}
+
+Y el tercero:
+
+\begin{equation}
+-\frac{2C-B}{4}[2\beta\Ket{+}\Bra{-}+2\gamma\Ket{-}\Bra{+}]
+\end{equation}
+
+Esto se inserta en:
+
+\begin{equation}
+L\rho = \lambda\rho
+\end{equation}
+
+Y dado que cada uno de los cuatro componentes de $\rho$ son linealmente independientes, esto genera cuatro ecuaciones distintas:
+
+\begin{align}
+B(s(\alpha+\delta)-\alpha)\Ket{+}\Bra{+} =& \lambda\alpha\Ket{+}\Bra{+}\\
+B(-s(\alpha+\delta)+\alpha)\Ket{-}\Bra{-} =& \lambda\delta\Ket{-}\Bra{-}\\
+-\beta C \Ket{+}\Bra{-} =& \lambda \beta \Ket{+}\Bra{-} \\
+-\gamma C \Ket{-}\Bra{+} =& \lambda \gamma \Ket{-}\Bra{+}
+\end{align}
+
+De las cuales se obtienen los cuatro vectores propios:
+
+\begin{align}
+L_\sigma \sigma_0 =& 0 \\
+L_\sigma \sigma_z =& -B \sigma_z \\
+L_\sigma \sigma_\pm =& -C \sigma_\pm
+\end{align}
+
+donde:
+
+\begin{equation}
+\sigma_0 = \frac{1}{2}[I + (2s-1)\sigma_z]
+\end{equation}
+
+Las constantes en \eqref{MasterEq} son todas positivas por lo que todos los valores propios son no positivos. Esto es importante, ya que al hacer tender el tiempo a infinito solo el término que corresponde al valor propio 0 sobrevive, los demás términos decaen exponencialmente con el tiempo. Esto lleva a identificar al término con valor propio 0 como el estado estacionario del sistema. A continuación se trata el caso del oscilador armónico.
+
+\section{Caso Oscilador Armónico}
+
+Se busca modelar interacciones que involucran un capo electromagnético. Este se modela simplemente como una suma infinita de modos de oscilador armónico. Este sistema en particular corresponde a un operador de Lindblat de la forma:
+
+\begin{align}\label{EMField}
+L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^\dagger] \nonumber \\
+ &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a^\dagger\rho a]
+\end{align}
+
+Esto modela un campo electromagnético en una cavidad con acoplamiento a un reservorio térmico con un número $\nu$ promedio de fotones térmicos. $A,\nu \geq 0$. La elección de un ansatz para este sistema es mucho más compleja, ya que ahora la base estados sobre la cual actúan los operadores que forman $L$ es infinita.  En base a lo visto en la sección anterior, se propone una base que acople estados de distinta energía:
+
+\begin{equation}
+ \rho^l_n = \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l}
+\end{equation} 
+
+El objetivo de nuevo es sustituir el ansatz en \eqref{EMField} para obtener un sistema de ecuaciones para los valores y vectores propios. Se trabaja primero con el primer término de \eqref{EMField}, donde se ignora el coeficiente exterior por brevedad:
+
+\begin{align*}
+=&[a^\dagger a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger]\\
+=&[\sum_{n=0}^\infty Q_n^la^\dagger a\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2\sum_{n=0}^\infty Q_n^la\Ket{n}\Bra{n+l} a^\dagger]\\
+=&[\sum_{n=0}^\infty Q_n^ln\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} (n+l) -2\sum_{n=0}^\infty Q_n^l\sqrt{n}\Ket{n-1}\Bra{n+l-1}\sqrt{n+l}]\\
+=&[\sum_{n=0}^\infty Q_n^l(2n+l)\Ket{n}\Bra{n+l} -2\sum_{n=0}^\infty\sqrt{n(n+l)} Q_n^l\Ket{n-1}\Bra{n+l-1}]\\
+\end{align*}
+
+El segundo término actúa de una forma completamente análoga y se obtniene:
+
+\begin{equation*}
+=[\sum_{n=0}^\infty Q_n^l(2n+l+2)\Ket{n}\Bra{n+l} -2\sum_{n=0}^\infty\sqrt{(n+1)(n+l+1)} Q_n^l\Ket{n+1}\Bra{n+l+1}]
+\end{equation*}
+
+Como $p^l_n$  es un vector propio los términos anteriores deben de poder igualarse a un valor propio por $\rho^l_n$:
+
+\begin{align}
+\lambda_n^l \rho_n^l=& \sum_{n=0}^\infty Q_n^l \{ -\frac{A}{2}(\nu+1)[(2n+l)\Ket{n}\Bra{n+l} -2\sqrt{n(n+l)} Q_n^l\Ket{n-1}\Bra{n+l-1}] \nonumber \\
+-&\frac{A}{2}(\nu)[(2n+l+2)\Ket{n}\Bra{n+l}-2\sqrt{(n+1)(n+l+1)} Q_n^l\Ket{n+1}\Bra{n+l+1}]\}
+\end{align}
+
+Si en el segundo término se recorre el índice de suma hacia arriba por uno y en el cuarto hacía abajo por uno, se puede utilizar independencia lineal respecto al elemento $\Ket{n}\Bra{n+l}$ para obtener una ecuación para cada elemento de la suma. Se obtiene que los coeficientes deben cumplir con:
+
+\begin{align}
+A&(\nu+1) Q_{n+1}^l \sqrt{(n+1)(n+l+1) }+ A(\nu) Q_{n-1}^l\sqrt{n(n+l)}\\ \nonumber
+=&[\lambda_n^l+A\nu(2n+l+2)+\frac{A}{2}(2n+l)]Q_{n}^l
+\end{align}
+
+Esto es una relación de recuerrencia similar a la que se encuentra en los polinomios generalizados de Laguerre. En englert1993 se propone una solución:
+
+\begin{equation}\label{Englert1993}
+\rho_\lambda (a,a^\dagger) = :f(aa^\dagger):a^l
+\end{equation}
+
+Podemos pensar en $a^l$ como
+
+\begin{equation}
+\sum_{n=0}^\infty C_n^l\Ket{n}\Bra{n+l}
+\end{equation}
+
+Es entonces posible relacionar este ansatz con el de Englert, lo cual lleva a su solución para $\rho_n^l$
+
+\begin{align}
+&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{[\frac{a^\dagger a}{\nu+1}]}:\quad k \geq 0 \\
+&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad k \leq 0
+\end{align}
+
+con autovalores
+
+\begin{equation}
+\lambda_n^l = -A[n + \frac{|l|}{2}]
+\end{equation}
+
+con las condiciones
+
+\begin{equation}
+n=0,1,2...,\qquad l = 0,\pm 1, \pm 2,... 
+\end{equation}
+
+A continuación se muestra de forma explicita como calcular estos elementos. 
+
+\subsection{Estado Estacionario}
+
+Este es el estado con valor propio 0, lo cual corresponde a $n=0, \qquad l=0$. En este caso, la solución tiene la forma
+
+\begin{equation}
+\frac{1}{(\nu+1)}:L_0^0[\frac{a^\dagger a}{\nu+1}]e^{[\frac{a^\dagger a}{\nu+1}]}:
+\end{equation}
+
+ya que $L_0^0 = 1$ si se desarrolla la exponencial en una serie infinita se tiene, aplicando el ordenamiento normal:
+
+\begin{equation}
+\frac{1}{(\nu+1)^2}a^\dagger a[\sum_{n=0}^\infty \frac{(a^\dagger a)^n}{n!(\nu+1)^n}]
+\end{equation}
+
+es conveniente expresar $a^\dagger a$ en la base de número
+
+\begin{equation}
+\sum_{n=0}^\infty n\Ket{n}\Bra{n}
+\end{equation}
+
+si se sustituye esto en la expresión para el estado estacionario se tiene
+
+\begin{equation}
+\sum_{n=0}^\infty\frac{1}{(\nu+1)^2} n\Ket{n}\Bra{n}\sum_{m=0}^\infty \frac{(a^\dagger a)^m}{m!(\nu+1)^m}
+\end{equation}
+
+El operador $a^\dagger a$ es el operador de número y es auto adjunto, por lo que se tiene
+
+\begin{align}
+=&\sum_{n=0}^\infty\frac{1}{(\nu+1)^2} n\Ket{n}\Bra{n}\sum_{m=0}^\infty (\frac{n}{\nu+1})^m\frac{1}{m!} \nonumber \\
+=&\sum_{n=0}^\infty\frac{1}{(\nu+1)^2} n\Ket{n}\Bra{n}e^{(\frac{n}{\nu+1})} \nonumber \\
+=&\sum_{n=0}^\infty\frac{ne^{(\frac{n}{\nu+1})}}{(\nu+1)^2}\Ket{n}\Bra{n}
+\end{align}
+
+\end{document}
