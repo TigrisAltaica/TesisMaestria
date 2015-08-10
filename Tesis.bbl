@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{ArfkenMM}
+George~B. Arfken.
+\newblock {\em Mathematical Methods for Physicists, Seventh Edition: A
+  Comprehensive Guide}.
+\newblock Academic Press, •.
+
+\bibitem{EnglertDB}
+Berthold-Georg~Englert Hans-Jurgen~Briegel.
+\newblock Quantum optical master equations: The use of damping bases.
+\newblock {\em PHYSICAL REVIEW A}, 1993.
+
+\bibitem{SakuraiQM}
+Jim~Napolitano J.~J.~Sakurai.
+\newblock {\em Modern Quantum Mechanics}.
+\newblock Pearson, 2013.
+
+\bibitem{WardFT}
+M.~Ward.
+\newblock {\em Supplement: Floquet Theory and the Mathieu's Equation}.
+\newblock •, •.
+
+\bibitem{ZollerQN}
+Peter Zoller.
+\newblock {\em Quantum Noise:A Handbook of Markovian and Non-Markovian Quantum
+  Stochastic Methods with Applications to Quantum Optics}.
+\newblock Springer Science and Business Media, 2004.
+
+\end{thebibliography}

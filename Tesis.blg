@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Tesis.aux
+The style file: plain.bst
+Database file #1: Bib.bib
+Warning--can't use both author and editor fields in ArfkenMM
+You've used 5 entries,
+            2118 wiz_defined-function locations,
+            525 strings with 4589 characters,
+and the built_in function-call counts, 1089 in all, are:
+= -- 96
+> -- 35
+< -- 0
++ -- 15
+- -- 10
+* -- 45
+:= -- 200
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 16
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 58
+empty$ -- 106
+format.name$ -- 10
+if$ -- 226
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 9
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 35
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 31
+stack$ -- 0
+substring$ -- 25
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 1
+while$ -- 10
+width$ -- 6
+write$ -- 52
+(There was 1 warning)

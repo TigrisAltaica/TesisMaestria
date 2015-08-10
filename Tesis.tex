@@ -1,5 +1,4 @@
 \documentclass[a4paper,10pt]{report}
-\usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{braket}
@@ -7,6 +6,11 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{colortbl}
+
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
 \DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
 \DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
 
@@ -189,13 +193,13 @@ A&(\nu+1) Q_{n+1}^l \sqrt{(n+1)(n+l+1) }+ A(\nu) Q_{n-1}^l\sqrt{n(n+l)}\\ \nonum
 =&[\lambda_n^l+A\nu(2n+l+2)+\frac{A}{2}(2n+l)]Q_{n}^l
 \end{align}
 
-Esto es una relación de recuerrencia similar a la que se encuentra en los polinomios generalizados de Laguerre. En englert1993 se propone una solución:
+Esto es una relación de recuerrencia similar a la que se encuentra en los polinomios generalizados de Laguerre. En \cite{EnglertDB} se propone una solución:
 
 \begin{equation}\label{Englert1993}
 \rho_\lambda (a,a^\dagger) = :f(aa^\dagger):a^l
 \end{equation}
 
-Podemos pensar en $a^l$ como
+Se puede en $a^l$ como
 
 \begin{equation}
 \sum_{n=0}^\infty C_n^l\Ket{n}\Bra{n+l}
@@ -203,9 +207,9 @@ Podemos pensar en $a^l$ como
 
 Es entonces posible relacionar este ansatz con el de Englert, lo cual lleva a su solución para $\rho_n^l$
 
-\begin{align}
-&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{[\frac{a^\dagger a}{\nu+1}]}:\quad k \geq 0 \\
-&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad k \leq 0
+\begin{align}\label{DefDB}
+&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:\quad l \geq 0 \\
+&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad l \leq 0
 \end{align}
 
 con autovalores
@@ -222,38 +226,248 @@ n=0,1,2...,\qquad l = 0,\pm 1, \pm 2,...
 
 A continuación se muestra de forma explicita como calcular estos elementos. 
 
-\subsection{Estado Estacionario}
+\subsection{Estado Base}
 
 Este es el estado con valor propio 0, lo cual corresponde a $n=0, \qquad l=0$. En este caso, la solución tiene la forma
 
 \begin{equation}
-\frac{1}{(\nu+1)}:L_0^0[\frac{a^\dagger a}{\nu+1}]e^{[\frac{a^\dagger a}{\nu+1}]}:
+\frac{1}{(\nu+1)}:L_0^0[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:
 \end{equation}
 
-ya que $L_0^0 = 1$ si se desarrolla la exponencial en una serie infinita se tiene, aplicando el ordenamiento normal:
+ya que $L_0^0 = 1$ \cite{ArfkenMM} si se desarrolla la exponencial en una serie infinita se tiene, aplicando el ordenamiento normal:
 
 \begin{equation}
-\frac{1}{(\nu+1)^2}a^\dagger a[\sum_{n=0}^\infty \frac{(a^\dagger a)^n}{n!(\nu+1)^n}]
+\sum_{n=0}^\infty \frac{-(a^\dagger a)^n}{n!(\nu+1)^n}
 \end{equation}
 
-es conveniente expresar $a^\dagger a$ en la base de número
+si se sustituye esto en la expresión para el estado base, junto con la relación de cerradura para la base de Foch se tiene:
 
 \begin{equation}
-\sum_{n=0}^\infty n\Ket{n}\Bra{n}
-\end{equation}
-
-si se sustituye esto en la expresión para el estado estacionario se tiene
-
-\begin{equation}
-\sum_{n=0}^\infty\frac{1}{(\nu+1)^2} n\Ket{n}\Bra{n}\sum_{m=0}^\infty \frac{(a^\dagger a)^m}{m!(\nu+1)^m}
+\sum_{n=0}^\infty \Ket{n}\Bra{n}\sum_{m=0}^\infty \frac{-(a^\dagger a)^m}{m!(\nu+1)^m}
 \end{equation}
 
 El operador $a^\dagger a$ es el operador de número y es auto adjunto, por lo que se tiene
 
 \begin{align}
-=&\sum_{n=0}^\infty\frac{1}{(\nu+1)^2} n\Ket{n}\Bra{n}\sum_{m=0}^\infty (\frac{n}{\nu+1})^m\frac{1}{m!} \nonumber \\
-=&\sum_{n=0}^\infty\frac{1}{(\nu+1)^2} n\Ket{n}\Bra{n}e^{(\frac{n}{\nu+1})} \nonumber \\
-=&\sum_{n=0}^\infty\frac{ne^{(\frac{n}{\nu+1})}}{(\nu+1)^2}\Ket{n}\Bra{n}
+=&\sum_{n=0}^\infty \Ket{n}\Bra{n}\sum_{m=0}^\infty -(\frac{n}{\nu+1})^m\frac{1}{m!} \nonumber \\
+=&\sum_{n=0}^\infty \Ket{n}\Bra{n}e^{-[\frac{n}{\nu+1}]} \nonumber
 \end{align}
+
+\subsection{Primer Estado Excitado}
+
+Por la definición de la base proporcionada en \ref{DefDB}, es claro que el primer cambio sustancial en la expresión para los estados se debe a tener valores distintos de $l$, en el caso de $l=1$, se tiene que\cite{ArfkenMM}:
+
+\begin{equation}
+L_1^1(x) = -x + 2
+\end{equation}
+
+Recordando que en el caso de esta base, la variable es $\frac{a^\dagger a}{\nu+1}$, el término correspondiente a $n=1$, $l=1$ es:
+
+\begin{equation}
+\frac{a^\dagger}{(\nu+1)}:(\frac{a^\dagger a}{\nu+1}-2)e^{-[\frac{a^\dagger a}{\nu+1}]}:
+\end{equation}
+
+Claramente, el segundo término de la suma simplemente resulta en el término del estado base multiplicado por un factor de -2. Enfocandosé en el primer término se obtiene:
+
+\begin{equation} \label{PrimerExcitado}
+\frac{a^\dagger a^\dagger a}{(\nu+1)^2}e^{-[\frac{a^\dagger a}{\nu+1}]}
+\end{equation}
+
+En términos de la base de Foch, el operador $a^\dagger a$ es:
+
+\begin{equation}
+ \sum_{n=0}^\infty n\Ket{n}\Bra{n}
+\end{equation}
+
+Se tiene que el estado \ref{PrimerExcitado}, utilizando el mismo procedimiento del caso del estado base es:
+
+\begin{align}
+ =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty na^\dagger\Ket{n}\Bra{n}e^{-[\frac{a^\dagger a}{\nu+1}]}\\
+ =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}\sum_{m=0}^\infty \frac{-(a^\dagger a)^m}{m!(\nu+1)^m}\\
+ =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}\sum_{m=0}^\infty \frac{-(n)^m}{m!(\nu+1)^m}\\
+ =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}e^{-[\frac{n}{\nu+1}]}
+\end{align}
+
+Con esto, el estado completo es:
+
+\begin{equation}
+\rho_1^1=\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}e^{-[\frac{n}{\nu+1}]}-2\sum_{n=0}^\infty \Ket{n}\Bra{n}e^{-[\frac{n}{\nu+1}]}
+\end{equation}
+
+Se puede observar el cambio en la estructura, si se hubiese tomado $l=-1$ la única diferencia sería que el Bra, y no el Ket, tendría el valor $n+1$
+
+\chapter{Deducción de Ecuacion Maestra Mediante Operadores de Proyección}
+
+Se busca obtener la ecuación maestra correspondiente a un sistema sujeto a interacción con un baño térmico:
+
+\begin{equation}
+\hat{H} = \hat{H}_{Sis}+\hat{H}_{Int}+\hat{H}_B
+\end{equation}
+
+Lo cual implica una ecuación de evolución temporal para $\rho$ de la forma:
+
+\begin{equation}\label{LMeq}
+\dot{\rho}_{total} = (L_{Sis}+L_{Int}+L_B)\rho
+\end{equation}
+
+Donde:
+
+\begin{equation}\label{defL}
+L\rho(t) = \frac{i}{\hbar}[\hat{H},\rho(t_0)]
+\end{equation}
+
+Se busca una solución para el operador densidad únicamente del sistema, por lo que se busca una ecuación para el operador total después de tomar la traza sobre las variables del baño:
+
+\begin{equation}
+\rho(t) \equiv Tr_B\{\rho_{total}(t)\}
+\end{equation}
+
+Se define un operador de proyección \cite{ZollerQN} que opere sobre $ \rho $:
+
+\begin{equation}
+P\rho_t = Tr_B\{\rho_{t}(t)\}\otimes \rho_B
+\end{equation}
+
+Y un operador:
+
+\begin{equation}
+Q = \mathbf{1}-P
+\end{equation}
+
+Tal que:
+
+\begin{align}
+\rho_t =& P\rho_t + Q\rho_t \\
+\equiv & v(t)+u(t)
+\end{align}
+
+Se emplean las siguientes propiedades:
+
+\begin{enumerate}
+\item $ PL_{sis} = L_{sis}P$\qquad Ya que $ P $ y $ L_{sis} $ operan en espacios distintos.
+
+\item $ PL_{B} = L_{B}P = 0 $\qquad Por conservación de la probabilidad.
+
+\item $PL_{int}P=0$ \qquad Se asume que la interacción no tiene términos diagonales en las variables del baño
+
+\item $P^2 = P \quad Q^2 = Q$ \qquad $P$ y $Q$ son proyectores
+\end{enumerate}
+
+Por convieniencia se trabaja con la transformada de Laplace [citar arfken] de las proyecciones $v(t)$ y $u(t)$:
+
+\begin{equation}
+\tilde{v}(t) = \int_0^\infty e^{-st}v(t)dt \qquad \tilde{u}(t) = \int_0^\infty e^{-st}u(t)dt
+\end{equation}
+
+Dado que las dos proyecciones se encuentran es espacios distintos, se puede sustituir $\rho$ por ellas en \eqref{LMeq} y resolver por separado para cada proyección. En el caso de $v(t)$ se tiene, antes de utilizar la transformada de Laplace, al aplicar el proyector $P$ a \eqref{LMeq}:
+
+\begin{align*}
+P\dot{p}(t)_t =& P(L_{Sis}+L_{Int}+L_B)\rho \\
+ \dot{v}(t) =& (PL_{Sis}+PL_{Int}+PL_B)\rho \\
+ =&(L_{Sis}P+PL_{Int}+\underbrace{PL_B}_0)\rho \\
+ =& L_{sis}P\rho_t + PL_{int}\rho_t \\
+ =& L_{sis}v + \underbrace{PL_{int}(P}_0+Q)\rho_t \\
+ =& L_{sis}v + PL_{int}Q\rho_t \\
+ =& L_{sis}v + PL_{int}u 
+\end{align*}
+
+De manera análoga se obtiene una ecuación para $u$ al proyectar con $Q$:
+
+\begin{align*}
+Q\dot{p}(t)_t =& Q(L_{Sis}+L_{Int}+L_B)\rho \\
+ \dot{u}(t) =& (QL_{Sis}+QL_{Int}+QL_B)\rho \\
+ =&(L_{Sis}Q+QL_{Int}+L_BQ)\rho \\
+ =& L_{sis}Q\rho_t + L_{B}Q\rho_t + QL_{int}\rho_t \\
+ =& L_{sis}u + L_{B}u + QL_{int}(Q+P)\rho_t  \\
+ =& L_{sis}u + L_{B}u + QL_{int}v+QL_{int}u\rho_t \\
+ =& (L_{Sis}+L_B+QL_{Int})u +QL_{Int}v 
+\end{align*}
+
+Al aplicar la transformada de Laplace a la ecuación para $v$ se obtiene:
+
+\begin{equation}\label{eqv}
+s\tilde{v}(s)-\tilde{v}(0) = L_{sis}\tilde{v}(s) + PL_{int}\tilde{u}(s)
+\end{equation}
+
+Y en el caso de $u$:
+
+\begin{equation}\label{equ}
+s\tilde{u}(s)-\tilde{u}(0) = (L_{Sis}+L_B+QL_{Int})\tilde{u}(s) + QL_{Int}\tilde{v}(s)
+\end{equation}
+
+Se resuelve \eqref{equ} en términos de $v$:
+
+\begin{equation}
+\tilde{u}(s)=\frac{QL_{Int}\tilde{v}(s)+\tilde{u}(0)}{s-\underbrace{(L_{Sis}+L_B+QL_{Int})}_\alpha}
+\end{equation}
+
+Y se sustituye el resultado en \eqref{eqv}:
+
+\begin{equation}
+s\tilde{v}(s)-(\tilde{v}(0)+PL_{int}\alpha\tilde{u}(0))=(L_{sis}+PL_{int}\alpha QL_{int})\tilde{v}(s)
+\end{equation}
+
+En este punto se toma la aproximación de aclopamiento débil:
+
+\begin{equation}
+L_{int} \rightarrow \epsilon L_{int}
+\end{equation}
+
+Los términos asociados a $\tilde{u}0$ son únicamente correciones a la condición inicial, por lo que se desprecian. Tomando esto en cuenta, se obtiene:
+
+\begin{equation}
+s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\epsilon^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s)
+\end{equation}
+
+Y al tomar la transformada inversa de Laplace:
+
+\begin{equation}\label{eqProyectores}
+\dot{v}(t)=L_{sis}v(t) + \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau)
+\end{equation}
+
+Se busca obtener una ecuación en términos de los operadores del Hamiltoniano \cite{ZollerQN},se procede con el segundo término de la ecuación \eqref{eqProyectores}:
+
+\begin{align*}
+QL_{int}v=&(1-P)L_{int}v\\
+=& (1-P)L_{int}P\rho \\
+=& L_{int}P\rho \\
+=& L_{int}v
+\end{align*}
+
+Con esto el segundo término de la ecuación \eqref{eqProyectores}, y tomando en cuenta la definición de los términos $L$ dada en \eqref{defL} y el lema de Baker-Campbell-Housedorff \cite{SakuraiQM}
+
+\begin{align*}
+=& \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau)\\
+=& \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau}\\
+=&\epsilon^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau) \\
+=&\epsilon^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)] \\
+=&\epsilon^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]]
+\end{align*}
+
+En este punto se realiza la aproximación de Markov \cite{ZollerQN}, al hacer la sustitución:
+
+\begin{equation}
+t-\tau \rightarrow t
+\end{equation}
+
+Y se traza toda la ecuación sobre las variables del baño. Con esto se llega a la ecuación:
+
+\chapter{Solución de la Ecuación Maestra Mediante Estados de Floquet}
+
+Para resolver el problema correspondiente a un oscilador armónico amortiguado con frequencia dependiente del tiempo, se utiliza la teoría de Floquet \cite{WardFT}y se busca una forma de la ecuación maestra (eq capitulo anterior) expresada mediante operadores de Floquet, que se definirán más adelante.
+
+\section{Teoría de Floquet}
+
+Sea un problema del tipo:
+
+\begin{equation}
+x' = A(t)x
+\end{equation}
+
+Donde la función $A(t)$ es periódica con periodicidad $\tau$. En este caso
+
+\bibliographystyle{plain}
+\bibliography{Bib}
+
 
 \end{document}
