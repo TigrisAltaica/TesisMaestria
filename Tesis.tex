@@ -464,7 +464,53 @@ Sea un problema del tipo:
 x' = A(t)x
 \end{equation}
 
-Donde la función $A(t)$ es periódica con periodicidad $\tau$. En este caso
+Donde la función $A(t)$ es periódica con periodicidad $\tau$. En este caso el teorema de Floquet dice que la solución no necesariamnte es periódica pero debe tener la forma:
+
+\begin{equation}\label{FloquetForm}
+x(t)=e^{\mu t}p(t)
+\end{equation}
+
+Se considera que $x(t)$ es un vector de $n$ dimensiones y que $A(t)$ es una matriz de $n\times n$. Existen $n$ valores distintos de $\mu$ tales que:
+
+\begin{equation}
+e^{\mu_1 }...e^{\mu_n}=e^{\int_0^\tau tr[A(t)]}
+\end{equation}
+
+Los valores de $\mu$ se conocen como exponentes característicos. Es importante notar que la función $p(t)$ es periódica con período $\tau$. Los coeficientes $\mu$ son, en general complejos.
+
+\section{Estados de Floquet en Mecánica Cuántica}
+
+Se busca estudiar Hamiltonianos del tipo:
+
+\begin{equation}
+H(t)=H(t+\tau)
+\end{equation}
+
+El hecho de que el Hamiltoniano sea simétrico respecto a (ciertas) traslaciones en el tiempo, permite el uso del formalismo de Floquet \cite{HanngiDQS}. Se asume que la dependencia temporal puede ser vista como una perturbación sobre un Hamiltoniano original:
+
+\begin{equation}
+H(x,t)=H_0(x)+V(x,t) \qquad V(x,t)=V(x,t+\tau)
+\end{equation} 
+
+También se asume que el Hamiltoniano no perturbado poseé un conjunto completo de eigenfuciones $\{\phi_n\}$ con eigenvalores correspondientes $E_n$. En este caso, la ecuación de Schr\"{o}dinger tiene la forma:
+
+\begin{equation}\label{SchrodingerEQ}
+-i\hbar\dot{\Psi}(x,t) = H(x,t)\Psi(x,t)
+\end{equation}
+
+El problema admite una solución del tipo visto en la sección anterior:
+
+\begin{equation}
+\Psi_n(x,t) = e^{(\frac{-i}{\hbar}\mu_nt)}\Phi_n(x,t)
+\end{equation}
+
+Como se mencionó en la sección anterior, $\mu$ en general es un número complejo, lo cual puede llevar a soluciones inestables. En este caso $\Phi_n(x,t)$ es la función que contiene la periodícidad en el tiempo. Sustituir la solución en la ecuación \ref{SchrodingerEQ} genera una ecuación para las funciones periódicas:
+
+\begin{equation}
+H(x,t)\Phi_n(x,t)=\epsilon_n\Phi_n(x,t)
+\end{equation}
+
+\section{Oscilador Armónico Dependinte del Tiempo: Solución Mediante Formalismo de Floquet}
 
 \bibliographystyle{plain}
 \bibliography{Bib}
