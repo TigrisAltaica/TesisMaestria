@@ -16,6 +16,17 @@ Jim~Napolitano J.~J.~Sakurai.
 \newblock {\em Modern Quantum Mechanics}.
 \newblock Pearson, 2013.
 
+\bibitem{HanngiFM}
+Peter~H\"{a}nggi Sigmund~Kohler, Thomas~Dittrich†.
+\newblock Floquet-markov description of the parametrically driven, dissipative
+  harmonic quantum oscillator.
+\newblock {\em Phys.Rev. E55}, 30 Sep 1998.
+
+\bibitem{BarnettSD}
+Stig~Stenholm Stephen~Barnett.
+\newblock Spectral decomposition of the lindblad operator.
+\newblock {\em Journal of Modern Optics}, 2000.
+
 \bibitem{WardFT}
 M.~Ward.
 \newblock {\em Supplement: Floquet Theory and the Mathieu's Equation}.

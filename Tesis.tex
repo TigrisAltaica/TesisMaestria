@@ -149,7 +149,7 @@ donde:
 
 Las constantes en \eqref{MasterEq} son todas positivas por lo que todos los valores propios son no positivos. Esto es importante, ya que al hacer tender el tiempo a infinito solo el término que corresponde al valor propio 0 sobrevive, los demás términos decaen exponencialmente con el tiempo. Esto lleva a identificar al término con valor propio 0 como el estado estacionario del sistema. A continuación se trata el caso del oscilador armónico.
 
-\section{Caso Oscilador Armónico}
+\section{Caso Oscilador Armónico: Base de Decaimiento}
 
 Se busca modelar interacciones que involucran un capo electromagnético. Este se modela simplemente como una suma infinita de modos de oscilador armónico. Este sistema en particular corresponde a un operador de Lindblat de la forma:
 
@@ -296,6 +296,44 @@ Con esto, el estado completo es:
 
 Se puede observar el cambio en la estructura, si se hubiese tomado $l=-1$ la única diferencia sería que el Bra, y no el Ket, tendría el valor $n+1$
 
+\section{Estados Duales}
+
+La base de decaimiento \cite{EnglertDB} definida en \ref{DefDB} corresponde a eigenvalores:
+
+\begin{equation}
+ -A[n+\frac{|l|}{2}]
+\end{equation}
+
+Lo cual corresponde a una doble degeneración $\pm l$. Antes de poder realizar la expansión de estados arbitrarios en esta base es necesario conocer los eigenestados del operador dual, los cuales son aquellos que cumplen la condición\cite{EnglertDB}:
+
+\begin{equation}
+\bar{\rho}_\gamma L = \gamma\bar{\rho}_\gamma
+\end{equation}
+
+Es decir, los eigenestados \textit{izquierdos} del operador de Lindblat. Los estados duales cumplen con:
+
+\begin{equation}
+Tr[\bar{\rho}_{\gamma}\rho_{\gamma'}] = \delta_{\gamma\gamma'}
+\end{equation}
+
+Donde la barra denota al estado dual y $\gamma$ denota algún eigenvalor particular del problema. Bajo este producto es posible entonces resolver las ecuaciones para los coeficientes de una expansión de un estado particular en estados de la base de decaimiento:
+
+\begin{equation}
+\Psi = \sum_{\gamma}\bar{c}_\gamma \rho_\gamma
+\end{equation}
+
+Entonces:
+
+\begin{equation}
+\bar{c}_\gamma = Tr[\Psi\bar{\rho}_{\gamma}]
+\end{equation}
+
+Con esto la evolución temporal del sistema queda determinada:
+
+\begin{equation}
+\Psi(t) = \sum_\gamma \bar{c}_\gamma e^{\frac{-i}{\hbar} \gamma t} \rho_{\gamma}
+\end{equation}
+
 \chapter{Deducción de Ecuacion Maestra Mediante Operadores de Proyección}
 
 Se busca obtener la ecuación maestra correspondiente a un sistema sujeto a interacción con un baño térmico:
@@ -410,19 +448,19 @@ s\tilde{v}(s)-(\tilde{v}(0)+PL_{int}\alpha\tilde{u}(0))=(L_{sis}+PL_{int}\alpha 
 En este punto se toma la aproximación de aclopamiento débil:
 
 \begin{equation}
-L_{int} \rightarrow \epsilon L_{int}
+L_{int} \rightarrow \Xi L_{int}
 \end{equation}
 
 Los términos asociados a $\tilde{u}0$ son únicamente correciones a la condición inicial, por lo que se desprecian. Tomando esto en cuenta, se obtiene:
 
 \begin{equation}
-s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\epsilon^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s)
+s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\Xi^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s)
 \end{equation}
 
 Y al tomar la transformada inversa de Laplace:
 
 \begin{equation}\label{eqProyectores}
-\dot{v}(t)=L_{sis}v(t) + \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau)
+\dot{v}(t)=L_{sis}v(t) + \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau)
 \end{equation}
 
 Se busca obtener una ecuación en términos de los operadores del Hamiltoniano \cite{ZollerQN},se procede con el segundo término de la ecuación \eqref{eqProyectores}:
@@ -437,11 +475,11 @@ QL_{int}v=&(1-P)L_{int}v\\
 Con esto el segundo término de la ecuación \eqref{eqProyectores}, y tomando en cuenta la definición de los términos $L$ dada en \eqref{defL} y el lema de Baker-Campbell-Housedorff \cite{SakuraiQM}
 
 \begin{align*}
-=& \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau)\\
-=& \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau}\\
-=&\epsilon^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau) \\
-=&\epsilon^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)] \\
-=&\epsilon^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]]
+=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau)\\
+=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau}\\
+=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau) \\
+=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)] \\
+=&\Xi^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]]
 \end{align*}
 
 En este punto se realiza la aproximación de Markov \cite{ZollerQN}, al hacer la sustitución:
@@ -507,10 +545,82 @@ El problema admite una solución del tipo visto en la sección anterior:
 Como se mencionó en la sección anterior, $\mu$ en general es un número complejo, lo cual puede llevar a soluciones inestables. En este caso $\Phi_n(x,t)$ es la función que contiene la periodícidad en el tiempo. Sustituir la solución en la ecuación \ref{SchrodingerEQ} genera una ecuación para las funciones periódicas:
 
 \begin{equation}
-H(x,t)\Phi_n(x,t)=\epsilon_n\Phi_n(x,t)
+H(x,t)\Phi_n(x,t)=\Xi_n\Phi_n(x,t)
 \end{equation}
 
 \section{Oscilador Armónico Dependinte del Tiempo: Solución Mediante Formalismo de Floquet}
+
+En el caso clásico \cite{HanngiFM} se tiene, para un oscilador armónico unidimensional con frecuencia dependiente del tiempo y el cual experimenta una fuerza disipativa dependiente de la velocidad, que la posición cumple:
+
+\begin{equation}
+\ddot{x}+\gamma\dot{x}+\frac{k(t)}{m}x=0
+\end{equation}
+
+Se asume que la función $k(t)$ tiene es periódica con periódo $T$ Si se utiliza la sustitución $x=ye^{-\frac{\gamma t}{2}}$, se llega a la ecuación:
+
+\begin{equation}
+\ddot{y} +(\frac{k(t)}{m}-\frac{\gamma^2}{4})y=0
+\end{equation}
+
+El teorema de Floquet para ecuaciones de segundo orden con coeficientes del tiempo (ver Hanngi para referencia) asegura que esta ecuación tiene dos soluciones:
+
+
+\begin{equation}
+\Xi_1(t) = e^{i\mu t}\phi(t), \quad \Xi_2(t)=\Xi_1(-t)
+\end{equation}
+
+Recordando que la función $\phi$ debe tener la misma periodicidad que $k(t)$. Dado que la función cumple con esta condición, es posible realizar una expansión de Fourier \cite{ArfkenMM} de la misma:
+
+\begin{equation}
+\phi(t) = \sum_{-\infty}^\infty c_n e^{in\omega t}
+\end{equation}
+
+Para fijar los coeficientes se normaliza el Wronskiano tal que:
+
+\begin{equation}
+W = \dot{\Xi}_1(t)\Xi_2(t)-\Xi_1(t)\dot{\Xi}_2(t) = 2i
+\end{equation}
+
+Lo cual genera la regla de suma:
+
+\begin{equation}
+\sum_{-\infty}^\infty c_n^2(\mu + n\omega) = 1
+\end{equation}
+
+\section{Caso Cuántico}
+
+En el caso de un Hamiltoniano con dependencia temporal como la vista anteriormente, existe un conjunto completo de soluciones \cite{BarnettSD}:
+
+\begin{equation}
+\Ket{\Psi_\alpha (t)} = e^{-i\mu_\alpha t}\Ket{\phi_\alpha t}, \qquad \Ket{\phi_\alpha (t)}=\Ket{\phi_\alpha (t+\tau)}
+\end{equation}
+
+Estas soluciones tienen la forma explícita (FALTA REFERENCIA):
+
+\begin{equation}
+\Psi_\alpha (x,t) = (\frac{\sqrt{m/\pi\hbar}}{2^\alpha n!E_1^0(t)})^{\frac{1}{2}}(\frac{E_1^0(t)}{E_2^0(t)})^\frac{\alpha}{2}H_\alpha(x\sqrt{\frac{m}{\hbar E_1^0(t) E_2^0(t)}})e^{(ix^2\frac{E_1^0(t)}{2E_2^0(t)})}
+\end{equation}
+
+Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet:
+
+\begin{align*}
+\Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)} \\
+\Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}
+\end{align*}
+
+Es importante notar que estos operadores dependen explicitamente del tiempo, en términos de los operadores de momento y posición, pueden expresarse de manera análoga a los operadores de creación y aniquilación del oscilador armónico:
+
+\begin{equation}
+\Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2m}{\hbar}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}})
+\end{equation}
+
+\section{Ecuación Maestra Mejorada: Solución con Base de Decaimiento}
+
+La ecuación maestra a resolver es:
+
+\begin{equation}
+
+\end{equation}
 
 \bibliographystyle{plain}
 \bibliography{Bib}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  11 AUG 2015 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  14 AUG 2015 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -503,22 +503,23 @@ Overfull \hbox (13.23123pt too wide) in paragraph at lines 187--187
 [] 
  []
 
-[4] [5] [6] [7]
+[4] [5] [6] [7] [8]
 Cap\'{\i }tulo 2.
-[8
+[9
 
-] [9] [10] [11]
+] [10] [11] [12]
 Cap\'{\i }tulo 3.
-[12
+[13
 
-] (./Tesis.bbl [13]
+] [14] (./Tesis.bbl [15]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
-) [14
+) [16
 
 ] (./Tesis.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -527,10 +528,10 @@ LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 4008 strings out of 494353
- 52248 string characters out of 6163061
- 125227 words of memory out of 5000000
- 7188 multiletter control sequences out of 15000+600000
+ 4013 strings out of 494353
+ 52313 string characters out of 6163061
+ 125237 words of memory out of 5000000
+ 7193 multiletter control sequences out of 15000+600000
  13680 words of font info for 52 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
  38i,15n,30p,946b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -551,10 +552,10 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on Tesis.pdf (16 pages, 216149 bytes).
+Output written on Tesis.pdf (18 pages, 226259 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

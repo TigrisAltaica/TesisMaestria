@@ -5,45 +5,45 @@ The style file: plain.bst
 Database file #1: Bib.bib
 Warning--can't use both author and editor fields in ArfkenMM
 Warning--can't use both author and editor fields in HanngiDQS
-You've used 6 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            531 strings with 4711 characters,
-and the built_in function-call counts, 1345 in all, are:
-= -- 118
-> -- 48
+            543 strings with 5023 characters,
+and the built_in function-call counts, 1753 in all, are:
+= -- 158
+> -- 62
 < -- 0
-+ -- 20
-- -- 14
-* -- 60
-:= -- 244
-add.period$ -- 18
-call.type$ -- 6
-change.case$ -- 20
++ -- 26
+- -- 18
+* -- 76
+:= -- 322
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 70
-empty$ -- 128
-format.name$ -- 14
-if$ -- 279
+cite$ -- 10
+duplicate$ -- 90
+empty$ -- 162
+format.name$ -- 18
+if$ -- 361
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 11
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 43
+int.to.str$ -- 8
+missing$ -- 13
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 51
 preamble$ -- 1
-purify$ -- 19
+purify$ -- 25
 quote$ -- 0
-skip$ -- 38
+skip$ -- 52
 stack$ -- 0
-substring$ -- 30
-swap$ -- 8
+substring$ -- 40
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 22
 warning$ -- 2
-while$ -- 12
-width$ -- 7
-write$ -- 62
+while$ -- 16
+width$ -- 9
+write$ -- 82
 (There were 2 warnings)
