@@ -237,64 +237,16 @@ Este es el estado con valor propio 0, lo cual corresponde a $n=0, \qquad l=0$. E
 ya que $L_0^0 = 1$ \cite{ArfkenMM} si se desarrolla la exponencial en una serie infinita se tiene, aplicando el ordenamiento normal:
 
 \begin{equation}
-\sum_{n=0}^\infty \frac{-(a^\dagger a)^n}{n!(\nu+1)^n}
+\sum_{n=0}^\infty \frac{-(a^\dagger)^n (a)^n}{n!(\nu+1)^n}
 \end{equation}
 
-si se sustituye esto en la expresión para el estado base, junto con la relación de cerradura para la base de Foch se tiene:
+si se sustituye esto en la expresión para el estado base, junto con la relación de cerradura para la base de Foch se llega a \cite{EnglertDB}
 
 \begin{equation}
-\sum_{n=0}^\infty \Ket{n}\Bra{n}\sum_{m=0}^\infty \frac{-(a^\dagger a)^m}{m!(\nu+1)^m}
+\rho_0^0 = \frac{1}{1+\nu} [\frac{\nu}{1+\nu}]^{a^\dagger a}
 \end{equation}
 
-El operador $a^\dagger a$ es el operador de número y es auto adjunto, por lo que se tiene
-
-\begin{align}
-=&\sum_{n=0}^\infty \Ket{n}\Bra{n}\sum_{m=0}^\infty -(\frac{n}{\nu+1})^m\frac{1}{m!} \nonumber \\
-=&\sum_{n=0}^\infty \Ket{n}\Bra{n}e^{-[\frac{n}{\nu+1}]} \nonumber
-\end{align}
-
-\subsection{Primer Estado Excitado}
-
-Por la definición de la base proporcionada en \ref{DefDB}, es claro que el primer cambio sustancial en la expresión para los estados se debe a tener valores distintos de $l$, en el caso de $l=1$, se tiene que\cite{ArfkenMM}:
-
-\begin{equation}
-L_1^1(x) = -x + 2
-\end{equation}
-
-Recordando que en el caso de esta base, la variable es $\frac{a^\dagger a}{\nu+1}$, el término correspondiente a $n=1$, $l=1$ es:
-
-\begin{equation}
-\frac{a^\dagger}{(\nu+1)}:(\frac{a^\dagger a}{\nu+1}-2)e^{-[\frac{a^\dagger a}{\nu+1}]}:
-\end{equation}
-
-Claramente, el segundo término de la suma simplemente resulta en el término del estado base multiplicado por un factor de -2. Enfocandosé en el primer término se obtiene:
-
-\begin{equation} \label{PrimerExcitado}
-\frac{a^\dagger a^\dagger a}{(\nu+1)^2}e^{-[\frac{a^\dagger a}{\nu+1}]}
-\end{equation}
-
-En términos de la base de Foch, el operador $a^\dagger a$ es:
-
-\begin{equation}
- \sum_{n=0}^\infty n\Ket{n}\Bra{n}
-\end{equation}
-
-Se tiene que el estado \ref{PrimerExcitado}, utilizando el mismo procedimiento del caso del estado base es:
-
-\begin{align}
- =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty na^\dagger\Ket{n}\Bra{n}e^{-[\frac{a^\dagger a}{\nu+1}]}\\
- =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}\sum_{m=0}^\infty \frac{-(a^\dagger a)^m}{m!(\nu+1)^m}\\
- =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}\sum_{m=0}^\infty \frac{-(n)^m}{m!(\nu+1)^m}\\
- =&\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}e^{-[\frac{n}{\nu+1}]}
-\end{align}
-
-Con esto, el estado completo es:
-
-\begin{equation}
-\rho_1^1=\frac{1}{(\nu+1)^2}\sum_{n=0}^\infty n\sqrt{n+1}\Ket{n+1}\Bra{n}e^{-[\frac{n}{\nu+1}]}-2\sum_{n=0}^\infty \Ket{n}\Bra{n}e^{-[\frac{n}{\nu+1}]}
-\end{equation}
-
-Se puede observar el cambio en la estructura, si se hubiese tomado $l=-1$ la única diferencia sería que el Bra, y no el Ket, tendría el valor $n+1$
+El cual corresponde a un estado térmico. El estado base es el estado estacionario del sistema.
 
 \section{Estados Duales}
 
@@ -333,6 +285,77 @@ Con esto la evolución temporal del sistema queda determinada:
 \begin{equation}
 \Psi(t) = \sum_\gamma \bar{c}_\gamma e^{\frac{-i}{\hbar} \gamma t} \rho_{\gamma}
 \end{equation}
+
+\subsection{Estados Duales: Forma Explícita}
+
+Ya que es necesario tomar trazas sobre los estados duales, es conveniente encontrar tanto su forma explícita en términos de operadores de creación y aniquilación, así como una relación de recurrencia que permita relacionar un estado a los estados de menor número $n$. Los polinomios asociados de Laguerre, en general, son de la forma\cite{ArfkenMM}
+
+\begin{equation}\label{DefLaguerre}
+L_n^k(x) = \sum_{m=0}^n (-1)^m \frac{(n+k)!}{(n-m)!(k+m)!m! x^m}
+\end{equation}
+
+Recordando que en este caso la variable $x$ corresponde a $\frac{a^\dagger a}{\nu}$, y que los estados se encuentran multiplicados por un coeficiente:
+
+\begin{equation}
+(\frac{-\nu}{1+\nu})^n \frac{n!}{(n+k)!}
+\end{equation}
+
+Se llega a la expresión general, la cual toma en cuenta el ordenamiento normal y los operadores de aniquilación a la derecha del mismo:
+
+\begin{equation}\label{DefDual}
+\sum_{m=0}^n \frac{(-\nu)^{n-m}}{(\nu+1)^n} \frac{n!}{(n-m)!(m+k)!m!} a^{\dagger m}a^{m+k}
+\end{equation}
+
+Basandose en \ref{DefDual}, se puede ver que para cualquier valor de $n$ y $k \\geq 0$ el primer término de la suma, es decir el correspondiente a $m=0$ es:
+
+\begin{equation}
+(\frac{-\nu}{1+\nu})^n \frac{a^k}{k!}
+\end{equation} 
+
+El último término de la suma, el correspondiente a $m=n$, es:
+
+\begin{equation}
+\frac{1}{(\nu+1)^n} \frac{1}{(n+k)!} a^{\dagger n}a^{n+k}
+\end{equation}
+
+Si se desea una representación de estos estados en la base de Foch, se puede recurrir a:
+
+\begin{equation}
+I = \sum^\infty _n \Ket{n}\Bra{n}
+\end{equation}
+
+Y aplicar todos los operadores desde la derecha. En el caso del primer término ya antes mencionado, se obtiene:
+
+\begin{equation}
+ (\frac{-\nu}{1+\nu})^n \sqrt{\frac{n!}{(n-k)!}}\sum^\infty _{l=k} \Ket{l-k}\Bra{l}
+\end{equation}
+
+Los estados con número de ocupación menor a $k$ se anulan por la definición del operadore de aniquilación. En el caso del último término de la suma, se obtiene:
+
+\begin{equation}
+(\frac{1}{1+\nu})^n \frac{n!}{(n-k)!}\sum^\infty _{l=n+k} \Ket{l-k}\Bra{l}
+\end{equation}
+
+Puede verse que ambos términos involucran la misma diferencia en el número de ocupación del ket y del bra, pero la suma correspondiente al último término no cubre tantos estados, pues ahora todo estado con número menor a $n+k$ es anulado.
+
+\subsection{Relación de Recurrencia para Estados Duales}
+
+A fin de obtener una relación de recurrencia para los estados duales, es posible basarse en una de las muchas relaciones de recurrencia de los polinomios asociados de Laguerre \cite{ArfkenMM}:
+
+\begin{equation}
+L_n^{k+1}(x) = \frac{n-x}{n}L_{n-1}^{k+1}(x) + \frac{n+k}{n}L_{n-1}^{k}(x)
+\end{equation}
+
+Si se sustituye esto en la expresión para el estado dual correspondiente se tiene, recordando que se utiliza $x$ para la variable únicamente por simplicida:
+
+\begin{align}
+\hat{\rho}_n ^{k+1} =& [\frac{-\nu}{1+\nu}]^n \frac{n!}{(n+k+1)!} :L_n^{k+1}:a^{k+1}\\
+=&[\frac{-\nu}{1+\nu}]^n\frac{n!}{(n+k+1)!} :\frac{n-x}{n}L_{n-1}^{k+1}(x) + \frac{n+k}{n}L_{n-1}^{k}(x):a^{k+1}\\
+=&[\frac{-\nu}{1+\nu}]^n\frac{n!}{(n+k+1)!}[:L_{n-1}^{k+1}(x)+L_{n-1}^{k}(x):+\frac{1}{n}:-xL_{n-1}^{k+1}(x)+L_{n-1}^{k}(x):]a^{k+1}\\
+=&[(\frac{-\nu}{1+\nu})\frac{1}{(n+k+1)}+ \frac{(n+k)}{-\nu(\nu+1)}a^\dagger \bullet a]\hat{\rho}_{n-1} ^{k+1} + [(\frac{-\nu}{1+\nu}) (n+1)(n+k+1)(n+k)]\hat{\rho}_{n-1} ^{k}
+\end{align}
+
+Donde $\bullet$ indica que el estado dual va entre el operador de creación y el de aniquilación.
 
 \chapter{Deducción de Ecuacion Maestra Mediante Operadores de Proyección}
 
@@ -618,9 +641,6 @@ Es importante notar que estos operadores dependen explicitamente del tiempo, en 
 
 La ecuación maestra a resolver es:
 
-\begin{equation}
-
-\end{equation}
 
 \bibliographystyle{plain}
 \bibliography{Bib}
