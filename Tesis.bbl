@@ -1,10 +1,25 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{ArfkenMM}
 George~B. Arfken.
 \newblock {\em Mathematical Methods for Physicists, Seventh Edition: A
   Comprehensive Guide}.
 \newblock Academic Press, •.
+
+\bibitem{BlumDM}
+Karl Blum.
+\newblock {\em Density Matrix Theory and Applications}.
+\newblock Springer, 2012.
+
+\bibitem{BrownPT}
+Lowell~S. Brown.
+\newblock Quantum motion in a paul trap.
+\newblock {\em Physical Review Letters}, 1991.
+
+\bibitem{CarmichaelQO}
+Howard Carmichael.
+\newblock {\em Statistical Methods in Quantum Optics, Vol 1}.
+\newblock Springer, 1999.
 
 \bibitem{EnglertDB}
 Berthold-Georg~Englert Hans-Jurgen~Briegel.

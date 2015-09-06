@@ -29,7 +29,245 @@
 
 \chapter{Sistemas Cuánticos Abiertos y Ecuaciones Maestras}
 
-El objetivo es encontrar la evolución temporal de un sistema cuántico abierto, los cuales son modelados por ecuaciones del tipo:
+\section{Introducción}
+
+Modelar la pérdida de energía en un sistema clásico como un oscilador armónico es un proceso directo \cite{CarmichaelQO} que consiste en modificar el Hamiltoniano usual:
+
+\begin{equation}
+H = \frac{p^2}{2m} + \frac{1}{2} m\omega^2 q^2
+\end{equation}
+
+Al agregarle un termino dependiente de la velocidad $-\gamma p$, lo cual lleva a la conocida ecuación:
+
+\begin{equation}
+\ddot{q} + \gamma \dot{q} + \omega^2 q = 0
+\end{equation}
+
+Sin embargo, este enfoque no es igualmente exitosos al tratar con sistemas cuánticos. En el procedimiento anterior se llega a las ecuaciones lineales:
+
+\begin{equation}
+\dot{q} = \frac{p}{m} \qquad \dot{p} = -\gamma p -m\omega ^2 q
+\end{equation}
+
+Como estás son lineales deben de seguir siendo validas al cambiar $p$ y $q$ por operadores, pero si se piensa en la evolución temporal del conmutador, tomando ahora a $p$ y $q$ como operadores:
+
+\begin{align*}
+ \dfrac{d}{dt}[q,p] =& \dot{q}p + q\dot{p} - \dot{p}q p\dot{q}\\  
+ =& -\gamma[q,p]
+\end{align*}
+
+Por lo que:
+
+\begin{equation}
+[q(t),p(t)] = e^{-\gamma t}[q(0),p(0)] = i\hbar e^{-\gamma t}
+\end{equation}
+
+El enfoque que en el caso clásico lleva a la solución correcta en el caso cuántico lleva a que la relación de conmutación canónica decaiga con el tiempo. Se busca otra forma de proceder.
+
+\section{Enfoque de Sitema y Baño}
+
+Este enfoque depende de asumir que el sistema no pierde energía por sí mismo, en realidad las perdidas de energía se deben un acoplamiento a un sistema mucho más grande, al cual llamamos baño. Normalmente las propiedades del baño no son de interés, más allá de propiedades básicas como temperatura. Se asume que el acoplamiento lleva a pérdidas de energía en el sistema de estudio pero que este sistema no es lo suficientemente grande como para alterar las propiedades del baño. Esto lleva a un Hamiltoniano de la forma:
+
+\begin{equation} \label{BathSysH}
+H = H_{Sis} + H_{B} + H_{Int}
+\end{equation}
+
+Un Hamiltoniano total formado por la suma del Hamiltoniano del sistema original sin péridas de energía, un Hamiltoniano para el baño y un Hamiltoniano de acoplamiento entre los otros dos.  Dado que solo es de interés conocer las propiedades del sistema, esto sugiere el uso de matrices densidad.
+
+\subsection{Matriz Densidad}
+
+Si un sistema se encuentra en un estado $\Ket{\Psi}$, su matriz densidad\cite{BlumDM}, usualmente denotada como $\rho$ está dada por:
+
+\begin{equation}
+\rho = \Ket{\Psi}\Bra{\Psi}
+\end{equation}
+
+La matriz contiene toda la información del sistema y tiene varias propiedades de interés. Si se desea conocer el valor de expectación de un operador, este es:
+
+\begin{equation}
+<A> = Tr[A\rho]
+\end{equation}
+
+Su evolución temporal se comporta de acuerdo con la ecuación de Liouville:
+
+\begin{equation}
+\dfrac{\partial \rho}{\partial t} = \frac{1}{i\hbar}[H,\rho]
+\end{equation}
+
+Finalmente, y de especial utilidad, existe una forma de extraer información de un subsistema de la matriz densidad. Si se conoce la matriz densidad de un sistema compuesto formado por dos sistemas $A$ y $B$ tal que el sistema compuesto se encuentra en un espacio formado por el producto directo de los dos subsistemas:
+
+\begin{equation}
+H_{AB} = H_A \otimes H_B
+\end{equation}
+
+Entonces es posible encontrar la matriz densidad correspondiente a uno de los dos subespacios al tomar la traza sobre el otro:
+
+\begin{equation}
+\rho_A = Tr_B [\rho_{AB}]
+\end{equation}
+
+Esto muestra la utilidad de este formalismo para trabajar con Hamiltonianos del tipo \ref{BathSysH}, ya que si se encuentra una solución basta con tomar la traza sobre los estados del baño para encontrar una solución para el sistema con pérdidas de energía.
+
+\section{Deducción de Ecuacion Maestra Mediante Operadores de Proyección}
+
+Se busca obtener la ecuación correspondiente a un sistema sujeto a interacción con un baño térmico:
+
+\begin{equation}
+\hat{H} = \hat{H}_{Sis}+\hat{H}_{Int}+\hat{H}_B
+\end{equation}
+
+Lo cual implica una ecuación de evolución temporal para $\rho$ de la forma:
+
+\begin{equation}\label{LMeq}
+\dot{\rho}_{total} = (L_{Sis}+L_{Int}+L_B)\rho
+\end{equation}
+
+Donde:
+
+\begin{equation}\label{defL}
+L\rho(t) = \frac{i}{\hbar}[\hat{H},\rho(t_0)]
+\end{equation}
+
+Se busca una solución para el operador densidad únicamente del sistema, por lo que se busca una ecuación para el operador total después de tomar la traza sobre las variables del baño:
+
+\begin{equation}
+\rho(t) \equiv Tr_B\{\rho_{total}(t)\}
+\end{equation}
+
+Se define un operador de proyección \cite{ZollerQN} que opere sobre $ \rho $:
+
+\begin{equation}
+P\rho_t = Tr_B\{\rho_{t}(t)\}\otimes \rho_B
+\end{equation}
+
+Y un operador:
+
+\begin{equation}
+Q = \mathbf{1}-P
+\end{equation}
+
+Tal que:
+
+\begin{align}
+\rho_t =& P\rho_t + Q\rho_t \\
+\equiv & v(t)+u(t)
+\end{align}
+
+Se emplean las siguientes propiedades:
+
+\begin{enumerate}
+\item $ PL_{sis} = L_{sis}P$\qquad Ya que $ P $ y $ L_{sis} $ operan en espacios distintos.
+
+\item $ PL_{B} = L_{B}P = 0 $\qquad Por conservación de la probabilidad.
+
+\item $PL_{int}P=0$ \qquad Se asume que la interacción no tiene términos diagonales en las variables del baño
+
+\item $P^2 = P \quad Q^2 = Q$ \qquad $P$ y $Q$ son proyectores
+\end{enumerate}
+
+Por convieniencia se trabaja con la transformada de Laplace [citar arfken] de las proyecciones $v(t)$ y $u(t)$:
+
+\begin{equation}
+\tilde{v}(t) = \int_0^\infty e^{-st}v(t)dt \qquad \tilde{u}(t) = \int_0^\infty e^{-st}u(t)dt
+\end{equation}
+
+Dado que las dos proyecciones se encuentran es espacios distintos, se puede sustituir $\rho$ por ellas en \eqref{LMeq} y resolver por separado para cada proyección. En el caso de $v(t)$ se tiene, antes de utilizar la transformada de Laplace, al aplicar el proyector $P$ a \eqref{LMeq}:
+
+\begin{align*}
+P\dot{p}(t)_t =& P(L_{Sis}+L_{Int}+L_B)\rho \\
+ \dot{v}(t) =& (PL_{Sis}+PL_{Int}+PL_B)\rho \\
+ =&(L_{Sis}P+PL_{Int}+\underbrace{PL_B}_0)\rho \\
+ =& L_{sis}P\rho_t + PL_{int}\rho_t \\
+ =& L_{sis}v + \underbrace{PL_{int}(P}_0+Q)\rho_t \\
+ =& L_{sis}v + PL_{int}Q\rho_t \\
+ =& L_{sis}v + PL_{int}u 
+\end{align*}
+
+De manera análoga se obtiene una ecuación para $u$ al proyectar con $Q$:
+
+\begin{align*}
+Q\dot{p}(t)_t =& Q(L_{Sis}+L_{Int}+L_B)\rho \\
+ \dot{u}(t) =& (QL_{Sis}+QL_{Int}+QL_B)\rho \\
+ =&(L_{Sis}Q+QL_{Int}+L_BQ)\rho \\
+ =& L_{sis}Q\rho_t + L_{B}Q\rho_t + QL_{int}\rho_t \\
+ =& L_{sis}u + L_{B}u + QL_{int}(Q+P)\rho_t  \\
+ =& L_{sis}u + L_{B}u + QL_{int}v+QL_{int}u\rho_t \\
+ =& (L_{Sis}+L_B+QL_{Int})u +QL_{Int}v 
+\end{align*}
+
+Al aplicar la transformada de Laplace a la ecuación para $v$ se obtiene:
+
+\begin{equation}\label{eqv}
+s\tilde{v}(s)-\tilde{v}(0) = L_{sis}\tilde{v}(s) + PL_{int}\tilde{u}(s)
+\end{equation}
+
+Y en el caso de $u$:
+
+\begin{equation}\label{equ}
+s\tilde{u}(s)-\tilde{u}(0) = (L_{Sis}+L_B+QL_{Int})\tilde{u}(s) + QL_{Int}\tilde{v}(s)
+\end{equation}
+
+Se resuelve \eqref{equ} en términos de $v$:
+
+\begin{equation}
+\tilde{u}(s)=\frac{QL_{Int}\tilde{v}(s)+\tilde{u}(0)}{s-\underbrace{(L_{Sis}+L_B+QL_{Int})}_\alpha}
+\end{equation}
+
+Y se sustituye el resultado en \eqref{eqv}:
+
+\begin{equation}
+s\tilde{v}(s)-(\tilde{v}(0)+PL_{int}\alpha\tilde{u}(0))=(L_{sis}+PL_{int}\alpha QL_{int})\tilde{v}(s)
+\end{equation}
+
+En este punto se toma la aproximación de aclopamiento débil:
+
+\begin{equation}
+L_{int} \rightarrow \Xi L_{int}
+\end{equation}
+
+Los términos asociados a $\tilde{u}0$ son únicamente correciones a la condición inicial, por lo que se desprecian. Tomando esto en cuenta, se obtiene:
+
+\begin{equation}
+s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\Xi^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s)
+\end{equation}
+
+Y al tomar la transformada inversa de Laplace:
+
+\begin{equation}\label{eqProyectores}
+\dot{v}(t)=L_{sis}v(t) + \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau)
+\end{equation}
+
+Se busca obtener una ecuación en términos de los operadores del Hamiltoniano \cite{ZollerQN},se procede con el segundo término de la ecuación \eqref{eqProyectores}:
+
+\begin{align*}
+QL_{int}v=&(1-P)L_{int}v\\
+=& (1-P)L_{int}P\rho \\
+=& L_{int}P\rho \\
+=& L_{int}v
+\end{align*}
+
+Con esto el segundo término de la ecuación \eqref{eqProyectores}, y tomando en cuenta la definición de los términos $L$ dada en \eqref{defL} y el lema de Baker-Campbell-Housedorff \cite{SakuraiQM}
+
+\begin{align*}
+=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau)\\
+=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau}\\
+=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau) \\
+=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)] \\
+=&\Xi^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]]
+\end{align*}
+
+En este punto se realiza la aproximación de Markov \cite{ZollerQN}, al hacer la sustitución:
+
+\begin{equation}
+t-\tau \rightarrow t
+\end{equation}
+
+Y se traza toda la ecuación sobre las variables del baño. Con esto se llega a la ecuación:
+
+
+\chapter{Ecuaciones Maestras: Atomo de dos Niveles, Oscilador Armónico y la Base de Decaimiento}
+
+Se busca poder resolver ecuaciones como las encontradas en el capitulo anterior, estás en general se escriben de la forma:
 
 \begin{equation}\label{MasterEq}
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L\rho
@@ -61,7 +299,13 @@ Se busca una solución equivalente para la ecuación \eqref{MasterEq}. Es posibl
 \rho(t) = \sum_{\Gamma} c_{\Gamma} e^{\Gamma t}P_{\Gamma} 
 \end{equation}
 
-Los coeficientes ahora son respecto a las funciones propias de $L$. Es importante notar que $L$ no es necesariamente un operador autoadjunto, por lo que no se puede garantizar que sus funciones propias formen una base completa del espacio ni que sus valores propios sean reales. También es importante notar  que $Psi$ es un vector de estado que pertenece al espacio de Hilbert mientras que $rho$ es un operador que pertenece al espacio de Liouville. Por esto, se dice que $L$ es un superoperador. La base que se obtiene de esta forma se conoce como \textit{damping base}. Una de las diferencias importantes con el caso de mecánica cuántica estandard es que como $L$ no es autoadjunto, los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza:
+Los coeficientes ahora son respecto a las funciones propias de $L$. Es importante notar que $L$ no es necesariamente un operador autoadjunto, por lo que no se puede garantizar que sus funciones propias formen una base completa del espacio ni que sus valores propios sean reales. En el caso de este tipo de operadores existen dos tipos de vectores propios\cite{BarnettSD}, izquierdos y derechos:
+
+\begin{align*}
+
+\end{align*}
+
+ También es importante notar que $Psi$ es un vector de estado que pertenece al espacio de Hilbert mientras que $rho$ es un operador que pertenece al espacio de Liouville. Por esto, se dice que $L$ es un superoperador.8 Una de las diferencias importantes con el caso de mecánica cuántica estandard es que como $L$ no es autoadjunto, los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza:
 
 \begin{equation}
 Tr\{\check{P_{\Gamma'}}P_\Gamma\} = \delta_{\Gamma'\Gamma}
@@ -69,7 +313,7 @@ Tr\{\check{P_{\Gamma'}}P_\Gamma\} = \delta_{\Gamma'\Gamma}
 
 Esto se puede emplear para obtener las constantes de la expansión.
 
-\section{Ejemplo: Átomo de dos Niveles}
+\section{Átomo de dos Niveles}
 
 Antes de intentar resolver sistemas más complejos, es ilustrativo tratar el caso relativamente sencillo del átomo de niveles. A este sistema le corresponde el operador de Linblad:
 
@@ -86,7 +330,7 @@ Es convenitente utilizar notación de Dirac en este tratamiento. Todos los opera
 \sigma_{\pm} = \sigma_x \pm \sigma_y = (\sigma_{\mp}) ^\dagger
 \end{equation}
 
-El método para encontrar los vectores y valores propios de $L$ consiste en proponer una forma adecuada para los vectores, aplicar $L$ a la propuesta y resolver las ecuaciones resultantes. En este caso se propone:
+Un método \cite{BarnettSD} para encontrar los vectores y valores propios de $L$ consiste en proponer una forma adecuada para los vectores, aplicar $L$ a la propuesta y resolver las ecuaciones resultantes. En este caso se propone:
 
 \begin{equation}
 \rho_\sigma = \alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}+\delta\Ket{-}\Bra{-}
@@ -147,18 +391,42 @@ donde:
 \sigma_0 = \frac{1}{2}[I + (2s-1)\sigma_z]
 \end{equation}
 
-Las constantes en \eqref{MasterEq} son todas positivas por lo que todos los valores propios son no positivos. Esto es importante, ya que al hacer tender el tiempo a infinito solo el término que corresponde al valor propio 0 sobrevive, los demás términos decaen exponencialmente con el tiempo. Esto lleva a identificar al término con valor propio 0 como el estado estacionario del sistema. A continuación se trata el caso del oscilador armónico.
+Las constantes en \eqref{MasterEq} son todas positivas por lo que todos los valores propios son no positivos. Esto es importante, ya que al hacer tender el tiempo a infinito solo el término que corresponde al valor propio 0 sobrevive, los demás términos decaen exponencialmente con el tiempo. Esto lleva a identificar al término con valor propio 0 como el estado estacionario del sistema. Los estados duales se obtienen de la misma forma y resultan ser\cite{EnglertDB}:
 
-\section{Caso Oscilador Armónico: Base de Decaimiento}
+\begin{align}
+\check{\sigma_0} L_\sigma  =& 0 \\
+\check{\sigma_z} L_\sigma =& -B \check{\sigma_z} \\
+\check{\sigma_{\pm}} L_\sigma =& -C \check{\sigma_{\pm}}
+\end{align}
 
-Se busca modelar interacciones que involucran un capo electromagnético. Este se modela simplemente como una suma infinita de modos de oscilador armónico. Este sistema en particular corresponde a un operador de Lindblat de la forma:
+Donde:
+
+\begin{align*}
+\check{\sigma_0} =& 1\\
+\check{\sigma_z} =& \frac{1}{2}[\sigma_z-(2s-1)]\\
+\check{\sigma_{\pm}} =& \frac{1}{4}\sigma_{\mp}
+\end{align*}
+
+Se puede verificar rápidamente la condición de ortogonalidad, por ejemplo utilizando $\check{\sigma_0}$:
+
+\begin{align*}
+Tr[\sigma_0\check{\sigma_0}] =& Tr[\frac{1}{2}[I + (2s-1)\sigma_z]]\\
+=& \frac{1}{2} Tr[I] + \frac{2s-1}{2}Tr[\sigma_z]\\
+=& 1
+\end{align*}
+
+Donde se utiliza el hecho de que las matrices de Pauli tienen traza cero. Con esta misma propiedad se puede verificar que los productos restantes con $\check{\sigma_0}$ se anulan.
+
+\section{Oscilador Armónico: Primer Ansatz}
+
+Se busca modelar interacciones que involucran un capo electromagnético. Este se modela simplemente como una suma infinita de modos de oscilador armónico. Este sistema en particular corresponde a un operador de Lindblat de la forma \cite{EnglertDB}
 
 \begin{align}\label{EMField}
 L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^\dagger] \nonumber \\
  &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a^\dagger\rho a]
 \end{align}
 
-Esto modela un campo electromagnético en una cavidad con acoplamiento a un reservorio térmico con un número $\nu$ promedio de fotones térmicos. $A,\nu \geq 0$. La elección de un ansatz para este sistema es mucho más compleja, ya que ahora la base estados sobre la cual actúan los operadores que forman $L$ es infinita.  En base a lo visto en la sección anterior, se propone una base que acople estados de distinta energía:
+Esto modela un campo electromagnético en una cavidad con acoplamiento a un reservorio térmico con un número $\nu$ promedio de fotones térmicos. $A,\nu \geq 0$. La elección de un ansatz para este sistema es mucho más compleja, ya que ahora la base estados sobre la cual actúan los operadores que forman $L$ es infinita.  En base a lo visto en la sección anterior, se propone como ansatz una base que acople estados de distinta energía:
 
 \begin{equation}
  \rho^l_n = \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l}
@@ -188,12 +456,54 @@ Como $p^l_n$  es un vector propio los términos anteriores deben de poder iguala
 
 Si en el segundo término se recorre el índice de suma hacia arriba por uno y en el cuarto hacía abajo por uno, se puede utilizar independencia lineal respecto al elemento $\Ket{n}\Bra{n+l}$ para obtener una ecuación para cada elemento de la suma. Se obtiene que los coeficientes deben cumplir con:
 
-\begin{align}
+\begin{align}\label{RecurrenciaStengholm}
 A&(\nu+1) Q_{n+1}^l \sqrt{(n+1)(n+l+1) }+ A(\nu) Q_{n-1}^l\sqrt{n(n+l)}\\ \nonumber
 =&[\lambda_n^l+A\nu(2n+l+2)+\frac{A}{2}(2n+l)]Q_{n}^l
 \end{align}
 
-Esto es una relación de recuerrencia similar a la que se encuentra en los polinomios generalizados de Laguerre. En \cite{EnglertDB} se propone una solución:
+El operador de dual Linblat para este sistema es:
+
+\begin{align}
+L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a^\dagger\rho a] \nonumber \\
+ &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a\rho a^\dagger]
+\end{align}
+
+Lo cual sugiere el mismo ansatz que para el caso de \ref{EMField}, y en efecto se obtiene una relación extremadamente similar, únicamente se intercambian los términos donde el operador densidad se coloca enmedio. No he logrado resolver estas relaciones de recurrencia de forma anlítica para condiciones generales. Sin embargo, en el caso de temperatura cero, se tiene que $\nu = 0$ y \ref{RecurrenciaStengholm} se simplifica considerablemente:
+
+\begin{equation}
+AQ_{n+1}^l\sqrt{(n+1)(n+l+1)}=[\lambda_n^l + \frac{A}{2}(2n+l)]Q_n^l
+\end{equation}
+
+Lo cual nos permite resolver para una de las dos $Q$:
+
+\begin{equation}
+Q_{n+1}^l = \frac{\lambda_n^l + \frac{A}{2}(2n+l)}{A\sqrt{(n+1)(n+l+1)}}Q_n^l
+\end{equation}
+
+Lo cual tiene un número infinito de soluciones. En \cite{BarnettSD} se corta la suma con el valor de $\lambda$ y se llega a una solución para A, que ahora también depende de un nuevo entero $m$:
+
+\begin{equation}
+A_m^l = \sum_{n=0}^m (-1)^m \frac{m!}{(m-n)!}\sqrt{\frac{l!}{n!(n+l)!}}\Ket{n}\Bra{n+l}
+\end{equation}
+
+Al cual le corresponde a un valor para $\lambda$ de:
+
+\begin{equation}
+\lambda_l^m = -(2m+l)
+\end{equation}
+
+Utilizando la condición de ortogonalidad con los estados duales se llega a que estos son \cite{BarnettSD}:
+
+\begin{equation}
+B_m^l = \sum_{n=m}^\infty \sqrt{\frac{n!(n+l)!}{l!}}\frac{1}{(n-m)!}\Ket{n}\Bra{n+l}
+\end{equation}
+
+Sin embargo esto solo es valido en el caso de temperatura cero. Para poder tratar el caso general se requiere de otro enfoque.
+
+\section{Oscilador Armónico: Base de Decaimiento}
+
+
+
 
 \begin{equation}\label{Englert1993}
 \rho_\lambda (a,a^\dagger) = :f(aa^\dagger):a^l
@@ -357,161 +667,6 @@ Si se sustituye esto en la expresión para el estado dual correspondiente se tie
 
 Donde $\bullet$ indica que el estado dual va entre el operador de creación y el de aniquilación.
 
-\chapter{Deducción de Ecuacion Maestra Mediante Operadores de Proyección}
-
-Se busca obtener la ecuación maestra correspondiente a un sistema sujeto a interacción con un baño térmico:
-
-\begin{equation}
-\hat{H} = \hat{H}_{Sis}+\hat{H}_{Int}+\hat{H}_B
-\end{equation}
-
-Lo cual implica una ecuación de evolución temporal para $\rho$ de la forma:
-
-\begin{equation}\label{LMeq}
-\dot{\rho}_{total} = (L_{Sis}+L_{Int}+L_B)\rho
-\end{equation}
-
-Donde:
-
-\begin{equation}\label{defL}
-L\rho(t) = \frac{i}{\hbar}[\hat{H},\rho(t_0)]
-\end{equation}
-
-Se busca una solución para el operador densidad únicamente del sistema, por lo que se busca una ecuación para el operador total después de tomar la traza sobre las variables del baño:
-
-\begin{equation}
-\rho(t) \equiv Tr_B\{\rho_{total}(t)\}
-\end{equation}
-
-Se define un operador de proyección \cite{ZollerQN} que opere sobre $ \rho $:
-
-\begin{equation}
-P\rho_t = Tr_B\{\rho_{t}(t)\}\otimes \rho_B
-\end{equation}
-
-Y un operador:
-
-\begin{equation}
-Q = \mathbf{1}-P
-\end{equation}
-
-Tal que:
-
-\begin{align}
-\rho_t =& P\rho_t + Q\rho_t \\
-\equiv & v(t)+u(t)
-\end{align}
-
-Se emplean las siguientes propiedades:
-
-\begin{enumerate}
-\item $ PL_{sis} = L_{sis}P$\qquad Ya que $ P $ y $ L_{sis} $ operan en espacios distintos.
-
-\item $ PL_{B} = L_{B}P = 0 $\qquad Por conservación de la probabilidad.
-
-\item $PL_{int}P=0$ \qquad Se asume que la interacción no tiene términos diagonales en las variables del baño
-
-\item $P^2 = P \quad Q^2 = Q$ \qquad $P$ y $Q$ son proyectores
-\end{enumerate}
-
-Por convieniencia se trabaja con la transformada de Laplace [citar arfken] de las proyecciones $v(t)$ y $u(t)$:
-
-\begin{equation}
-\tilde{v}(t) = \int_0^\infty e^{-st}v(t)dt \qquad \tilde{u}(t) = \int_0^\infty e^{-st}u(t)dt
-\end{equation}
-
-Dado que las dos proyecciones se encuentran es espacios distintos, se puede sustituir $\rho$ por ellas en \eqref{LMeq} y resolver por separado para cada proyección. En el caso de $v(t)$ se tiene, antes de utilizar la transformada de Laplace, al aplicar el proyector $P$ a \eqref{LMeq}:
-
-\begin{align*}
-P\dot{p}(t)_t =& P(L_{Sis}+L_{Int}+L_B)\rho \\
- \dot{v}(t) =& (PL_{Sis}+PL_{Int}+PL_B)\rho \\
- =&(L_{Sis}P+PL_{Int}+\underbrace{PL_B}_0)\rho \\
- =& L_{sis}P\rho_t + PL_{int}\rho_t \\
- =& L_{sis}v + \underbrace{PL_{int}(P}_0+Q)\rho_t \\
- =& L_{sis}v + PL_{int}Q\rho_t \\
- =& L_{sis}v + PL_{int}u 
-\end{align*}
-
-De manera análoga se obtiene una ecuación para $u$ al proyectar con $Q$:
-
-\begin{align*}
-Q\dot{p}(t)_t =& Q(L_{Sis}+L_{Int}+L_B)\rho \\
- \dot{u}(t) =& (QL_{Sis}+QL_{Int}+QL_B)\rho \\
- =&(L_{Sis}Q+QL_{Int}+L_BQ)\rho \\
- =& L_{sis}Q\rho_t + L_{B}Q\rho_t + QL_{int}\rho_t \\
- =& L_{sis}u + L_{B}u + QL_{int}(Q+P)\rho_t  \\
- =& L_{sis}u + L_{B}u + QL_{int}v+QL_{int}u\rho_t \\
- =& (L_{Sis}+L_B+QL_{Int})u +QL_{Int}v 
-\end{align*}
-
-Al aplicar la transformada de Laplace a la ecuación para $v$ se obtiene:
-
-\begin{equation}\label{eqv}
-s\tilde{v}(s)-\tilde{v}(0) = L_{sis}\tilde{v}(s) + PL_{int}\tilde{u}(s)
-\end{equation}
-
-Y en el caso de $u$:
-
-\begin{equation}\label{equ}
-s\tilde{u}(s)-\tilde{u}(0) = (L_{Sis}+L_B+QL_{Int})\tilde{u}(s) + QL_{Int}\tilde{v}(s)
-\end{equation}
-
-Se resuelve \eqref{equ} en términos de $v$:
-
-\begin{equation}
-\tilde{u}(s)=\frac{QL_{Int}\tilde{v}(s)+\tilde{u}(0)}{s-\underbrace{(L_{Sis}+L_B+QL_{Int})}_\alpha}
-\end{equation}
-
-Y se sustituye el resultado en \eqref{eqv}:
-
-\begin{equation}
-s\tilde{v}(s)-(\tilde{v}(0)+PL_{int}\alpha\tilde{u}(0))=(L_{sis}+PL_{int}\alpha QL_{int})\tilde{v}(s)
-\end{equation}
-
-En este punto se toma la aproximación de aclopamiento débil:
-
-\begin{equation}
-L_{int} \rightarrow \Xi L_{int}
-\end{equation}
-
-Los términos asociados a $\tilde{u}0$ son únicamente correciones a la condición inicial, por lo que se desprecian. Tomando esto en cuenta, se obtiene:
-
-\begin{equation}
-s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\Xi^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s)
-\end{equation}
-
-Y al tomar la transformada inversa de Laplace:
-
-\begin{equation}\label{eqProyectores}
-\dot{v}(t)=L_{sis}v(t) + \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau)
-\end{equation}
-
-Se busca obtener una ecuación en términos de los operadores del Hamiltoniano \cite{ZollerQN},se procede con el segundo término de la ecuación \eqref{eqProyectores}:
-
-\begin{align*}
-QL_{int}v=&(1-P)L_{int}v\\
-=& (1-P)L_{int}P\rho \\
-=& L_{int}P\rho \\
-=& L_{int}v
-\end{align*}
-
-Con esto el segundo término de la ecuación \eqref{eqProyectores}, y tomando en cuenta la definición de los términos $L$ dada en \eqref{defL} y el lema de Baker-Campbell-Housedorff \cite{SakuraiQM}
-
-\begin{align*}
-=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau)\\
-=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau}\\
-=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau) \\
-=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)] \\
-=&\Xi^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]]
-\end{align*}
-
-En este punto se realiza la aproximación de Markov \cite{ZollerQN}, al hacer la sustitución:
-
-\begin{equation}
-t-\tau \rightarrow t
-\end{equation}
-
-Y se traza toda la ecuación sobre las variables del baño. Con esto se llega a la ecuación:
 
 \chapter{Solución de la Ecuación Maestra Mediante Estados de Floquet}
 
@@ -636,6 +791,77 @@ Es importante notar que estos operadores dependen explicitamente del tiempo, en 
 \begin{equation}
 \Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2m}{\hbar}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}})
 \end{equation}
+
+Es conveniente entender el origen de estos operadores. Si se comienza con un Hamiltoniano con frecuencia dependiente del tiempo, se puede seguir el procedimiento de \cite{BrownPT}:
+
+\begin{equation}\label{TDHO}
+H = \frac{1}{2m}p^2 + \frac{1}{2}k(t)q^2
+\end{equation}
+
+Este lleva a la ecuación de movimiento:
+
+\begin{equation}
+m\ddot{q}(t) + k(t)q(t) = 0
+\end{equation}
+
+Para el operador $q(t)$. Lo que se busca es una transformación unitaria que lleve este problema al problema usual del oscilador armónico en mecánica cuántica. Es decir, se busca $U$ tal que, trabajando en el cuadro de Heisenberg \cite{SakuraiQM}
+
+\begin{align}
+\tilde{q}(t) =& U^{-1}(t)q(t)U(t)\\
+\tilde{p}(t) =& U^{-1}(t)p(t)U(t)
+\end{align}
+
+Y donde entonces el nuevo Hamiltoniano queda dado por:
+
+\begin{equation}
+\tilde{H} = H + U^{-1}i\dot{U}
+\end{equation}
+
+Para la transformación se elije:
+
+\begin{equation}
+U = e^{-i\chi(t)q^2(t)}
+\end{equation}
+
+Donde:
+
+\begin{equation}
+\chi(t) = \frac{m}{4}(\frac{\dot{f}}{f}+\frac{\dot{f^*}}{f^*})
+\end{equation}
+
+Las funciones $f$ son las soluciones al problema clásico correspondiente al Hamiltoniano \ref{TDHO}, que tiene dos soluciones linealmente independientes, pero una es la compleja conjugada de la otra. Bajo esta transformación:
+
+\begin{align}
+\tilde{q}(t)=&q(t)\\
+\tilde{p}(t)=&p(t)-2\chi(t)q(t)
+\end{align}
+
+Utilizando esto se puede escribir el Hamiltoniano en las nuevas coordenas tomando en cuenta que $\ddot{f}= -k(t)f$ y el Wronskiano:
+
+\begin{equation}
+ H = \frac{1}{2m}\tilde{p}^2 + \frac{\chi(t)}{m}(\{\tilde{q},\tilde{p}\}) + \frac{mW^2}{|f|^2}k(t)\tilde{q}^2
+\end{equation}
+
+Para eliminar el término cruzado se utiliza una segunda transformación:
+
+\begin{equation}
+U_2(t)=e^{\frac{i}{4}(\{\tilde{q},\tilde{p}\})ln|f|^2}
+\end{equation}
+
+Esto es una transformación de escala que deja como variables finales:
+
+\begin{align}
+Q=&U_2^{-1}\tilde{q}U_2 =\frac{1}{|f|}q(t)\\
+P=&U_2^{-1}\tilde{p}U_2 = |f|(p-2\chi q) 
+\end{align}
+
+En estas variables, el Hamiltoniano es:
+
+\begin{equation}
+\tilde{H} = \frac{1}{|f(t)|^2}(\frac{1}{2m}P^2(t)+\frac{1}{2}mW^2Q^2(t))
+\end{equation}
+
+Este Hamiltoniano es, salvo por un coeficiente general dependiente del tiempo, el Hamiltoniano usual de oscilador armónico y se puede resolver por medio de operadores de creación y aniquilación. Estos operadores son los operadores de Floquet ya mencionados.
 
 \section{Ecuación Maestra Mejorada: Solución con Base de Decaimiento}
 
