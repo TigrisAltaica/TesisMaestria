@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  6 SEP 2015 14:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  7 SEP 2015 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,26 +497,26 @@ Cap\'{\i }tulo 1.
 Cap\'{\i }tulo 2.
 [6
 
-] [7] [8]
-Overfull \hbox (38.95493pt too wide) in paragraph at lines 436--436
+] [7] [8] [9]
+Overfull \hbox (38.95493pt too wide) in paragraph at lines 455--455
 [] 
  []
 
-[9]
-Overfull \hbox (13.23123pt too wide) in paragraph at lines 449--449
+
+Overfull \hbox (13.23123pt too wide) in paragraph at lines 468--468
 [] 
  []
 
 [10] [11] [12] [13]
-Overfull \hbox (61.90753pt too wide) in paragraph at lines 660--660
+Overfull \hbox (61.90753pt too wide) in paragraph at lines 679--679
 [] 
  []
 
-[14]
+[14] [15]
 Cap\'{\i }tulo 3.
-[15
+[16
 
-] [16] [17] (./Tesis.bbl [18] [19]
+] [17] [18] (./Tesis.bbl [19] [20]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -530,7 +530,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 56--60
 of Mar-ko-vian and Non-
  []
 
-) [20
+) [21
 
 ] (./Tesis.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -545,7 +545,7 @@ Here is how much of TeX's memory you used:
  7200 multiletter control sequences out of 15000+600000
  13680 words of font info for 52 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 38i,15n,30p,865b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,30p,663b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -563,10 +563,10 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on Tesis.pdf (22 pages, 245260 bytes).
+Output written on Tesis.pdf (23 pages, 245559 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 151 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

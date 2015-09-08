@@ -296,22 +296,35 @@ Los coeficientes $c_j$ son las proyecciones de la función $\Psi(0)$ sobre las f
 Se busca una solución equivalente para la ecuación \eqref{MasterEq}. Es posible transformar dicha ecuación al cuadro de interacción, donde solo importa la parte abierta del problema. En este cuadro, se busca una solución del tipo:
 
 \begin{equation}
-\rho(t) = \sum_{\Gamma} c_{\Gamma} e^{\Gamma t}P_{\Gamma} 
+\rho(t) = \sum_{\lambda} c_{\lambda} e^{\lambda t}\rho_{\lambda} 
 \end{equation}
 
 Los coeficientes ahora son respecto a las funciones propias de $L$. Es importante notar que $L$ no es necesariamente un operador autoadjunto, por lo que no se puede garantizar que sus funciones propias formen una base completa del espacio ni que sus valores propios sean reales. En el caso de este tipo de operadores existen dos tipos de vectores propios\cite{BarnettSD}, izquierdos y derechos:
 
 \begin{align*}
-
+L\rho =& \lambda \rho \\
+\rho L =& \lambda \check{\rho}
 \end{align*}
 
- También es importante notar que $Psi$ es un vector de estado que pertenece al espacio de Hilbert mientras que $rho$ es un operador que pertenece al espacio de Liouville. Por esto, se dice que $L$ es un superoperador.8 Una de las diferencias importantes con el caso de mecánica cuántica estandard es que como $L$ no es autoadjunto, los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza:
+Los estados que se obtienen al aplicar el superoperador por la derecha se conocen también como estados duales, se denotan por $\check{\rho}$. También es importante notar que $\Psi$ es un vector de estado que pertenece al espacio de Hilbert mientras que $rho$ es un operador que pertenece al espacio de Liouville. Por esto, se dice que $L$ es un superoperador, los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza\cite{EnglertDB} y sus eigenvalores son iguales.
 
 \begin{equation}
-Tr\{\check{P_{\Gamma'}}P_\Gamma\} = \delta_{\Gamma'\Gamma}
+Tr[\check{\rho}_\lambda \rho_{\lambda'}] = \delta_{\lambda'\lambda}
 \end{equation}
 
-Esto se puede emplear para obtener las constantes de la expansión.
+Esto se puede emplear para obtener las constantes de la expansión:
+
+\begin{equation}
+\rho(0) = \sum_{\lambda} \check{c} \rho_{\lambda}
+\end{equation}
+
+Donde:
+
+\begin{equation}
+\check{c}_\lambda = Tr[\check{\rho}_\lambda \rho(0)]
+\end{equation}
+
+Es importante notar que para realizar una expansion es estados de este tipo es necesario poder trazar sobre los estados duales. Por esto, estos estados se estudiarán de manera más cuidadosa en una sección posterior.
 
 \section{Átomo de dos Niveles}
 
