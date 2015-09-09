@@ -878,7 +878,41 @@ Este Hamiltoniano es, salvo por un coeficiente general dependiente del tiempo, e
 
 \section{Ecuación Maestra Mejorada: Solución con Base de Decaimiento}
 
-La ecuación maestra a resolver es:
+Se busca obtener una mejor ecuación maestra al tomar en cuenta la dependencia temporal del Hamiltoniano antes de realizar la aproximación de Markov \cite{HanngiDQS}. Como el Hamiltoniano es explícitamente dependiente del tiempo, no pueden usarse los operadores usuales de creación y aniquilación, es aquí donde entra la teoría de floquet de la sección anterior. Utilizando dichos operadores, los elementos de matríz del operador de posición son:
+
+\begin{align}
+X_{\alpha \beta}(t) =& e^{i(\mu_{\alpha}-\mu_{\beta})}\Bra{\phi_{\alpha}(t)}x\Ket{\phi_{\beta}(t)}\\
+=& \sum{k} e^{i\Delta_{\alpha\beta k}t} X_{\alpha\beta k}
+\end{align}
+
+Con:
+
+\begin{align*}
+X_{\alpha\beta k} =& \frac{1}{T} \int_0^T dt e^{-ik\Omega t}\Bra{\phi_{\alpha}(t)}x\Ket{\phi_{\beta}(t)} \\
+\Delta_{\alpha \beta k} =& \mu_{\alpha}-\mu_{\beta} + k\Omega
+\end{align*}
+
+Aprovechando la periodicidad de los estados de Floquet para hacer un desarrollo en series de Fourier. Con esto, es posible expresar los elementos de matriz de la forma:
+
+\begin{equation}
+X_{\alpha\beta k} = \sqrt{\frac{\hbar}{2m}}(\sqrt{\beta}c_{-k} \delta_{\alpha,\beta-1}+\sqrt{\alpha}c_k\delta_{\alpha,\beta+1})
+\end{equation}
+
+Si se regresa ahora a la ecuacion maestra en el límite de acoplamiento débil, asumiendo que el baño es Ohmico, es decir de la forma $I(\omega) = m\gamma \omega$:
+
+\begin{equation}
+\dot{\rho} = -\frac{i}{\hbar}[H(t)_{sis},\rho] + \frac{1}{\pi \hbar} \int_{-\infty}^\infty d\omega I(\omega)n_{th}(\omega)\int_0^\infty e^{i\omega t}[\tilde{x}(t-\tau,t)\rho,x] + C.H.
+\end{equation}
+
+Aquí $C.H.$ indica el conjugado Hermitiano de la parte disipativa y $n(\omega)$ es la ocupación térmica de los osciladores del baño. Utilizando que los estados de Floquet son la solución a la parte no disipativa, se llega a la ecuación en representación de Floquet:
+
+\begin{align*}
+\dot{\rho}_{\alpha \beta} =& \frac{1}{\pi \hbar} \int_{-\infty}^\infty d\omega I(\omega)n_{th}(\omega) \int_0 ^{\infty} d\tau e^{i\omega \tau} \\
+ \times & \sum_{\alpha' \beta '} [X_{\alpha \alpha'}(t-\tau)\rho_{\alpha' \beta'}X^* _{\beta \beta'}(t)\\
+ -& X^* _{\alpha' \alpha}(t) X_{\alpha' \beta'}(t-\tau)\rho_{\beta' \beta}] + C.H.
+\end{align*}
+
+Y se llega a:
 
 
 \bibliographystyle{plain}
