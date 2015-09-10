@@ -52,7 +52,7 @@ Sin embargo, este enfoque no es igualmente exitosos al tratar con sistemas cuán
 Como estás son lineales deben de seguir siendo validas al cambiar $p$ y $q$ por operadores, pero si se piensa en la evolución temporal del conmutador, tomando ahora a $p$ y $q$ como operadores:
 
 \begin{align*}
- \dfrac{d}{dt}[q,p] =& \dot{q}p + q\dot{p} - \dot{p}q p\dot{q}\\  
+ \dfrac{d}{dt}[q,p] =& \dot{q}p + q\dot{p} - \dot{p}q p-\dot{q}\\  
  =& -\gamma[q,p]
 \end{align*}
 
@@ -794,7 +794,7 @@ Estas soluciones tienen la forma explícita (FALTA REFERENCIA):
 
 Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet:
 
-\begin{align*}
+\begin{align*}\label{FloquetOperators}
 \Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)} \\
 \Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}
 \end{align*}
@@ -870,7 +870,7 @@ P=&U_2^{-1}\tilde{p}U_2 = |f|(p-2\chi q)
 
 En estas variables, el Hamiltoniano es:
 
-\begin{equation}
+\begin{equation}\label{QTDHO}
 \tilde{H} = \frac{1}{|f(t)|^2}(\frac{1}{2m}P^2(t)+\frac{1}{2}mW^2Q^2(t))
 \end{equation}
 
@@ -914,6 +914,47 @@ Aquí $C.H.$ indica el conjugado Hermitiano de la parte disipativa y $n(\omega)$
 
 Y se llega a:
 
+\begin{align*}
+\dot{\rho}_{\alpha \beta} =& \frac{1}{\hbar} \sum_{\alpha' \beta'}\sum_{k k'}[-I(\Delta_{\alpha' \beta' k'}) n_{th} (\Delta_{\alpha' \beta' k'})\\
+\times & e^{i(\Delta_{\alpha' \beta' k'}-\Delta_{\alpha \alpha' k})t} X^*_{\alpha' \alpha k}X_{\alpha' \beta' k'}\rho_{\beta \beta'} + I(\Delta_{\alpha \alpha' k})\\
+\times & n_{th}(\Delta_{\alpha \alpha' k}) e^{i(\Delta_{\alpha \alpha' k}-\Delta_{\beta \beta' k})}X_{\alpha \alpha' k} \rho_{\alpha' \beta'}X^*_{\beta \beta' k'}]\\
++& C. H.  
+\end{align*}
+
+La función $\Delta_{\alpha \beta k}$ contiene las cuasienergías del sistema sin pérdidas de energía \cite{HanngiDQS}. Se utiliza la aproximación de onda rotante FALTA REFERENCIA., sin embargo en este sistema no se desprecian todos los términos, ya que $(\alpha-\beta,k)=(\alpha'-\beta',k')$ es suficiente para asegurar que $\Delta_{\alpha \beta k}=\Delta_{\alpha' \beta' k'}$, de esta forma se obtiene la ecuación:
+
+\begin{align*}
+\dot{\rho}_{\alpha \beta} = \frac{\gamma}{2}&(N+1)[2\sqrt{(\alpha+1)(\beta + 1)}\rho_{\alpha+1,\beta+1} - (\alpha + \beta)\rho_{\alpha \beta}]\\
++& N[2\sqrt{\alpha \beta}\rho_{\alpha-1,\beta-1} - (\alpha + \beta + 2)\rho_{\alpha \beta}]
+\end{align*}
+
+Utilizando las propiedades de los operadores definidos en \ref{FloquetOperators} se obtiene la ecuación en términos de operadores:
+
+\begin{align*}
+\dot{\rho} = -&\frac{i}{\hbar}[H_S (t),\rho] + \frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )\\
+ +& N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
+\end{align*}
+
+Formalmente, la parte disipativa de la ecuación tiene la misma forma que la ecuación que genera la base \ref{DefDB}, así que transformando al cuadro de interacción, donde se toma el Hamiltoniano del sistema como \ref{QTDHO}, el cual puede expresarse como\cite{BrownPT}
+
+\begin{equation}
+H_S = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2})
+\end{equation}
+
+Dado que los operadores de Floquet conmutan con este Hamiltoniano, se puede realizar la transformación al cuadro de interacción con el operador unitario \cite{SakuraiQM}:
+
+\begin{equation}
+ e^{\frac{i}{\hbar}\frac{W}{|f(t)|^2}t(\Gamma^\dagger \Gamma + \frac{1}{2})}
+\end{equation}
+
+Lo que lleva a la ecuación:
+
+\begin{equation}
+\dot{\rho}=\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )
+ + N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
+\end{equation}
+
+La cual queda formalmente resuelta mediante la base de decaimiento.
 
 \bibliographystyle{plain}
 \bibliography{Bib}
