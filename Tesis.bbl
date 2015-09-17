@@ -26,10 +26,21 @@ Berthold-Georg~Englert Hans-Jurgen~Briegel.
 \newblock Quantum optical master equations: The use of damping bases.
 \newblock {\em PHYSICAL REVIEW A}, 1993.
 
+\bibitem{NooshiLC}
+N.~Nooshi I.~Wilson-Rae.
+\newblock Theory of ground state cooling of a mechanical oscillator using
+  dynamical backaction.
+\newblock {\em Physical Review Letters}, 2007.
+
 \bibitem{SakuraiQM}
 Jim~Napolitano J.~J.~Sakurai.
 \newblock {\em Modern Quantum Mechanics}.
 \newblock Pearson, 2013.
+
+\bibitem{BarberisLC}
+Pablo Barberis-Blostein Marc~Bienert.
+\newblock Optomechanical laser cooling with mechanical modulation.
+\newblock {\em Physical Review Letters A}, 2015.
 
 \bibitem{HanngiFM}
 Peter~H\"{a}nggi Sigmund~Kohler, Thomas~Dittrich†.

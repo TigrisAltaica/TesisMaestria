@@ -956,6 +956,83 @@ Lo que lleva a la ecuación:
 
 La cual queda formalmente resuelta mediante la base de decaimiento.
 
+
+\chapter{Enfriamiento Laser}
+
+Se piensa en un sistema que consiste de una cavidad optomecánica, como por ejemplo una cavidad de Fabry-Perot en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, las cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En particular, se desea analizar el sistema cuando la frecuencia del oscilador armónico depende del tiempo. Se asume que el oscilador se encuentra acoplado a un único modo forzado de la cavidad el cual tiene frecuencia $\omega_{cav}$. Se asume que el marco de referencia rota con la frecuencia de la bomba. Se modela el sistema mediante el siguiente Hamiltoniano\cite{BarberisLC}:
+
+\begin{equation}
+H(t) = H_{cav} + H_{mec}(t) + H_{rad} + B
+\end{equation}
+
+En donde:
+
+\begin{align}
+H_{cav} =& -\hbar \delta a^\dagger a\\
+H_{mec}(t) =& \frac{p^2}{2m} + \frac{1}{2}m \nu (t) x^2\\
+H_{rad} =& -\hbar g a^\dagger a x\\
+B =& \hbar\frac{\Omega}{2}(a^\dagger + a)
+\end{align}
+
+En este caso, $\delta = w_{bomba} - w_{cav}$ representa la diferencia de frecuencias entre la bomba de fotones y la cavidad y $\hbar g$ representa la fuerza de radiación que un fotón aplica sobre el oscilador mecánico sin modulación. Por \ref{QTDHO}, se modela al oscilador mecánico utilizando operadores de floquet:
+
+\begin{equation}
+H_{mec}(t) = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2})
+\end{equation}
+
+Recordando la definición de los operadores de Floquet \ref{FloquetOperators}, se puede invertir la relación en términos de los operadores $x$ y $p$:
+
+
+\begin{align*}
+\Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)} \\
+\Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}
+\end{align*}
+
+Si se toma la suma y la resta de los operadores:
+
+\begin{align*}
+2i(\Gamma (t) + \Gamma ^\dagger (t)) =& (\dot{E} (t) - \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}x + (E^* (t) - E (t))\sqrt{\frac{2}{m\hbar}} p \\
+2i(\Gamma (t) - \Gamma ^\dagger (t)) =& (\dot{E} (t) + \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}x -(E^* (t) + E (t))\sqrt{\frac{2}{m\hbar}} p
+\end{align*}
+
+Renombrando los coeficientes esto es simplemente:
+
+\begin{align*}
+2i(\Gamma (t) + \Gamma ^\dagger (t)) =& ax + bp \\
+2i(\Gamma (t) - \Gamma ^\dagger (t)) =& cx - dp
+\end{align*}
+
+Si se toma la primera ecuación multiplicada por $\frac{d}{b}$ y se suma a la segunda, se obtiene:
+
+\begin{align*}
+(\frac{da}{b}+c)x =& 2i \frac{d}{b}(\Gamma (t) + \Gamma ^\dagger (t)) + 2i(\Gamma (t) - \Gamma ^\dagger (t)) \\
+=&2i[(\frac{d}{b}+1)\Gamma (t)+(\frac{d}{b}-1)\Gamma^\dagger (t)]\\
+\therefore x =& \frac{2i[(\frac{d}{b}+1)\Gamma (t)+(\frac{d}{b}-1)\Gamma^\dagger (t)]}{\frac{da}{b}+c}
+\end{align*}
+
+O lo que es equivalente:
+
+\begin{equation}
+x = 2i \sqrt{\frac{\hbar}{2m}}[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
+\end{equation}
+
+Donde:
+
+\begin{align}
+\alpha(t) =& \frac{d}{b} = \frac{(E^* (t) + E (t))}{(E^* (t) - E (t))} \\
+\beta(t) = & \frac{da}{b}+c \\
+=& \frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}}{(E^* (t) - E (t))} + (\dot{E} (t) + \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}\\
+=&\sqrt{\frac{2m}{\hbar}}\frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t))+(E^* (t) - E (t))(\dot{E} (t) + \dot{E}^* (t))}{(E^* (t) - E (t))}
+\end{align}
+
+Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano:
+
+\begin{equation}
+H(t)_{rad} = -2ig \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
+\end{equation}
+
+
+
 \bibliographystyle{plain}
 \bibliography{Bib}
 
