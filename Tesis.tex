@@ -786,7 +786,7 @@ En el caso de un Hamiltoniano con dependencia temporal como la vista anteriormen
 \Ket{\Psi_\alpha (t)} = e^{-i\mu_\alpha t}\Ket{\phi_\alpha t}, \qquad \Ket{\phi_\alpha (t)}=\Ket{\phi_\alpha (t+\tau)}
 \end{equation}
 
-Estas soluciones tienen la forma explícita (FALTA REFERENCIA):
+Estas soluciones tienen la forma explícita\cite{BrownPT}
 
 \begin{equation}
 \Psi_\alpha (x,t) = (\frac{\sqrt{m/\pi\hbar}}{2^\alpha n!E_1^0(t)})^{\frac{1}{2}}(\frac{E_1^0(t)}{E_2^0(t)})^\frac{\alpha}{2}H_\alpha(x\sqrt{\frac{m}{\hbar E_1^0(t) E_2^0(t)}})e^{(ix^2\frac{E_1^0(t)}{2E_2^0(t)})}
@@ -959,7 +959,16 @@ La cual queda formalmente resuelta mediante la base de decaimiento.
 
 \chapter{Enfriamiento Laser}
 
-Se piensa en un sistema que consiste de una cavidad optomecánica, como por ejemplo una cavidad de Fabry-Perot en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, las cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En particular, se desea analizar el sistema cuando la frecuencia del oscilador armónico depende del tiempo. Se asume que el oscilador se encuentra acoplado a un único modo forzado de la cavidad el cual tiene frecuencia $\omega_{cav}$. Se asume que el marco de referencia rota con la frecuencia de la bomba. Se modela el sistema mediante el siguiente Hamiltoniano\cite{BarberisLC}:
+\section{Introducción}
+
+Se desea describir un sistema optomecánico donde un oscilador armónico macroscópico se acopla de forma paramétrica a un oscilador armónico bosónico que permite enfriar el sistema macroscópico \cite{NooshiLC}. En esencia, se busca un efecto análogo al enfriamiento láser de átomos, pero para la preparación de estados base mecánicos. El objetivo es enfriar un único modo de un oscilador armónico mecánico mediante su interacción con un láser. Se ha reportado enfriamiento de un micro oscilador armónico de forma toroidal de temperatura ambiente a 11K mediante técnicas de enfriamiento basadas en la presión de radiación\cite{SchliesserRPC}. Se piensa en un sistema que consiste de una cavidad optomecánica, como por ejemplo una cavidad de Fabry-Perot, en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, las cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En analogía con sistemas de enfriamiento láser de átomos, el movimiento del espejo lleva a que este vea dos frecuencias distintas debido al efecto Doppler, la diferencia de las frecuencias del láser y de la frecuencia resonante de la cavidad permiten controlar cual de las dos frecuencias Doppler domina. Una de estas frecuencias lleva a que el sistema mecánico se caliente y la otra lo enfría. En efecto, el láser y su ambiente funcionan como un baño térmico para enfriar al oscilador armónico mecánico. A la absorción de quantos de movimiento (enfriamiento) se le asocia con procesos de dispersión de Raman donde un quanto se sube de nivel mientras que los procesos de emisión (calentamiento) se le asocia con dispersión de Raman donde un fotón decae. \cite{LCNooshi} El enfriamiento hasta el estado base es posible siempre y cuando el ancho de banda de la cavidad sea mucho menor que la frecuencia de oscilación mecánica. \cite{LCNooshi} \cite{MarquardtSC} Este regimen solo es válido cuando el acoplamiento optomecánico puede ser tratado como una perturbación, así que el esquema deja de ser valido cuando el acoplamiento es comparable al ancho de banda de la cavidad o a la frecuencia del oscilador mecánico.
+
+
+
+
+\section{Hamiltoniano para Enfriamiento Laser}
+
+En particular, se desea analizar el sistema cuando la frecuencia del oscilador armónico depende del tiempo. Se asume que el oscilador se encuentra acoplado a un único modo forzado de la cavidad el cual tiene frecuencia $\omega_{cav}$. Se asume que el marco de referencia rota con la frecuencia de la bomba. Se modela el sistema mediante el siguiente Hamiltoniano\cite{BarberisLC}:
 
 \begin{equation}
 H(t) = H_{cav} + H_{mec}(t) + H_{rad} + B

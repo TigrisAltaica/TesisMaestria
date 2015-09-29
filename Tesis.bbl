@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{SchliesserRPC}
+et~al A.~Schliesser, 1 P.~Del’Haye.
+\newblock Radiation pressure cooling of a micromechanical oscillator using
+  dynamical backaction.
+\newblock {\em Physical Review Letters}, 2006.
+
 \bibitem{ArfkenMM}
 George~B. Arfken.
 \newblock {\em Mathematical Methods for Physicists, Seventh Edition: A
@@ -25,6 +31,11 @@ Howard Carmichael.
 Berthold-Georg~Englert Hans-Jurgen~Briegel.
 \newblock Quantum optical master equations: The use of damping bases.
 \newblock {\em PHYSICAL REVIEW A}, 1993.
+
+\bibitem{LCNooshi}
+et~al I~Wilson-Rae, N.~Nooshi.
+\newblock Cavity-assisted back action cooling of mechanical resonators.
+\newblock {\em New Journal of Physics}, 2008.
 
 \bibitem{NooshiLC}
 N.~Nooshi I.~Wilson-Rae.
