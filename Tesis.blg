@@ -4,45 +4,45 @@ The top-level auxiliary file: Tesis.aux
 The style file: plain.bst
 Database file #1: Bib.bib
 Warning--can't use both author and editor fields in HanngiDQS
-You've used 15 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            582 strings with 5820 characters,
-and the built_in function-call counts, 3200 in all, are:
-= -- 296
-> -- 111
+            586 strings with 5942 characters,
+and the built_in function-call counts, 3404 in all, are:
+= -- 316
+> -- 118
 < -- 0
-+ -- 47
-- -- 32
-* -- 129
-:= -- 595
-add.period$ -- 45
-call.type$ -- 15
-change.case$ -- 54
++ -- 50
+- -- 34
+* -- 137
+:= -- 634
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 164
-empty$ -- 291
-format.name$ -- 32
-if$ -- 658
+cite$ -- 17
+duplicate$ -- 174
+empty$ -- 308
+format.name$ -- 34
+if$ -- 699
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 22
-newline$ -- 78
-num.names$ -- 30
-pop$ -- 88
+int.to.str$ -- 16
+missing$ -- 23
+newline$ -- 83
+num.names$ -- 32
+pop$ -- 92
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 49
 quote$ -- 0
-skip$ -- 98
+skip$ -- 105
 stack$ -- 0
-substring$ -- 75
-swap$ -- 16
+substring$ -- 80
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 46
+type$ -- 50
 warning$ -- 1
-while$ -- 30
-width$ -- 17
-write$ -- 152
+while$ -- 32
+width$ -- 18
+write$ -- 162
 (There was 1 warning)

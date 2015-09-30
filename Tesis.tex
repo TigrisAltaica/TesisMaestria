@@ -1034,12 +1034,19 @@ Donde:
 =&\sqrt{\frac{2m}{\hbar}}\frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t))+(E^* (t) - E (t))(\dot{E} (t) + \dot{E}^* (t))}{(E^* (t) - E (t))}
 \end{align}
 
-Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano:
+Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano, absorbiendo el factor de $-2i$ en la defininición de los coeficientes $\beta(t)$:
 
 \begin{equation}
-H(t)_{rad} = -2ig \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
+H(t)_{rad} = g \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
 \end{equation}
 
+Con esto, el Hamiltoniano final es el siguiente:
+
+\begin{equation}\label{LaserCoolingHamiltonian}
+H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) +  g \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a)
+\end{equation}
+
+\section{Tratamiento Perturbativo}
 
 
 \bibliographystyle{plain}
