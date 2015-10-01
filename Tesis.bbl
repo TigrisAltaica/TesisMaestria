@@ -1,10 +1,15 @@
 \begin{thebibliography}{10}
 
 \bibitem{SchliesserRPC}
-et~al A.~Schliesser, 1 P.~Del’Haye.
+et~al A.~Schliesser, P. Del~Haye.
 \newblock Radiation pressure cooling of a micromechanical oscillator using
   dynamical backaction.
 \newblock {\em Physical Review Letters}, 2006.
+
+\bibitem{AbramoviciLIGO}
+et.~al Alex~Abramovici, William E.~Althouse.
+\newblock Ligo: The laser interferometer gravitational-wave observatory.
+\newblock {\em Science}, 1992.
 
 \bibitem{ArfkenMM}
 George~B. Arfken.
@@ -26,6 +31,18 @@ Lowell~S. Brown.
 Howard Carmichael.
 \newblock {\em Statistical Methods in Quantum Optics, Vol 1}.
 \newblock Springer, 1999.
+
+\bibitem{CavesIF}
+Carlton~M. Caves.
+\newblock Quantum-mechanical radiation-pressure fluctuations in an
+  interferometer.
+\newblock {\em Physical Review Letters}, 1980.
+
+\bibitem{VerhagenMOC}
+et~al E.~Verhagen.
+\newblock Quantum-coherent coupling of a mechanical oscillator to an optical
+  cavity mode.
+\newblock {\em Nature}, 2012.
 
 \bibitem{MarquardtSC}
 Joe P.~Chen Florian~Marquardt.
@@ -49,6 +66,18 @@ N.~Nooshi I.~Wilson-Rae.
   dynamical backaction.
 \newblock {\em Physical Review Letters}, 2007.
 
+\bibitem{FaveroCR}
+et~al Ivan~Favero.
+\newblock Fluctuating nanomechanical system in a high finesse optical
+  microcavity.
+\newblock {\em Optics Express}, 2009.
+
+\bibitem{SankeyMC}
+et.~al J.~C.~Sankey.
+\newblock Strong and tunable nonlinear optomechanical coupling in a low-loss
+  system.
+\newblock {\em •}, •.
+
 \bibitem{SakuraiQM}
 Jim~Napolitano J.~J.~Sakurai.
 \newblock {\em Modern Quantum Mechanics}.
@@ -69,6 +98,22 @@ Peter~H\"{a}nggi Sigmund~Kohler, Thomas~Dittrich†.
 Stig~Stenholm Stephen~Barnett.
 \newblock Spectral decomposition of the lindblad operator.
 \newblock {\em Journal of Modern Optics}, 2000.
+
+\bibitem{CorbittOC}
+et~al Thomas~Corbitt, Christopher~Wipf.
+\newblock Optical dilution and feedback cooling of a gram-scale oscillator to
+  6.9 mk.
+\newblock {\em Physical Review Letters}, 2007.
+
+\bibitem{KippenberCO}
+Markus~Aspelmeyer Thomas J.~Kippenberg, Thomas~Marquardt.
+\newblock Cavity optomechanics.
+\newblock {\em Review of Modern Physics}, 2013.
+
+\bibitem{VahalaOM}
+Kerry~J. Vahala.
+\newblock Optical microcavities.
+\newblock {\em Nature}, 2003.
 
 \bibitem{WardFT}
 M.~Ward.

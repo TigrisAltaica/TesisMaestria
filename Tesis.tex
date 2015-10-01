@@ -957,16 +957,30 @@ Lo que lleva a la ecuación:
 La cual queda formalmente resuelta mediante la base de decaimiento.
 
 
-\chapter{Enfriamiento Laser}
+\chapter{Enfriamiento Optomecánico}
 
 \section{Introducción}
 
-Se desea describir un sistema optomecánico donde un oscilador armónico macroscópico se acopla de forma paramétrica a un oscilador armónico bosónico que permite enfriar el sistema macroscópico \cite{NooshiLC}. En esencia, se busca un efecto análogo al enfriamiento láser de átomos, pero para la preparación de estados base mecánicos. El objetivo es enfriar un único modo de un oscilador armónico mecánico mediante su interacción con un láser. Se ha reportado enfriamiento de un micro oscilador armónico de forma toroidal de temperatura ambiente a 11K mediante técnicas de enfriamiento basadas en la presión de radiación\cite{SchliesserRPC}. Se piensa en un sistema que consiste de una cavidad optomecánica, como por ejemplo una cavidad de Fabry-Perot, en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, las cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En analogía con sistemas de enfriamiento láser de átomos, el movimiento del espejo lleva a que este vea dos frecuencias distintas debido al efecto Doppler, la diferencia de las frecuencias del láser y de la frecuencia resonante de la cavidad permiten controlar cual de las dos frecuencias Doppler domina. Una de estas frecuencias lleva a que el sistema mecánico se caliente y la otra lo enfría. En efecto, el láser y su ambiente funcionan como un baño térmico para enfriar al oscilador armónico mecánico. A la absorción de quantos de movimiento (enfriamiento) se le asocia con procesos de dispersión de Raman donde un quanto se sube de nivel mientras que los procesos de emisión (calentamiento) se le asocia con dispersión de Raman donde un fotón decae. \cite{LCNooshi} El enfriamiento hasta el estado base es posible siempre y cuando el ancho de banda de la cavidad sea mucho menor que la frecuencia de oscilación mecánica. \cite{LCNooshi} \cite{MarquardtSC} Este regimen solo es válido cuando el acoplamiento optomecánico puede ser tratado como una perturbación, así que el esquema deja de ser valido cuando el acoplamiento es comparable al ancho de banda de la cavidad o a la frecuencia del oscilador mecánico.
+Se desea describir un sistema optomecánico donde un oscilador armónico macroscópico se acopla de forma paramétrica a un oscilador armónico bosónico que permite enfriar el sistema macroscópico \cite{NooshiLC}. En esencia, se busca un efecto análogo al enfriamiento láser de átomos, pero para la preparación de estados base mecánicos. El objetivo es enfriar un único modo de un oscilador armónico mecánico mediante su interacción con un láser. Se ha reportado enfriamiento de un micro oscilador armónico de forma toroidal desde temperatura ambiente a 11K mediante técnicas de enfriamiento basadas en la presión de radiación\cite{SchliesserRPC}. Se piensa en un sistema que consiste de una cavidad optomecánica, como por ejemplo una cavidad de Fabry-Perot, en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, las cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En analogía con sistemas de enfriamiento láser de átomos, el movimiento del espejo lleva a que este vea dos frecuencias distintas debido al efecto Doppler, la diferencia de las frecuencias del láser y de la frecuencia resonante de la cavidad permiten controlar cual de las dos frecuencias Doppler domina. Una de estas frecuencias lleva a que el sistema mecánico se caliente y la otra lo enfría. En efecto, el láser y su ambiente funcionan como un baño térmico para enfriar al oscilador armónico mecánico. A la absorción de quantos de movimiento (enfriamiento) se le asocia con procesos de dispersión de Raman donde un quanto se sube de nivel mientras que los procesos de emisión (calentamiento) se le asocia con dispersión de Raman donde un fotón decae. \cite{LCNooshi} El enfriamiento hasta el estado base es posible siempre y cuando el ancho de banda de la cavidad sea mucho menor que la frecuencia de oscilación mecánica. \cite{LCNooshi} \cite{MarquardtSC} Este regimen solo es válido cuando el acoplamiento optomecánico puede ser tratado como una perturbación, así que el esquema deja de ser valido cuando el acoplamiento es comparable al ancho de banda de la cavidad o a la frecuencia del oscilador mecánico.
 
+\section{Posibles Sistemas Optomecánicos}
 
+Existen muchas implementaciones posibles de acoplamientos entre elementos ópticos y elementos mecánicos \cite{KippenberCO}. En esta sección se detallan algunas de las posibilidades.
 
+\subsection{Espejos Suspendidos}
 
-\section{Hamiltoniano para Enfriamiento Laser}
+Estos sistemas consisten en cavidades opticas donde uno o mas de los espejos pueden cambiar de posicion y asi alteran la longitud de la cavidad. La primera realización experimental de este tipo de sistemas se debe a los primeros esfuerzos para detectar ondas gravtiacionales \cite{AbramoviciLIGO}. El sistema consiste en un interferometro con los espejos fijos en masas suspendidas, a manera que una onda gravitacional, al interactuar con las masas cambiaría la posición de los espejos y así la longitud de camino óptico. El propósito de suspender las masas no es optomecánico, sin embargo, las fluctuaciones en la potencia del laser, debido a la incretidumbre en el número de fotones, son un efecto cuántico que impone un límite a la precisión de las mediciones\cite{CavesIF}. Experimentos en este tipo de sistemas han demostrado varios efectos, entre ellos el enfriamiento mediante presión de radiación \cite{CorbittOC}.
+
+\subsection{Microresonadores}
+
+Otro tipo posible de sistema son los microresonadore o microcavidades. En este tipo de sistemas, es posible confinar a la luz a viajar en modos \textit{Whispering Gallery}, los cuales implican que la luz es guiada a lo largo del perímetro del resonador,el cual puede tener forma esférica, circular, o toroidal\cite{VahalaOM}. Si este vibra, esto puede alterar el camino óptico de la luz y se logra un acoplamiento optomecánico. Debido a su tamaño, es posible obtener acoplamiento fuerte entre sistemas cuánticos y el resonador\cite{VerhagenMOC}.
+
+\subsection{Objetos Suspendidos o Levitados}
+
+En este tipo de sistemas, se considera una cavidad optica rigida donde se coloca un objeto mecánico dentro de la cavidad. Este esquema permite el acoplamiento de objetos mecánicos de tamaños inferiores a la longitud de onda de la luz \cite{KippenberCO}, como por ejemplo una membrana dieléctrica de $SI_3N_4$ de  $1mm \times 1mm \times 50nm$
+de dimensión\cite{SankeyMC}. En ese caso, se puede observar que parámetros de la cavidad como el detuning y la finesa dependen del desplazamiento de la membrana. Otra posibilidad consiste en un nano cable de carbón, de aproximadamente $10^9$ átomos, el cual se coloca dentro de una micro cavidad de Fabri-Perot. Las propiedades de la cavidad cambian no solo dependiendo de la posición del objeto, sino también de sus modos vibracionales\cite{FaveroCR}.  
+
+\section{Hamiltoniano para Enfriamiento Optomecánico}
 
 En particular, se desea analizar el sistema cuando la frecuencia del oscilador armónico depende del tiempo. Se asume que el oscilador se encuentra acoplado a un único modo forzado de la cavidad el cual tiene frecuencia $\omega_{cav}$. Se asume que el marco de referencia rota con la frecuencia de la bomba. Se modela el sistema mediante el siguiente Hamiltoniano\cite{BarberisLC}:
 
@@ -983,7 +997,13 @@ H_{rad} =& -\hbar g a^\dagger a x\\
 B =& \hbar\frac{\Omega}{2}(a^\dagger + a)
 \end{align}
 
-En este caso, $\delta = w_{bomba} - w_{cav}$ representa la diferencia de frecuencias entre la bomba de fotones y la cavidad y $\hbar g$ representa la fuerza de radiación que un fotón aplica sobre el oscilador mecánico sin modulación. Por \ref{QTDHO}, se modela al oscilador mecánico utilizando operadores de floquet:
+En este caso, $\delta = w_{bomba} - w_{cav}$ representa la diferencia de frecuencias entre la bomba de fotones y la cavidad y $\hbar g$ representa la fuerza de radiación que un fotón aplica sobre el oscilador mecánico sin modulación. El término $H_{rad}$ modela una interacción simple entre los fotones y el espejo. Dado que en este caso la longitud de la cavidad no es fija, la frecuencia de la cavidad debe tener una dependencia en la coordenada $x$, entonces, tomando el hamiltoniano para el oscilador que modela la cavidad y expandiendo hasta primer orden en $x$\cite{KippenberCO}:
+
+\begin{equation}
+\hbar w_{cav}(x) a^\dagger a \simeq \hbar(w_{cav}-g_0x)a^\dagger a
+\end{equation}
+
+Esto acopla los dos sistemas. Por \ref{QTDHO}, se modela al oscilador mecánico utilizando operadores de floquet:
 
 \begin{equation}
 H_{mec}(t) = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2})
