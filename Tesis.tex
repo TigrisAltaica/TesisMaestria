@@ -961,7 +961,7 @@ La cual queda formalmente resuelta mediante la base de decaimiento.
 
 \section{Introducción}
 
-Se desea describir un sistema optomecánico donde un oscilador armónico macroscópico se acopla de forma paramétrica a un oscilador armónico bosónico que permite enfriar el sistema macroscópico \cite{NooshiLC}. En esencia, se busca un efecto análogo al enfriamiento láser de átomos, pero para la preparación de estados base mecánicos. El objetivo es enfriar un único modo de un oscilador armónico mecánico mediante su interacción con un láser. Se ha reportado enfriamiento de un micro oscilador armónico de forma toroidal desde temperatura ambiente a 11K mediante técnicas de enfriamiento basadas en la presión de radiación\cite{SchliesserRPC}. Se piensa en un sistema que consiste de una cavidad optomecánica, como por ejemplo una cavidad de Fabry-Perot, en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, las cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En analogía con sistemas de enfriamiento láser de átomos, el movimiento del espejo lleva a que este vea dos frecuencias distintas debido al efecto Doppler, la diferencia de las frecuencias del láser y de la frecuencia resonante de la cavidad permiten controlar cual de las dos frecuencias Doppler domina. Una de estas frecuencias lleva a que el sistema mecánico se caliente y la otra lo enfría. En efecto, el láser y su ambiente funcionan como un baño térmico para enfriar al oscilador armónico mecánico. A la absorción de quantos de movimiento (enfriamiento) se le asocia con procesos de dispersión de Raman donde un quanto se sube de nivel mientras que los procesos de emisión (calentamiento) se le asocia con dispersión de Raman donde un fotón decae. \cite{LCNooshi} El enfriamiento hasta el estado base es posible siempre y cuando el ancho de banda de la cavidad sea mucho menor que la frecuencia de oscilación mecánica. \cite{LCNooshi} \cite{MarquardtSC} Este regimen solo es válido cuando el acoplamiento optomecánico puede ser tratado como una perturbación, así que el esquema deja de ser valido cuando el acoplamiento es comparable al ancho de banda de la cavidad o a la frecuencia del oscilador mecánico.
+Se desea describir un sistema optomecánico donde un oscilador armónico macroscópico se acopla de forma paramétrica a un oscilador armónico bosónico que permite enfriar el sistema macroscópico \cite{NooshiLC}. En esencia, se busca un efecto análogo al enfriamiento láser de átomos, pero para la preparación de estados base mecánicos. El objetivo es enfriar un único modo de un oscilador armónico mecánico mediante su interacción con un láser. Por ejempl, se ha reportado enfriamiento de un micro oscilador armónico de forma toroidal desde temperatura ambiente a 11K mediante técnicas de enfriamiento basadas en la presión de radiación\cite{SchliesserRPC}. En esta tesis se piensa en un sistema que consiste de una cavidad optomecánica de Fabry-Perot, en la cual uno de los dos espejos en los extremos se encuentra a su vez acoplado a un resorte. Este acoplamiento permite la utilización de medios ópticos para controlar el objeto mecánico, los cuales pueden llevar a enfriamiento laser del objeto mecánico\cite{NooshiLC}. En analogía con sistemas de enfriamiento láser de átomos, el movimiento del espejo lleva a que este vea dos frecuencias distintas debido al efecto Doppler\cite{KippenberCO}, la diferencia de las frecuencias del láser y de la frecuencia resonante de la cavidad permiten controlar cual de las dos frecuencias Doppler domina. Una de estas frecuencias lleva a que el sistema mecánico se caliente y la otra lo enfría. En efecto, el láser y su ambiente funcionan como un baño térmico para enfriar al oscilador armónico mecánico. A la absorción de quantos de movimiento (enfriamiento) se le asocia con procesos de dispersión de Raman donde un quanto se sube de nivel mientras que los procesos de emisión (calentamiento) se le asocia con dispersión de Raman donde un fotón decae \cite{LCNooshi}. Este enfriamiento es posible siempre y cuando el ancho de banda de la cavidad sea mucho menor que la frecuencia de oscilación mecánica. \cite{LCNooshi} \cite{MarquardtSC} Este regimen solo es válido cuando el acoplamiento optomecánico puede ser tratado como una perturbación, así que el esquema deja de ser valido cuando el acoplamiento es comparable al ancho de banda de la cavidad o a la frecuencia del oscilador mecánico.
 
 \section{Posibles Sistemas Optomecánicos}
 
@@ -1066,9 +1066,89 @@ Con esto, el Hamiltoniano final es el siguiente:
 H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) +  g \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a)
 \end{equation}
 
-\section{Tratamiento Perturbativo}
+\section{Transformación Mediante Operador de Desplazamiento}
 
+El Hamiltoniano \ref{LaserCoolingHamiltonian} presenta algunos términos problemáticos, por lo que es necesario realizar una transformación unitaria. Se utiliza la transformación:
 
+\begin{equation}
+U_{a,\Gamma} = e^{(\alpha a^\dagger - \alpha^*a)}e^{(\beta \Gamma^\dagger - \beta^*\Gamma)}
+\end{equation}
+
+La cual claramente es unitaria. Es importante notar que tanto $\alpha$ como $\beta$ dependen del tiempo. Bajo la transformación, el operador densidad es:
+
+\begin{equation}
+\rho' = U_{a,\Gamma}^\dagger \rho U_{a,\Gamma}
+\end{equation}
+
+Se puede despejar en términos de $\rho$, utilizando el hecho de que la transformación es unitaria:
+
+\begin{equation}
+\rho = U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger
+\end{equation}
+
+Y derivando respecto al tiempo:
+
+\begin{equation}
+\dot{\rho} = L\rho = \dot{U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger}
+\end{equation}
+
+En este caso, $L$ representa el operador de Liouville. Esto permite obtener una ecuación maestra para $\rho'$. 
+
+\begin{align}
+ U_{a,\Gamma} \dot{\rho'} U_{a,\Gamma}^\dagger =& L[U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger] - \dot{U}_{a,\Gamma}\rho'U_{a,\Gamma}^\dagger -U_{a,\Gamma} \rho' \dot{U}_{a,\Gamma}^\dagger\\
+\dot{\rho} =& U_{a,\Gamma}^\dagger L[U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger]U_{a,\Gamma}-U_{a,\Gamma}^\dagger\dot{U}_{a,\Gamma}\rho'-\rho'\dot{U}_{a,\Gamma}^\dagger U_{a,\Gamma}
+\end{align}
+
+A partir de este punto, se omiten los sub-índices de las transformaciones y la $'$ para el operador densidad. Para ver los cálculos de la transformación en detalle, ver los apéndices, en esta sección únicamente se ilustrara el procedimiento. Para entender el efecto de la transformación se utiliza la fórmula de Baker-Campdell-Housdorff\cite{SakuraiQM}, para dos operadores $A$ y $B$:
+
+\begin{equation}
+e^{A} B e^{-A} = B + [A,B] + \frac{1}{2}[A,[A,B]] + ...
+\end{equation} 
+ 
+Debido a que los operadores involucrados si conmutan con sus conmutadores, la serie se corta de manera automática. Aplicando esta regla a los operadores que forman la ecuación maestra se obtiene:
+
+\begin{align}
+U^{\dagger} a U =& a + \alpha \\
+U^{\dagger} a^{\dagger} U =& a^{\dagger} + \alpha^* \\
+U^{\dagger} \Gamma U =& \Gamma + \beta \\
+U^{\dagger} \Gamma^{\dagger} U =& \Gamma^{\dagger} + \beta^* 
+\end{align} 
+ 
+Con esto, los Hamiltonianos transforman en:
+
+\begin{align}
+H_{cav}' =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)\\
+H_{mec}' =& \frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma + |\beta|^2 )\\
+H_{rad}'=&-\hbar g[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(\Gamma^{\dagger}+\beta^*)+\gamma_-(\Gamma+\beta))]\\
+B' = \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*)
+\end{align}
+
+Los terminos de Lindblat que modelan el decaimiento se convierten en:
+
+\begin{align}
+L_a ' =& L_a + \frac{A}{2}(\alpha a^\dagger - \alpha^*a),\rho] \\
+L_{\Gamma}' =& L_{\Gamma} + \frac{\gamma}{2}[(\beta\Gamma^{\dagger}-\beta^* \Gamma),\rho]
+\end{align}
+
+Finalmente es necesario tomar en cuenta los términos provenientes de las derivadas temporales. Estos cálculos requieren de especial atención debido a la dependencia temporal de los operadores de Floquet. Si el lector desea ver los detalles, se encuentran en el apendice. Los términos obtenidos son:
+
+\begin{align*}
+U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}(a^{\dagger}+\alpha^*)\rho + \rho \dot{\alpha}^*(a+\alpha)\\
+&+ \dot{\beta}(\Gamma^{\dagger}+\beta^*)\rho + \rho\dot{\beta}^*(\Gamma + \beta)-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma}\\\
+&+(|\beta|^2+|\beta^*|^2)C_{--}(t)\rho + |\beta|^2(C_{+-}(t) + C_{-+}(t))\rho + (|\beta^*|^2C_{--}(t) + |\beta|^2C_{++}(t))\rho
+\end{align*} 
+
+Las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos no son nulos:
+
+\begin{align*}
+C_{++}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma^{\dagger}]\\
+C_{+-}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma]\\
+C_{-+}(t) =& [\dot{\Gamma}, \Gamma^{\dagger}]\\
+C_{--}(t) =& [\dot{\Gamma}, \Gamma]
+\end{align*} 
+ 
+Es interesante notar que toda la dependencia relacionada con estás funciones va acompañada de coeficientes de orden $|\beta|^2$.
+ 
 \bibliographystyle{plain}
 \bibliography{Bib}
 
