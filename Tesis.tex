@@ -1054,18 +1054,23 @@ Donde:
 =&\sqrt{\frac{2m}{\hbar}}\frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t))+(E^* (t) - E (t))(\dot{E} (t) + \dot{E}^* (t))}{(E^* (t) - E (t))}
 \end{align}
 
-Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano, absorbiendo el factor de $-2i$ en la defininición de los coeficientes $\beta(t)$:
+Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano:
 
 \begin{equation}
-H(t)_{rad} = g \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
+H(t)_{rad} = \frac{g}{-2i}\sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
 \end{equation}
 
 Con esto, el Hamiltoniano final es el siguiente:
 
 \begin{equation}\label{LaserCoolingHamiltonian}
-H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) +  g \sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a)
-\end{equation}
+H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) +  g'a^\dagger a[\gamma_+(t)\Gamma (t) +\gamma_-(t)\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a),
+\end{equation}, donde se hicieron las redefiniciones:
 
+\begin{align*}
+g'=&g\sqrt{\frac{\hbar^3}{2m}},\\
+\gamma_+(t)(t)=&\frac{\alpha (t) +1}{-2i\beta(t)},\\
+\gamma_-(t)=&\frac{\alpha (t) -1}{-2i\beta(t)},
+\end{align*} 
 \section{Transformación Mediante Operador de Desplazamiento}
 
 El Hamiltoniano \ref{LaserCoolingHamiltonian} presenta algunos términos problemáticos, por lo que es necesario realizar una transformación unitaria. Se utiliza la transformación:
@@ -1119,35 +1124,62 @@ Con esto, los Hamiltonianos transforman en:
 \begin{align}
 H_{cav}' =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)\\
 H_{mec}' =& \frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma + |\beta|^2 )\\
-H_{rad}'=&-\hbar g[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(\Gamma^{\dagger}+\beta^*)+\gamma_-(\Gamma+\beta))]\\
-B' = \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*)
+H_{rad}'=&-\hbar g\sqrt{\frac{\hbar^3}{2m}}[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
+B' =& \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*)
 \end{align}
 
 Los terminos de Lindblat que modelan el decaimiento se convierten en:
 
 \begin{align}
-L_a ' =& L_a + \frac{A}{2}(\alpha a^\dagger - \alpha^*a),\rho] \\
+L_a ' =& L_a + \frac{A}{2}[(\alpha a^\dagger - \alpha^*a),\rho] \\
 L_{\Gamma}' =& L_{\Gamma} + \frac{\gamma}{2}[(\beta\Gamma^{\dagger}-\beta^* \Gamma),\rho]
 \end{align}
 
 Finalmente es necesario tomar en cuenta los términos provenientes de las derivadas temporales. Estos cálculos requieren de especial atención debido a la dependencia temporal de los operadores de Floquet. Si el lector desea ver los detalles, se encuentran en el apendice. Los términos obtenidos son:
 
 \begin{align*}
-U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}(a^{\dagger}+\alpha^*)\rho + \rho \dot{\alpha}^*(a+\alpha)\\
-&+ \dot{\beta}(\Gamma^{\dagger}+\beta^*)\rho + \rho\dot{\beta}^*(\Gamma + \beta)-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma}\\\
-&+(|\beta|^2+|\beta^*|^2)C_{--}(t)\rho + |\beta|^2(C_{+-}(t) + C_{-+}(t))\rho + (|\beta^*|^2C_{--}(t) + |\beta|^2C_{++}(t))\rho
-\end{align*} 
-
-Las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos no son nulos:
+U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a\\
+&+ \dot{\beta}\Gamma^{\dagger}\rho + \rho\dot{\beta}^*\Gamma-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma}\\\
+&+(|\beta|^2+|\beta^*|^2)C_{--}(t)\rho + |\beta|^2(C_{+-}(t) + C_{-+}(t))\rho + (|\beta^*|^2C_{--}(t) + |\beta|^2C_{++}(t))\rho,
+\end{align*} donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos no son nulos:
 
 \begin{align*}
-C_{++}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma^{\dagger}]\\
-C_{+-}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma]\\
-C_{-+}(t) =& [\dot{\Gamma}, \Gamma^{\dagger}]\\
-C_{--}(t) =& [\dot{\Gamma}, \Gamma]
+C_{++}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma^{\dagger}],\\
+C_{+-}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma],\\
+C_{-+}(t) =& [\dot{\Gamma}, \Gamma^{\dagger}],\\
+C_{--}(t) =& [\dot{\Gamma}, \Gamma].
 \end{align*} 
  
-Es interesante notar que toda la dependencia relacionada con estás funciones va acompañada de coeficientes de orden $|\beta|^2$.
+Es interesante notar que toda la dependencia relacionada con estás funciones va acompañada de coeficientes de orden $|\beta|^2$. Por el momento ests términos se traran de forma separada. Todos los demás términos se pueden expresar como conmutadores:
+
+\begin{equation}
+-(U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U) = [\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger,\rho]+ [\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger,\rho],
+\end{equation} lo cual sugiere tratarlos, junto con los términos adicionales que surgen al transformar los términos de Lindblat, como parte del Hamiltoniano. Esto lleva a que el Hamiltoniano total en el marco transformado incluya nuevos términos:
+
+\begin{align}
+H_{rot} =& i\hbar(\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger),\\
+H_{dec} =& i\hbar(\frac{A}{2}(\alpha a^\dagger - \alpha^*a)+\frac{\gamma}{2}(\beta\Gamma^{\dagger}-\beta^* \Gamma)),\\
+H_{temp}=& i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
+\end{align} si se escribe el Hamiltoniano total del sistema en el nuevo marco de referencia, se llega a que este es:
+
+\begin{align*}
+H =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)+\frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma)\\
+ &-\hbar g\sqrt{\frac{\hbar^3}{2m}}[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
+ &+\frac{\hbar \Omega}{2}(a^{\dagger} + a)+i\hbar(\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger)\\
+ &+i\hbar(\frac{A}{2}(\alpha a^\dagger - \alpha^*a)+\frac{\gamma}{2}(\beta\Gamma^{\dagger}-\beta^* \Gamma))+i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
+\end{align*} aquí es importante notar que se eliminaron los términos que no contenían ningún operador, puesto que estos claramente conmutan con $\rho$ y por lo tanto no contribuyen a la ecuación maestra. Se desea eliminar los términos que únicamente contienen un operador de creación o aniquilación, por lo que se agrupan todos estos términos: 
+
+\begin{align}
+a&(-\hbar\delta\alpha^* -\hbar g' \alpha^*(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} + i\hbar\dot{\alpha}^* -\hbar\frac{A}{2}\alpha^*),\\
+a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} - i\hbar\dot{\alpha} -\hbar\frac{A}{2}\alpha),\\
+\Gamma&(\frac{W}{|f(t)|^2}\beta^*-\hbar g'|\alpha|^2\gamma_- +  i\hbar\dot{\beta}^*-i\hbar\frac{\gamma}{2}\beta^*),\\
+\Gamma^\dagger&(\frac{W}{|f(t)|^2}\beta-\hbar g'|\alpha|^2\gamma_+ -  i\hbar\dot{\beta}+i\hbar\frac{\gamma}{2}\beta),
+\end{align} lo cual genera ecuaciones diferenciales para los coeficientes $\alpha$ y $\beta$:
+
+\begin{align}
+\dot{\alpha} =& \alpha(\frac{A}{2}+i(\delta+g'(\gamma_+(t) \beta^* + \gamma_-(t) \beta))-i\frac{\Omega}{2},\\
+\dot{\beta} =& \beta(\frac{\gamma}{2}-i\frac{W}{\hbar|f(t)|^2})+ig'|\alpha|^2\gamma_+(t),
+\end{align}
  
 \bibliographystyle{plain}
 \bibliography{Bib}
