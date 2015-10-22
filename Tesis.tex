@@ -757,7 +757,7 @@ El teorema de Floquet para ecuaciones de segundo orden con coeficientes del tiem
 
 
 \begin{equation}
-\Xi_1(t) = e^{i\mu t}\phi(t), \quad \Xi_2(t)=\Xi_1(-t)
+E_1(t) = e^{i\mu t}\phi(t), \quad E_2(t)=E_1(-t)
 \end{equation}
 
 Recordando que la función $\phi$ debe tener la misma periodicidad que $k(t)$. Dado que la función cumple con esta condición, es posible realizar una expansión de Fourier \cite{ArfkenMM} de la misma:
@@ -769,7 +769,7 @@ Recordando que la función $\phi$ debe tener la misma periodicidad que $k(t)$. D
 Para fijar los coeficientes se normaliza el Wronskiano tal que:
 
 \begin{equation}
-W = \dot{\Xi}_1(t)\Xi_2(t)-\Xi_1(t)\dot{\Xi}_2(t) = 2i
+W = \dot{E}_1(t)E_2(t)-E_1(t)\dot{E}_2(t) = 2i
 \end{equation}
 
 Lo cual genera la regla de suma:
@@ -783,16 +783,14 @@ Lo cual genera la regla de suma:
 En el caso de un Hamiltoniano con dependencia temporal como la vista anteriormente, existe un conjunto completo de soluciones \cite{BarnettSD}:
 
 \begin{equation}
-\Ket{\Psi_\alpha (t)} = e^{-i\mu_\alpha t}\Ket{\phi_\alpha t}, \qquad \Ket{\phi_\alpha (t)}=\Ket{\phi_\alpha (t+\tau)}
+\Ket{\Psi_\alpha (t)} = e^{-i\mu_\alpha t}\Ket{\phi_\alpha t}, \qquad \Ket{\phi_\alpha (t)}=\Ket{\phi_\alpha (t+\tau)},
 \end{equation}
 
 Estas soluciones tienen la forma explícita\cite{BrownPT}
 
 \begin{equation}
 \Psi_\alpha (x,t) = (\frac{\sqrt{m/\pi\hbar}}{2^\alpha n!E_1^0(t)})^{\frac{1}{2}}(\frac{E_1^0(t)}{E_2^0(t)})^\frac{\alpha}{2}H_\alpha(x\sqrt{\frac{m}{\hbar E_1^0(t) E_2^0(t)}})e^{(ix^2\frac{E_1^0(t)}{2E_2^0(t)})}
-\end{equation}
-
-Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet:
+\end{equation} donde el superíndice 0 indica que se toma el límite donde $\gamma$ tiende a cero. Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet:
 
 \begin{align*}\label{FloquetOperators}
 \Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)} \\
@@ -921,7 +919,7 @@ Y se llega a:
 +& C. H.  
 \end{align*}
 
-La función $\Delta_{\alpha \beta k}$ contiene las cuasienergías del sistema sin pérdidas de energía \cite{HanngiDQS}. Se utiliza la aproximación de onda rotante FALTA REFERENCIA., sin embargo en este sistema no se desprecian todos los términos, ya que $(\alpha-\beta,k)=(\alpha'-\beta',k')$ es suficiente para asegurar que $\Delta_{\alpha \beta k}=\Delta_{\alpha' \beta' k'}$, de esta forma se obtiene la ecuación:
+La función $\Delta_{\alpha \beta k}$ contiene las cuasienergías del sistema sin pérdidas de energía \cite{HanngiDQS}. Se utiliza la aproximación de onda rotante, sin embargo en este sistema no se desprecian todos los términos, ya que $(\alpha-\beta,k)=(\alpha'-\beta',k')$ es suficiente para asegurar que $\Delta_{\alpha \beta k}=\Delta_{\alpha' \beta' k'}$, de esta forma se obtiene la ecuación:
 
 \begin{align*}
 \dot{\rho}_{\alpha \beta} = \frac{\gamma}{2}&(N+1)[2\sqrt{(\alpha+1)(\beta + 1)}\rho_{\alpha+1,\beta+1} - (\alpha + \beta)\rho_{\alpha \beta}]\\
@@ -949,7 +947,7 @@ Dado que los operadores de Floquet conmutan con este Hamiltoniano, se puede real
 
 Lo que lleva a la ecuación:
 
-\begin{equation}
+\begin{equation} \label{GammaLindblat}
 \dot{\rho}=\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )
  + N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
 \end{equation}
@@ -991,13 +989,11 @@ H(t) = H_{cav} + H_{mec}(t) + H_{rad} + B
 En donde:
 
 \begin{align}
-H_{cav} =& -\hbar \delta a^\dagger a\\
-H_{mec}(t) =& \frac{p^2}{2m} + \frac{1}{2}m \nu (t) x^2\\
-H_{rad} =& -\hbar g a^\dagger a x\\
-B =& \hbar\frac{\Omega}{2}(a^\dagger + a)
-\end{align}
-
-En este caso, $\delta = w_{bomba} - w_{cav}$ representa la diferencia de frecuencias entre la bomba de fotones y la cavidad y $\hbar g$ representa la fuerza de radiación que un fotón aplica sobre el oscilador mecánico sin modulación. El término $H_{rad}$ modela una interacción simple entre los fotones y el espejo. Dado que en este caso la longitud de la cavidad no es fija, la frecuencia de la cavidad debe tener una dependencia en la coordenada $x$, entonces, tomando el hamiltoniano para el oscilador que modela la cavidad y expandiendo hasta primer orden en $x$\cite{KippenberCO}:
+H_{cav} =& -\hbar \delta a^\dagger a,\\
+H_{mec}(t) =& \frac{p^2}{2m} + \frac{1}{2}m \nu (t) x^2,\\
+H_{rad} =& -\hbar g a^\dagger a x,\\
+B =& \hbar\frac{\Omega}{2}(a^\dagger + a),
+\end{align} en este caso, $\delta = w_{bomba} - w_{cav}$ representa la diferencia de frecuencias entre la bomba de fotones y la cavidad y $\hbar g$ representa la fuerza de radiación que un fotón aplica sobre el oscilador mecánico sin modulación. El término $H_{rad}$ modela una interacción simple entre los fotones y el espejo. Dado que en este caso la longitud de la cavidad no es fija, la frecuencia de la cavidad debe tener una dependencia en la coordenada $x$, entonces, tomando el hamiltoniano para el oscilador que modela la cavidad y expandiendo hasta primer orden en $x$\cite{KippenberCO}:
 
 \begin{equation}
 \hbar w_{cav}(x) a^\dagger a \simeq \hbar(w_{cav}-g_0x)a^\dagger a
@@ -1013,54 +1009,42 @@ Recordando la definición de los operadores de Floquet \ref{FloquetOperators}, s
 
 
 \begin{align*}
-\Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)} \\
-\Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}
-\end{align*}
-
-Si se toma la suma y la resta de los operadores:
+\Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)}, \\
+\Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}.
+\end{align*}Si se toma la suma y la resta de los operadores:
 
 \begin{align*}
-2i(\Gamma (t) + \Gamma ^\dagger (t)) =& (\dot{E} (t) - \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}x + (E^* (t) - E (t))\sqrt{\frac{2}{m\hbar}} p \\
-2i(\Gamma (t) - \Gamma ^\dagger (t)) =& (\dot{E} (t) + \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}x -(E^* (t) + E (t))\sqrt{\frac{2}{m\hbar}} p
-\end{align*}
-
-Renombrando los coeficientes esto es simplemente:
+2i(\Gamma (t) + \Gamma ^\dagger (t)) =& (\dot{E} (t) - \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}x + (E^* (t) - E (t))\sqrt{\frac{2}{m\hbar}} p, \\
+2i(\Gamma (t) - \Gamma ^\dagger (t)) =& (\dot{E} (t) + \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}x -(E^* (t) + E (t))\sqrt{\frac{2}{m\hbar}} p,
+\end{align*} renombrando los coeficientes esto es simplemente:
 
 \begin{align*}
-2i(\Gamma (t) + \Gamma ^\dagger (t)) =& ax + bp \\
-2i(\Gamma (t) - \Gamma ^\dagger (t)) =& cx - dp
-\end{align*}
-
-Si se toma la primera ecuación multiplicada por $\frac{d}{b}$ y se suma a la segunda, se obtiene:
+2i(\Gamma (t) + \Gamma ^\dagger (t)) =& ax + bp, \\
+2i(\Gamma (t) - \Gamma ^\dagger (t)) =& cx - dp,
+\end{align*} si se toma la primera ecuación multiplicada por $\frac{d}{b}$ y se suma a la segunda, se obtiene:
 
 \begin{align*}
-(\frac{da}{b}+c)x =& 2i \frac{d}{b}(\Gamma (t) + \Gamma ^\dagger (t)) + 2i(\Gamma (t) - \Gamma ^\dagger (t)) \\
+(\frac{da}{b}+c)x =& 2i \frac{d}{b}(\Gamma (t) + \Gamma ^\dagger (t)) + 2i(\Gamma (t) - \Gamma ^\dagger (t)), \\
 =&2i[(\frac{d}{b}+1)\Gamma (t)+(\frac{d}{b}-1)\Gamma^\dagger (t)]\\
-\therefore x =& \frac{2i[(\frac{d}{b}+1)\Gamma (t)+(\frac{d}{b}-1)\Gamma^\dagger (t)]}{\frac{da}{b}+c}
-\end{align*}
-
-O lo que es equivalente:
+\therefore x =& \frac{2i[(\frac{d}{b}+1)\Gamma (t)+(\frac{d}{b}-1)\Gamma^\dagger (t)]}{\frac{da}{b}+c},
+\end{align*} o lo que es equivalente:
 
 \begin{equation}
-x = 2i \sqrt{\frac{\hbar}{2m}}[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
-\end{equation}
-
-Donde:
+x = 2i \sqrt{\frac{\hbar}{2m}}[(\frac{A(t) +1}{B(t)})\Gamma (t) +(\frac{A(t) -1}{B(t)})\Gamma^\dagger (t)],
+\end{equation} donde:
 
 \begin{align}
-\alpha(t) =& \frac{d}{b} = \frac{(E^* (t) + E (t))}{(E^* (t) - E (t))} \\
-\beta(t) = & \frac{da}{b}+c \\
+A(t) =& \frac{d}{b} = \frac{(E^* (t) + E (t))}{(E^* (t) - E (t))}, \\
+B(t) = & \frac{da}{b}+c \\
 =& \frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}}{(E^* (t) - E (t))} + (\dot{E} (t) + \dot{E}^* (t)) \sqrt{\frac{2m}{\hbar}}\\
-=&\sqrt{\frac{2m}{\hbar}}\frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t))+(E^* (t) - E (t))(\dot{E} (t) + \dot{E}^* (t))}{(E^* (t) - E (t))}
+=&\sqrt{\frac{2m}{\hbar}}\frac{(E^* (t) + E (t))(\dot{E} (t) - \dot{E}^* (t))+(E^* (t) - E (t))(\dot{E} (t) + \dot{E}^* (t))}{(E^* (t) - E (t))}.
 \end{align}
 
 Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano:
 
 \begin{equation}
-H(t)_{rad} = \frac{g}{-2i}\sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{\alpha (t) +1}{\beta(t)})\Gamma (t) +(\frac{\alpha (t) -1}{\beta(t)})\Gamma^\dagger (t)]
-\end{equation}
-
-Con esto, el Hamiltoniano final es el siguiente:
+H(t)_{rad} = \frac{g}{-2i}\sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{A(t) +1}{B(t)})\Gamma (t) +(\frac{A(t) -1}{B(t)})\Gamma^\dagger (t)]
+\end{equation} con esto, el Hamiltoniano final es el siguiente:
 
 \begin{equation}\label{LaserCoolingHamiltonian}
 H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) +  g'a^\dagger a[\gamma_+(t)\Gamma (t) +\gamma_-(t)\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a),
@@ -1068,12 +1052,21 @@ H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \f
 
 \begin{align*}
 g'=&g\sqrt{\frac{\hbar^3}{2m}},\\
-\gamma_+(t)(t)=&\frac{\alpha (t) +1}{-2i\beta(t)},\\
-\gamma_-(t)=&\frac{\alpha (t) -1}{-2i\beta(t)},
+\gamma_+(t)(t)=&\frac{A(t) +1}{-2iB(t)},\\
+\gamma_-(t)=&\frac{A(t) -1}{-2iB(t)},
 \end{align*} 
+
+Ahora se desea resolver la ecuación maestra correspondiente a este Hamiltoniano. Los términos de Lindblat que corresponden a este Hamiltoniano son $L_a$ para la cavidad y $L_\Gamma$ para el oscilador, ambos tienen la misma forma funcional, la cual es la de \ref{GammaLindblat}. Esto lleva a la ecuación maestra:
+
+\begin{equation}\label{LCMasterEquation}
+\dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L_a\rho + L_\Gamma \rho
+\end{equation}
+
+\chapter{Solución para la Ecuación Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}
+
 \section{Transformación Mediante Operador de Desplazamiento}
 
-El Hamiltoniano \ref{LaserCoolingHamiltonian} presenta algunos términos problemáticos, por lo que es necesario realizar una transformación unitaria. Se utiliza la transformación:
+Para poder encontrar una solución a \ref{LCMasterEquation} es necesario eliminar los términos de tercer orden en operadores, ya que estos son no-lineales y causan dificultades. Esto puede lograrse mediante una transformación unitaria. Se utiliza la transformación:
 
 \begin{equation}
 U_{a,\Gamma} = e^{(\alpha a^\dagger - \alpha^*a)}e^{(\beta \Gamma^\dagger - \beta^*\Gamma)}
@@ -1124,7 +1117,7 @@ Con esto, los Hamiltonianos transforman en:
 \begin{align}
 H_{cav}' =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)\\
 H_{mec}' =& \frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma + |\beta|^2 )\\
-H_{rad}'=&-\hbar g\sqrt{\frac{\hbar^3}{2m}}[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
+H_{rad}'=&-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
 B' =& \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*)
 \end{align}
 
@@ -1164,23 +1157,48 @@ H_{temp}=& i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
 
 \begin{align*}
 H =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)+\frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma)\\
- &-\hbar g\sqrt{\frac{\hbar^3}{2m}}[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
+ &-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
  &+\frac{\hbar \Omega}{2}(a^{\dagger} + a)+i\hbar(\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger)\\
  &+i\hbar(\frac{A}{2}(\alpha a^\dagger - \alpha^*a)+\frac{\gamma}{2}(\beta\Gamma^{\dagger}-\beta^* \Gamma))+i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
 \end{align*} aquí es importante notar que se eliminaron los términos que no contenían ningún operador, puesto que estos claramente conmutan con $\rho$ y por lo tanto no contribuyen a la ecuación maestra. Se desea eliminar los términos que únicamente contienen un operador de creación o aniquilación, por lo que se agrupan todos estos términos: 
 
 \begin{align}
-a&(-\hbar\delta\alpha^* -\hbar g' \alpha^*(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} + i\hbar\dot{\alpha}^* -\hbar\frac{A}{2}\alpha^*),\\
-a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} - i\hbar\dot{\alpha} -\hbar\frac{A}{2}\alpha),\\
-\Gamma&(\frac{W}{|f(t)|^2}\beta^*-\hbar g'|\alpha|^2\gamma_- +  i\hbar\dot{\beta}^*-i\hbar\frac{\gamma}{2}\beta^*),\\
-\Gamma^\dagger&(\frac{W}{|f(t)|^2}\beta-\hbar g'|\alpha|^2\gamma_+ -  i\hbar\dot{\beta}+i\hbar\frac{\gamma}{2}\beta),
-\end{align} lo cual genera ecuaciones diferenciales para los coeficientes $\alpha$ y $\beta$:
+a&(-\hbar\delta\alpha^* -\hbar g' \alpha^*(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} + i\hbar\dot{\alpha}^* -i\hbar\frac{A}{2}\alpha^*),\\
+a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} - i\hbar\dot{\alpha} +i\hbar\frac{A}{2}\alpha),\\
+\Gamma&(\frac{W}{|f(t)|^2}\beta^*-\hbar g'|\alpha|^2\gamma_- +  i\hbar\dot{\beta}^*+i\hbar\frac{\gamma}{2}\beta^*),\\
+\Gamma^\dagger&(\frac{W}{|f(t)|^2}\beta-\hbar g'|\alpha|^2\gamma_+ -  i\hbar\dot{\beta}-i\hbar\frac{\gamma}{2}\beta),
+\end{align} si se desea eliminar todos estor términos, los términos asociados a cada operador deben eliminarse de manera independiente,lo cual genera ecuaciones diferenciales para los coeficientes $\alpha$ y $\beta$. Es importante notar que solo se obtienen dos ecuaciones, ya que las ecuaciones para los conjugados se obtienen al conjugar. Estas son:
 
 \begin{align}
-\dot{\alpha} =& \alpha(\frac{A}{2}+i(\delta+g'(\gamma_+(t) \beta^* + \gamma_-(t) \beta))-i\frac{\Omega}{2},\\
-\dot{\beta} =& \beta(\frac{\gamma}{2}-i\frac{W}{\hbar|f(t)|^2})+ig'|\alpha|^2\gamma_+(t),
-\end{align}
- 
+\dot{\alpha} =& \alpha(-\frac{A}{2}+i(\delta+g'(\gamma_+(t) \beta^* + \gamma_-(t) \beta))-i\frac{\Omega}{2},\\
+\dot{\beta} =& \beta(-\frac{\gamma}{2}-i\frac{W}{\hbar|f(t)|^2})+ig'|\alpha|^2\gamma_+(t),
+\end{align} si estas ecuaciones se cumplen, entonces se obtiene el Hamiltoniano:
+
+
+\begin{align*}
+H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)(\gamma_+(t)\Gamma^{\dagger}+\gamma_-(t)\Gamma+\beta)]\\
+&+ i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
+\end{align*}  donde se ha hecho el cambio $\delta' = \delta + g'(\beta + \beta^*)$. Con esto se obtiene la ecuación maestra para el enfriamiento optomecánico con un oscilador con frecuencia dependiente del tiempo, en el marco de referencia desplazado:
+
+\begin{equation}\label{DLCMasterEquation}
+\dot{\rho} = \frac{1}{i\hbar}[H',\rho] + L_a\rho + L_\Gamma\rho + C(t)\rho,
+\end{equation} en donde $C(t)$ representa los términos de conmutadores vistos anteriormente. Para poder avanzar más allá, se requiere una forma escpecífica para la dependencia funcional de la frecuencia del oscilador.
+
+
+\section{Solución para Oscilaciones Pequeñas Respecto a una Frecuencia Promedio}
+
+La ecuación \ref{DLCMasterEquation} depende fuertemente de las soluciones clásicas del problema del oscilador armónico con frecuencia dependiente del tiempo. Estas soluciones no solo determinan la forma exacta de los operadores $\Gamma$, también determinan la forma de los términos denominados $C(t)$. En esta sección se trabajará con el supuesto de que la dependencia temporal en la frecuencia se puede tratar como pequeñas variaciones périódicas en torno a una frecuencia promedio:
+
+\begin{equation}
+k(t) = \nu_0 + \nu Cos(wt)
+\end{equation}
+
+Si se hace esta sustitución, en la ecuación de movimiento correspondiente al Hamiltoniano \ref{TDHO}, se llega a:
+
+\begin{equation}
+m\ddot{x} + (\nu_0 + \nu Cos(wt))x = 0,
+\end{equation} la cual es muy similar a la "Escuación de Mathieu". A continuación se resuelve el caso donde $\nu \ll \nu_0$.
+
 \bibliographystyle{plain}
 \bibliography{Bib}
 
