@@ -1190,14 +1190,63 @@ H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar
 La ecuación \ref{DLCMasterEquation} depende fuertemente de las soluciones clásicas del problema del oscilador armónico con frecuencia dependiente del tiempo. Estas soluciones no solo determinan la forma exacta de los operadores $\Gamma$, también determinan la forma de los términos denominados $C(t)$. En esta sección se trabajará con el supuesto de que la dependencia temporal en la frecuencia se puede tratar como pequeñas variaciones périódicas en torno a una frecuencia promedio:
 
 \begin{equation}
-k(t) = \nu_0 + \nu Cos(wt)
+k(t) = \nu_0 + \nu Cos(2t)
 \end{equation}
 
 Si se hace esta sustitución, en la ecuación de movimiento correspondiente al Hamiltoniano \ref{TDHO}, se llega a:
 
 \begin{equation}
-m\ddot{x} + (\nu_0 + \nu Cos(wt))x = 0,
-\end{equation} la cual es muy similar a la "Escuación de Mathieu". A continuación se resuelve el caso donde $\nu \ll \nu_0$.
+m\ddot{x} + (\nu_0 + \nu Cos(2t))x = 0,
+\end{equation} la cual es muy similar a la "Escuación de Mathieu". A continuación se resuelve el caso donde $\nu \ll \nu_0$. En particular, la ecuación solo tiene soluciones estables para ciertos casos donde $\nu = n^2$ con $n$ un número entero \cite{WardFT}. Se resolverá el caso donde $n = 1$. Se absorbe la masa en las demás constantes para facilitar la notación. Con esto, la ecuación a resolver es:
+
+\begin{equation}
+\ddot{x} + (1 + \nu cos(2t))x=0,
+\end{equation} lo cual lleva a la solución, a primer orden en $\nu$:
+
+\begin{equation}
+f(t) = e^{it} + \frac{\epsilon}{16} e^{3it},
+\end{equation} esta función es la función mencionada en el tratamiento de los operadores $\Gamma$ como $E_1^0(t)$. La otra solución que se debe obtener según esa sección es la forrespondiente a $f(-t)$ que en este caso equivale al complejo conjugado. Con este resultado se pueden calcular los términos correspondientes a los conmutadores de los operadores $\Gamma$ y sus derivadas.
+
+\subsection{Cálculo de Conmutadores}
+
+Se comienza con el conmutador $C_{++}(t)$, recordando que en este contexto $x$ y $p$ son los operadores usuales en mecánica cuántica:
+
+\begin{align*}
+C_{++}(t) =& [\dot{\Gamma}^\dagger,\Gamma]\\
+ =&[\frac{-1}{2i}(x\sqrt{\frac{2m}{\hbar}}\ddot{f}^*-p\sqrt{\frac{2}{m\hbar}}\dot{f}^*),\frac{-1}{2i}(x\sqrt{\frac{2m}{\hbar}}\dot{f}^*-p\sqrt{\frac{2}{m\hbar}}f^*)],\\
+ =&[\frac{-1}{2i}x\sqrt{\frac{2m}{\hbar}}\ddot{f}^*,\frac{1}{2i}p\sqrt{\frac{2}{m\hbar}}f^*]+[\frac{1}{2i}p\sqrt{\frac{2}{m\hbar}}\dot{f}^*,\frac{-1}{2i}x\sqrt{\frac{2m}{\hbar}}\dot{f}^*],\\
+ =&(\frac{-1}{2i})(\frac{1}{2i})\sqrt{\frac{2m}{\hbar}}\sqrt{\frac{2}{m\hbar}}\ddot{f}^*f^*[x,p]+(\frac{1}{2i})(\frac{-1}{2i})\sqrt{\frac{2m}{\hbar}}\sqrt{\frac{2}{m\hbar}}\dot{f}^*\dot{f}^*[p,x],\\
+ =&\frac{1}{2\hbar}(\ddot{f}^*f^*(i\hbar)-\dot{f}^*\dot{f}^*(i\hbar)),\\
+ =&\frac{i}{2}[(-e^{-it}-\frac{9\epsilon}{16}e^{-3it})(e^{-it}+\frac{\epsilon}{16}e^{-3it})-(ie^{-it}+\frac{3i\epsilon}{16}e^{-3it})(ie^{-it}+\frac{3i\epsilon}{16}e^{-3it})],\\ 
+ =&\frac{i}{2}[-e^{-2it}-\frac{\epsilon}{16}e^{-4it}-\frac{9\epsilon}{16}e^{-4it})-(-e^{-2it}-\frac{6\epsilon}{16}e^{-4it})],\\
+ =&\frac{i}{2}[-\frac{10\epsilon}{16}e^{-4it}+\frac{6\epsilon}{16}e^{-4it}],\\
+ =&\frac{i}{2}[-\frac{4\epsilon}{16}e^{-4it}],\\
+ =&-\epsilon\frac{i}{8}e^{-4it}.
+\end{align*} Para calcular el conmutador $C_{--}(t)$ es útil notar que:
+
+\begin{align*}
+([a,b])^{\dagger} =& (ab-ba)^{\dagger}, \\
+=& (b^{\dagger}a^{\dagger}-a^{\dagger}b^{\dagger}),\\
+=& [b^{\dagger},a^{\dagger}],\\
+=& -[a^{\dagger},b^{\dagger}], 
+\end{align*} por lo que:
+
+\begin{align*}
+([a,b])^{\dagger} =& (C_{++}(t))^{\dagger},\\
+=& -[a^{\dagger},b^{\dagger}],\\
+\Rightarrow & [a^{\dagger},b^{\dagger}] = -(C_{++}(t))^{\dagger}
+\end{align*} lo que lleva a:
+
+\begin{equation*}
+C_{--}(t) = -\epsilon\frac{i}{8}e^{4it}.
+\end{equation*} El calculo de los otros dos conmutadores es completamente análogo, y se llega a:
+
+\begin{align}
+C_{++}(t) =& -\epsilon\frac{i}{8}e^{-4it},\\
+C_{--}(t) =& -\epsilon\frac{i}{8}e^{4it},\\
+C_{+-}(t) =& i [1 -\frac{\epsilon}{16}e^{2it}-\frac{6\epsilon}{16}e^{-2it}],\\
+C_{-+}(t) =& i [1 -\frac{\epsilon}{16}e^{-2it}-\frac{6\epsilon}{16}e^{2it}].
+\end{align}
 
 \bibliographystyle{plain}
 \bibliography{Bib}
