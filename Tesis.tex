@@ -1133,7 +1133,7 @@ Finalmente es necesario tomar en cuenta los términos provenientes de las deriva
 \begin{align*}
 U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a\\
 &+ \dot{\beta}\Gamma^{\dagger}\rho + \rho\dot{\beta}^*\Gamma-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma}\\\
-&+(|\beta|^2+|\beta^*|^2)C_{--}(t)\rho + |\beta|^2(C_{+-}(t) + C_{-+}(t))\rho + (|\beta^*|^2C_{--}(t) + |\beta|^2C_{++}(t))\rho,
+&+\beta^2C_{--}(t)\rho + |\beta|^2(C_{+-}(t) - C_{-+}(t))\rho +  \beta^2 C_{++}(t)\rho,
 \end{align*} donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos no son nulos:
 
 \begin{align*}
@@ -1246,7 +1246,19 @@ C_{++}(t) =& -\epsilon\frac{i}{8}e^{-4it},\\
 C_{--}(t) =& -\epsilon\frac{i}{8}e^{4it},\\
 C_{+-}(t) =& i [1 -\frac{\epsilon}{16}e^{2it}-\frac{6\epsilon}{16}e^{-2it}],\\
 C_{-+}(t) =& i [1 -\frac{\epsilon}{16}e^{-2it}-\frac{6\epsilon}{16}e^{2it}].
-\end{align}
+\end{align} con esto, el término correspondiente a los conmutadores es:
+
+\begin{equation}
+C(t)\rho=-\beta^2\epsilon\frac{i}{8}e^{4it}\rho + |\beta|^2(-\frac{\epsilon}{16}e^{2it}-\frac{6\epsilon}{16}e^{-2it} + \frac{\epsilon}{16}e^{-2it}-\frac{6\epsilon}{16}e^{2it})\rho -\beta^2\epsilon\frac{i}{8}e^{-4it}\rho,
+\end{equation} ya que $\epsilon$ es en realidad $\frac{\epsilon}{m\omega^2}$ y todos los términos tienen una amplitud aún menor que esto, se desprecian estos términos. Aún es necesario calcular la forma explícita del resto de los términos con dependencia temporal, ya que todos estos quedan determinados por la solución del problema clásico.
+
+\subsection{Otros Términos con Dependencia Temporal}
+
+Se trata el caso de los factores $\gamma_{\pm}(t)$. Para esto primero es necesario calcular los factores $A(t)$ y $B(t)$. Recordando su forma explícita:
+
+
+
+
 
 \bibliographystyle{plain}
 \bibliography{Bib}
