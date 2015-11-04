@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  28 OCT 2015 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  4 NOV 2015 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -514,52 +514,58 @@ Overfull \hbox (61.90753pt too wide) in paragraph at lines 679--679
 
 [14] [15]
 Cap\'{\i }tulo 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+
+ []
+
 [16
 
-] [17] [18] [19] [20]
-Overfull \hbox (0.62465pt too wide) in paragraph at lines 922--923
+] [17] [18] [19] [20] [21]
+Overfull \hbox (0.62465pt too wide) in paragraph at lines 1016--1017
 []\OT1/cmr/m/n/10 La fun-ci^^Son $^^A[]$ con-tie-ne las cua-sie-nerg^^S^^Pas de
 l sis-te-ma sin p^^Serdi-das de energ^^S^^Pa
  []
 
+[22]
 
-LaTeX Warning: Reference `FloquetOperators' on page 21 undefined on input line 
-929.
+LaTeX Warning: Reference `FloquetOperators' on page 23 undefined on input line 
+1023.
 
-[21]
+[23]
 Cap\'{\i }tulo 4.
-[22
+[24
 
 ]
-Overfull \hbox (16.83282pt too wide) in paragraph at lines 981--981
+Overfull \hbox (16.83282pt too wide) in paragraph at lines 1075--1075
 []\OT1/cmr/bx/n/14.4 Hamiltoniano pa-ra En-fria-mien-to Op-to-mec^^Sani-
  []
 
-[23]
+[25]
 
-LaTeX Warning: Reference `FloquetOperators' on page 24 undefined on input line 
-1008.
+LaTeX Warning: Reference `FloquetOperators' on page 26 undefined on input line 
+1102.
 
-[24] [25] [26]
+[26] [27] [28]
 Cap\'{\i }tulo 5.
 
-Overfull \hbox (2.02132pt too wide) in paragraph at lines 1067--1067
+Overfull \hbox (2.02132pt too wide) in paragraph at lines 1161--1161
 []\OT1/cmr/bx/n/14.4 Transformaci^^Son Me-dian-te Ope-ra-dor de Des-
  []
 
-[27
+[29
 
 ]
-Overfull \hbox (1.83476pt too wide) in paragraph at lines 1137--1137
+Overfull \hbox (1.83476pt too wide) in paragraph at lines 1231--1231
 [] 
  []
 
-[28] [29] [30]
-Overfull \hbox (28.09698pt too wide) in paragraph at lines 1225--1225
+[30] [31] [32]
+Overfull \hbox (28.09698pt too wide) in paragraph at lines 1319--1319
 [] 
  []
 
-[31] (./Tesis.bbl [32]
+[33] (./Tesis.bbl [34]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -568,7 +574,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
-[33
+[35
 
 ]
 Underfull \hbox (badness 1067) in paragraph at lines 129--133
@@ -576,7 +582,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 129--133
 of Mar-ko-vian and Non-
  []
 
-) [34] (./Tesis.aux
+) [36] (./Tesis.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
@@ -587,10 +593,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4055 strings out of 494353
- 52880 string characters out of 6163061
- 126424 words of memory out of 5000000
- 7235 multiletter control sequences out of 15000+600000
+ 4058 strings out of 494353
+ 52930 string characters out of 6163061
+ 126436 words of memory out of 5000000
+ 7238 multiletter control sequences out of 15000+600000
  13680 words of font info for 52 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
  38i,15n,30p,2310b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -613,10 +619,10 @@ xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Tesis.pdf (36 pages, 300886 bytes).
+Output written on Tesis.pdf (38 pages, 309782 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

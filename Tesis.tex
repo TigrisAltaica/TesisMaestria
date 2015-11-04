@@ -687,25 +687,127 @@ Para resolver el problema correspondiente a un oscilador armónico amortiguado c
 
 \section{Teoría de Floquet}
 
-Sea un problema del tipo:
+Se desea resolver una ecuación diferencial respecto al tiempo que involucra coeficientes con dependencia temporal, tal como:
 
-\begin{equation}
-x' = A(t)x
-\end{equation}
-
-Donde la función $A(t)$ es periódica con periodicidad $\tau$. En este caso el teorema de Floquet dice que la solución no necesariamnte es periódica pero debe tener la forma:
+\begin{equation}\label{FloquetEquation}
+x' = A(t)x,
+\end{equation} donde la función $A(t)$ es periódica con periodicidad $\tau$. En este caso el teorema de Floquet\cite{WardFT} dice que la solución no necesariamente es periódica pero debe tener la forma:
 
 \begin{equation}\label{FloquetForm}
-x(t)=e^{\mu t}p(t)
-\end{equation}
+x(t)=e^{\mu t}p(t).
+\end{equation} Los valores $\mu$ se conocen como los exponentes característicos o de Floquet y la función $p(t)$ es periódica con período $\tau$, es decir el mismo periodo que el coeficiente en la ecuación diferencial. Los coeficientes $\mu$ son, en general, complejos. Claramente, el hecho de que la solución tenga la forma \ref{FloquetForm} puede llevar a que la solución se dispare con el tiempo, por lo que se desea entender el criterio de estabilidad de este tipo de soluciones. Antes de esto, es necesario establecer algunas definiciones y propiedades, las cuales se presentan sin demostración debido a que no son el enfoque principal de este trabajo. Si el lector se encuentra interesado, el tratamiento se encuentra con mayor detalle en la referencia \cite{WardFT}.\linebreak
 
-Se considera que $x(t)$ es un vector de $n$ dimensiones y que $A(t)$ es una matriz de $n\times n$. Existen $n$ valores distintos de $\mu$ tales que:
+\subsection{Propiedades Básicas}
+
+Sea la ecuación \ref{FloquetEquation} en $n$ dimensiones. Esto es, se piensa en $x$ como un vector de $n$ dimensiones y en $A(t)$ como una matriz de $n \times n$. En este caso, si la ecuación tiene $n$ soluciones $x_1, x_2, ... , x_n$, se define la \textbf{matriz fundamental} como la matriz formada utilizando las soluciones como columnas, siempre y cuando estas sean linealmente independientes:
 
 \begin{equation}
-e^{\mu_1 }...e^{\mu_n}=e^{\int_0^\tau tr[A(t)]}
+X(t) = [[x_1][x_2]...[x_n]],
+\end{equation}Si $X(t_0) = I$ la matriz se conoce como la \textbf{matriz fundamental principal}. Se tiene que
+
+\begin{center}
+\textbf{Lema:} \textit{Si $X(t)$ es una matriz fundamental, también lo es $X(t)B$ para cualquier matriz constante y no singular $B$.}
+\end{center}Y que:
+
+\begin{center}
+\textbf{Lema:} \textit{Sea $W(t)$ el Wronskiano de $X(t)$ el determinante de X(t), entonces:}
+
+\begin{equation}
+W(t) = W(t_0) e^{\int_{t_0}^{t}tr[A(s)]ds}.
+\end{equation}
+ 
+\end{center} Se tiene entonces un teorema:
+
+\begin{center}
+\textbf{Teorema:} \textit{Sea A(t) una matriz con periodicidad $\tau$. Si $X(t)$ es una matriz fundamntal entonces $X(t+\tau)$ también lo es y existe una única matriz constante no singular $B$ tal que:}\linebreak \linebreak i) $X(t+\tau) = X(t)B \qquad\forall t$, \linebreak ii) $det(B) = e^{\int_0^t tr[A(s)]ds}.$
+\end{center}Si se toma $X(0)=I$ entonces $B=X(\tau)$. Con esto se pueden definir los \textbf{multiplicadores característicos}, los cuales son los eigenvalores de la matriz $B$, y se denominan con la letra $\rho$. Estos cumplen que:
+
+\begin{equation}
+\rho_1 = e^{\mu_1 \tau}, \quad \rho_2 = e^{\mu_2 \tau}, ... , \rho_n = e^{\mu_n \tau},
+\end{equation} donde los valores $\mu$ son los exponentes de Floquet definidos anteriormente. Se cumplen cuatro propiedades:
+
+1) Los multiplicadores característicos de $B=X(\tau)$ cumplen que:
+
+\begin{equation}
+det(B) = \rho_1 \rho_2 ... \rho_n = e^{\int_0^T tr[A(s)]ds}.
 \end{equation}
 
-Los valores de $\mu$ se conocen como exponentes característicos. Es importante notar que la función $p(t)$ es periódica con período $\tau$. Los coeficientes $\mu$ son, en general complejos.
+2) Trivialmente, como la traza es la suma de los eigenvalores:
+
+\begin{equation}
+Tr[B] = \rho_1 + \rho_2 + ... + \rho_n.
+\end{equation}
+
+3) Los multiplicadores característicos no son únicos, ya que:
+
+\begin{equation}
+e^{\mu \tau} = e^{(\mu  +\frac{2\pi i}{\tau} )\tau}.
+\end{equation}
+
+4) Los multiplicadores característicos son una propidad de la ecuación \ref{FloquetEquation} y no dependen de la elección de matriz fundamental.
+
+Con estas propiedades, se puede pasar a analizar la estabilidad de las soluciones.
+
+\subsection{Estabilidad para Ecuaciones de Segundo Orden}
+
+Si se piensa en una ecuación diferencial de segundo orden del tipo:
+
+\begin{equation}
+\ddot{x} + a(t)x= 0,
+\end{equation} donde $a(t)$ tiene periodo $\tau$. Si se toma $x_1 = x$ y $x_2 = \dot{x}$, la ecuación puede re-escribirse como:
+
+\begin{equation}
+[\begin{array}{c}
+\dot{x_1} \\
+\dot{x_2}
+\end{array}] = [\begin{array}{cc}
+0 & 1 \\
+-a(t) & 0
+\end{array}][\begin{array}{c} 
+x_1 \\ 
+x_2
+
+\end{array}],
+\end{equation} si se toma la condición inicial $[\begin{array}{c} 1 \\ 0 \end{array}]$, se obtiene una solución de la forma:
+
+\begin{equation}
+[\begin{array}{c}
+x_1^1(t) \\
+\dot{x_1^1(t)}
+\end{array}],
+\end{equation} y para la condición inicial $[\begin{array}{c} 0 \\ 1 \end{array}]$, se obtiene una solución de la forma:
+
+\begin{equation}
+[\begin{array}{c}
+x_1^2(t) \\
+\dot{x_1^2(t)}
+\end{array}],
+\end{equation} esto permite generar la matriz $B$:
+
+\begin{equation}
+B= [\begin{array}{cc}
+
+x_1^1(\tau) & x_1^2(\tau) \\
+\dot{x_1^1(\tau)} & \dot{x_1^2(\tau)}
+
+\end{array}],
+\end{equation} lo cual permite calcular los multiplicadores característicos, ya que:
+
+\begin{equation}
+\rho_1 \rho_2 = e^{\int_0^\tau Tr[A(s)]ds} = e^0 = 1,
+\end{equation} y:
+
+\begin{equation}
+\rho_1 + \rho_2 = Tr[B] =x_1^1(\tau)+ \dot{x_1^{(2)}(\tau)} = 2\phi.
+\end{equation} Esto permite obtener la ecuación:
+
+\begin{equation}
+\rho = \phi \pm \sqrt{\phi^2 -1},
+\end{equation} o en términos de $mu$:
+
+\begin{equation}
+cosh(\mu_1 \tau) = \phi
+\end{equation}
 
 \section{Estados de Floquet en Mecánica Cuántica}
 
