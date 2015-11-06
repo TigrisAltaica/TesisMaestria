@@ -1285,22 +1285,65 @@ H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar
 La ecuación \ref{DLCMasterEquation} depende fuertemente de las soluciones clásicas del problema del oscilador armónico con frecuencia dependiente del tiempo. Estas soluciones no solo determinan la forma exacta de los operadores $\Gamma$, también determinan la forma de los términos denominados $C(t)$. En esta sección se trabajará con el supuesto de que la dependencia temporal en la frecuencia se puede tratar como pequeñas variaciones périódicas en torno a una frecuencia promedio:
 
 \begin{equation}
-k(t) = \nu_0 + \nu Cos(2t)
-\end{equation}
-
-Si se hace esta sustitución, en la ecuación de movimiento correspondiente al Hamiltoniano \ref{TDHO}, se llega a:
+k(t) = \nu_0 + \epsilon cos(2\omega t)
+\end{equation}Si se hace esta sustitución, en la ecuación de movimiento correspondiente al Hamiltoniano \ref{TDHO}, se llega a:
 
 \begin{equation}
-m\ddot{x} + (\nu_0 + \nu Cos(2t))x = 0,
-\end{equation} la cual es muy similar a la "Escuación de Mathieu". A continuación se resuelve el caso donde $\nu \ll \nu_0$. En particular, la ecuación solo tiene soluciones estables para ciertos casos donde $\nu = n^2$ con $n$ un número entero \cite{WardFT}. Se resolverá el caso donde $n = 1$. Se absorbe la masa en las demás constantes para facilitar la notación. Con esto, la ecuación a resolver es:
+m\ddot{x} + (\nu_0 + \epsilon cos(2\omega t))x = 0,
+\end{equation} la cual es muy similar a la ecuación de Mathieu, la cual es un caso particular de la ecuacion de Hill vista anteriormente. A continuación se resuelve el caso donde $\epsilon \ll \nu_0$. En particular, se buscaran soluciones periódicas para los casos donde $\nu \simeq n^2$ con $n$ un número entero. Se resolverá el caso donde $n \simeq 1$. Primero se debe transformar la ecuacion a la forma estandard:
 
 \begin{equation}
-\ddot{x} + (1 + \nu cos(2t))x=0,
-\end{equation} lo cual lleva a la solución, a primer orden en $\nu$:
+\ddot{x} + (\delta+\epsilon cos(2t))x=0,
+\end{equation} para esto primero se hace un cambio de variables $t' = wt$ lo cual lleva a la ecuación:
 
 \begin{equation}
-f(t) = e^{it} + \frac{\epsilon}{16} e^{3it},
-\end{equation} esta función es la función mencionada en el tratamiento de los operadores $\Gamma$ como $E_1^0(t)$. La otra solución que se debe obtener según esa sección es la forrespondiente a $f(-t)$ que en este caso equivale al complejo conjugado. Con este resultado se pueden calcular los términos correspondientes a los conmutadores de los operadores $\Gamma$ y sus derivadas.
+m\omega^2\ddot(x)+(\nu_0+\epsilon cos(2t'))x=0,
+\end{equation} y se divide toda la ecuacion por $m\omega^2$. Con esto la ecuacion queda en la forma deseada si se toma $\epsilon' = \frac{\epsilon}{m\omega^2}$ y se pide $\frac{\nu_0}{m\omega^2} = n^2$, omitiendo los superindices primos por simplicidad, se tiene:
+
+\begin{equation} \label{MathieuEquation}
+\ddot{x} + (n^2+\epsilon cos(2t))x=0.
+\end{equation} Para encontrar una solución a primer orden en $\epsilon$, se hacen desarrollos en términos de esta:
+
+\begin{align}
+x(t)=& x_0(t) + \epsilon x_1(t) + \epsilon^2 x_2(t) + ... , \\
+\delta =& n^2 + \epsilon \delta_1 + \epsilon^2 \delta_2 + ..., 
+\end{align} al sustituir estos términos en la ecuación \ref{MathieuEquation}, se obtienen dos ecuaciones distintas, si únicamente se consideran términos hasta primer orden en $\epsilon$:
+
+\begin{align}
+\ddot{x_0}& + n^2x_0 = 0, \\
+\ddot{x_1}& + n^2x_1 = -\delta_1x_0 -x_0cos(2t) ,
+\end{align} al agrupar de acuerdo a la potencia de la dependencia en $\epsilon$. La primera ecuación es simplemente el oscilador armónico usual y su solución es:
+
+\begin{equation}
+x_0(t) = a cos(nt) + b sin(nt),
+\end{equation}, esta solución puede sustituirse en la segunda ecuación y se obtiene que:
+
+\begin{equation}
+\ddot{x_1} + n^2x_1 = -\delta_1(a cos(nt) + b sin(nt)) -(a cos(nt) + b sin(nt))cos(2t),
+\end{equation} utilizando identidades trigonometricas, se tiene:
+
+\begin{equation}
+\ddot{x_1} + n^2x_1 = -\delta_1a cos(nt) -\delta_1b sin(nt) -\frac{a}{2}(cos((n+2)t)+cos((n-2)t) - \frac{b}{2} ((sin((n+2)t)+sin((n-2)t)),
+\end{equation} y ahora se toma el caso $n=1$:
+
+\begin{equation}
+\ddot{x_1} + x_1 = -\delta_1a cos(t) -\delta_1b sin(t) -\frac{a}{2}(cos(3t)+cos(t)) - \frac{b}{2} ((sin(3t)-sin(t)),
+\end{equation} para asegurar que la solución no se dispare, se debe asegurar que la solución para $x_1$ sea más pequeña que la solución para $x_0$, por lo que se pide que $-\delta_1a - \frac{a}{2}=0$ y que $-\delta_1b + \frac{b}{2}=0$, con esto se obtiene la ecuación:
+
+\begin{equation}
+\ddot{x_1} + x_1 = -\frac{a}{2}cos(3t)-\frac{a}{2}sin(3t),
+\end{equation} se propone una solución en forma de combinación lineal de senos y cosenos. Por independencia lineal de estas funciones, del lado izquierdo solo pueden ser no nulos los términos con $n=3$. Esto lleva a que:
+
+\begin{align*}
+-\frac{a}{2} =& c_3 - 9c_3, \\
+=& 8c_3, \\
+\therefore \frac{a}{16} =& c_3,
+\end{align*} y de forma completamente análoga para los coeficientes de seno. Con esto, si se toma $a=1$ y $b=i$ para expresar las soluciones de forma exponencial, se tiene que la solución a orden $\epsilon$ es:
+
+
+\begin{equation}
+f(t)= E_1^0(t) = e^{i\omega t} + \frac{\epsilon}{16} e^{3i\omega t},
+\end{equation} esta función es la función mencionada en el tratamiento de los operadores $\Gamma$. La otra solución que se debe obtener según esa sección es la forrespondiente a $f(-t)$ que en este caso equivale al complejo conjugado. Esta solución es la que corresponde a $E_2^0(t)$. Con este resultado se pueden calcular los términos correspondientes a los conmutadores de los operadores $\Gamma$ y sus derivadas.
 
 \subsection{Cálculo de Conmutadores}
 
@@ -1312,12 +1355,12 @@ C_{++}(t) =& [\dot{\Gamma}^\dagger,\Gamma]\\
  =&[\frac{-1}{2i}x\sqrt{\frac{2m}{\hbar}}\ddot{f}^*,\frac{1}{2i}p\sqrt{\frac{2}{m\hbar}}f^*]+[\frac{1}{2i}p\sqrt{\frac{2}{m\hbar}}\dot{f}^*,\frac{-1}{2i}x\sqrt{\frac{2m}{\hbar}}\dot{f}^*],\\
  =&(\frac{-1}{2i})(\frac{1}{2i})\sqrt{\frac{2m}{\hbar}}\sqrt{\frac{2}{m\hbar}}\ddot{f}^*f^*[x,p]+(\frac{1}{2i})(\frac{-1}{2i})\sqrt{\frac{2m}{\hbar}}\sqrt{\frac{2}{m\hbar}}\dot{f}^*\dot{f}^*[p,x],\\
  =&\frac{1}{2\hbar}(\ddot{f}^*f^*(i\hbar)-\dot{f}^*\dot{f}^*(i\hbar)),\\
- =&\frac{i}{2}[(-e^{-it}-\frac{9\epsilon}{16}e^{-3it})(e^{-it}+\frac{\epsilon}{16}e^{-3it})-(ie^{-it}+\frac{3i\epsilon}{16}e^{-3it})(ie^{-it}+\frac{3i\epsilon}{16}e^{-3it})],\\ 
- =&\frac{i}{2}[-e^{-2it}-\frac{\epsilon}{16}e^{-4it}-\frac{9\epsilon}{16}e^{-4it})-(-e^{-2it}-\frac{6\epsilon}{16}e^{-4it})],\\
- =&\frac{i}{2}[-\frac{10\epsilon}{16}e^{-4it}+\frac{6\epsilon}{16}e^{-4it}],\\
- =&\frac{i}{2}[-\frac{4\epsilon}{16}e^{-4it}],\\
- =&-\epsilon\frac{i}{8}e^{-4it}.
-\end{align*} Para calcular el conmutador $C_{--}(t)$ es útil notar que:
+ =&\frac{i\omega^2}{2}[(-e^{-i\omega t}-\frac{9\epsilon}{16}e^{-3i\omega t})(e^{-i\omega t}+\frac{\epsilon}{16}e^{-3i\omega t})-(ie^{-i\omega t}+\frac{3i\epsilon}{16}e^{-3i\omega t})(ie^{-i\omega t}+\frac{3i\epsilon}{16}e^{-3i\omega t})],\\ 
+ =&\frac{i\omega^2}{2}[-e^{-2i\omega t}-\frac{\epsilon}{16}e^{-4i\omega t}-\frac{9\epsilon}{16}e^{-4i\omega t})-(-e^{-2i\omega t}-\frac{6\epsilon}{16}e^{-4i\omega t})],\\
+ =&\frac{i\omega^2}{2}[-\frac{10\epsilon}{16}e^{-4i\omega t}+\frac{6\epsilon}{16}e^{-4i\omega t}],\\
+ =&\frac{i\omega^2}{2}[-\frac{4\epsilon}{16}e^{-4i\omega t}],\\
+ =&-\epsilon\frac{i}{8}e^{-4i\omega t}.
+\end{align*} El factor $\omega^2$ queda absorbido en $\epsilon$, recordando que al transformar la ecuación se dividió por $\omega^2$. La nueva $\epsilon$ es entonces $\frac{\epsilon}{m}$. Para calcular el conmutador $C_{--}(t)$ es útil notar que:
 
 \begin{align*}
 ([a,b])^{\dagger} =& (ab-ba)^{\dagger}, \\
@@ -1333,23 +1376,115 @@ C_{++}(t) =& [\dot{\Gamma}^\dagger,\Gamma]\\
 \end{align*} lo que lleva a:
 
 \begin{equation*}
-C_{--}(t) = -\epsilon\frac{i}{8}e^{4it}.
+C_{--}(t) = -\epsilon\frac{i}{8}e^{4i\omega t}.
 \end{equation*} El calculo de los otros dos conmutadores es completamente análogo, y se llega a:
 
 \begin{align}
-C_{++}(t) =& -\epsilon\frac{i}{8}e^{-4it},\\
-C_{--}(t) =& -\epsilon\frac{i}{8}e^{4it},\\
-C_{+-}(t) =& i [1 -\frac{\epsilon}{16}e^{2it}-\frac{6\epsilon}{16}e^{-2it}],\\
-C_{-+}(t) =& i [1 -\frac{\epsilon}{16}e^{-2it}-\frac{6\epsilon}{16}e^{2it}].
+C_{++}(t) =& -\epsilon\frac{i}{8}e^{-4i\omega t},\\
+C_{--}(t) =& -\epsilon\frac{i}{8}e^{4i\omega t},\\
+C_{+-}(t) =& i [1 -\frac{\epsilon}{16}e^{2i\omega t}-\frac{6\epsilon}{16}e^{-2i\omega t}],\\
+C_{-+}(t) =& i [1 -\frac{\epsilon}{16}e^{-2i\omega t}-\frac{6\epsilon}{16}e^{2i\omega t}].
 \end{align} con esto, el término correspondiente a los conmutadores es:
 
 \begin{equation}
-C(t)\rho=-\beta^2\epsilon\frac{i}{8}e^{4it}\rho + |\beta|^2(-\frac{\epsilon}{16}e^{2it}-\frac{6\epsilon}{16}e^{-2it} + \frac{\epsilon}{16}e^{-2it}-\frac{6\epsilon}{16}e^{2it})\rho -\beta^2\epsilon\frac{i}{8}e^{-4it}\rho,
-\end{equation} ya que $\epsilon$ es en realidad $\frac{\epsilon}{m\omega^2}$ y todos los términos tienen una amplitud aún menor que esto, se desprecian estos términos. Aún es necesario calcular la forma explícita del resto de los términos con dependencia temporal, ya que todos estos quedan determinados por la solución del problema clásico.
+C(t)\rho=-\beta^2\epsilon\frac{i}{8}e^{4i\omega t}\rho + |\beta|^2(-\frac{\epsilon}{16}e^{2i\omega t}-\frac{6\epsilon}{16}e^{-2i\omega t} + \frac{\epsilon}{16}e^{-2i\omega t}-\frac{6\epsilon}{16}e^{2i\omega t})\rho -\beta^2\epsilon\frac{i}{8}e^{-4i\omega t}\rho,
+\end{equation} ya que $\epsilon$ es en realidad $\frac{\epsilon}{m}$ y todos los términos tienen una amplitud aún menor que esto, se desprecian estos términos. Aún es necesario calcular la forma explícita del resto de los términos con dependencia temporal, ya que todos estos quedan determinados por la solución del problema clásico.
 
-\subsection{Otros Términos con Dependencia Temporal}
+\subsection{Coeficientes $\gamma_\pm$}
 
 Se trata el caso de los factores $\gamma_{\pm}(t)$. Para esto primero es necesario calcular los factores $A(t)$ y $B(t)$. Recordando su forma explícita:
+
+\begin{align}
+A(t) =& \frac{(f^* (t) + f(t))}{(f^* (t) - f(t))}, \\
+B(t) =& \sqrt{\frac{2m}{\hbar}}\frac{(f^* (t) + f(t))(\dot{f}(t) - \dot{f}^*(t))+(f^* (t) - f(t))(\dot{f}(t) + \dot{f}^* (t))}{(f^* (t) - f(t))}.
+\end{align} Se procede primero con el calculo correspondiente a $A(t)$. Se tiene que los factores son:
+
+\begin{align*}
+(f^* (t) + f(t)) =& 2cos(\omega t) +\frac{\epsilon}{8}cos(3\omega t), \\
+(f^* (t) - f(t)) =& -2isin(\omega t) -i\frac{\epsilon}{8}sin(3\omega t),
+\end{align*} si de nuevo se desprecian los términos con amplitud menor que $\epsilon$, se tiene que:
+
+\begin{equation}
+A(t) = i \frac{cos(\omega t)}{sin(\omega t)}.
+\end{equation} Se procede de igual forma y se obtiene, despreciando como siempre los términos menores que $\epsilon$:
+
+\begin{align*}
+(\dot{f}^* (t) + \dot{f}(t))=&-2\omega sin(\omega t),\\
+(\dot{f} (t) - \dot{f}^*(t))=&-2\omega i cos(\omega t),
+\end{align*} con lo que se puede calcular el valor de $B(t)$:
+
+\begin{equation}
+B(t) = \frac{-2\omega }{sen(wt)}.
+\end{equation} Recordando ahora la forma explícita de los coeficientes $\gamma_{\pm}$:
+
+\begin{align*}
+\gamma_+(t)=&\frac{A(t) +1}{-2iB(t)},\\
+\gamma_-(t)=&\frac{A(t) -1}{-2iB(t)},
+\end{align*} simplemente se sustituyen los valores obtenidos:
+
+\begin{align}
+\gamma_\pm =& \frac{A(t) \pm 1}{-2iB(t)},\\
+=& \frac{i \frac{cos(\omega t)}{sin(\omega t)}\pm 1}{\frac{-2\omega }{sen(wt)}}, \\
+=& \frac{i \frac{cos(\omega t)}{sin(\omega t)}}{\frac{-2\omega }{sen(wt)}} \pm \frac{1}{\frac{-2\omega }{sen(wt)}}, \\
+=& \frac{cos(\omega t)}{-4\omega} \pm \frac{i sen(\omega t)}{-4\omega},\\
+=& -\frac{1}{4\omega}e^{\pm i\omega t}.
+\end{align}
+
+Falta la forma explícita de los operadores $\dot{\Gamma}$ para poder continuar con los cálculos.
+
+\subsection{Operadores $\Gamma$}
+
+Dado que se tiene una forma explícita para la solución clásica, es posible dar una forma explícita de las derivadas temporales de los operadores $\Gamma$. Se puede ver que las derivadas temporales de la solución clásica pueden expresarse de una forma particularmente conveniente:
+
+\begin{equation}
+\dot{f} = i\omega e^{i \omega t} + 3i\omega\frac{\epsilon}{16} e^{3i\omega t}= i\omega f + 2i\omega \frac{\epsilon}{16} e^{3i\omega t},
+\end{equation} y de forma análoga:
+
+\begin{equation}
+\ddot{f} = i\omega\dot{f} - 6\omega^2\frac{\epsilon}{16} e^{3i\omega t}.
+\end{equation}Si se recuerda la expresión explícita del operador $\Gamma$ y se desprecian los terminos menores a $\epsilon$, se llega al resultado:
+
+\begin{align}
+\dot{\Gamma}(t) =& i\omega \Gamma(t),\\
+\dot{\Gamma}^\dagger(t) =& -i\omega \Gamma^\dagger(t),
+\end{align} lo cual convierte el termino que depende de estas derivadas en el Hamiltoniano en:
+
+\begin{equation}
+i\hbar(\beta^*\dot{\Gamma}-\beta\dot{\Gamma}^\dagger) = \hbar\omega(\beta^*\Gamma+\beta\Gamma^{\dagger}),
+\end{equation}, esto lleva necesariamente a modificar las ecuaciones diferenciales de los coeficientes $\beta$ puesto que estos términos deben cancelarse también. Finalmente, es necesario obtener una forma explícita para el factor $\frac{W}{|f|^2}$ que acompaña al oscilador armónico expresado en operadores $\Gamma$.
+
+\subsection{Factor General para el Oscilador Dependiente del Tiempo}
+
+Se busca calcular el factor $\frac{W}{|f|^2}$, primero se calcula el denominador:
+
+\begin{align*}
+|f|^2=&ff^*,\\
+=& (e^{i\omega t} + \frac{\epsilon}{16} e^{3i\omega t})(e^{-i\omega t} + \frac{\epsilon}{16} e^{-3i\omega t}),\\
+=& 1+\frac{\epsilon}{16}(e^{2i\omega t}+e^{-2i\omega t}),\\
+\simeq & 1
+\end{align*} donde de nuevo se han descartado terminos debido a ser oscilaciones con amplitud menor que $\epsilon$. Falta calcular el Wronskiano $W$,tomando en cuenta que \cite{BrownPT} define como:
+
+\begin{equation}
+2iW = \dot{f}f^* - f\dot{f}^*,
+\end{equation} utilizando los resultados para $\dot{f}$ de la sección anterior, esto puede expresarse como:
+
+\begin{equation}
+2iW = i\omega ff^* + i\omega ff^* = 2i\omega ff^*,
+\end{equation} al utilizar el resultado apenas obtenido, se llega a:
+
+\begin{equation}
+W = \omega,
+\end{equation} lo que resulta que el factor general entonces, despreciando las correcciones menores a $\epsilon$:
+
+\begin{equation}
+\frac{W}{|f|^2} = \omega.
+\end{equation}
+
+Se puede ahora proceder a resolver las ecuaciones para los coeficientes $\alpha$ y $\beta$.
+
+\subsection{Solución para $\alpha$ y $\beta$}
+
+Las ecuaciones a resolver, tomando en cuenta el nuevo término correspondiente a las derivadas temporales de los operadores $\Gamma$ y las formas explícitas de los coeficientes son:
 
 
 

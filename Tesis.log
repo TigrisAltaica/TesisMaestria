@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  5 NOV 2015 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  6 NOV 2015 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -522,58 +522,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 698--699
 [16
 
 ] [17] [18] [19] [20] [21] [22] [23]
-Overfull \hbox (0.62465pt too wide) in paragraph at lines 1081--1082
-[]\OT1/cmr/m/n/10 La fun-ci^^Son $^^A[]$ con-tie-ne las cua-sie-nerg^^S^^Pas de
-l sis-te-ma sin p^^Serdi-das de energ^^S^^Pa
- []
-
 
 LaTeX Warning: Reference `FloquetOperators' on page 24 undefined on input line 
-1088.
+1056.
 
-[24]
+[24] [25]
 Cap\'{\i }tulo 4.
-[25
+[26
 
 ]
-Overfull \hbox (16.83282pt too wide) in paragraph at lines 1140--1140
+Overfull \hbox (16.83282pt too wide) in paragraph at lines 1102--1102
 []\OT1/cmr/bx/n/14.4 Hamiltoniano pa-ra En-fria-mien-to Op-to-mec^^Sani-
  []
 
-[26]
+[27]
 
-LaTeX Warning: Reference `FloquetOperators' on page 27 undefined on input line 
-1167.
+LaTeX Warning: Reference `FloquetOperators' on page 28 undefined on input line 
+1123.
 
-[27] [28] [29]
+[28] [29] [30]
 Cap\'{\i }tulo 5.
 
-Overfull \hbox (2.02132pt too wide) in paragraph at lines 1226--1226
+Overfull \hbox (2.02132pt too wide) in paragraph at lines 1180--1180
 []\OT1/cmr/bx/n/14.4 Transformaci^^Son Me-dian-te Ope-ra-dor de Des-
  []
 
-[30
+[31
 
 ]
-Overfull \hbox (1.83476pt too wide) in paragraph at lines 1296--1296
+Overfull \hbox (4.61255pt too wide) in paragraph at lines 1232--1232
 [] 
  []
 
-[31] [32] [33]
-Overfull \hbox (28.09698pt too wide) in paragraph at lines 1384--1384
+[32] [33] [34]
+Overfull \hbox (85.08896pt too wide) detected at line 1327
+[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 n[]x[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
+ ^^@\OML/cmm/m/it/10 ^^N[]acos\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 nt\OT1/cmr/m/n/
+10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^N[]bsin\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 nt\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 cos\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 2)\OML/cmm/m/it/
+10 t\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 cos\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 
+n \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2)\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) \O
+MS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 sin\OT1/cmr/m/n/10 ((\O
+ML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 2)\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) + \OML
+/cmm/m/it/10 sin\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OT1/
+cmr/m/n/10 2)\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 ;
+ []
+
+[35]
+Overfull \hbox (79.92294pt too wide) in paragraph at lines 1363--1363
 [] 
  []
 
-[34] (./Tesis.bbl [35]
+[36] [37]
+Overfull \hbox (23.78838pt too wide) detected at line 1391
+\OML/cmm/m/it/10 C\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/
+m/it/10 ^^Z \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^O[]e[
+]^^Z \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^L\OMS/cmsy/m/n/10 j
+[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@[]\OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 
+^^@ []\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 e[] \OMS/cmsy/m
+/n/10 ^^@ []\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ^^Z \OMS/cmsy
+/m/n/10 ^^@ \OML/cmm/m/it/10 ^^L[]^^O[]e[]^^Z;
+ []
+
+[38] [39] (./Tesis.bbl [40]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
-[36
+ [41
 
 ]
 Underfull \hbox (badness 1067) in paragraph at lines 129--133
@@ -581,7 +603,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 129--133
 of Mar-ko-vian and Non-
  []
 
-) [37] (./Tesis.aux
+) [42] (./Tesis.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
@@ -592,11 +614,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4058 strings out of 494353
- 52930 string characters out of 6163061
- 126436 words of memory out of 5000000
- 7238 multiletter control sequences out of 15000+600000
- 13680 words of font info for 52 fonts, out of 8000000 for 9000
+ 4057 strings out of 494353
+ 52907 string characters out of 6163061
+ 127448 words of memory out of 5000000
+ 7235 multiletter control sequences out of 15000+600000
+ 14301 words of font info for 54 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
  38i,15n,30p,2310b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -604,24 +626,26 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Tesis.pdf (39 pages, 314495 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm7.pfb>
+Output written on Tesis.pdf (44 pages, 338133 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
+ 236 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
