@@ -1228,7 +1228,7 @@ L_{\Gamma}' =& L_{\Gamma} + \frac{\gamma}{2}[(\beta\Gamma^{\dagger}-\beta^* \Gam
 \begin{align*}
 U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a,\\
 &+ \dot{\beta}\Gamma^{\dagger}\rho + \rho\dot{\beta}^*\Gamma-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma},\\
-&+\beta^2C_{--}(t)\rho + |\beta|^2(C_{+-}(t) - C_{-+}(t))\rho +  \beta^2 C_{++}(t)\rho,
+&+3(\beta^*)^2C_{--}(t)\rho + |\beta|^2(C_{+-}(t) - C_{-+}(t))\rho -  \beta^2 C_{++}(t)\rho,
 \end{align*} donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos no son nulos:
 
 \begin{align*}
@@ -1271,7 +1271,7 @@ a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_+(t) \beta^* + \gamma_-(t)
 
 
 \begin{align*}
-H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)(\gamma_+(t)\Gamma^{\dagger}+\gamma_-(t)\Gamma+\beta)]\\
+H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)(\gamma_+(t)\Gamma^{\dagger}+\gamma_-(t)\Gamma)]\\
 &+ i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
 \end{align*}  donde se ha hecho el cambio $\delta' = \delta + g'(\beta + \beta^*)$. Con esto se obtiene la ecuación maestra para el enfriamiento optomecánico con un oscilador con frecuencia dependiente del tiempo, en el marco de referencia desplazado:
 
@@ -1387,7 +1387,7 @@ C_{-+}(t) =& i [1 -\frac{\epsilon}{16}e^{-2i\omega t}-\frac{6\epsilon}{16}e^{2i\
 \end{align} con esto, el término correspondiente a los conmutadores es:
 
 \begin{equation}
-C(t)\rho=-\beta^2\epsilon\frac{i}{8}e^{4i\omega t}\rho + |\beta|^2(-\frac{\epsilon}{16}e^{2i\omega t}-\frac{6\epsilon}{16}e^{-2i\omega t} + \frac{\epsilon}{16}e^{-2i\omega t}-\frac{6\epsilon}{16}e^{2i\omega t})\rho -\beta^2\epsilon\frac{i}{8}e^{-4i\omega t}\rho,
+C(t)\rho=-\beta^2\epsilon\frac{i}{8}e^{4i\omega t}\rho + |\beta|^2(-\frac{\epsilon}{16}e^{2i\omega t}-\frac{6\epsilon}{16}e^{-2i\omega t} + \frac{\epsilon}{16}e^{-2i\omega t}-\frac{6\epsilon}{16}e^{2i\omega t})\rho +(\beta^*)^2\epsilon\frac{i3}{8}e^{-4i\omega t}\rho,
 \end{equation} ya que $\epsilon$ es en realidad $\frac{\epsilon}{m}$ y todos los términos tienen una amplitud aún menor que esto, se desprecian estos términos. Aún es necesario calcular la forma explícita del resto de los términos con dependencia temporal, ya que todos estos quedan determinados por la solución del problema clásico.
 
 \subsection{Coeficientes $\gamma_\pm$}
