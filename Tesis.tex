@@ -1489,11 +1489,29 @@ Se puede ahora proceder a resolver las ecuaciones para los coeficientes $\alpha$
 
 \subsection{Solución para $\alpha$ y $\beta$}
 
-Las ecuaciones a resolver, tomando en cuenta el nuevo término correspondiente a las derivadas temporales de los operadores $\Gamma$ y las formas explícitas de los coeficientes son:
+A fin de encontrar una solución analítica, se restringe el estudio al caso estacionario para las ecuaciones, es decir $\dot{\alpha}= \dot{\beta} = 0$. Se asume también que el acoplamiento es débil, por lo cual se toma el caso de menor orden en $g'$. Con estas restricciones, las ecuaciones son:
 
+\begin{align}
+0 =& \alpha(-\frac{A}{2}+i\delta)-i\frac{\Omega}{2},\\
+0 =& \beta(-\frac{\gamma}{2}-i 2\omega),
+\end{align}, este sistema se puede resolver de manera sencilla:
 
+\begin{align}
+\alpha_0 =& \frac{\Omega}{2\delta-iA},\\
+\beta_0 =& 0.
+\end{align}. 
 
+Trabajando con estás soluciones de orden $0$ en $g'$, el Hamiltoniano es:
 
+\begin{equation}
+H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma -\hbar g'(a^{\dagger}a +\alpha_0 a^{\dagger}+\alpha^*_0 a)(\gamma_+(t)\Gamma^{\dagger}+\gamma_-(t)\Gamma)
+\end{equation}
+
+En magnitud, $\alpha \gg 1$, por lo que en el término de interacción se desprecia el término $a^\dagger a$ al ser mucho menor que los otros dos. Con esto, el Hamiltoniano final es:
+
+\begin{equation}
+H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma +\frac{\hbar g'}{4\omega}(\alpha_0 a^{\dagger}+\alpha^*_0 a)(e^{i\omega t}\Gamma^{\dagger}+e^{-i\omega t}\Gamma)
+\end{equation}
 
 \bibliographystyle{plain}
 \bibliography{Bib}
