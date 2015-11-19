@@ -1175,7 +1175,7 @@ Ahora se desea resolver la ecuación maestra correspondiente a este Hamiltoniano
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L_a\rho + L_\Gamma \rho
 \end{equation}
 
-\chapter{Solución para la Ecuación Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}
+\chapter{Ecuación Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}
 
 \section{Transformación Mediante Operador de Desplazamiento}
 
@@ -1511,7 +1511,70 @@ En magnitud, $\alpha \gg 1$, por lo que en el término de interacción se despre
 
 \begin{equation}
 H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma +\frac{\hbar g'}{4\omega}(\alpha_0 a^{\dagger}+\alpha^*_0 a)(e^{i\omega t}\Gamma^{\dagger}+e^{-i\omega t}\Gamma)
+\end{equation} y finalmente la ecuación maestra es:
+
+\begin{equation}\label{LCMasterEq}
+\dot{\rho} = \frac{1}{i\hbar}[H,\rho] +L_A\rho + L_\gamma \rho.
 \end{equation}
+
+En el siguiente capitulo se explicará de forma breve la teoría de enfriamiento laser y se aplicará para este caso particular.
+
+\chapter{Teoría del Enfriamiento Laser para sistemas Optomecánicos}
+
+La ecuación maestra definida en el capitulo anterior se divide naturalmente en distintas escalas de tiempo ya que $\nu y A$ son normalmente del orden de mega Hertz y $\gamma y \alpha$ del orden de 100 Hertz lo cual lleva a establecer una jerarquía de tiempos donde el movitiento optomecánico es mucho más rápido que la interacción optomecánica, la cual es mucho más rápida que el amortiguamiento mecánico. Se desea dividir la ecuación maestra en términos de un parámetro que se trata como parámetro perturbativo. Como parámetro se toma $\eta=\frac{g'}{4\omega}$. Esto divide la ecuación maestra en dos ordenes:
+
+\begin{equation}
+L = L_0 + L_1,
+\end{equation} con:
+
+\begin{align*}
+L_0 =& L_c + L_m,\\
+L_c =& \frac{1}{i\hbar}[H_c,\cdot] + L_A,\\
+L_m =& \frac{1}{i\hbar}[H_m,\cdot] + L_\gamma,\\
+L_1 =& \frac{1}{i\hbar}[H_{int},\cdot].
+\end{align*} Es decir la evolución libre correspondiente a la cavidad y al oscilador así como los términos de lindblat correspondientes corresponden a orden 0. La interacción entre ambos sistemas ocurre a primer orden en $\eta$.
+
+\subsection{Proyectores a Escalas Temporales}
+
+Ya que se desea estudiar el comportamiento del sistema en el estado estacionario, se definen proyectores independientes del tiempo tales que permitan proyectar la ecuación a dicho estado. Se debe recordar por lo visto en la sección de la base de decaimiento que el estado estacionario es el correspondiente al eigenvalor 0. Estos proyectores son:
+
+\begin{align}
+P = P_c^{\lambda_c = 0}P_m^{\lambda_m = 0},\\
+Q = 1 - P.
+\end{align} Se busca encontrar una ecuación maestra válida en el sub espacio seleccionado por $P$, el cual corresponde a las escalas de tiempo pequeñas, mientras que $Q$ selecciona las escalas de tiempo rápidas. Se utiliza una transformación para pasar al cuadro de disipación:
+
+\begin{align*}
+ \rho' =& e^{L_0t}\rho,\\
+ L' =& e^{-L_0t}Le^{L_0t}.
+\end{align*} La ecuación \ref{LCMasterEq} se proyecta a cada uno de los dos espacios, por simplicidad se omiten las primas, pero se debe tomar en cuenta que se trabaja en el cuadro de decaimiento. En el caso del proyector al espacio $P$:
+
+\begin{align*}
+P\dot{\rho} =& PL\rho,\\
+=& PL(P+Q)\rho,\\
+=& PL_1P\rho + PL_1Q\rho,\\
+=& PL_1Q\rho.
+\end{align*} Aquí se utilizó el hecho de que $PL_0 = L_0P = 0$ debido a que $P$ proyecta a los estados estacionarios,  que $P+Q=1$ de la definición de los proyectores y que $PL_1P=0$ debido a que $L_1$ no concecta estados del espacio $P$. Para el caso de Q se tiene que:
+
+\begin{align*}
+Q\dot{\rho} =& QL\rho,\\
+=& QL(Q+P)\rho,\\
+=& QLQ\rho + QLP\rho.
+\end{align*} Se resuelve la ecuación del espacio $Q$ a fin de encontrar una ecuación cerrada para el espacio $P$. Esta se puede integrar formalmente como:
+
+\begin{align*}
+Q\rho =& Q\rho(t_0) + \int_{t_0}^{t}dt' QL(t')P\rho(t')+\int_{t_0}^{t}dt'QL(t')Q\rho(t'),\\
+\simeq & Q\rho(t_0) + \int_{t_0}^{t}dt' QL_1(t')P\rho(t_0)+\int_{t_0}^{t}dt'QL_1(t')Q\rho(t_0)+O(\eta^2),
+\end{align*} y esto puede sustituirse en la ecuación correspondiente a $P$:
+
+\begin{equation}
+P\dot{\rho}(t) = PL_1Q\rho(t-\Delta t) + PL_1\int_{t_0}^{t}dt' QL_1(t')P\rho(t_0) + PL_1\int_{t_0}^{t}dt'QL_1(t')Q\rho(t_0),
+\end{equation} donde únicamente sobrevive el último término. Regresando del cuadro de decaimiento:
+
+\begin{equation}
+P e^{-L_0 t}L_1e^{L_0 t}\int_{t_0}^{t}dt'Qe^{-L_0 t}L_1(t')e^{L_0 t}Pe^{-L_0 t}\rho(t_0)
+\end{equation}
+
+
 
 \bibliographystyle{plain}
 \bibliography{Bib}
