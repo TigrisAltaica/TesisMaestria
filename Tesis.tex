@@ -1545,7 +1545,7 @@ Q = 1 - P.
 
 \begin{align*}
  \rho' =& e^{L_0t}\rho,\\
- L' =& e^{-L_0t}Le^{L_0t}.
+ L' =& e^{-L_0t}Le^{L_0t} = L_1'.
 \end{align*} La ecuación \ref{LCMasterEq} se proyecta a cada uno de los dos espacios, por simplicidad se omiten las primas, pero se debe tomar en cuenta que se trabaja en el cuadro de decaimiento. En el caso del proyector al espacio $P$:
 
 \begin{align*}
@@ -1567,11 +1567,47 @@ Q\rho =& Q\rho(t_0) + \int_{t_0}^{t}dt' QL(t')P\rho(t')+\int_{t_0}^{t}dt'QL(t')Q
 \end{align*} y esto puede sustituirse en la ecuación correspondiente a $P$:
 
 \begin{equation}
-P\dot{\rho}(t) = PL_1Q\rho(t-\Delta t) + PL_1\int_{t_0}^{t}dt' QL_1(t')P\rho(t_0) + PL_1\int_{t_0}^{t}dt'QL_1(t')Q\rho(t_0),
+P\dot{\rho}(t) = PL_1Q\rho(t-\Delta t) + PL_1\int_{t_0}^{t}dt' QL_1(t')P\rho(t-\Delta t) + PL_1\int_{t_0}^{t}dt'QL_1(t')Q\rho(t-\Delta t),
 \end{equation} donde únicamente sobrevive el último término. Regresando del cuadro de decaimiento:
 
+\begin{equation}\label{ProyectionEQ}
+P e^{-L_0 t}L_1e^{L_0 t}\int_{t-\Delta t}^{t}dt'Qe^{-L_0 t}L_1(t')e^{L_0 t}Pe^{-L_0 t}\rho(t-\Delta t).
+\end{equation} Para poder proceder es necesario entender la interacción entre los proyectores y los super operadores. La forma general de estos proyectores es:
+
 \begin{equation}
-P e^{-L_0 t}L_1e^{L_0 t}\int_{t_0}^{t}dt'Qe^{-L_0 t}L_1(t')e^{L_0 t}Pe^{-L_0 t}\rho(t_0)
+P = \sum_\lambda \hat{\rho_\lambda}\otimes\bar{\rho_\lambda},
+\end{equation} donde la variable $\lambda$ corre sobre el sub espacio sobre el cual se está proyectando. Los dos estados cuyo producto se está tomando son los estados derechos e izquierdos de algún super operador. El producto que se utiliza es el definido anteriormente, basado en la traza. Para algún operador cualquiera $X$:
+
+\begin{equation}
+PX=\sum_\lambda \hat{\rho_\lambda}\otimes\bar{\rho_\lambda}X = \sum_\lambda \hat{\rho_\lambda}Tr[\bar{\rho_\lambda}X],
+\end{equation} si el operador actúa por la izquierda, la traza involucra a los estados izquierdos. En el caso de los super operadores $L_0$, se está proyectando utilizando sus eigenestados, por lo que:
+
+\begin{equation}
+PL_0=\sum_\lambda \hat{\rho_\lambda}\otimes Tr[\bar{\rho_\lambda}L_0] = \sum_\lambda \hat{\rho_\lambda}\lambda.
+\end{equation} Es importante recordar que a ambos estados les corresponde el mismo eigenvalor. Por esto:
+
+\begin{equation}
+e^{L_0 t} P = \sum_\lambda e^{\lambda t} \hat{\rho}_\lambda.
+\end{equation} Para poder realizar la integral temporal en \ref{ProyectionEQ}, es necesario conocer cierta información sobre $L_1$, específicamente si debe integrarse con respecto al tiempo. En este caso, la dependencia temporal de $L_1$ se encuentra en $\gamma_-(t)\Gamma(t)$ y su complejo conjugado, sin embargo:
+
+\begin{equation}
+e^{-i\omega t}\Gamma(t) = e^{-i\omega t}\frac{1}{2i}(\hat{x}i\omega \sqrt{\frac{2m}{\hbar}}e^{i\omega t}-\hat{p}\sqrt{\frac{\hbar}{2m}}e^{i\omega t})
+\end{equation}, por lo que la dependencia temporal de $L_1$, a orden más bajo de perturbación, se elimina, y el factor puede salir de la integral. Los proyectores dentro de la integral se desarrollan en términos de sumas. Los índices primados corresponden al espacio correspondinte a $P$ y los no primados a $Q$:
+
+\begin{equation}
+P e^{-L_0 t}L_1e^{L_0 t}\sum_{\lambda ,\lambda'}\int_{t-\Delta t}^{t}dt'\hat{\rho_\lambda}\otimes\bar{\rho_\lambda}e^{-L_0 t}L_1e^{L_0 t}\hat{\rho_{\lambda'}}\otimes\bar{\rho_{\lambda'}}e^{-L_0 t}\rho(t-\Delta t),
+\end{equation} se conoce como actúan las exponenciales sobre los proyectores, lo que lleva a:
+
+\begin{equation}
+\sum_{\lambda ,\lambda'} P e^{-L_0 t} L_1 \rho_{\lambda} L_1 \rho_{\lambda'} \rho(t-\Delta t) e^{\lambda t} \int_{t-\Delta t}^{t} dt'[ e^{(\lambda'-\lambda)t'}] e^{-\lambda'(t-\Delta t)},
+\end{equation} el resultado de la integral es, tomando en cuenta las exponenciales fuera de la integral es:
+
+\begin{equation}
+\frac{1}{\lambda' - \lambda} [e^{\lambda' \Delta t}-e^{\lambda \Delta t}],
+\end{equation} debido a que los indices primados corresponden a los tiempos lentos, el primer factor vale 1 y el segundo, que corresponde a tiempos rápidos, vale 0. Esto convierte a la ecuacion en:
+
+\begin{equation}
+P\dot{\rho}=\sum_{\lambda ,\lambda'} P e^{-L_0 t} L_1 \rho_{\lambda} L_1 \rho_{\lambda'} \rho(t-\Delta t)\frac{1}{\lambda' - \lambda} ,
 \end{equation}
 
 
