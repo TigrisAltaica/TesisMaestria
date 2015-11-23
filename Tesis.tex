@@ -1534,7 +1534,7 @@ L_m =& \frac{1}{i\hbar}[H_m,\cdot] + L_\gamma,\\
 L_1 =& \frac{1}{i\hbar}[H_{int},\cdot].
 \end{align*} Es decir la evolución libre correspondiente a la cavidad y al oscilador así como los términos de lindblat correspondientes corresponden a orden 0. La interacción entre ambos sistemas ocurre a primer orden en $\eta$.
 
-\subsection{Proyectores a Escalas Temporales}
+\section{Proyectores a Escalas Temporales}
 
 Ya que se desea estudiar el comportamiento del sistema en el estado estacionario, se definen proyectores independientes del tiempo tales que permitan proyectar la ecuación a dicho estado. Se debe recordar por lo visto en la sección de la base de decaimiento que el estado estacionario es el correspondiente al eigenvalor 0. Estos proyectores son:
 
@@ -1608,7 +1608,42 @@ P e^{-L_0 t}L_1e^{L_0 t}\sum_{\lambda ,\lambda'}\int_{t-\Delta t}^{t}dt'\hat{\rh
 
 \begin{equation}
 P\dot{\rho}=\sum_{\lambda ,\lambda'} P e^{-L_0 t} L_1 \rho_{\lambda} L_1 \rho_{\lambda'} \rho(t-\Delta t)\frac{1}{\lambda' - \lambda} ,
-\end{equation}
+\end{equation} se multiplica por $Pe^{L_0 t}$ y se regresan los proyectores a su estado previo a expresarlos como sumas. Se obtiene:
+
+\begin{equation}
+P\dot{\rho} = PL_1 \frac{Q}{\lambda_m-L_0}L_1\rho_{st}\mu,
+\end{equation} donde se ha asumido que $\rho(t-\Delta t)=rho_{st} \otimes Tr_c[P\rho]$, es decir que los estados iniciales son separables. $\mu$ representa a $Tr_c[P\rho]$. Para obtener la ecuación deseada simplemente se traza sobre los grados de libertad de la cavidad, y así se obtiene una ecuación proyectada a los estados deseados, sobre las variables del oscilador. A continuación se trata el caso específico para la interacción que se ha utilizado hasta ahora. vale la pena recordar:
+
+\begin{equation}
+L_1\rho= \frac{1}{i\hbar}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\Gamma(t)+e^{i\omega t}\Gamma(t)^{\dagger}),\rho]
+\end{equation} 
+ 
+\section{Solución para Interacción Optomecánica}
+
+Hasta ahora, salvo por las consideraciones de la dependencia temporal de $L_1$, el tratamiento ha sido general. Para poder continuar, se debe tomar en cuenta la forma de la interacción. Por simplicidad se denota $L_1=Fx$ donde $F$ corresponde a la parte de la interacción que opera sobre estados de la cavidad y $x$ a la parte que opera sobre el oscilador. Se tiene entonces:
+
+\begin{align*}
+=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}L_1 \rho_{st}\mu],\\
+=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}[Fx, \rho_{st}\mu]],\\
+=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}(Fx\rho_{st}\mu-\rho_{st}\mu Fx)],\\
+=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu \rho_{st}F],\\
+=&\frac{-1}{\hbar^2} Tr_c[[Fx,x\mu]\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[[Fx,\mu x]\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
+=&\frac{-1}{\hbar^2} Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
+=&\frac{-1}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]xx\mu+\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]x\mu x\\
+ &+\frac{1}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]x\mu x-\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]\mu xx,\\
+=&-T_1xx\mu+T_1x\mu x + T_2x\mu x + T_2\mu xx.
+\end{align*} Se debe de calcular los términos con operadores fuera de la traza:
+
+\begin{align*}
+xx\mu=& (x_++x_-)(x_++x_-)\mu,\\
+=&x_+x_+\mu + x_+x_-\mu + x_-x_+\mu + x_-x_-\mu, 
+\end{align*} donde $x_- = \gamma_- \Gamma$ y $x_+ = \gamma_+ \Gamma^{\dagger}$. De esta forma, los términos son:
+
+\begin{align}
+xx\mu=&x_+x_+\mu + x_+x_-\mu + x_-x_+\mu + x_-x_-\mu,\\
+x\mu x=&x_+\mu x_+ + x_+\mu x_- + x_-\mu x_+ x_-\mu x_-,\\
+\mu xx=& \mu x_+x_+ + \mu x_+x_-+ \mu x_-x_+ +\mu x_-x_-,
+\end{align}
 
 
 
