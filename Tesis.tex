@@ -18,10 +18,11 @@
 % Title Page
 \title{Tesis de Maestría}
 \author{Pablo Yanes}
-
+\makeindex
 
 \begin{document}
 \maketitle
+\tableofcontents
 
 \begin{abstract}
 
@@ -34,126 +35,96 @@
 Modelar la pérdida de energía en un sistema clásico como un oscilador armónico es un proceso directo \cite{CarmichaelQO} que consiste en modificar el Hamiltoniano usual:
 
 \begin{equation}
-H = \frac{p^2}{2m} + \frac{1}{2} m\omega^2 q^2
-\end{equation}
-
-Al agregarle un termino dependiente de la velocidad $-\gamma p$, lo cual lleva a la conocida ecuación:
+H = \frac{p^2}{2m} + \frac{1}{2} m\omega^2 q^2,
+\end{equation} agregando un termino dependiente de la velocidad $-\gamma p$, lo cual lleva a la ecuación:
 
 \begin{equation}
-\ddot{q} + \gamma \dot{q} + \omega^2 q = 0
-\end{equation}
-
-Sin embargo, este enfoque no es igualmente exitosos al tratar con sistemas cuánticos. En el procedimiento anterior se llega a las ecuaciones lineales:
+\ddot{q} + \gamma \dot{q} + \omega^2 q = 0.
+\end{equation} Sin embargo, este enfoque no es igualmente exitosos al tratar con sistemas cuánticos. Al repetir el procedimiento anterior se llega a las ecuaciones lineales:
 
 \begin{equation}
-\dot{q} = \frac{p}{m} \qquad \dot{p} = -\gamma p -m\omega ^2 q
-\end{equation}
-
-Como estás son lineales deben de seguir siendo validas al cambiar $p$ y $q$ por operadores, pero si se piensa en la evolución temporal del conmutador, tomando ahora a $p$ y $q$ como operadores:
+\dot{q} = \frac{p}{m} \qquad \dot{p} = -\gamma p -m\omega ^2 q,
+\end{equation}Al ser estas lineales, deben de seguir siendo validas al cambiar $p$ y $q$ por operadores, sin embargo esto resulta problemático al considerar la evolución temporal de la relación canónica de conmutación, tomando ahora a $p$ y $q$ como operadores:
 
 \begin{align*}
  \dfrac{d}{dt}[q,p] =& \dot{q}p + q\dot{p} - \dot{p}q p-\dot{q}\\  
- =& -\gamma[q,p]
-\end{align*}
-
-Por lo que:
+ =& -\gamma[q,p],
+\end{align*}por lo que:
 
 \begin{equation}
-[q(t),p(t)] = e^{-\gamma t}[q(0),p(0)] = i\hbar e^{-\gamma t}
-\end{equation}
+[q(t),p(t)] = e^{-\gamma t}[q(0),p(0)] = i\hbar e^{-\gamma t}.
+\end{equation} El enfoque que en el caso clásico lleva a la solución correcta, en el caso cuántico ocasiona a que la relación de conmutación canónica decaiga con el tiempo. Claramente, esto no es permisible y se requiere de otro enfoque.
 
-El enfoque que en el caso clásico lleva a la solución correcta en el caso cuántico lleva a que la relación de conmutación canónica decaiga con el tiempo. Se busca otra forma de proceder.
+\section{Enfoque de Sistema y Baño}
 
-\section{Enfoque de Sitema y Baño}
-
-Este enfoque depende de asumir que el sistema no pierde energía por sí mismo, en realidad las perdidas de energía se deben un acoplamiento a un sistema mucho más grande, al cual llamamos baño. Normalmente las propiedades del baño no son de interés, más allá de propiedades básicas como temperatura. Se asume que el acoplamiento lleva a pérdidas de energía en el sistema de estudio pero que este sistema no es lo suficientemente grande como para alterar las propiedades del baño. Esto lleva a un Hamiltoniano de la forma:
+Este enfoque asume que el sistema no pierde energía por sí mismo, en realidad las perdidas de energía se deben al acoplamiento a un sistema mucho más grande, al cual se le conoce como baño. Normalmente las propiedades del baño no son de interés, más allá de propiedades básicas como su temperatura. Se asume que el acoplamiento causa pérdidas de energía en el sistema de estudio pero que este sistema no es lo suficientemente grande como para alterar las propiedades del baño. Esto se representa con un Hamiltoniano de la forma:
 
 \begin{equation} \label{BathSysH}
-H = H_{Sis} + H_{B} + H_{Int}
-\end{equation}
-
-Un Hamiltoniano total formado por la suma del Hamiltoniano del sistema original sin péridas de energía, un Hamiltoniano para el baño y un Hamiltoniano de acoplamiento entre los otros dos.  Dado que solo es de interés conocer las propiedades del sistema, esto sugiere el uso de matrices densidad.
+H = H_{Sis} + H_{B} + H_{Int}.
+\end{equation} Esto es, un Hamiltoniano total formado por la suma del Hamiltoniano del sistema original sin péridas de energía, un Hamiltoniano para el baño y un Hamiltoniano de acoplamiento entre los otros dos.  Dado que solo es de interés conocer las propiedades del sistema, esto sugiere el uso de matrices densidad, ya que en este formalismo es posible trazar sobre las variables no deseadas para obtener únicamente la información de interés.
 
 \subsection{Matriz Densidad}
 
-Si un sistema se encuentra en un estado $\Ket{\Psi}$, su matriz densidad\cite{BlumDM}, usualmente denotada como $\rho$ está dada por:
+Si un sistema se encuentra en un estado $\Ket{\Psi}$, su matriz densidad\cite{BlumDM}, usualmente denotada como $\rho$, está dada por:
 
 \begin{equation}
-\rho = \Ket{\Psi}\Bra{\Psi}
-\end{equation}
-
-La matriz contiene toda la información del sistema y tiene varias propiedades de interés. Si se desea conocer el valor de expectación de un operador, este es:
+\rho = \Ket{\Psi}\Bra{\Psi}.
+\end{equation} La matriz densidad, a veces también llamada operador densidad, contiene toda la información del sistema. Se dan a continuación algunas propiedades de posible interés- Si se desea conocer el valor de expectación de un operador, este es:
 
 \begin{equation}
-<A> = Tr[A\rho]
-\end{equation}
-
-Su evolución temporal se comporta de acuerdo con la ecuación de Liouville:
+<A> = Tr[A\rho],
+\end{equation} su evolución temporal se comporta de acuerdo con la ecuación de Liouville:
 
 \begin{equation}
-\dfrac{\partial \rho}{\partial t} = \frac{1}{i\hbar}[H,\rho]
-\end{equation}
-
-Finalmente, y de especial utilidad, existe una forma de extraer información de un subsistema de la matriz densidad. Si se conoce la matriz densidad de un sistema compuesto formado por dos sistemas $A$ y $B$ tal que el sistema compuesto se encuentra en un espacio formado por el producto directo de los dos subsistemas:
+\dfrac{\partial \rho}{\partial t} = \frac{1}{i\hbar}[H,\rho].
+\end{equation} Finalmente, y de especial utilidad, existe una forma de extraer información de un subsistema de la matriz densidad. Si se conoce la matriz densidad de un sistema compuesto formado por dos sistemas $A$ y $B$ tal que el sistema compuesto se encuentra en un espacio formado por el producto directo de los dos subsistemas:
 
 \begin{equation}
-H_{AB} = H_A \otimes H_B
-\end{equation}
-
-Entonces es posible encontrar la matriz densidad correspondiente a uno de los dos subespacios al tomar la traza sobre el otro:
+H_{AB} = H_A \otimes H_B,
+\end{equation} es posible encontrar la matriz densidad correspondiente a uno de los dos subespacios al tomar la traza sobre los grados de libertad del otro espacio:
 
 \begin{equation}
-\rho_A = Tr_B [\rho_{AB}]
+\rho_A = Tr_B [\rho_{AB}].
 \end{equation}
 
-Esto muestra la utilidad de este formalismo para trabajar con Hamiltonianos del tipo \ref{BathSysH}, ya que si se encuentra una solución basta con tomar la traza sobre los estados del baño para encontrar una solución para el sistema con pérdidas de energía.
+Esto muestra la utilidad de este formalismo para trabajar con Hamiltonianos del tipo \ref{BathSysH}, ya que si se encuentra una solución general basta con tomar la traza sobre los estados del baño para encontrar una solución para el sistema con pérdidas de energía. A continuación se verá como obtener una ecuación diferencial para este tipo de sistemas en el formalimo de matriz densidad.
 
 \section{Deducción de Ecuacion Maestra Mediante Operadores de Proyección}
 
 Se busca obtener la ecuación correspondiente a un sistema sujeto a interacción con un baño térmico:
 
 \begin{equation}
-\hat{H} = \hat{H}_{Sis}+\hat{H}_{Int}+\hat{H}_B
-\end{equation}
-
-Lo cual implica una ecuación de evolución temporal para $\rho$ de la forma:
+\hat{H} = \hat{H}_{Sis}+\hat{H}_{Int}+\hat{H}_B,
+\end{equation} lo cual implica una ecuación de evolución temporal para $\rho$ de la forma:
 
 \begin{equation}\label{LMeq}
-\dot{\rho}_{total} = (L_{Sis}+L_{Int}+L_B)\rho
-\end{equation}
-
-Donde:
+\dot{\rho}_{total} = (L_{Sis}+L_{Int}+L_B)\rho,
+\end{equation}donde:
 
 \begin{equation}\label{defL}
-L\rho(t) = \frac{i}{\hbar}[\hat{H},\rho(t_0)]
-\end{equation}
-
-Se busca una solución para el operador densidad únicamente del sistema, por lo que se busca una ecuación para el operador total después de tomar la traza sobre las variables del baño:
+L\rho(t) = \frac{i}{\hbar}[\hat{H},\rho(t_0)].
+\end{equation} Se busca una solución para el operador densidad únicamente del sistema, por lo que se busca una ecuación para el operador total después de tomar la traza sobre las variables del baño:
 
 \begin{equation}
-\rho(t) \equiv Tr_B\{\rho_{total}(t)\}
-\end{equation}
-
-Se define un operador de proyección \cite{ZollerQN} que opere sobre $ \rho $:
+\rho(t) \equiv Tr_B\{\rho_{total}(t)\}.
+\end{equation} Se define un operador de proyección \cite{ZollerQN} que opere sobre $ \rho $:
 
 \begin{equation}
-P\rho_t = Tr_B\{\rho_{t}(t)\}\otimes \rho_B
-\end{equation}
-
-Y un operador:
+P\rho_t = Tr_B\{\rho_{t}(t)\}\otimes \rho_B,
+\end{equation} y un operador:
 
 \begin{equation}
-Q = \mathbf{1}-P
-\end{equation}
+Q = \mathbf{1}-P.
+\end{equation} El operador $P$ proyecta a la matriz densidad $\rho$ a un espacio donde esta es separable, es el producto directo de $\rho$ al perder toda la información sobre los grados de libertad del baño y un estado del baño que se puede elejir de manera conveniente. De las definiciones anteriores es trivial ver que:
 
-Tal que:
+\begin{equation}
+1 = P + Q,
+\end{equation} por lo que:
 
 \begin{align}
-\rho_t =& P\rho_t + Q\rho_t \\
-\equiv & v(t)+u(t)
-\end{align}
-
-Se emplean las siguientes propiedades:
+\rho_t =& P\rho_t + Q\rho_t ,\\
+\equiv & v(t)+u(t).
+\end{align} Se emplean las siguientes propiedades de los operadores $P$ y $Q$:
 
 \begin{enumerate}
 \item $ PL_{sis} = L_{sis}P$\qquad Ya que $ P $ y $ L_{sis} $ operan en espacios distintos.
@@ -165,347 +136,267 @@ Se emplean las siguientes propiedades:
 \item $P^2 = P \quad Q^2 = Q$ \qquad $P$ y $Q$ son proyectores
 \end{enumerate}
 
-Por convieniencia se trabaja con la transformada de Laplace [citar arfken] de las proyecciones $v(t)$ y $u(t)$:
+Por convieniencia se trabaja con la transformada de Laplace \cite{ArfkenMM} de las proyecciones $v(t)$ y $u(t)$:
 
 \begin{equation}
-\tilde{v}(t) = \int_0^\infty e^{-st}v(t)dt \qquad \tilde{u}(t) = \int_0^\infty e^{-st}u(t)dt
-\end{equation}
-
-Dado que las dos proyecciones se encuentran es espacios distintos, se puede sustituir $\rho$ por ellas en \eqref{LMeq} y resolver por separado para cada proyección. En el caso de $v(t)$ se tiene, antes de utilizar la transformada de Laplace, al aplicar el proyector $P$ a \eqref{LMeq}:
+\tilde{v}(t) = \int_0^\infty e^{-st}v(t)dt \qquad \tilde{u}(t) = \int_0^\infty e^{-st}u(t)dt.
+\end{equation} Dado que las dos proyecciones se encuentran es espacios distintos, se puede sustituir $\rho$ por ellas en \eqref{LMeq} y resolver por separado para cada proyección. En el caso de $v(t)$ se tiene, antes de utilizar la transformada de Laplace, que al aplicar el proyector $P$ a \eqref{LMeq}:
 
 \begin{align*}
-P\dot{p}(t)_t =& P(L_{Sis}+L_{Int}+L_B)\rho \\
- \dot{v}(t) =& (PL_{Sis}+PL_{Int}+PL_B)\rho \\
- =&(L_{Sis}P+PL_{Int}+\underbrace{PL_B}_0)\rho \\
- =& L_{sis}P\rho_t + PL_{int}\rho_t \\
- =& L_{sis}v + \underbrace{PL_{int}(P}_0+Q)\rho_t \\
- =& L_{sis}v + PL_{int}Q\rho_t \\
- =& L_{sis}v + PL_{int}u 
-\end{align*}
-
-De manera análoga se obtiene una ecuación para $u$ al proyectar con $Q$:
+P\dot{p}(t)_t =& P(L_{Sis}+L_{Int}+L_B)\rho, \\
+ \dot{v}(t) =& (PL_{Sis}+PL_{Int}+PL_B)\rho, \\
+ =&(L_{Sis}P+PL_{Int}+\underbrace{PL_B}_0)\rho, \\
+ =& L_{sis}P\rho_t + PL_{int}\rho_t, \\
+ =& L_{sis}v + \underbrace{PL_{int}(P}_0+Q)\rho_t, \\
+ =& L_{sis}v + PL_{int}Q\rho_t, \\
+ =& L_{sis}v + PL_{int}u.
+\end{align*} De manera análoga se obtiene una ecuación para $u$ al proyectar con $Q$:
 
 \begin{align*}
-Q\dot{p}(t)_t =& Q(L_{Sis}+L_{Int}+L_B)\rho \\
- \dot{u}(t) =& (QL_{Sis}+QL_{Int}+QL_B)\rho \\
- =&(L_{Sis}Q+QL_{Int}+L_BQ)\rho \\
- =& L_{sis}Q\rho_t + L_{B}Q\rho_t + QL_{int}\rho_t \\
- =& L_{sis}u + L_{B}u + QL_{int}(Q+P)\rho_t  \\
- =& L_{sis}u + L_{B}u + QL_{int}v+QL_{int}u\rho_t \\
- =& (L_{Sis}+L_B+QL_{Int})u +QL_{Int}v 
-\end{align*}
-
-Al aplicar la transformada de Laplace a la ecuación para $v$ se obtiene:
+Q\dot{p}(t)_t =& Q(L_{Sis}+L_{Int}+L_B)\rho, \\
+ \dot{u}(t) =& (QL_{Sis}+QL_{Int}+QL_B)\rho, \\
+ =&(L_{Sis}Q+QL_{Int}+L_BQ)\rho, \\
+ =& L_{sis}Q\rho_t + L_{B}Q\rho_t + QL_{int}\rho_t, \\
+ =& L_{sis}u + L_{B}u + QL_{int}(Q+P)\rho_t,  \\
+ =& L_{sis}u + L_{B}u + QL_{int}v+QL_{int}u\rho_t, \\
+ =& (L_{Sis}+L_B+QL_{Int})u +QL_{Int}v. 
+\end{align*} Al aplicar la transformada de Laplace a la ecuación para $v$ se obtiene:
 
 \begin{equation}\label{eqv}
-s\tilde{v}(s)-\tilde{v}(0) = L_{sis}\tilde{v}(s) + PL_{int}\tilde{u}(s)
-\end{equation}
-
-Y en el caso de $u$:
+s\tilde{v}(s)-\tilde{v}(0) = L_{sis}\tilde{v}(s) + PL_{int}\tilde{u}(s),
+\end{equation} y en el caso de $u$:
 
 \begin{equation}\label{equ}
-s\tilde{u}(s)-\tilde{u}(0) = (L_{Sis}+L_B+QL_{Int})\tilde{u}(s) + QL_{Int}\tilde{v}(s)
-\end{equation}
-
-Se resuelve \eqref{equ} en términos de $v$:
+s\tilde{u}(s)-\tilde{u}(0) = (L_{Sis}+L_B+QL_{Int})\tilde{u}(s) + QL_{Int}\tilde{v}(s).
+\end{equation} Se resuelve \eqref{equ} en términos de $v$:
 
 \begin{equation}
-\tilde{u}(s)=\frac{QL_{Int}\tilde{v}(s)+\tilde{u}(0)}{s-\underbrace{(L_{Sis}+L_B+QL_{Int})}_\alpha}
-\end{equation}
-
-Y se sustituye el resultado en \eqref{eqv}:
+\tilde{u}(s)=\frac{QL_{Int}\tilde{v}(s)+\tilde{u}(0)}{s-\underbrace{(L_{Sis}+L_B+QL_{Int})}_\alpha},
+\end{equation} y se sustituye el resultado en \eqref{eqv}:
 
 \begin{equation}
-s\tilde{v}(s)-(\tilde{v}(0)+PL_{int}\alpha\tilde{u}(0))=(L_{sis}+PL_{int}\alpha QL_{int})\tilde{v}(s)
-\end{equation}
-
-En este punto se toma la aproximación de aclopamiento débil:
+s\tilde{v}(s)-(\tilde{v}(0)+PL_{int}\alpha\tilde{u}(0))=(L_{sis}+PL_{int}\alpha QL_{int})\tilde{v}(s).
+\end{equation} En este punto se toma la aproximación de aclopamiento débil:
 
 \begin{equation}
-L_{int} \rightarrow \Xi L_{int}
-\end{equation}
-
-Los términos asociados a $\tilde{u}0$ son únicamente correciones a la condición inicial, por lo que se desprecian. Tomando esto en cuenta, se obtiene:
+L_{int} \rightarrow \epsilon L_{int}.
+\end{equation} Los términos asociados a $\tilde{u}_0$ son únicamente correciones a la condición inicial, ya que la transformada inversa resulta:
 
 \begin{equation}
-s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\Xi^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s)
-\end{equation}
+e^{(L_{Sis}+L_B+QL_{Int})t}u_0,
+\end{equation} por lo que se desprecian. Tomando esto en cuenta, se obtiene:
 
-Y al tomar la transformada inversa de Laplace:
+\begin{equation}
+s\tilde{v}(s)-\tilde{v}(0) = (L_{sis}+\epsilon^2\frac{PL_{int}QL_{int}}{s-L_{sis}-L_{B}})s\tilde{v}(s).
+\end{equation} Y al tomar la transformada inversa de Laplace:
 
 \begin{equation}\label{eqProyectores}
-\dot{v}(t)=L_{sis}v(t) + \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau)
-\end{equation}
-
-Se busca obtener una ecuación en términos de los operadores del Hamiltoniano \cite{ZollerQN},se procede con el segundo término de la ecuación \eqref{eqProyectores}:
+\dot{v}(t)=L_{sis}v(t) + \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}QL_{int}v(t-\tau).
+\end{equation} Se busca obtener una ecuación en términos de los operadores del Hamiltoniano \cite{ZollerQN},se procede con el segundo término de la ecuación \eqref{eqProyectores}:
 
 \begin{align*}
-QL_{int}v=&(1-P)L_{int}v\\
-=& (1-P)L_{int}P\rho \\
-=& L_{int}P\rho \\
-=& L_{int}v
+QL_{int}v=&(1-P)L_{int}v,\\
+=& (1-P)L_{int}P\rho, \\
+=& L_{int}P\rho, \\
+=& L_{int}v,
 \end{align*}
 
 Con esto el segundo término de la ecuación \eqref{eqProyectores}, y tomando en cuenta la definición de los términos $L$ dada en \eqref{defL} y el lema de Baker-Campbell-Housedorff \cite{SakuraiQM}
 
 \begin{align*}
-=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau)\\
-=& \Xi^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau}\\
-=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau) \\
-=&\Xi^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)] \\
-=&\Xi^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]]
+=& \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{(L_{sis}+L_{B})\tau}L_{int}v(t-\tau),\\
+=& \epsilon^2 PL_{int} \int_{0}^{\infty}d\tau e^{\frac{-i}{\hbar}H_B\tau}e^{\frac{-i}{\hbar}H_s\tau}L_{int}v(t-\tau)e^{\frac{i}{\hbar}H_B\tau}e^{\frac{i}{\hbar}H_s\tau},\\
+=&\epsilon^2 PL_{int} \int_{0}^{\infty}d\tau L_{int}v(t-\tau), \\
+=&\epsilon^2 PL_{int} \int_{0}^{\infty}d\tau[H_{int}^*,P\rho(t-\tau)], \\
+=&\epsilon^2 P[H_{int},\int_{0}^{\infty}d\tau[H_{int}^*,tr_B(\rho(t-\tau))\otimes\rho_B]],
 \end{align*}
 
 En este punto se realiza la aproximación de Markov \cite{ZollerQN}, al hacer la sustitución:
 
 \begin{equation}
-t-\tau \rightarrow t
-\end{equation}
-
-Y se traza toda la ecuación sobre las variables del baño. Con esto se llega a la ecuación:
+t-\tau \rightarrow t,
+\end{equation} y se traza toda la ecuación sobre las variables del baño. Con esto se llega a la ecuación:
 
 
 \chapter{Ecuaciones Maestras: Atomo de dos Niveles, Oscilador Armónico y la Base de Decaimiento}
 
-Se busca poder resolver ecuaciones como las encontradas en el capitulo anterior, estás en general se escriben de la forma:
+Se busca poder resolver ecuaciones como las encontradas en el capitulo anterior, las cuales normalmente se escriben de la forma:
 
 \begin{equation}\label{MasterEq}
-\dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L\rho
-\end{equation}
-
-Donde $\rho$ es la matriz densidad del sistema, $H$ es el Hamiltoniano que modela las partes del sistema donde no hay pérdidas de energía y $L$ es el operador de Lindblat, el cual corresponde a la parte abierta del sistema. En la mecánica cuántica cerrada, el análisis se limíta al operador Hamiltoniano el cual es un operador auto adjunto. En ese caso, es suficiente resolver la ecuación de Schröedinger estacionaria:
+\dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L\rho,
+\end{equation} donde $\rho$ es la matriz densidad del sistema, $H$ es el Hamiltoniano que modela las partes del sistema donde no hay pérdidas de energía y $L$ es el operador de Lindblat, el cual corresponde a la parte abierta del sistema. En la mecánica cuántica cerrada, el análisis se limíta al operador Hamiltoniano el cual es un operador auto adjunto. En ese caso, es suficiente resolver la ecuación de Schröedinger estacionaria:
 
 \begin{equation}
-H\Psi = E\Psi
-\end{equation}
-
-cuya solución formal es:
+H\Psi = E\Psi,
+\end{equation} cuya solución formal es:
 
 \begin{equation}
-\Psi(t) = e^{\frac{-iHt}{\hbar}}\Psi(0)
-\end{equation}
-
-La función $\Psi(0)$ puede expresarse como una  combinación lineal de las funciones propias de $H$. Al hacer esto, la ecuación anterior toma la forma:
+\Psi(t) = e^{\frac{-iHt}{\hbar}}\Psi(0).
+\end{equation} La función $\Psi(0)$ puede expresarse como una  combinación lineal de las eigenfunciones de $H$. Al hacer esto, la ecuación anterior toma la forma:
 
 \begin{equation}
-\Psi(t) = \sum_j c_j e^{\frac{-iE_jt}{\hbar}}\phi_j(0)
-\end{equation}
+\Psi(t) = \sum_j c_j e^{\frac{-iE_jt}{\hbar}}\phi_j(0),
+\end{equation}los coeficientes $c_j$ son las proyecciones de la función $\Psi(0)$ sobre las funciones propias de $H$:
 
-Los coeficientes $c_j$ son las proyecciones de la función $\Psi(0)$ sobre las funciones propias de $H$
-
-Se busca una solución equivalente para la ecuación \eqref{MasterEq}. Es posible transformar dicha ecuación al cuadro de interacción, donde solo importa la parte abierta del problema. En este cuadro, se busca una solución del tipo:
+\begin{equation}
+c_j(t)= (\phi_j(t),\Psi(t)).
+\end{equation} Se busca una solución equivalente para la ecuación \eqref{MasterEq}. Es posible transformar dicha ecuación al cuadro de interacción, donde solo importa la parte abierta del problema. En este cuadro, se busca una solución del tipo:
 
 \begin{equation}
 \rho(t) = \sum_{\lambda} c_{\lambda} e^{\lambda t}\rho_{\lambda} 
-\end{equation}
-
-Los coeficientes ahora son respecto a las funciones propias de $L$. Es importante notar que $L$ no es necesariamente un operador autoadjunto, por lo que no se puede garantizar que sus funciones propias formen una base completa del espacio ni que sus valores propios sean reales. En el caso de este tipo de operadores existen dos tipos de vectores propios\cite{BarnettSD}, izquierdos y derechos:
+\end{equation} Los coeficientes ahora son respecto a las funciones propias de $L$. Ya que $L$ actúa no sobre vectores en el espacio de Hilbert, como lo son las funciones $\Psi(t)$, si no más bien sobre matrices densidad como son las $\rho(t)$, las cuales son operadores, se le conoce como superoperador. Es importante notar que $L$ no es necesariamente autoadjunto, por lo que no se puede garantizar que sus funciones propias formen una base completa del espacio ni que sus valores propios sean reales. En el caso de este tipo de operadores existen dos tipos de vectores propios\cite{BarnettSD}, izquierdos y derechos:
 
 \begin{align*}
-L\rho =& \lambda \rho \\
-\rho L =& \lambda \check{\rho}
-\end{align*}
-
-Los estados que se obtienen al aplicar el superoperador por la derecha se conocen también como estados duales, se denotan por $\check{\rho}$. También es importante notar que $\Psi$ es un vector de estado que pertenece al espacio de Hilbert mientras que $rho$ es un operador que pertenece al espacio de Liouville. Por esto, se dice que $L$ es un superoperador, los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza\cite{EnglertDB} y sus eigenvalores son iguales.
+L\rho =& \lambda \rho, \\
+\rho L =& \lambda \check{\rho}.
+\end{align*} Los estados que se obtienen al aplicar el superoperador por la derecha se conocen también como estados duales, se denotan por $\check{\rho}$. También es importante notar que os vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza\cite{EnglertDB}, sin embargo sus eigenvalores son iguales.
 
 \begin{equation}
-Tr[\check{\rho}_\lambda \rho_{\lambda'}] = \delta_{\lambda'\lambda}
-\end{equation}
-
-Esto se puede emplear para obtener las constantes de la expansión:
+Tr[\check{\rho}_\lambda \rho_{\lambda'}] = \delta_{\lambda'\lambda}.
+\end{equation} Esto se puede emplear para obtener las constantes de la expansión:
 
 \begin{equation}
 \rho(0) = \sum_{\lambda} \check{c} \rho_{\lambda}
-\end{equation}
-
-Donde:
+\end{equation}, donde:
 
 \begin{equation}
-\check{c}_\lambda = Tr[\check{\rho}_\lambda \rho(0)]
-\end{equation}
-
-Es importante notar que para realizar una expansion es estados de este tipo es necesario poder trazar sobre los estados duales. Por esto, estos estados se estudiarán de manera más cuidadosa en una sección posterior.
+\check{c}_\lambda = Tr[\check{\rho}_\lambda \rho(0)].
+\end{equation} Es importante notar que para realizar una expansion es estados de este tipo es necesario poder trazar sobre los estados duales. Por esto, estos estados se estudiarán de manera más cuidadosa en una sección posterior. Primero se tratan algunos ejemplos.
 
 \section{Átomo de dos Niveles}
 
-Antes de intentar resolver sistemas más complejos, es ilustrativo tratar el caso relativamente sencillo del átomo de niveles. A este sistema le corresponde el operador de Linblad:
+Antes de intentar resolver sistemas más complejos, es ilustrativo tratar el caso relativamente sencillo del átomo de dos niveles. A este sistema le corresponde el operador de Linblad \cite{EnglertDB}:
 
 \begin{align}\label{TwoLevel}
  L_{\sigma}\rho = 
  &-\frac{B}{2}(1-s)[\sigma_+\sigma_-\rho + \rho\sigma_+\sigma_--2\sigma_-\rho\sigma_+ ]\nonumber\\
  &-\frac{B}{2}s[\sigma_-\sigma_+\rho + \rho\sigma_-\sigma_+-2\sigma_+\rho\sigma_- ]\nonumber\\
- &-\frac{2C-B}{4}[\rho - \sigma_z\rho\sigma_z]
-\end{align}
-
-Es convenitente utilizar notación de Dirac en este tratamiento. Todos los operadores involucrados pueden verse como matrices de dos por dos. $\sigma_z$ es la matriz de Pauli correspondiente al eje z y:
+ &-\frac{2C-B}{4}[\rho - \sigma_z\rho\sigma_z].
+\end{align} Es convenitente utilizar notación de Dirac en este tratamiento. Todos los operadores involucrados pueden verse como matrices de dos por dos. $\sigma_z$ es la matriz de Pauli correspondiente al eje z y:
 
 \begin{equation}
-\sigma_{\pm} = \sigma_x \pm \sigma_y = (\sigma_{\mp}) ^\dagger
-\end{equation}
-
-Un método \cite{BarnettSD} para encontrar los vectores y valores propios de $L$ consiste en proponer una forma adecuada para los vectores, aplicar $L$ a la propuesta y resolver las ecuaciones resultantes. En este caso se propone:
+\sigma_{\pm} = \sigma_x \pm \sigma_y = (\sigma_{\mp}) ^\dagger,
+\end{equation} Un método \cite{BarnettSD} para encontrar los vectores y valores propios de $L$ consiste en proponer una forma adecuada para los vectores, aplicar $L$ a la propuesta y resolver las ecuaciones resultantes. En este caso se propone una combinación lineal general:
 
 \begin{equation}
-\rho_\sigma = \alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}+\delta\Ket{-}\Bra{-}
-\end{equation}
-
-Ya que se conoce la forma en la cual las matrcies $\sigma$ operan sobre estos elementos:
+\rho_\sigma = \alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}+\delta\Ket{-}\Bra{-}.
+\end{equation} Ya que se conoce la forma en la cual las matrcies $\sigma$ operan sobre estos elementos:
 
 \begin{align*}
-&&\sigma_{+}\Bra{-} =& \Bra{+} \quad \sigma_{+}\Bra{+} = 0 \\
-&&\sigma_{-}\Bra{+} =& \Bra{-} \quad \sigma_{-}\Bra{-} = 0 \\
-&&\sigma_{z}\Bra{+} =& \Bra{+} \quad \sigma_{z}\Bra{-} = -\Bra{-}
-\end{align*}
-
-Al sustituir $\rho_{\sigma}$ en \eqref{TwoLevel} se obtiene, para el primer término de $L$:
+&&\sigma_{+}\Bra{-} =& \Bra{+} \quad \sigma_{+}\Bra{+} = 0, \\
+&&\sigma_{-}\Bra{+} =& \Bra{-} \quad \sigma_{-}\Bra{-} = 0, \\
+&&\sigma_{z}\Bra{+} =& \Bra{+} \quad \sigma_{z}\Bra{-} = -\Bra{-}.
+\end{align*} Al sustituir $\rho_{\sigma}$ en \eqref{TwoLevel} se obtiene, para el primer término de $L$:
 
 \begin{equation}
--\frac{B}{2}(1-s)[2\alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}-2\alpha\Ket{-}\Bra{-}]
-\end{equation}
-
-El segundo término es:
+-\frac{B}{2}(1-s)[2\alpha\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}-2\alpha\Ket{-}\Bra{-}].
+\end{equation} El segundo término es:
 
 \begin{equation}
--\frac{B}{2}(s)[2\delta\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}-2\delta\Ket{-}\Bra{-}]
-\end{equation}
-
-Y el tercero:
+-\frac{B}{2}(s)[2\delta\Ket{+}\Bra{+}+\beta\Ket{+}\Bra{-}+\gamma\Ket{-}\Bra{+}-2\delta\Ket{-}\Bra{-}].
+\end{equation} Y el tercero:
 
 \begin{equation}
--\frac{2C-B}{4}[2\beta\Ket{+}\Bra{-}+2\gamma\Ket{-}\Bra{+}]
+-\frac{2C-B}{4}[2\beta\Ket{+}\Bra{-}+2\gamma\Ket{-}\Bra{+}].
 \end{equation}
 
-Esto se inserta en:
+Esto se sustituye en la ecuación de eigenvalores correspondiente a $L$:
 
 \begin{equation}
-L\rho = \lambda\rho
-\end{equation}
-
-Y dado que cada uno de los cuatro componentes de $\rho$ son linealmente independientes, esto genera cuatro ecuaciones distintas:
+L\rho = \lambda\rho,
+\end{equation} dado que cada uno de los cuatro componentes de $\rho$ son linealmente independientes, esto genera cuatro ecuaciones distintas:
 
 \begin{align}
-B(s(\alpha+\delta)-\alpha)\Ket{+}\Bra{+} =& \lambda\alpha\Ket{+}\Bra{+}\\
-B(-s(\alpha+\delta)+\alpha)\Ket{-}\Bra{-} =& \lambda\delta\Ket{-}\Bra{-}\\
--\beta C \Ket{+}\Bra{-} =& \lambda \beta \Ket{+}\Bra{-} \\
--\gamma C \Ket{-}\Bra{+} =& \lambda \gamma \Ket{-}\Bra{+}
-\end{align}
-
-De las cuales se obtienen los cuatro vectores propios:
+B(s(\alpha+\delta)-\alpha)\Ket{+}\Bra{+} =& \lambda\alpha\Ket{+}\Bra{+},\\
+B(-s(\alpha+\delta)+\alpha)\Ket{-}\Bra{-} =& \lambda\delta\Ket{-}\Bra{-},\\
+-\beta C \Ket{+}\Bra{-} =& \lambda \beta \Ket{+}\Bra{-}, \\
+-\gamma C \Ket{-}\Bra{+} =& \lambda \gamma \Ket{-}\Bra{+},
+\end{align}de las cuales se obtienen los cuatro vectores eigenvectores:
 
 \begin{align}
-L_\sigma \sigma_0 =& 0 \\
-L_\sigma \sigma_z =& -B \sigma_z \\
-L_\sigma \sigma_\pm =& -C \sigma_\pm
-\end{align}
-
-donde:
+L_\sigma \sigma_0 =& 0, \\
+L_\sigma \sigma_z =& -B \sigma_z, \\
+L_\sigma \sigma_\pm =& -C \sigma_\pm,
+\end{align} donde:
 
 \begin{equation}
-\sigma_0 = \frac{1}{2}[I + (2s-1)\sigma_z]
-\end{equation}
-
-Las constantes en \eqref{MasterEq} son todas positivas por lo que todos los valores propios son no positivos. Esto es importante, ya que al hacer tender el tiempo a infinito solo el término que corresponde al valor propio 0 sobrevive, los demás términos decaen exponencialmente con el tiempo. Esto lleva a identificar al término con valor propio 0 como el estado estacionario del sistema. Los estados duales se obtienen de la misma forma y resultan ser\cite{EnglertDB}:
+\sigma_0 = \frac{1}{2}[I + (2s-1)\sigma_z].
+\end{equation} Las constantes en \eqref{MasterEq} son todas positivas por lo que todos los valores propios son no positivos. Esto es importante, ya que al hacer tender el tiempo a infinito solo el término que corresponde al valor propio 0 sobrevive, los demás términos decaen exponencialmente con el tiempo. Esto lleva a identificar al término con valor propio 0 como el estado estacionario del sistema. Los estados duales se obtienen de la misma forma y resultan ser\cite{EnglertDB}:
 
 \begin{align}
-\check{\sigma_0} L_\sigma  =& 0 \\
-\check{\sigma_z} L_\sigma =& -B \check{\sigma_z} \\
-\check{\sigma_{\pm}} L_\sigma =& -C \check{\sigma_{\pm}}
-\end{align}
-
-Donde:
+\check{\sigma_0} L_\sigma  =& 0, \\
+\check{\sigma_z} L_\sigma =& -B \check{\sigma_z}, \\
+\check{\sigma_{\pm}} L_\sigma =& -C \check{\sigma_{\pm}}.
+\end{align} Donde:
 
 \begin{align*}
-\check{\sigma_0} =& 1\\
-\check{\sigma_z} =& \frac{1}{2}[\sigma_z-(2s-1)]\\
-\check{\sigma_{\pm}} =& \frac{1}{4}\sigma_{\mp}
+\check{\sigma_0} =& 1,\\
+\check{\sigma_z} =& \frac{1}{2}[\sigma_z-(2s-1)],\\
+\check{\sigma_{\pm}} =& \frac{1}{4}\sigma_{\mp}.
 \end{align*}
 
-Se puede verificar rápidamente la condición de ortogonalidad, por ejemplo utilizando $\check{\sigma_0}$:
+La ortogonalidad de los estados regulares con los estados duales puede comprobarse de forma directa, por ejemplo utilizando $\check{\sigma_0}$:
 
 \begin{align*}
-Tr[\sigma_0\check{\sigma_0}] =& Tr[\frac{1}{2}[I + (2s-1)\sigma_z]]\\
-=& \frac{1}{2} Tr[I] + \frac{2s-1}{2}Tr[\sigma_z]\\
-=& 1
-\end{align*}
-
-Donde se utiliza el hecho de que las matrices de Pauli tienen traza cero. Con esta misma propiedad se puede verificar que los productos restantes con $\check{\sigma_0}$ se anulan.
+Tr[\sigma_0\check{\sigma_0}] =& Tr[\frac{1}{2}[I + (2s-1)\sigma_z]],\\
+=& \frac{1}{2} Tr[I] + \frac{2s-1}{2}Tr[\sigma_z],\\
+=& 1.
+\end{align*} Donde se utiliza el hecho de que las matrices de Pauli tienen traza cero. Con esta misma propiedad se puede verificar que los productos restantes con $\check{\sigma_0}$ se anulan. A continuación se trata un sistema más complejo, donde se modela una cavidad óptica.
 
 \section{Oscilador Armónico: Primer Ansatz}
 
-Se busca modelar interacciones que involucran un capo electromagnético. Este se modela simplemente como una suma infinita de modos de oscilador armónico. Este sistema en particular corresponde a un operador de Lindblat de la forma \cite{EnglertDB}
+Se busca modelar interacciones que involucran un capo electromagnético. Este se modela simplemente como una suma infinita de modos de oscilador armónico. Este sistema en particular corresponde a un superoperador de Lindblad de la forma \cite{EnglertDB}
 
 \begin{align}\label{EMField}
 L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^\dagger] \nonumber \\
- &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a^\dagger\rho a]
-\end{align}
-
-Esto modela un campo electromagnético en una cavidad con acoplamiento a un reservorio térmico con un número $\nu$ promedio de fotones térmicos. $A,\nu \geq 0$. La elección de un ansatz para este sistema es mucho más compleja, ya que ahora la base estados sobre la cual actúan los operadores que forman $L$ es infinita.  En base a lo visto en la sección anterior, se propone como ansatz una base que acople estados de distinta energía:
+ &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a^\dagger\rho a].
+\end{align}Los operadores $a,a^{\dagger}$ son los operadores usuales de creación y aniquilación para el oscilador armónico en mecánica cuántica. Esto modela un campo electromagnético en una cavidad con acoplamiento a un reservorio térmico con un número $\nu$ promedio de fotones térmicos. $A,\nu \geq 0$. La elección de un ansatz para este sistema es mucho más compleja, ya que ahora la base de estados sobre la cual actúan los operadores que forman $L$ es infinita.  En base a lo visto en la sección anterior, se propone como ansatz una base que acople estados de distintas energía:
 
 \begin{equation}
- \rho^l_n = \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l}
-\end{equation} 
-
-El objetivo de nuevo es sustituir el ansatz en \eqref{EMField} para obtener un sistema de ecuaciones para los valores y vectores propios. Se trabaja primero con el primer término de \eqref{EMField}, donde se ignora el coeficiente exterior por brevedad:
+ \rho^l_n = \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l},
+\end{equation} El procedimiento de nuevo es sustituir el ansatz en \eqref{EMField} para obtener un sistema de ecuaciones para los valores y vectores propios. Se trabaja primero con el primer término de \eqref{EMField}, donde se ignora el coeficiente exterior por brevedad:
 
 \begin{align*}
-=&[a^\dagger a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger]\\
-=&[\sum_{n=0}^\infty Q_n^la^\dagger a\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2\sum_{n=0}^\infty Q_n^la\Ket{n}\Bra{n+l} a^\dagger]\\
-=&[\sum_{n=0}^\infty Q_n^ln\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} (n+l) -2\sum_{n=0}^\infty Q_n^l\sqrt{n}\Ket{n-1}\Bra{n+l-1}\sqrt{n+l}]\\
-=&[\sum_{n=0}^\infty Q_n^l(2n+l)\Ket{n}\Bra{n+l} -2\sum_{n=0}^\infty\sqrt{n(n+l)} Q_n^l\Ket{n-1}\Bra{n+l-1}]\\
-\end{align*}
+=&[a^\dagger a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger],\\
+=&[\sum_{n=0}^\infty Q_n^la^\dagger a\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2\sum_{n=0}^\infty Q_n^la\Ket{n}\Bra{n+l} a^\dagger],\\
+=&[\sum_{n=0}^\infty Q_n^ln\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} (n+l) -2\sum_{n=0}^\infty Q_n^l\sqrt{n}\Ket{n-1}\Bra{n+l-1}\sqrt{n+l}],\\
+=&[\sum_{n=0}^\infty Q_n^l(2n+l)\Ket{n}\Bra{n+l} -2\sum_{n=0}^\infty\sqrt{n(n+l)} Q_n^l\Ket{n-1}\Bra{n+l-1}].\\
+\end{align*} El segundo término actúa de una forma completamente análoga y se obtiene:
 
-El segundo término actúa de una forma completamente análoga y se obtniene:
-
-\begin{equation*}
-=[\sum_{n=0}^\infty Q_n^l(2n+l+2)\Ket{n}\Bra{n+l} -2\sum_{n=0}^\infty\sqrt{(n+1)(n+l+1)} Q_n^l\Ket{n+1}\Bra{n+l+1}]
-\end{equation*}
-
-Como $p^l_n$  es un vector propio los términos anteriores deben de poder igualarse a un valor propio por $\rho^l_n$:
+\begin{equation}
+=[\sum_{n=0}^\infty Q_n^l(2n+l+2)\Ket{n}\Bra{n+l} -2\sum_{n=0}^\infty\sqrt{(n+1)(n+l+1)} Q_n^l\Ket{n+1}\Bra{n+l+1}].
+\end{equation} Como $p^l_n$  es un vector propio los términos anteriores deben de poder igualarse a un valor propio multiplicando a $\rho^l_n$:
 
 \begin{align}
-\lambda_n^l \rho_n^l=& \sum_{n=0}^\infty Q_n^l \{ -\frac{A}{2}(\nu+1)[(2n+l)\Ket{n}\Bra{n+l} -2\sqrt{n(n+l)} Q_n^l\Ket{n-1}\Bra{n+l-1}] \nonumber \\
--&\frac{A}{2}(\nu)[(2n+l+2)\Ket{n}\Bra{n+l}-2\sqrt{(n+1)(n+l+1)} Q_n^l\Ket{n+1}\Bra{n+l+1}]\}
-\end{align}
-
-Si en el segundo término se recorre el índice de suma hacia arriba por uno y en el cuarto hacía abajo por uno, se puede utilizar independencia lineal respecto al elemento $\Ket{n}\Bra{n+l}$ para obtener una ecuación para cada elemento de la suma. Se obtiene que los coeficientes deben cumplir con:
+\lambda_n^l \rho_n^l=& \sum_{n=0}^\infty Q_n^l \{ -\frac{A}{2}(\nu+1)[(2n+l)\Ket{n}\Bra{n+l} -2\sqrt{n(n+l)} Q_n^l\Ket{n-1}\Bra{n+l-1}] \nonumber, \\
+-&\frac{A}{2}(\nu)[(2n+l+2)\Ket{n}\Bra{n+l}-2\sqrt{(n+1)(n+l+1)} Q_n^l\Ket{n+1}\Bra{n+l+1}]\}.
+\end{align} Si en el segundo término se recorre el índice de suma hacia arriba por uno y en el cuarto hacía abajo por uno, se puede utilizar independencia lineal respecto al elemento $\Ket{n}\Bra{n+l}$ para obtener una ecuación para cada elemento de la suma. Se obtiene que los coeficientes deben cumplir con:
 
 \begin{align}\label{RecurrenciaStengholm}
 A&(\nu+1) Q_{n+1}^l \sqrt{(n+1)(n+l+1) }+ A(\nu) Q_{n-1}^l\sqrt{n(n+l)}\\ \nonumber
-=&[\lambda_n^l+A\nu(2n+l+2)+\frac{A}{2}(2n+l)]Q_{n}^l
-\end{align}
-
-El operador de dual Linblat para este sistema es:
+=&[\lambda_n^l+A\nu(2n+l+2)+\frac{A}{2}(2n+l)]Q_{n}^l.
+\end{align} El operador de dual Linblad para este sistema es:
 
 \begin{align}
 L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a^\dagger\rho a] \nonumber \\
- &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a\rho a^\dagger]
-\end{align}
-
-Lo cual sugiere el mismo ansatz que para el caso de \ref{EMField}, y en efecto se obtiene una relación extremadamente similar, únicamente se intercambian los términos donde el operador densidad se coloca enmedio. No he logrado resolver estas relaciones de recurrencia de forma anlítica para condiciones generales. Sin embargo, en el caso de temperatura cero, se tiene que $\nu = 0$ y \ref{RecurrenciaStengholm} se simplifica considerablemente:
+ &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a\rho a^\dagger],
+\end{align} lo cual sugiere el mismo ansatz que para el caso de \ref{EMField}, y en efecto se obtiene una relación extremadamente similar, únicamente se intercambian los términos donde el operador densidad se coloca en medio. En condiciones generales, esta relación de recurrencia es difícil de resolver de forma analítica. Sin embargo, en el caso de temperatura cero, se tiene que $\nu = 0$ y \ref{RecurrenciaStengholm} se simplifica considerablemente:
 
 \begin{equation}
-AQ_{n+1}^l\sqrt{(n+1)(n+l+1)}=[\lambda_n^l + \frac{A}{2}(2n+l)]Q_n^l
-\end{equation}
-
-Lo cual nos permite resolver para una de las dos $Q$:
+AQ_{n+1}^l\sqrt{(n+1)(n+l+1)}=[\lambda_n^l + \frac{A}{2}(2n+l)]Q_n^l,
+\end{equation} Lo cual permite resolver para una de las dos $Q$:
 
 \begin{equation}
-Q_{n+1}^l = \frac{\lambda_n^l + \frac{A}{2}(2n+l)}{A\sqrt{(n+1)(n+l+1)}}Q_n^l
-\end{equation}
-
-Lo cual tiene un número infinito de soluciones. En \cite{BarnettSD} se corta la suma con el valor de $\lambda$ y se llega a una solución para A, que ahora también depende de un nuevo entero $m$:
+Q_{n+1}^l = \frac{\lambda_n^l + \frac{A}{2}(2n+l)}{A\sqrt{(n+1)(n+l+1)}}Q_n^l.
+\end{equation}Esta expresión tiene un número infinito de soluciones. En \cite{BarnettSD} se corta la suma con el valor de $\lambda$ y se llega a una solución para A, que ahora también depende de un nuevo entero $m$:
 
 \begin{equation}
-A_m^l = \sum_{n=0}^m (-1)^m \frac{m!}{(m-n)!}\sqrt{\frac{l!}{n!(n+l)!}}\Ket{n}\Bra{n+l}
-\end{equation}
-
-Al cual le corresponde a un valor para $\lambda$ de:
+A_m^l = \sum_{n=0}^m (-1)^m \frac{m!}{(m-n)!}\sqrt{\frac{l!}{n!(n+l)!}}\Ket{n}\Bra{n+l},
+\end{equation} a la cual le corresponde a un valor para $\lambda$ de:
 
 \begin{equation}
-\lambda_l^m = -(2m+l)
-\end{equation}
-
-Utilizando la condición de ortogonalidad con los estados duales se llega a que estos son \cite{BarnettSD}:
+\lambda_l^m = -(2m+l).
+\end{equation} Los estados duales del sistema se calculan a base de la relación de ortogonalidad con los estados ya encontrados, estos resultan ser \cite{BarnettSD}:
 
 \begin{equation}
 B_m^l = \sum_{n=m}^\infty \sqrt{\frac{n!(n+l)!}{l!}}\frac{1}{(n-m)!}\Ket{n}\Bra{n+l}
@@ -515,179 +406,136 @@ Sin embargo esto solo es valido en el caso de temperatura cero. Para poder trata
 
 \section{Oscilador Armónico: Base de Decaimiento}
 
-
-
+Se sigue el ansatz propuesto en \cite{EnglertDB}, el cual consiste en una función arbitraria de operadores de creación y aniquilación en ordenamiento normal, y posibles operadores adicionales de aniquilación:
 
 \begin{equation}\label{Englert1993}
-\rho_\lambda (a,a^\dagger) = :f(aa^\dagger):a^l
-\end{equation}
-
-Se puede en $a^l$ como
+\rho_\lambda (a,a^\dagger) = :f(aa^\dagger):a^l.
+\end{equation} Se puede expresar $a^l$ en la base de número como:
 
 \begin{equation}
-\sum_{n=0}^\infty C_n^l\Ket{n}\Bra{n+l}
-\end{equation}
-
-Es entonces posible relacionar este ansatz con el de Englert, lo cual lleva a su solución para $\rho_n^l$
+\sum_{n=0}^\infty C_n^l\Ket{n}\Bra{n+l},
+\end{equation} donde puede verse la relación de este ansatz con el de la sección anterior. A partir de este se llega a la solución para $\rho_n^l$ \cite{EnglertDB}:
 
 \begin{align}\label{DefDB}
-&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:\quad l \geq 0 \\
-&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad l \leq 0
-\end{align}
-
-con autovalores
+&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:\quad l \geq 0, \\
+&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad l \leq 0,
+\end{align} con eigenvalores:
 
 \begin{equation}
-\lambda_n^l = -A[n + \frac{|l|}{2}]
-\end{equation}
-
-con las condiciones
+\lambda_n^l = -A[n + \frac{|l|}{2}],
+\end{equation} los cuales cumplen con las condiciones
 
 \begin{equation}
 n=0,1,2...,\qquad l = 0,\pm 1, \pm 2,... 
-\end{equation}
+\end{equation}. Es importante notar que esto se obtiene en el cuadro de interacción, por lo que los valores finales deben incluir los eigenvalores de la parte correspondiente al Hamiltoniano sin pérdidas de energía.
 
 A continuación se muestra de forma explicita como calcular estos elementos. 
 
 \subsection{Estado Base}
 
-Este es el estado con valor propio 0, lo cual corresponde a $n=0, \qquad l=0$. En este caso, la solución tiene la forma
+Este es el estado con valor propio 0, lo cual corresponde a $n=0, \qquad l=0$. En este caso, la solución tiene la forma explícita:
 
 \begin{equation}
-\frac{1}{(\nu+1)}:L_0^0[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:
-\end{equation}
-
-ya que $L_0^0 = 1$ \cite{ArfkenMM} si se desarrolla la exponencial en una serie infinita se tiene, aplicando el ordenamiento normal:
+\frac{1}{(\nu+1)}:L_0^0[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:,
+\end{equation} ya que $L_0^0 = 1$ \cite{ArfkenMM} si se desarrolla la exponencial en una serie infinita se tiene, aplicando el ordenamiento normal:
 
 \begin{equation}
-\sum_{n=0}^\infty \frac{-(a^\dagger)^n (a)^n}{n!(\nu+1)^n}
-\end{equation}
-
-si se sustituye esto en la expresión para el estado base, junto con la relación de cerradura para la base de Foch se llega a \cite{EnglertDB}
+\sum_{n=0}^\infty \frac{-(a^\dagger)^n (a)^n}{n!(\nu+1)^n},
+\end{equation} si se sustituye esto en la expresión para el estado base, junto con la relación de cerradura para la base de Foch se llega a \cite{EnglertDB}:
 
 \begin{equation}
-\rho_0^0 = \frac{1}{1+\nu} [\frac{\nu}{1+\nu}]^{a^\dagger a}
-\end{equation}
-
-El cual corresponde a un estado térmico. El estado base es el estado estacionario del sistema.
+\rho_0^0 = \frac{1}{1+\nu} [\frac{\nu}{1+\nu}]^{a^\dagger a}.
+\end{equation}El cual corresponde a un estado térmico\cite{EnglertDB}. El estado base es el estado estacionario del sistema. A continuación se estudian los estados duales correspondientes al sistema.
 
 \section{Estados Duales de la base de decaimiento}
 
 La base de decaimiento \cite{EnglertDB} definida en \ref{DefDB} corresponde a eigenvalores:
 
 \begin{equation}
- -A[n+\frac{|l|}{2}]
-\end{equation}
-
-Lo cual corresponde a una doble degeneración $\pm l$. Antes de poder realizar la expansión de estados arbitrarios en esta base es necesario conocer los eigenestados del operador dual, los cuales son aquellos que cumplen la condición\cite{EnglertDB}:
+ -A[n+\frac{|l|}{2}],
+\end{equation}lo cual corresponde a una doble degeneración $\pm l$. Antes de poder realizar la expansión de estados arbitrarios en esta base es necesario conocer los eigenestados del operador dual, los cuales son aquellos que cumplen la condición\cite{EnglertDB}:
 
 \begin{equation}
-\bar{\rho}_\gamma L = \gamma\bar{\rho}_\gamma
-\end{equation}
-
-Es decir, los eigenestados \textit{izquierdos} del operador de Lindblat. Los estados duales cumplen con:
+\bar{\rho}_\gamma L = \gamma\bar{\rho}_\gamma.
+\end{equation} Es decir, los eigenestados \textit{izquierdos} del operador de Lindblat. Los estados duales cumplen con:
 
 \begin{equation}
-Tr[\bar{\rho}_{\gamma}\rho_{\gamma'}] = \delta_{\gamma\gamma'}
-\end{equation}
-
-Donde la barra denota al estado dual y $\gamma$ denota algún eigenvalor particular del problema. Bajo este producto es posible entonces resolver las ecuaciones para los coeficientes de una expansión de un estado particular en estados de la base de decaimiento:
+Tr[\bar{\rho}_{\gamma}\rho_{\gamma'}] = \delta_{\gamma\gamma'}.
+\end{equation} Donde la barra denota al estado dual y $\gamma$ denota algún eigenvalor particular del problema. Bajo este producto es posible entonces resolver las ecuaciones para los coeficientes de la expansión de un estado particular en estados de la base de decaimiento:
 
 \begin{equation}
-\Psi = \sum_{\gamma}\bar{c}_\gamma \rho_\gamma
-\end{equation}
-
-Entonces:
+\Psi = \sum_{\gamma}\bar{c}_\gamma \rho_\gamma.
+\end{equation} Entonces:
 
 \begin{equation}
-\bar{c}_\gamma = Tr[\Psi\bar{\rho}_{\gamma}]
-\end{equation}
-
-Con esto la evolución temporal del sistema queda determinada:
+\bar{c}_\gamma = Tr[\Psi\bar{\rho}_{\gamma}].
+\end{equation} Con esto la evolución temporal del sistema queda determinada:
 
 \begin{equation}
-\Psi(t) = \sum_\gamma \bar{c}_\gamma e^{\frac{-i}{\hbar} \gamma t} \rho_{\gamma}
-\end{equation}
+\Psi(t) = \sum_\gamma \bar{c}_\gamma e^{\frac{-i}{\hbar} \gamma t} \rho_{\gamma}.
+\end{equation} Se trata ahora la forma explícita de los estados duales.
 
 \subsection{Estados Duales: Forma Explícita}
 
 Ya que es necesario tomar trazas sobre los estados duales, es conveniente encontrar tanto su forma explícita en términos de operadores de creación y aniquilación, así como una relación de recurrencia que permita relacionar un estado a los estados de menor número $n$. Los polinomios asociados de Laguerre, en general, son de la forma\cite{ArfkenMM}
 
 \begin{equation}\label{DefLaguerre}
-L_n^k(x) = \sum_{m=0}^n (-1)^m \frac{(n+k)!}{(n-m)!(k+m)!m!} x^m
-\end{equation}
-
-Recordando que en este caso la variable $x$ corresponde a $\frac{a^\dagger a}{\nu}$, y que los estados se encuentran multiplicados por un coeficiente:
+L_n^k(x) = \sum_{m=0}^n (-1)^m \frac{(n+k)!}{(n-m)!(k+m)!m!} x^m.
+\end{equation} Recordando que en este caso la variable $x$ corresponde a $\frac{a^\dagger a}{\nu}$, y que los estados se encuentran multiplicados por un coeficiente:
 
 \begin{equation}
-(\frac{-\nu}{1+\nu})^n \frac{n!}{(n+k)!}
-\end{equation}
-
-Se llega a la expresión general, la cual toma en cuenta el ordenamiento normal y los operadores de aniquilación a la derecha del mismo:
+(\frac{-\nu}{1+\nu})^n \frac{n!}{(n+k)!}.
+\end{equation}Se llega a la expresión general, la cual toma en cuenta el ordenamiento normal y los operadores de aniquilación a la derecha del mismo:
 
 \begin{equation}\label{DefDual}
-\sum_{m=0}^n \frac{(-\nu)^{n-m}}{(\nu+1)^n} \frac{n!}{(n-m)!(m+k)!m!} a^{\dagger m}a^{m+k}
-\end{equation}
-
-Basandose en \ref{DefDual}, se puede ver que para cualquier valor de $n$ y $k \\geq 0$ el primer término de la suma, es decir el correspondiente a $m=0$ es:
+\sum_{m=0}^n \frac{(-\nu)^{n-m}}{(\nu+1)^n} \frac{n!}{(n-m)!(m+k)!m!} a^{\dagger m}a^{m+k},
+\end{equation}basandose en \ref{DefDual}, se puede ver que para cualquier valor de $n$ y $k \\geq 0$ el primer término de la suma, es decir el correspondiente a $m=0$ es:
 
 \begin{equation}
-(\frac{-\nu}{1+\nu})^n \frac{a^k}{k!}
-\end{equation} 
-
-El último término de la suma, el correspondiente a $m=n$, es:
+(\frac{-\nu}{1+\nu})^n \frac{a^k}{k!}.
+\end{equation} El último término de la suma, el correspondiente a $m=n$, es:
 
 \begin{equation}
-\frac{1}{(\nu+1)^n} \frac{1}{(n+k)!} a^{\dagger n}a^{n+k}
-\end{equation}
-
-Si se desea una representación de estos estados en la base de Foch, se puede recurrir a:
+\frac{1}{(\nu+1)^n} \frac{1}{(n+k)!} a^{\dagger n}a^{n+k}.
+\end{equation}Si se desea una representación de estos estados en la base de Foch, se puede recurrir a:
 
 \begin{equation}
-I = \sum^\infty _n \Ket{n}\Bra{n}
-\end{equation}
-
-Y aplicar todos los operadores desde la derecha. En el caso del primer término ya antes mencionado, se obtiene:
+I = \sum^\infty _n \Ket{n}\Bra{n},
+\end{equation}Y aplicar todos los operadores desde la derecha. En el caso del primer término ya antes mencionado, se obtiene:
 
 \begin{equation}
- (\frac{-\nu}{1+\nu})^n \sqrt{\frac{n!}{(n-k)!}}\sum^\infty _{l=k} \Ket{l-k}\Bra{l}
-\end{equation}
-
-Los estados con número de ocupación menor a $k$ se anulan por la definición del operadore de aniquilación. En el caso del último término de la suma, se obtiene:
+ (\frac{-\nu}{1+\nu})^n \sqrt{\frac{n!}{(n-k)!}}\sum^\infty _{l=k} \Ket{l-k}\Bra{l}.
+\end{equation} Los estados con número de ocupación menor a $k$ se anulan por la definición del operadore de aniquilación. En el caso del último término de la suma, se obtiene:
 
 \begin{equation}
-(\frac{1}{1+\nu})^n \frac{n!}{(n-k)!}\sum^\infty _{l=n+k} \Ket{l-k}\Bra{l}
-\end{equation}
-
-Puede verse que ambos términos involucran la misma diferencia en el número de ocupación del ket y del bra, pero la suma correspondiente al último término no cubre tantos estados, pues ahora todo estado con número menor a $n+k$ es anulado.
+(\frac{1}{1+\nu})^n \frac{n!}{(n-k)!}\sum^\infty _{l=n+k} \Ket{l-k}\Bra{l}.
+\end{equation} Puede verse que ambos términos involucran la misma diferencia en el número de ocupación del ket y del bra, pero la suma correspondiente al último término no cubre tantos estados, pues ahora todo estado con número menor a $n+k$ es anulado.
 
 \subsection{Relación de Recurrencia para Estados Duales}
 
 A fin de obtener una relación de recurrencia para los estados duales, es posible basarse en una de las muchas relaciones de recurrencia de los polinomios asociados de Laguerre \cite{ArfkenMM}:
 
 \begin{equation}
-L_n^{k+1}(x) = \frac{n-x}{n}L_{n-1}^{k+1}(x) + \frac{n+k}{n}L_{n-1}^{k}(x)
-\end{equation}
-
-Si se sustituye esto en la expresión para el estado dual correspondiente se tiene, recordando que se utiliza $x$ para la variable únicamente por simplicida:
+L_n^{k+1}(x) = \frac{n-x}{n}L_{n-1}^{k+1}(x) + \frac{n+k}{n}L_{n-1}^{k}(x).
+\end{equation} Si se sustituye esto en la expresión para el estado dual correspondiente se tiene, recordando que se utiliza $x$ para la variable únicamente por simplicida:
 
 \begin{align}
-\hat{\rho}_n ^{k+1} =& [\frac{-\nu}{1+\nu}]^n \frac{n!}{(n+k+1)!} :L_n^{k+1}:a^{k+1}\\
-=&[\frac{-\nu}{1+\nu}]^n\frac{n!}{(n+k+1)!} :\frac{n-x}{n}L_{n-1}^{k+1}(x) + \frac{n+k}{n}L_{n-1}^{k}(x):a^{k+1}\\
-=&[\frac{-\nu}{1+\nu}]^n\frac{n!}{(n+k+1)!}[:L_{n-1}^{k+1}(x)+L_{n-1}^{k}(x):+\frac{1}{n}:-xL_{n-1}^{k+1}(x)+L_{n-1}^{k}(x):]a^{k+1}\\
-=&[(\frac{-\nu}{1+\nu})\frac{1}{(n+k+1)}+ \frac{(n+k)}{-\nu(\nu+1)}a^\dagger \bullet a]\hat{\rho}_{n-1} ^{k+1} + [(\frac{-\nu}{1+\nu}) (n+1)(n+k+1)(n+k)]\hat{\rho}_{n-1} ^{k}
-\end{align}
+\hat{\rho}_n ^{k+1} =& [\frac{-\nu}{1+\nu}]^n \frac{n!}{(n+k+1)!} :L_n^{k+1}:a^{k+1},\\
+=&[\frac{-\nu}{1+\nu}]^n\frac{n!}{(n+k+1)!} :\frac{n-x}{n}L_{n-1}^{k+1}(x) + \frac{n+k}{n}L_{n-1}^{k}(x):a^{k+1},\\
+=&[\frac{-\nu}{1+\nu}]^n\frac{n!}{(n+k+1)!}[:L_{n-1}^{k+1}(x)+L_{n-1}^{k}(x):+\frac{1}{n}:-xL_{n-1}^{k+1}(x)+L_{n-1}^{k}(x):]a^{k+1},\\
+=&[(\frac{-\nu}{1+\nu})\frac{1}{(n+k+1)}+ \frac{(n+k)}{-\nu(\nu+1)}a^\dagger \bullet a]\hat{\rho}_{n-1} ^{k+1} + [(\frac{-\nu}{1+\nu}) (n+1)(n+k+1)(n+k)]\hat{\rho}_{n-1} ^{k}.
+\end{align} Donde $\bullet$ indica que el estado dual va entre el operador de creación y el de aniquilación.
 
-Donde $\bullet$ indica que el estado dual va entre el operador de creación y el de aniquilación.
+Con esto se puede proceder a atacar problemas de enfriamiento optomecánico. Primero se tratará el problema de un oscilador armónico con frecuenci dependiente del tiempo.
 
 
 \chapter{Solución de la Ecuación Maestra Mediante Estados de Floquet}
 
-Para resolver el problema correspondiente a un oscilador armónico amortiguado con frequencia dependiente del tiempo, se utiliza la teoría de Floquet \cite{WardFT}y se busca una forma de la ecuación maestra (eq capitulo anterior) expresada mediante operadores de Floquet, que se definirán más adelante.
+Para resolver el problema correspondiente a un oscilador armónico amortiguado con frequencia dependiente del tiempo, se utiliza la teoría de Floquet \cite{WardFT}y se busca una forma de la ecuación maestra expresada mediante operadores de Floquet, los cuales se definirán más adelante.
 
 \section{Teoría de Floquet}
 
-Se desea resolver una ecuación diferencial respecto al tiempo que involucra coeficientes con dependencia temporal, tal como:
+Se desea resolver una ecuación diferencial que involucra coeficientes con dependencia temporal, tal como:
 
 \begin{equation}\label{FloquetEquation}
 x' = A(t)x,
@@ -695,7 +543,7 @@ x' = A(t)x,
 
 \begin{equation}\label{FloquetForm}
 x(t)=e^{\mu t}p(t).
-\end{equation} Los valores $\mu$ se conocen como los exponentes característicos o de Floquet y la función $p(t)$ es periódica con período $\tau$, es decir el mismo periodo que el coeficiente en la ecuación diferencial. Los coeficientes $\mu$ son, en general, complejos. Claramente, el hecho de que la solución tenga la forma \ref{FloquetForm} puede llevar a que la solución se dispare con el tiempo, por lo que se desea entender el criterio de estabilidad de este tipo de soluciones. Antes de esto, es necesario establecer algunas definiciones y propiedades, las cuales se presentan sin demostración debido a que no son el enfoque principal de este trabajo. Si el lector se encuentra interesado, el tratamiento se encuentra con mayor detalle en la referencia \cite{WardFT}.\linebreak
+\end{equation} Los valores $\mu$ se conocen como los exponentes característicos o de Floquet y la función $p(t)$ es periódica con período $\tau$, es decir el mismo periodo que el coeficiente en la ecuación diferencial. Los coeficientes $\mu$ son, en general, complejos. Claramente, el hecho de que la solución tenga la forma \ref{FloquetForm} puede llevar a que la solución se dispare con el tiempo, por lo que se desea entender el criterio de estabilidad de este tipo de soluciones. Antes de esto, es necesario establecer algunas definiciones y propiedades, las cuales se presentan sin demostración debido a que no son el enfoque principal de este trabajo. Si el lector se encuentra interesado, el tratamiento se encuentra con mayor detalle en las notas de las cuales surge la sección siguiente. \cite{WardFT}
 
 \subsection{Propiedades Básicas}
 
@@ -851,7 +699,7 @@ Es muy importante notar que en estos dos ultimos casos, esta forma de la soluci�
 
 \subsection{Estabilidad de las Soluciones de Floquet para la Ecuación de Hill}
 
-La ecuación de Hill es una ecuación diferencial de segundo orden con coeficientes dependientes del tiempo de forma periódica:
+La ecuación de Hill es una ecuación diferencial de segundo orden con coeficientes dependientes del tiempo de forma periódica\cite{WardFT}:
 
 \begin{equation}
 \ddot{x}(t) + (\delta + \epsilon b(t))x = 0,
@@ -868,35 +716,27 @@ La ecuación de Hill es una ecuación diferencial de segundo orden con coeficien
 
 \section{Estados de Floquet en Mecánica Cuántica}
 
-Ahora se busca estudiar Hamiltonianos con una dependencia periódica en el tiempo:
+Ahora se busca estudiar Hamiltonianos con una dependencia periódica en el tiempo, donde se utilizaran los resultados obtenidos en la sección anterior:
 
 \begin{equation}
-H(t)=H(t+\tau)
-\end{equation}
-
-El hecho de que el Hamiltoniano sea simétrico respecto a (ciertas) traslaciones en el tiempo, permite el uso del formalismo de Floquet \cite{HanngiDQS}. Se asume que la dependencia temporal puede ser vista como una perturbación sobre un Hamiltoniano original:
+H(t)=H(t+\tau).
+\end{equation} El hecho de que el Hamiltoniano sea simétrico respecto a (ciertas) traslaciones en el tiempo, permite el uso del formalismo de Floquet \cite{HanngiDQS}. Se asume que la dependencia temporal puede ser vista como una perturbación sobre un Hamiltoniano original:
 
 \begin{equation}
-H(x,t)=H_0(x)+V(x,t) \qquad V(x,t)=V(x,t+\tau)
-\end{equation} 
-
-También se asume que el Hamiltoniano no perturbado poseé un conjunto completo de eigenfuciones $\{\phi_n\}$ con eigenvalores correspondientes $E_n$. En este caso, la ecuación de Schr\"{o}dinger tiene la forma:
+H(x,t)=H_0(x)+V(x,t) \qquad V(x,t)=V(x,t+\tau).
+\end{equation} También se asume que el Hamiltoniano no perturbado poseé un conjunto completo de eigenfuciones $\{\phi_n\}$ con eigenvalores correspondientes $E_n$. En este caso, la ecuación de Schr\"{o}dinger tiene la forma:
 
 \begin{equation}\label{SchrodingerEQ}
--i\hbar\dot{\Psi}(x,t) = H(x,t)\Psi(x,t)
-\end{equation}
-
-El problema admite una solución del tipo visto en la sección anterior:
+-i\hbar\dot{\Psi}(x,t) = H(x,t)\Psi(x,t).
+\end{equation} El problema cumple con las condiciones necesarias para utilizar una solución del tipo visto en la sección anterior:
 
 \begin{equation}
-\Psi_n(x,t) = e^{(\frac{-i}{\hbar}\mu_nt)}\Phi_n(x,t)
-\end{equation}
-
-Como se mencionó en la sección anterior, $\mu$ en general es un número complejo, lo cual puede llevar a soluciones inestables. En este caso $\Phi_n(x,t)$ es la función que contiene la periodícidad en el tiempo. Sustituir la solución en la ecuación \ref{SchrodingerEQ} genera una ecuación para las funciones periódicas:
+\Psi_n(x,t) = e^{(\frac{-i}{\hbar}\mu_nt)}\Phi_n(x,t).
+\end{equation} Como se mencionó en la sección anterior, $\mu$ en general es un número complejo, lo cual puede llevar a soluciones inestables. En este caso $\Phi_n(x,t)$ es la función que contiene la periodícidad en el tiempo. Sustituir la solución en la ecuación \ref{SchrodingerEQ} genera una ecuación para las funciones periódicas:
 
 \begin{equation}
-H(x,t)\Phi_n(x,t)=\Xi_n\Phi_n(x,t)
-\end{equation}
+H(x,t)\Phi_n(x,t)=E_n\Phi_n(x,t).
+\end{equation} Antes de buscar formas explícitas para estos estados, es necesario resolver el problema clásico correspondiente a este sistema.
 
 \section{Oscilador Armónico Dependinte del Tiempo: Solución Mediante Formalismo de Floquet}
 
@@ -906,26 +746,21 @@ En el caso clásico \cite{HanngiFM} se tiene, para un oscilador armónico unidim
 \ddot{x}+\gamma\dot{x}+\frac{k(t)}{m}x=0
 \end{equation}
 
-Se asume que la función $k(t)$ tiene es periódica con periódo $T$ Si se utiliza la sustitución $x=ye^{-\frac{\gamma t}{2}}$, se llega a la ecuación:
+Se asume que la función $k(t)$ es periódica con periódo $T$ Si se utiliza la sustitución $x=ye^{-\frac{\gamma t}{2}}$, se llega a la ecuación:
 
 \begin{equation}
 \ddot{y} +(\frac{k(t)}{m}-\frac{\gamma^2}{4})y=0
 \end{equation}
 
-El teorema de Floquet para ecuaciones de segundo orden con coeficientes del tiempo (ver Hanngi para referencia) asegura que esta ecuación tiene dos soluciones:
-
-
-\begin{equation}
-E_1(t) = e^{i\mu t}\phi(t), \quad E_2(t)=E_1(-t)
-\end{equation}
-
-Recordando que la función $\phi$ debe tener la misma periodicidad que $k(t)$. Dado que la función cumple con esta condición, es posible realizar una expansión de Fourier \cite{ArfkenMM} de la misma:
+El teorema de Floquet para ecuaciones de segundo orden con coeficientes del tiempo \cite{HanngiFM} asegura que esta ecuación tiene dos soluciones:
 
 \begin{equation}
-\phi(t) = \sum_{-\infty}^\infty c_n e^{in\omega t}
-\end{equation}
+E_1(t) = e^{i\mu t}\phi(t), \quad E_2(t)=E_1(-t),
+\end{equation} Recordando que la función $\phi$ debe tener la misma periodicidad que $k(t)$. Dado que la función cumple con esta condición, es posible realizar una expansión de Fourier \cite{ArfkenMM} de la misma:
 
-Para fijar los coeficientes se elije una normalización tale que el Wronskiano sea:
+\begin{equation}
+\phi(t) = \sum_{-\infty}^\infty c_n e^{in\omega t}.
+\end{equation} Para fijar los coeficientes se elije una normalización tal que el Wronskiano sea:
 
 \begin{equation}
 W = \dot{E}_1(t)E_2(t)-E_1(t)\dot{E}_2(t) = 2i.
@@ -959,35 +794,25 @@ Estas soluciones tienen la forma explícita\cite{BrownPT}
 \end{equation}Es conveniente entender el origen de estos operadores. Si se comienza con un Hamiltoniano con frecuencia dependiente del tiempo, se puede seguir el procedimiento de \cite{BrownPT}:
 
 \begin{equation}\label{TDHO}
-H = \frac{1}{2m}p^2 + \frac{1}{2}k(t)q^2
-\end{equation}
-
-Este lleva a la ecuación de movimiento:
+H = \frac{1}{2m}p^2 + \frac{1}{2}k(t)q^2.
+\end{equation} Este lleva a la ecuación de movimiento:
 
 \begin{equation}
-m\ddot{q}(t) + k(t)q(t) = 0
-\end{equation}
-
-Para el operador $q(t)$. Lo que se busca es una transformación unitaria que lleve este problema al problema usual del oscilador armónico en mecánica cuántica. Es decir, se busca $U$ tal que, trabajando en el cuadro de Heisenberg \cite{SakuraiQM}
+m\ddot{q}(t) + k(t)q(t) = 0,
+\end{equation} para el operador $q(t)$. Lo que se busca es una transformación unitaria que lleve este problema al problema usual del oscilador armónico en mecánica cuántica. Es decir, se busca $U$ tal que, trabajando en el cuadro de Heisenberg \cite{SakuraiQM}
 
 \begin{align}
-\tilde{q}(t) =& U^{-1}(t)q(t)U(t)\\
-\tilde{p}(t) =& U^{-1}(t)p(t)U(t)
-\end{align}
-
-Y donde entonces el nuevo Hamiltoniano queda dado por:
+\tilde{q}(t) =& U^{-1}(t)q(t)U(t),\\
+\tilde{p}(t) =& U^{-1}(t)p(t)U(t).
+\end{align} Y donde entonces el nuevo Hamiltoniano queda dado por:
 
 \begin{equation}
-\tilde{H} = H + U^{-1}i\dot{U}
-\end{equation}
-
-Para la transformación se elije:
+\tilde{H} = H + U^{-1}i\dot{U}.
+\end{equation} Para la transformación se elije:
 
 \begin{equation}
-U = e^{-i\chi(t)q^2(t)}
-\end{equation}
-
-Donde:
+U = e^{-i\chi(t)q^2(t)},
+\end{equation} donde:
 
 \begin{equation}
 \chi(t) = \frac{m}{4}(\frac{\dot{f}}{f}+\frac{\dot{f^*}}{f^*})
@@ -1017,7 +842,7 @@ P=&U_2^{-1}\tilde{p}U_2 = |f|(p-2\chi q),
 
 \section{Ecuación Maestra Mejorada: Solución con Base de Decaimiento}
 
-Se busca obtener una mejor ecuación maestra al tomar en cuenta la dependencia temporal del Hamiltoniano antes de realizar la aproximación de Markov \cite{HanngiDQS}. Como el Hamiltoniano es explícitamente dependiente del tiempo, no pueden usarse los operadores usuales de creación y aniquilación, es aquí donde entra la teoría de Floquet de la sección anterior. Utilizando dichos operadores, los elementos de matríz del operador de posición son:
+Se busca obtener una mejor ecuación maestra al tomar en cuenta la dependencia temporal del Hamiltoniano antes de realizar la aproximación de Markov \cite{HanngiDQS}. Como el Hamiltoniano es explícitamente dependiente del tiempo, no pueden usarse los operadores usuales de creación y aniquilación, es aquí donde entra en juego la teoría de Floquet de la sección anterior. Utilizando dichos operadores, los elementos de matríz del operador de posición son:
 
 \begin{align}
 X_{\alpha \beta}(t) =& e^{i(\mu_{\alpha}-\mu_{\beta})}\Bra{\phi_{\alpha}(t)}x\Ket{\phi_{\beta}(t)},\\
@@ -1071,9 +896,7 @@ H_S = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}).
 \begin{equation} \label{GammaLindblat}
 \dot{\rho}=\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )
  + N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
-\end{equation}
-
-La cual queda formalmente resuelta mediante la base de decaimiento. En el capitulo siguiente se utilizará este resultado para modelar enfriamiento optomecánico.
+\end{equation}La cual queda formalmente resuelta mediante la base de decaimiento. En el capitulo siguiente se utilizará este resultado para modelar enfriamiento optomecánico.
 
 
 \chapter{Enfriamiento Optomecánico}
@@ -1104,22 +927,22 @@ de dimensión\cite{SankeyMC}. En ese caso, se puede observar que parámetros de 
 En particular, se desea analizar el sistema cuando la frecuencia del oscilador armónico depende del tiempo. Se asume que el oscilador se encuentra acoplado a un único modo forzado de la cavidad el cual tiene frecuencia $\omega_{cav}$. Se asume que el marco de referencia rota con la frecuencia de la bomba. Se modela el sistema mediante el siguiente Hamiltoniano\cite{BarberisLC}:
 
 \begin{equation}
-H(t) = H_{cav} + H_{mec}(t) + H_{rad} + B.
+H(t) = H_{cav} + H_{mec}(t) + H_{rad} + Bomba.
 \end{equation} En donde:
 
 \begin{align}
 H_{cav} =& -\hbar \delta a^\dagger a,\\
 H_{mec}(t) =& \frac{p^2}{2m} + \frac{1}{2}m \nu (t) x^2,\\
 H_{rad} =& -\hbar g a^\dagger a x,\\
-B =& \hbar\frac{\Omega}{2}(a^\dagger + a),
+Bomba =& \hbar\frac{\Omega}{2}(a^\dagger + a),
 \end{align} en este caso, $\delta = w_{bomba} - w_{cav}$ representa la diferencia de frecuencias entre la bomba de fotones y la cavidad y $\hbar g$ representa la fuerza de radiación que un fotón aplica sobre el oscilador mecánico sin modulación. El término $H_{rad}$ modela una interacción simple entre los fotones y el espejo. Dado que en este caso la longitud de la cavidad no es fija, la frecuencia de la cavidad debe tener una dependencia en la coordenada $x$, entonces, tomando el hamiltoniano para el oscilador que modela la cavidad y expandiendo hasta primer orden en $x$\cite{KippenberCO}:
 
 \begin{equation}
 \hbar w_{cav}(x) a^\dagger a \simeq \hbar(w_{cav}-g_0x)a^\dagger a,
-\end{equation}lo cual acopla los dos sistemas. Por \ref{QTDHO}, se modela al oscilador mecánico utilizando operadores de floquet:
+\end{equation}lo cual acopla los dos sistemas. Por \ref{QTDHO}, se modela al oscilador mecánico utilizando operadores de Floquet:
 
 \begin{equation}
-H_{mec}(t) = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}).
+H_{mec}(t) = \hbar\frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}).
 \end{equation} Recordando la definición de los operadores de Floquet \ref{FloquetOperators}, se puede invertir la relación en términos de los operadores $x$ y $p$:
 
 
@@ -1156,7 +979,7 @@ B(t) = & \frac{da}{b}+c \\
 \end{align}Con esto, es posible sustituir el operador $x$ en el Hamiltoniano de radiación con operadores de Floquet, lo cual produce un nuevo Hamiltoniano:
 
 \begin{equation}
-H(t)_{rad} = \frac{g}{-2i}\sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{A(t) +1}{B(t)})\Gamma (t) +(\frac{A(t) -1}{B(t)})\Gamma^\dagger (t)]
+H(t)_{rad} = 2ig\sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{A(t) +1}{B(t)})\Gamma (t) +(\frac{A(t) -1}{B(t)})\Gamma^\dagger (t)]
 \end{equation} con esto, el Hamiltoniano final es el siguiente:
 
 \begin{equation}\label{LaserCoolingHamiltonian}
@@ -1165,15 +988,17 @@ H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \f
 
 \begin{align*}
 g'=&g\sqrt{\frac{\hbar^3}{2m}},\\
-\gamma_+(t)(t)=&\frac{A(t) +1}{-2iB(t)},\\
-\gamma_-(t)=&\frac{A(t) -1}{-2iB(t)},
+\gamma_+(t)=2i&\frac{A(t) +1}{B(t)},\\
+\gamma_-(t)=2i&\frac{A(t) -1}{B(t)},
 \end{align*} 
 
-Ahora se desea resolver la ecuación maestra correspondiente a este Hamiltoniano. Los términos de Lindblat que corresponden a este Hamiltoniano son $L_a$ para la cavidad y $L_\Gamma$ para el oscilador, ambos tienen la misma forma funcional, la cual es la de \ref{GammaLindblat}. Esto lleva a la ecuación maestra:
+Ahora se desea resolver la ecuación maestra correspondiente a este Hamiltoniano. Los términos de Lindblad que corresponden a este Hamiltoniano son $L_a$ para la cavidad y $L_\Gamma$ para el oscilador, ambos tienen la misma forma funcional, la cual es la de \ref{GammaLindblat}. Esto lleva a la ecuación maestra:
 
 \begin{equation}\label{LCMasterEquation}
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L_a\rho + L_\Gamma \rho
 \end{equation}
+
+Antes de poder resolver esta ecuación, es necesario realizar una serie de manipulaciones a fin de llegar a una forma más conveniente.
 
 \chapter{Ecuación Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}
 
@@ -1216,9 +1041,9 @@ U^{\dagger} \Gamma^{\dagger} U =& \Gamma^{\dagger} + \beta^*,
 \begin{align}
 H_{cav}' =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2),\\
 H_{mec}' =& \frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma + |\beta|^2 ),\\
-H_{rad}'=&-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))],\\
+H_{rad}'=&-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_-(t)(\Gamma^{\dagger}+\beta^*)+\gamma_+(t)(\Gamma+\beta))],\\
 B' =& \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*),
-\end{align}Los terminos de Lindblat que modelan el decaimiento se convierten en:
+\end{align}Los terminos de Lindblad que modelan el decaimiento se convierten en:
 
 \begin{align}
 L_a ' =& L_a + \frac{A}{2}[(\alpha a^\dagger - \alpha^*a),\rho], \\
@@ -1229,7 +1054,7 @@ L_{\Gamma}' =& L_{\Gamma} + \frac{\gamma}{2}[(\beta\Gamma^{\dagger}-\beta^* \Gam
 U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a,\\
 &+ \dot{\beta}\Gamma^{\dagger}\rho + \rho\dot{\beta}^*\Gamma-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma},\\
 &+3(\beta^*)^2C_{--}(t)\rho + |\beta|^2(C_{+-}(t) - C_{-+}(t))\rho -  \beta^2 C_{++}(t)\rho,
-\end{align*} donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos no son nulos:
+\end{align*} donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos, en general, no son nulos:
 
 \begin{align*}
 C_{++}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma^{\dagger}],\\
@@ -1242,7 +1067,7 @@ Es interesante notar que toda la dependencia relacionada con estás funciones va
 
 \begin{equation}
 -(U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U) = [\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger,\rho]+ [\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger,\rho],
-\end{equation} lo cual sugiere tratarlos, junto con los términos adicionales que surgen al transformar los términos de Lindblat, como parte del Hamiltoniano. Esto lleva a que el Hamiltoniano total en el marco transformado incluya nuevos términos:
+\end{equation} lo cual sugiere tratarlos, junto con los términos adicionales que surgen al transformar los términos de Lindblad, como parte del Hamiltoniano. Esto lleva a que el Hamiltoniano total en el marco transformado incluya nuevos términos:
 
 \begin{align}
 H_{rot} =& i\hbar(\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger),\\
@@ -1251,38 +1076,38 @@ H_{temp}=& i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
 \end{align} si se escribe el Hamiltoniano total del sistema en el nuevo marco de referencia, se llega a que este es:
 
 \begin{align*}
-H =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)+\frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma)\\
- &-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_+(t)(\Gamma^{\dagger}+\beta^*)+\gamma_-(t)(\Gamma+\beta))]\\
+H =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)+\hbar\frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma)\\
+ &-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_-(t)(\Gamma^{\dagger}+\beta^*)+\gamma_+(t)(\Gamma+\beta))]\\
  &+\frac{\hbar \Omega}{2}(a^{\dagger} + a)+i\hbar(\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger)\\
  &+i\hbar(\frac{A}{2}(\alpha a^\dagger - \alpha^*a)+\frac{\gamma}{2}(\beta\Gamma^{\dagger}-\beta^* \Gamma))+i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
 \end{align*} aquí es importante notar que se eliminaron los términos que no contenían ningún operador, puesto que estos claramente conmutan con $\rho$ y por lo tanto no contribuyen a la ecuación maestra. Se desea eliminar los términos que únicamente contienen un operador de creación o aniquilación, por lo que se agrupan todos estos términos: 
 
 \begin{align}
-a&(-\hbar\delta\alpha^* -\hbar g' \alpha^*(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} + i\hbar\dot{\alpha}^* -i\hbar\frac{A}{2}\alpha^*),\\
-a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_+(t) \beta^* + \gamma_-(t) \beta)+ \frac{\hbar\Omega}{2} - i\hbar\dot{\alpha} +i\hbar\frac{A}{2}\alpha),\\
+a&(-\hbar\delta\alpha^* -\hbar g' \alpha^*(\gamma_-(t) \beta^* + \gamma_+(t) \beta)+ \frac{\hbar\Omega}{2} + i\hbar\dot{\alpha}^* -i\hbar\frac{A}{2}\alpha^*),\\
+a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_-(t) \beta^* + \gamma_+(t) \beta)+ \frac{\hbar\Omega}{2} - i\hbar\dot{\alpha} +i\hbar\frac{A}{2}\alpha),\\
 \Gamma&(\frac{W}{|f(t)|^2}\beta^*-\hbar g'|\alpha|^2\gamma_- +  i\hbar\dot{\beta}^*+i\hbar\frac{\gamma}{2}\beta^*),\\
-\Gamma^\dagger&(\frac{W}{|f(t)|^2}\beta-\hbar g'|\alpha|^2\gamma_+ -  i\hbar\dot{\beta}-i\hbar\frac{\gamma}{2}\beta),
+\Gamma^\dagger&(\hbar\frac{W}{|f(t)|^2}\beta-\hbar g'|\alpha|^2\gamma_+ -  i\hbar\dot{\beta}-i\hbar\frac{\gamma}{2}\beta),
 \end{align} si se desea eliminar todos estor términos, los términos asociados a cada operador deben eliminarse de manera independiente,lo cual genera ecuaciones diferenciales para los coeficientes $\alpha$ y $\beta$. Es importante notar que solo se obtienen dos ecuaciones, ya que las ecuaciones para los conjugados se obtienen al conjugar. Estas son:
 
 \begin{align}
-\dot{\alpha} =& \alpha(-\frac{A}{2}+i(\delta+g'(\gamma_+(t) \beta^* + \gamma_-(t) \beta))-i\frac{\Omega}{2},\\
-\dot{\beta} =& \beta(-\frac{\gamma}{2}-i\frac{W}{\hbar|f(t)|^2})+ig'|\alpha|^2\gamma_+(t),
+\dot{\alpha} =& \alpha(-\frac{A}{2}+i(\delta+g'(\gamma_-(t) \beta^* + \gamma_+(t) \beta))-i\frac{\Omega}{2},\\
+\dot{\beta} =& \beta(-\frac{\gamma}{2}-i\frac{W}{|f(t)|^2})+ig'|\alpha|^2\gamma_+(t),
 \end{align} si estas ecuaciones se cumplen, entonces se obtiene el Hamiltoniano:
 
 
 \begin{align*}
-H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)(\gamma_+(t)\Gamma^{\dagger}+\gamma_-(t)\Gamma)]\\
+H'=& -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger -\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)(\gamma_-(t)\Gamma^{\dagger}+\gamma_+(t)\Gamma)]\\
 &+ i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger),
 \end{align*}  donde se ha hecho el cambio $\delta' = \delta + g'(\beta + \beta^*)$. Con esto se obtiene la ecuación maestra para el enfriamiento optomecánico con un oscilador con frecuencia dependiente del tiempo, en el marco de referencia desplazado:
 
 \begin{equation}\label{DLCMasterEquation}
 \dot{\rho} = \frac{1}{i\hbar}[H',\rho] + L_a\rho + L_\Gamma\rho + C(t)\rho,
-\end{equation} en donde $C(t)$ representa los términos de conmutadores vistos anteriormente. Para poder avanzar más allá, se requiere una forma escpecífica para la dependencia funcional de la frecuencia del oscilador.
+\end{equation} en donde $C(t)$ representa los términos de conmutadores vistos anteriormente. Para poder avanzar más, se requiere una forma escpecífica para la dependencia funcional de la frecuencia del oscilador. Con esta dependencia es posible calcular todos los términos con dependencia temporal.
 
 
 \section{Solución para Oscilaciones Pequeñas Respecto a una Frecuencia Promedio}
 
-La ecuación \ref{DLCMasterEquation} depende fuertemente de las soluciones clásicas del problema del oscilador armónico con frecuencia dependiente del tiempo. Estas soluciones no solo determinan la forma exacta de los operadores $\Gamma$, también determinan la forma de los términos denominados $C(t)$. En esta sección se trabajará con el supuesto de que la dependencia temporal en la frecuencia se puede tratar como pequeñas variaciones périódicas en torno a una frecuencia promedio:
+La ecuación \ref{DLCMasterEquation} depende fuertemente de las soluciones clásicas del problema del oscilador armónico con frecuencia dependiente del tiempo. Estas soluciones no solo determinan la forma exacta de los operadores $\Gamma$, también determinan la forma de los términos denominados $C(t)$. En esta sección se trabajará con el supuesto de que la dependencia temporal en la frecuencia se puede tratar como pequeñas variaciones périódicas en torno a una frecuencia promedio. En esta sección se seguirá el tratamiento en \cite{WardFT}. La ecuación a resolver es: 
 
 \begin{equation}
 k(t) = \nu_0 + \epsilon cos(2\omega t)
@@ -1418,21 +1243,21 @@ B(t) = \frac{-2\omega }{sen(wt)}.
 \end{equation} Recordando ahora la forma explícita de los coeficientes $\gamma_{\pm}$:
 
 \begin{align*}
-\gamma_+(t)=&\frac{A(t) +1}{-2iB(t)},\\
-\gamma_-(t)=&\frac{A(t) -1}{-2iB(t)},
+\gamma_+(t)=&-2i\frac{A(t) +1}{B(t)},\\
+\gamma_-(t)=&-2i\frac{A(t) -1}{B(t)},
 \end{align*} simplemente se sustituyen los valores obtenidos:
-
+a
 \begin{align}
-\gamma_\pm =& \frac{A(t) \pm 1}{-2iB(t)},\\
-=& \frac{i \frac{cos(\omega t)}{sin(\omega t)}\pm 1}{\frac{-2\omega }{sen(wt)}}, \\
-=& \frac{i \frac{cos(\omega t)}{sin(\omega t)}}{\frac{-2\omega }{sen(wt)}} \pm \frac{1}{\frac{-2\omega }{sen(wt)}}, \\
-=& \frac{cos(\omega t)}{-4\omega} \pm \frac{i sen(\omega t)}{-4\omega},\\
-=& -\frac{1}{4\omega}e^{\pm i\omega t}.
+\gamma_\pm =& 2i\frac{A(t) \pm 1}{B(t)},\\
+=& 2i(\frac{i \frac{cos(\omega t)}{sin(\omega t)}\pm 1}{\frac{-2\omega }{sen(wt)}}), \\
+=& 2i(\frac{i \frac{cos(\omega t)}{sin(\omega t)}}{\frac{-2\omega }{sen(wt)}} \pm \frac{1}{\frac{-2\omega }{sen(wt)}}), \\
+=& 2(\frac{cos(\omega t)}{2\omega} \pm \frac{i sen(\omega t)}{-2\omega}),\\
+=& \frac{1}{\omega}e^{\mp i\omega t}.
 \end{align}
 
 Falta la forma explícita de los operadores $\dot{\Gamma}$ para poder continuar con los cálculos.
 
-\subsection{Operadores $\Gamma$}
+\subsection{Operadores $\dot{\Gamma}$}
 
 Dado que se tiene una forma explícita para la solución clásica, es posible dar una forma explícita de las derivadas temporales de los operadores $\Gamma$. Se puede ver que las derivadas temporales de la solución clásica pueden expresarse de una forma particularmente conveniente:
 
@@ -1453,7 +1278,7 @@ Dado que se tiene una forma explícita para la solución clásica, es posible da
 i\hbar(\beta^*\dot{\Gamma}-\beta\dot{\Gamma}^\dagger) = \hbar\omega(\beta^*\Gamma+\beta\Gamma^{\dagger}),
 \end{equation}, esto lleva necesariamente a modificar las ecuaciones diferenciales de los coeficientes $\beta$ puesto que estos términos deben cancelarse también. Finalmente, es necesario obtener una forma explícita para el factor $\frac{W}{|f|^2}$ que acompaña al oscilador armónico expresado en operadores $\Gamma$.
 
-\subsection{Factor General para el Oscilador Dependiente del Tiempo}
+\subsection{Factores del Hamiltoniano del Oscilador Dependiente del Tiempo}
 
 Se busca calcular el factor $\frac{W}{|f|^2}$, primero se calcula el denominador:
 
@@ -1504,13 +1329,13 @@ A fin de encontrar una solución analítica, se restringe el estudio al caso est
 Trabajando con estás soluciones de orden $0$ en $g'$, el Hamiltoniano es:
 
 \begin{equation}
-H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma -\hbar g'(a^{\dagger}a +\alpha_0 a^{\dagger}+\alpha^*_0 a)(\gamma_+(t)\Gamma^{\dagger}+\gamma_-(t)\Gamma)
+H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma -\hbar g'(a^{\dagger}a +\alpha_0 a^{\dagger}+\alpha^*_0 a)(\gamma_-(t)\Gamma^{\dagger}+\gamma_+(t)\Gamma)
 \end{equation}
 
 En magnitud, $\alpha \gg 1$, por lo que en el término de interacción se desprecia el término $a^\dagger a$ al ser mucho menor que los otros dos. Con esto, el Hamiltoniano final es:
 
 \begin{equation}
-H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma +\frac{\hbar g'}{4\omega}(\alpha_0 a^{\dagger}+\alpha^*_0 a)(e^{i\omega t}\Gamma^{\dagger}+e^{-i\omega t}\Gamma)
+H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma +\frac{\hbar g'}{\omega}(\alpha_0 a^{\dagger}+\alpha^*_0 a)(e^{i\omega t}\Gamma^{\dagger}+e^{-i\omega t}\Gamma)
 \end{equation} y finalmente la ecuación maestra es:
 
 \begin{equation}\label{LCMasterEq}
@@ -1615,7 +1440,7 @@ P\dot{\rho} = PL_1 \frac{Q}{\lambda_m-L_0}L_1\rho_{st}\mu,
 \end{equation} donde se ha asumido que $\rho(t-\Delta t)=rho_{st} \otimes Tr_c[P\rho]$, es decir que los estados iniciales son separables. $\mu$ representa a $Tr_c[P\rho]$. Para obtener la ecuación deseada simplemente se traza sobre los grados de libertad de la cavidad, y así se obtiene una ecuación proyectada a los estados deseados, sobre las variables del oscilador. A continuación se trata el caso específico para la interacción que se ha utilizado hasta ahora. vale la pena recordar:
 
 \begin{equation}
-L_1\rho= \frac{1}{i\hbar}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\Gamma(t)+e^{i\omega t}\Gamma(t)^{\dagger}),\rho]
+L_1\rho= \frac{g'}{i\hbar}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\Gamma(t)+e^{i\omega t}\Gamma(t)^{\dagger}),\rho]
 \end{equation} 
  
 \section{Solución para Interacción Optomecánica}
@@ -1623,13 +1448,13 @@ L_1\rho= \frac{1}{i\hbar}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\Ga
 Hasta ahora, salvo por las consideraciones de la dependencia temporal de $L_1$, el tratamiento ha sido general. Para poder continuar, se debe tomar en cuenta la forma de la interacción. Por simplicidad se denota $L_1=Fx$ donde $F$ corresponde a la parte de la interacción que opera sobre estados de la cavidad y $x$ a la parte que opera sobre el oscilador. Se tiene entonces:
 
 \begin{align*}
-=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}L_1 \rho_{st}\mu],\\
-=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}[Fx, \rho_{st}\mu]],\\
-=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}(Fx\rho_{st}\mu-\rho_{st}\mu Fx)],\\
-=&\frac{-1}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu \rho_{st}F],\\
-=&\frac{-1}{\hbar^2} Tr_c[[Fx,x\mu]\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[[Fx,\mu x]\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
-=&\frac{-1}{\hbar^2} Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
-=&\frac{-1}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]xx\mu+\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]x\mu x\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}L_1 \rho_{st}\mu],\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}[Fx, \rho_{st}\mu]],\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}(Fx\rho_{st}\mu-\rho_{st}\mu Fx)],\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu \rho_{st}F],\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[[Fx,x\mu]\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[[Fx,\mu x]\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
+=&\frac{-g'^2}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]xx\mu+\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]x\mu x\\
  &+\frac{1}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]x\mu x-\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]\mu xx,\\
 =&-T_1xx\mu+T_1x\mu x + T_2x\mu x + T_2\mu xx.
 \end{align*} Se debe de calcular los términos con operadores fuera de la traza:
@@ -1643,7 +1468,168 @@ xx\mu=& (x_++x_-)(x_++x_-)\mu,\\
 xx\mu=&x_+x_+\mu + x_+x_-\mu + x_-x_+\mu + x_-x_-\mu,\\
 x\mu x=&x_+\mu x_+ + x_+\mu x_- + x_-\mu x_+ x_-\mu x_-,\\
 \mu xx=& \mu x_+x_+ + \mu x_+x_-+ \mu x_-x_+ +\mu x_-x_-,
+\end{align} sin embargo, $\mu$ corresponde a una proyección a estados diagonales, por lo que solo sobreviven los términos que corresponden a un operador de creación y uno de aniquilación. Adicionalmente, puede verse por \cite{BarberisLC} que se cumple:
+
+\begin{equation}
+T_1 = T_2^*
+\end{equation}
+
+Los valores posibles de $\lambda_m$ son 
+
+\appendix
+
+\chapter{Transformacion al Marco Desplazado}
+
+En este apéndice se dan los cálculos detallados para la transformación al marco desplazado. Primero se realiza la transformación del Hamiltoniano del sistema, luego se transforma los términos de Lindblad y finalmente se realizan las derivadas temporales.
+
+\section{Términos Hamiltonianos}
+
+Para hacer la transformación al marco desplazado, primero se recuerda el operador mediante el cual se realiza la transformación:
+
+\begin{equation}
+U_{a,\Gamma} = e^{(\alpha a^\dagger - \alpha^*a)}e^{(\beta \Gamma^\dagger - \beta^*\Gamma)},
+\end{equation} y su complejo conjugado:
+
+\begin{equation}
+U_{a,\Gamma}^{\dagger} = e^{-(\alpha a^\dagger - \alpha^*a)}e^{-(\beta \Gamma^\dagger - \beta^*\Gamma)},
+\end{equation} donde claramente:
+
+\begin{equation}
+UU^{\dagger} = 1.
+\end{equation} Primero se debe obtener como transforman los operadores individuales. En el caso del operador $a$, utilizando la formula de Baker-Campbell-Hausdorff:
+
+\begin{equation}
+U^{\dagger}aU = a +[a,(\alpha a^\dagger - \alpha^*a)] = a +\alpha[a,a^{\dagger}]=a+\alpha.
+\end{equation} Aquí se omitió el conmutador con los coeficientes $\beta$ al ser trivialmente cero. Debido a las reglas de conmutación de los operadores de creación y aniquilación la serie solo contiene un término. Si se toma el complejo conjugado:
+
+\begin{equation}
+U^{\dagger}a^{\dagger}U = a^\dagger + \alpha^*.
+\end{equation} Los operadores $\Gamma$ siguen las mismas reglas de conmutación y por lo tanto el resultado es completamente analogo:
+
+\begin{align}
+U^{\dagger}\Gamma U =& \Gamma + \beta, \\
+U^{\dagger}\Gamma^\dagger U =& \Gamma^\dagger + \beta^*.
+\end{align} También es necesario transformar el operador de número, primero se calcula el conmutador:
+
+\begin{align*}
+[a^\dagger a,(\alpha a^\dagger - \alpha^*a) ] =& [a^\dagger a,\alpha a^\dagger] - [a^\dagger a,\alpha^*a],\\
+=&\alpha [a^\dagger a,a^\dagger] - \alpha^*[a^\dagger a,a],\\
+=&\alpha a^{\dagger} + \alpha^* a.
+\end{align*} Entonces es necesario calcular el conmutador:
+
+\begin{align*}
+[\alpha a^{\dagger} + \alpha^* a,\alpha a^\dagger - \alpha^*a] = |\alpha|^2[a^{\dagger},a]-|\alpha|^2[a,a^{\dagger}],\\
+=2|\alpha|^2.
+\end{align*} Al sustituir esto en la serie, se obtiene:
+
+\begin{equation}
+U^\dagger a^\dagger a U = a^\dagger a +\alpha a^\dagger + \alpha^* a + |\alpha|^2,
+\end{equation} y de manera completamente equivalente:
+
+\begin{equation}
+U^\dagger \Gamma^\dagger \Gamma U = \Gamma^\dagger \Gamma +\beta \Gamma^\dagger + \beta^* \Gamma + |\beta|^2,
+\end{equation}. Utilizando estas reglas de transformación, los términos Hamiltonianos son:
+
+\begin{align}
+H_{cav}' =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2),\\
+H_{mec}' =& \frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma + |\beta|^2 ),\\
+H_{rad}'=&-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_-(t)(\Gamma^{\dagger}+\beta^*)+\gamma_+(t)(\Gamma+\beta))],\\
+B' =& \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*).
 \end{align}
+
+Se procede a transformar los términos de Lindblad.
+
+\section{Términos de Lindblad}
+
+Se recuerda que los términos correspondientes son:
+
+\begin{equation}
+U^\dagger [L_aU\rho U^\dagger]U + U^\dagger [L_\Gamma U\rho U^\dagger]U,
+\end{equation} se procede primero con $L_a$. Se recuerda la forma explícita de $L_a \rho$:
+
+\begin{equation}
+L_a\rho = 2a\rho a^\dagger - a^\dagger a \rho - \rho a^\dagger a,
+\end{equation} por lo que:
+
+\begin{align*}
+U^\dagger [L_aU\rho U^\dagger]U =& U^\dagger(2aU\rho U^\dagger a^\dagger - a^\dagger a U\rho U^\dagger - U\rho U^\dagger a^\dagger a)U,\\
+=& 2U^\dagger a U \rho U^\dagger a^\dagger U - U^\dagger a^\dagger a U \rho -\rho U^\dagger a^\dagger a U, \\
+=& 2(a+\alpha)\rho(a^\dagger+\alpha^*)-\{a^\dagger a +\alpha a^\dagger + \alpha^* a + |\alpha|^2,\rho \},\\
+=& 2a\rho a^\dagger + 2\alpha^* a\rho +2\alpha \rho a^\dagger + 2|\alpha|^2\rho -\{a^\dagger a +\alpha a^\dagger + \alpha^* a + |\alpha|^2,\rho \},\\
+=& 2a\rho a^\dagger + 2\alpha^* a\rho - a^\dagger a \rho -\alpha a^\dagger \rho -\rho a^\dagger a -\alpha^* \rho a,\\
+=& L_a\rho + [\alpha^* a - \alpha a^\dagger].
+\end{align*} En términos de forma algebráica, el término $L_\Gamma$ funciona de la misma forma, y se transforma de igual manera. Con esto se llega a:
+
+\begin{align}
+U^\dagger [L_aU\rho U^\dagger]U=& L_a\rho + [\alpha a^\dagger - \alpha^* a,\rho],\\
+U^\dagger [L_\Gamma U\rho U^\dagger]U =& L_\Gamma \rho + [ \beta \Gamma^\dagger - \beta^* \Gamma,\rho].
+\end{align} La transformación es equivalente al término usual de Lindblad más un Hamiltoniano efectivo adicional. Finalmente, se calculan las derivadas temporales.
+
+\section{Derivadas temporales de $U$ y $U^\dagger$}
+
+Para poder derivar el operador $U$, es necesario utilizar la identidad:
+
+\begin{equation}
+e^{A+B} = e^A e^B e^{\frac{1}{2}[A,B]},
+\end{equation} con $A$ y $B$ operadores. Esto es válido únicamente cuando tanto $A$ y $B$ conmutan con $[A,B]$. Utilizando esto es posible expresar $U_a$ como:
+
+\begin{equation}
+U_a = e^{\alpha a^\dagger}e^{\alpha^* a}e^{-\frac{|\alpha|^2}{2}},
+\end{equation} y de manera análoga:
+
+\begin{equation}
+U_\Gamma = e^{\beta \Gamma^\dagger}e^{\beta^* \Gamma}e^{-\frac{|\beta|^2}{2}}.
+\end{equation} Primero se nota que:
+
+\begin{equation}
+\dot{U} = \dot{U_aU_\Gamma} = \dot{U}_a U_\Gamma +  U_a \dot{U}_\Gamma,
+\end{equation} por lo que se calcula cada derivada por separado. Para el caso de $U_a$:
+
+\begin{align*}
+\dot{U}_a =& \dot{(e^{\alpha a^\dagger})}e^{\alpha^* a}e^{-\frac{|\alpha|^2}{2}}
++e^{\alpha a^\dagger}\dot{(e^{\alpha^* a})}e^{-\frac{|\alpha|^2}{2}}+e^{\alpha a^\dagger}e^{\alpha^* a}\dot{(e^{-\frac{|\alpha|^2}{2}})},\\
+=&\dot{\alpha} a^\dagger U_a - U_a\dot{\alpha}^* - \frac{1}{2}(\dot{\alpha} \alpha^*+\dot{\alpha}^* \alpha).
+\end{align*} Tomar el complejo conjugado es equivalente a cambiar el signo de los coeficientes $\alpha$ y $\alpha^*$, por lo que inmediatamente se puede obtener $\dot{U}_a^\dagger$, tenemos entonces:
+
+\begin{align}
+\dot{U}_a=&\dot{\alpha} a^\dagger U_a - U_a\dot{\alpha}^*a - \frac{1}{2}(\dot{\alpha} \alpha^*+\dot{\alpha}^* \alpha)U_a,\\
+\dot{U}_a^\dagger=&-\dot{\alpha} a^\dagger U_a^\dagger + U_a^\dagger\dot{\alpha}^*a - \frac{1}{2}(\dot{\alpha} \alpha^*+\dot{\alpha}^* \alpha)U_a^\dagger.
+\end{align} Se realiza un procedimiento similar con $U_\Gamma$, pero aquí debe tenerse en cuenta que los operadores $\Gamma$ dependen explícitamente del tiempo. También es importante tener en cuenta que mientras en el cálculo anterior esto no es problemático, para el caso de los operadores $\Gamma$, al aparecer derivadas de los operadores temporales no puede asumirse necesariamente que los operadores conmuten con sus derivadas. 
+
+\begin{align*}
+\dot{U}_\Gamma =& \dot{(e^{\beta \Gamma^\dagger})}e^{\beta^* \Gamma}e^{-\frac{|\beta|^2}{2}}
++e^{\beta \Gamma^\dagger}\dot{(e^{\beta^* \Gamma})}e^{-\frac{|\beta|^2}{2}}+e^{\beta \Gamma^\dagger}e^{\beta^* \Gamma}\dot{(e^{-\frac{|\beta|^2}{2}})},\\
+=&(\dot{\beta}\Gamma^\dagger +\beta \dot{\Gamma}^\dagger)U_\Gamma -e^{\beta \Gamma^\dagger}(\dot{\beta}^*\Gamma +\beta^* \dot{\Gamma})e^{\beta^* \Gamma}e^{-\frac{|\beta|^2}{2}} -\frac{1}{2}(\dot{\beta} \beta^*+\dot{\beta}^* \beta)U_\Gamma,\\
+=&(\dot{\beta}\Gamma^\dagger +\beta \dot{\Gamma}^\dagger)U_\Gamma - U_\Gamma\dot{\beta}^*\Gamma-U_\Gamma\beta^* \dot{\Gamma} + (\beta^*)^2 C_{--}(t)U_\Gamma-\frac{1}{2}(\dot{\beta} \beta^*+\dot{\beta}^* \beta)U_\Gamma.
+\end{align*} En este caso $C_{--}(t)=[\dot{\Gamma},\Gamma]$. Se utilizó la identidad:
+
+\begin{equation}
+[A,F(B)]=[A,B]F'(B).
+\end{equation} La cual es válida si $A$ y $B$ conmutan con $[A,B]$, para encontrar que:
+
+\begin{equation}
+\beta^*\dot{\Gamma} e^{-\beta^* \Gamma} = e^{-\beta^* \Gamma}\beta^*\dot{\Gamma} + (\beta^*)^2 C_{--}(t) e^{-\beta^* \Gamma}.
+\end{equation} Para todos los casos, $C_{\pm \pm}(t)$ son funciones dependientes del tiempo pero no contienen operadores. Se puede encontrar $U^\dagger$ de forma completamente equivalente. Con esto, se tiene que:
+
+\begin{align}
+\dot{U}_\Gamma =&(\dot{\beta}\Gamma^\dagger +\beta \dot{\Gamma}^\dagger)U_\Gamma - U_\Gamma\dot{\beta}^*\Gamma-U_\Gamma\beta^* \dot{\Gamma} + (\beta^*)^2 C_{--}(t)U_\Gamma-\frac{1}{2}(\dot{\beta} \beta^*+\dot{\beta}^* \beta)U_\Gamma, \\
+\dot{U}^\dagger_\Gamma=&-(\dot{\beta}\Gamma^\dagger +\beta \dot{\Gamma}^\dagger)U_\Gamma^\dagger + U_\Gamma^\dagger\dot{\beta}^*\Gamma+U_\Gamma^\dagger\beta^* \dot{\Gamma} + (\beta^*)^2 C_{--}(t)U_\Gamma^\dagger-\frac{1}{2}(\dot{\beta} \beta^*+\dot{\beta}^* \beta)U_\Gamma^\dagger.
+\end{align} Únicamente falta calcular las transformaciones de las derivadas temporales de los operadores $\Gamma$. Estas se calculan de la misma forma y resultan:
+
+\begin{align}
+U^{\dagger}\dot{\Gamma}U =& \dot{\Gamma} + \beta C_{-+}(t) +\beta^* C_{--}(t),\\
+U^{\dagger}\dot{\Gamma}^\dagger U =& \dot{\Gamma}^\dagger + \beta^* C_{+-}(t) +\beta C_{++}(t). 
+\end{align} Con esto, tomando en cuenta que la expresión total es:
+
+\begin{equation}
+U^\dagger \dot{U} \rho + \rho \dot{U}^\dagger U = U^\dagger(U_a \dot{U}_\Gamma+\dot{U}_a U_\Gamma)\rho + \rho(U_a^\dagger \dot{U}_\Gamma^\dagger+\dot{U}_a^\dagger U_\Gamma^\dagger)U,
+\end{equation} simplemente se debe sustituir, ya que todos los términos son conocidos. Se llega a la expresión final que puede expresarse en términos de conmutadores con $\rho$:
+
+\begin{align}
+U^\dagger \dot{U} \rho + \rho \dot{U}^\dagger U =& [\dot{\alpha}a^\dagger - \dot{\alpha}^* a,\rho] +[\dot{\beta}\Gamma^\dagger - \dot{\beta}^* \Gamma,\rho]+  [\beta\dot{\Gamma}^\dagger - \beta^* \dot{\Gamma},\rho]\\
+&-\nonumber\beta^2C_{++}(t)\rho + |\beta|^2(C_{+-}(t) + C_{-+}(t))\rho +3(\beta^*)^2C_{--}(t)\rho
+\end{align}
+
 
 
 

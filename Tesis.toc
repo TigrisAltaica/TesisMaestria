@@ -1,0 +1,46 @@
+\select@language {spanish}
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Sistemas Cu\IeC {\'a}nticos Abiertos y Ecuaciones Maestras}{1}
+\contentsline {section}{\numberline {1.1}Introducci\IeC {\'o}n}{1}
+\contentsline {section}{\numberline {1.2}Enfoque de Sistema y Ba\IeC {\~n}o}{2}
+\contentsline {subsection}{\numberline {1.2.1}Matriz Densidad}{2}
+\contentsline {section}{\numberline {1.3}Deducci\IeC {\'o}n de Ecuacion Maestra Mediante Operadores de Proyecci\IeC {\'o}n}{3}
+\contentsline {chapter}{\numberline {2}Ecuaciones Maestras: Atomo de dos Niveles, Oscilador Arm\IeC {\'o}nico y la Base de Decaimiento}{7}
+\contentsline {section}{\numberline {2.1}\IeC {\'A}tomo de dos Niveles}{8}
+\contentsline {section}{\numberline {2.2}Oscilador Arm\IeC {\'o}nico: Primer Ansatz}{10}
+\contentsline {section}{\numberline {2.3}Oscilador Arm\IeC {\'o}nico: Base de Decaimiento}{13}
+\contentsline {subsection}{\numberline {2.3.1}Estado Base}{13}
+\contentsline {section}{\numberline {2.4}Estados Duales de la base de decaimiento}{14}
+\contentsline {subsection}{\numberline {2.4.1}Estados Duales: Forma Expl\IeC {\'\i }cita}{15}
+\contentsline {subsection}{\numberline {2.4.2}Relaci\IeC {\'o}n de Recurrencia para Estados Duales}{16}
+\contentsline {chapter}{\numberline {3}Soluci\IeC {\'o}n de la Ecuaci\IeC {\'o}n Maestra Mediante Estados de Floquet}{17}
+\contentsline {section}{\numberline {3.1}Teor\IeC {\'\i }a de Floquet}{17}
+\contentsline {subsection}{\numberline {3.1.1}Propiedades B\IeC {\'a}sicas}{18}
+\contentsline {subsection}{\numberline {3.1.2}Estabilidad para Ecuaciones de Segundo Orden}{19}
+\contentsline {subsection}{\numberline {3.1.3}Estabilidad de las Soluciones de Floquet para la Ecuaci\IeC {\'o}n de Hill}{20}
+\contentsline {section}{\numberline {3.2}Estados de Floquet en Mec\IeC {\'a}nica Cu\IeC {\'a}ntica}{21}
+\contentsline {section}{\numberline {3.3}Oscilador Arm\IeC {\'o}nico Dependinte del Tiempo: Soluci\IeC {\'o}n Mediante Formalismo de Floquet}{21}
+\contentsline {section}{\numberline {3.4}Caso Cu\IeC {\'a}ntico}{22}
+\contentsline {section}{\numberline {3.5}Ecuaci\IeC {\'o}n Maestra Mejorada: Soluci\IeC {\'o}n con Base de Decaimiento}{24}
+\contentsline {chapter}{\numberline {4}Enfriamiento Optomec\IeC {\'a}nico}{27}
+\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{27}
+\contentsline {section}{\numberline {4.2}Posibles Sistemas Optomec\IeC {\'a}nicos}{28}
+\contentsline {subsection}{\numberline {4.2.1}Espejos Suspendidos}{28}
+\contentsline {subsection}{\numberline {4.2.2}Microresonadores}{28}
+\contentsline {subsection}{\numberline {4.2.3}Objetos Suspendidos o Levitados}{28}
+\contentsline {section}{\numberline {4.3}Hamiltoniano para Enfriamiento Optomec\IeC {\'a}nico}{28}
+\contentsline {chapter}{\numberline {5}Ecuaci\IeC {\'o}n Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}{32}
+\contentsline {section}{\numberline {5.1}Transformaci\IeC {\'o}n Mediante Operador de Desplazamiento}{32}
+\contentsline {section}{\numberline {5.2}Soluci\IeC {\'o}n para Oscilaciones Peque\IeC {\~n}as Respecto a una Frecuencia Promedio}{35}
+\contentsline {subsection}{\numberline {5.2.1}C\IeC {\'a}lculo de Conmutadores}{37}
+\contentsline {subsection}{\numberline {5.2.2}Coeficientes $\gamma _\pm $}{39}
+\contentsline {subsection}{\numberline {5.2.3}Operadores $\mathaccentV {dot}05F{\Gamma }$}{40}
+\contentsline {subsection}{\numberline {5.2.4}Factores del Hamiltoniano del Oscilador Dependiente del Tiempo}{41}
+\contentsline {subsection}{\numberline {5.2.5}Soluci\IeC {\'o}n para $\alpha $ y $\beta $}{42}
+\contentsline {chapter}{\numberline {6}Teor\IeC {\'\i }a del Enfriamiento Laser para sistemas Optomec\IeC {\'a}nicos}{43}
+\contentsline {section}{\numberline {6.1}Proyectores a Escalas Temporales}{43}
+\contentsline {section}{\numberline {6.2}Soluci\IeC {\'o}n para Interacci\IeC {\'o}n Optomec\IeC {\'a}nica}{46}
+\contentsline {chapter}{\numberline {A}Transformacion al Marco Desplazado}{48}
+\contentsline {section}{\numberline {A.1}T\IeC {\'e}rminos Hamiltonianos}{48}
+\contentsline {section}{\numberline {A.2}T\IeC {\'e}rminos de Lindblad}{49}
+\contentsline {section}{\numberline {A.3}Derivadas temporales de $U$ y $U^\dagger $}{50}
