@@ -25,8 +25,10 @@
 \tableofcontents
 
 \begin{abstract}
-
+Se modela el enfriamiento optomecánico de un resonador mecánico macroscopico mediante su acoplamiento con una cavidad óptica dentro de la cual se bombean fotones mediante un laser. El resonador se modela como un oscilador armónico con frecuencia dependiente del tiempo. Mediante el formalismo de Floquet se obtiene una expresión que toma en cuenta la dependencia temporal del oscilador. Se obtiene una ecuación maestra mejorada para el caso de un oscilador cuya frecuencia presenta oscilaciones periódicas pequeñas en torno a una frecuencia central. 
 \end{abstract}
+
+\chapter{Introducción}
 
 \chapter{Sistemas Cuánticos Abiertos y Ecuaciones Maestras}
 
@@ -217,6 +219,24 @@ En este punto se realiza la aproximación de Markov \cite{ZollerQN}, al hacer la
 t-\tau \rightarrow t,
 \end{equation} y se traza toda la ecuación sobre las variables del baño. Con esto se llega a la ecuación:
 
+\begin{equation}
+=\epsilon^2 \int_{0}^{\infty}d\tau Tr_B[[H_{int}(t),[H_{int}(t-\tau)\rho(t)\otimes\rho_B]]].
+\end{equation} Esta ecuacion, al insertar distintas interacciones genera las ecuaciones maestras deseadas. Si se utiliza una interaccion del tipo $\sum_m X^+_m\Gamma_m + X^-_m\Gamma^\dagger_m$, donde los operadores $X_m^\pm$ son operadores con reglas de conmutación de oscilador armónico, correspondiento a una frecuencia $\omega_m$ se genera la ecuación \cite{ZollerQN}:
+
+\begin{align}
+\dot{\rho} =& i\sum_m [\delta_m X^+_m X^-_m + e_mX^-_mX^+_m,\rho],\\
+&+ \nonumber \frac{1}{2}\sum_m K_m D[X^-_m] + G_m\frac{1}{2}\sum_m K_m D[X^+_m],
+\end{align} donde:
+
+\begin{align}
+\int_0 ^\infty e^{i\omega_m \tau}Tr_B[\Gamma(\tau)_m\Gamma(0)^\dagger_m] \equiv \frac{1}{2}K_m+i\delta_m,\\
+\int_0 ^\infty e^{i\omega_m \tau}Tr_B[\Gamma(0)_m\Gamma(\tau)^\dagger_m]\equiv \frac{1}{2}K_m-i\delta_m,\\
+\int_0 ^\infty e^{i\omega_m \tau}Tr_B[\Gamma(\tau)^\dagger_m\Gamma(0)_m]\equiv\frac{1}{2}G_m+ie_m,\\
+\int_0 ^\infty e^{i\omega_m \tau}Tr_B[\Gamma(0)^\dagger_m\Gamma(\tau)_m]\equiv\frac{1}{2}G_m-ie_m.
+\end{align}
+
+A continuación se estudiaran posibles soluciones a este tipo de ecuaciones.
+
 
 \chapter{Ecuaciones Maestras: Atomo de dos Niveles, Oscilador Armónico y la Base de Decaimiento}
 
@@ -224,7 +244,7 @@ Se busca poder resolver ecuaciones como las encontradas en el capitulo anterior,
 
 \begin{equation}\label{MasterEq}
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L\rho,
-\end{equation} donde $\rho$ es la matriz densidad del sistema, $H$ es el Hamiltoniano que modela las partes del sistema donde no hay pérdidas de energía y $L$ es el operador de Lindblat, el cual corresponde a la parte abierta del sistema. En la mecánica cuántica cerrada, el análisis se limíta al operador Hamiltoniano el cual es un operador auto adjunto. En ese caso, es suficiente resolver la ecuación de Schröedinger estacionaria:
+\end{equation} donde $\rho$ es la matriz densidad del sistema, $H$ es el Hamiltoniano que modela las partes del sistema donde no hay pérdidas de energía y $L$ es el superoperador de Lindblad, el cual corresponde a la parte abierta del sistema. En la mecánica cuántica cerrada, el análisis se limíta al operador Hamiltoniano el cual es un operador auto adjunto. En ese caso, es suficiente resolver la ecuación de Schröedinger estacionaria:
 
 \begin{equation}
 H\Psi = E\Psi,
@@ -489,7 +509,7 @@ L_n^k(x) = \sum_{m=0}^n (-1)^m \frac{(n+k)!}{(n-m)!(k+m)!m!} x^m.
 
 \begin{equation}\label{DefDual}
 \sum_{m=0}^n \frac{(-\nu)^{n-m}}{(\nu+1)^n} \frac{n!}{(n-m)!(m+k)!m!} a^{\dagger m}a^{m+k},
-\end{equation}basandose en \ref{DefDual}, se puede ver que para cualquier valor de $n$ y $k \\geq 0$ el primer término de la suma, es decir el correspondiente a $m=0$ es:
+\end{equation}basandose en \ref{DefDual}, se puede ver que para cualquier valor de $n$ y $k \geq 0$ el primer término de la suma, es decir el correspondiente a $m=0$ es:
 
 \begin{equation}
 (\frac{-\nu}{1+\nu})^n \frac{a^k}{k!}.
@@ -790,7 +810,7 @@ Estas soluciones tienen la forma explícita\cite{BrownPT}
 \end{align*}Es importante notar que estos operadores dependen explicitamente del tiempo, en términos de los operadores de momento y posición, pueden expresarse de manera análoga a los operadores de creación y aniquilación del oscilador armónico:
 
 \begin{equation}
-\Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2m}{\hbar}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}}).
+\Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2}{\hbar m}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}}).
 \end{equation}Es conveniente entender el origen de estos operadores. Si se comienza con un Hamiltoniano con frecuencia dependiente del tiempo, se puede seguir el procedimiento de \cite{BrownPT}:
 
 \begin{equation}\label{TDHO}
@@ -1456,7 +1476,7 @@ Hasta ahora, salvo por las consideraciones de la dependencia temporal de $L_1$, 
 =&\frac{-g'^2}{\hbar^2} Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
 =&\frac{-g'^2}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]xx\mu+\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]x\mu x\\
  &+\frac{1}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]x\mu x-\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]\mu xx,\\
-=&-T_1xx\mu+T_1x\mu x + T_2x\mu x + T_2\mu xx.
+=&-T_1xx\mu+T_1x\mu x + T_2x\mu x - T_2\mu xx.
 \end{align*} Se debe de calcular los términos con operadores fuera de la traza:
 
 \begin{align*}
@@ -1468,13 +1488,14 @@ xx\mu=& (x_++x_-)(x_++x_-)\mu,\\
 xx\mu=&x_+x_+\mu + x_+x_-\mu + x_-x_+\mu + x_-x_-\mu,\\
 x\mu x=&x_+\mu x_+ + x_+\mu x_- + x_-\mu x_+ x_-\mu x_-,\\
 \mu xx=& \mu x_+x_+ + \mu x_+x_-+ \mu x_-x_+ +\mu x_-x_-,
-\end{align} sin embargo, $\mu$ corresponde a una proyección a estados diagonales, por lo que solo sobreviven los términos que corresponden a un operador de creación y uno de aniquilación. Adicionalmente, puede verse por \cite{BarberisLC} que se cumple:
+\end{align} sin embargo, $\mu$ corresponde a una proyección a estados diagonales, por lo que solo sobreviven los términos que corresponden a un operador de creación y uno de aniquilación. Los términos sobrevivientes son entonces:
 
-\begin{equation}
-T_1 = T_2^*
-\end{equation}
+\begin{align}
+=&(T_1+T_2)x_+\mu x_- -T_1 x_+x_-\mu - T_2\mu x_+x_- \\ 
+&+ \nonumber (T_1+T_2)x_-\mu x_+  -T_1 x_-x_+\mu -T_2 \mu x_-x_+.
+\end{align} Se desea estudiar el número de excitaciones del oscilador armónico, por lo que es necesario regresar a la notación de operadores usuales para oscilador armónico. Para este fin se toma la frecuencia del oscilador como una frecuencia promedio $\nu_0$. Con esto, los operadores $\Gamma$ pueden expresarse como:
 
-Los valores posibles de $\lambda_m$ son 
+
 
 \appendix
 
@@ -1627,7 +1648,7 @@ U^\dagger \dot{U} \rho + \rho \dot{U}^\dagger U = U^\dagger(U_a \dot{U}_\Gamma+\
 
 \begin{align}
 U^\dagger \dot{U} \rho + \rho \dot{U}^\dagger U =& [\dot{\alpha}a^\dagger - \dot{\alpha}^* a,\rho] +[\dot{\beta}\Gamma^\dagger - \dot{\beta}^* \Gamma,\rho]+  [\beta\dot{\Gamma}^\dagger - \beta^* \dot{\Gamma},\rho]\\
-&-\nonumber\beta^2C_{++}(t)\rho + |\beta|^2(C_{+-}(t) + C_{-+}(t))\rho +3(\beta^*)^2C_{--}(t)\rho
+&-\nonumber\beta^2C_{++}(t)\rho + |\beta|^2(C_{+-}(t) - C_{-+}(t))\rho +3(\beta^*)^2C_{--}(t)\rho
 \end{align}
 
 
