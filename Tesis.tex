@@ -21,14 +21,14 @@
 \makeindex
 
 \begin{document}
-\maketitle
-\tableofcontents
+
 
 \begin{abstract}
 Se modela el enfriamiento optomecánico de un resonador mecánico macroscopico mediante su acoplamiento con una cavidad óptica dentro de la cual se bombean fotones mediante un laser. El resonador se modela como un oscilador armónico con frecuencia dependiente del tiempo. Mediante el formalismo de Floquet se obtiene una expresión que toma en cuenta la dependencia temporal del oscilador. Se obtiene una ecuación maestra mejorada para el caso de un oscilador cuya frecuencia presenta oscilaciones periódicas pequeñas en torno a una frecuencia central. 
 \end{abstract}
 
-\chapter{Introducción}
+\tableofcontents
+
 
 \chapter{Sistemas Cuánticos Abiertos y Ecuaciones Maestras}
 
@@ -1493,7 +1493,41 @@ x\mu x=&x_+\mu x_+ + x_+\mu x_- + x_-\mu x_+ x_-\mu x_-,\\
 \begin{align}
 =&(T_1+T_2)x_+\mu x_- -T_1 x_+x_-\mu - T_2\mu x_+x_- \\ 
 &+ \nonumber (T_1+T_2)x_-\mu x_+  -T_1 x_-x_+\mu -T_2 \mu x_-x_+.
-\end{align} Se desea estudiar el número de excitaciones del oscilador armónico, por lo que es necesario regresar a la notación de operadores usuales para oscilador armónico. Para este fin se toma la frecuencia del oscilador como una frecuencia promedio $\nu_0$. Con esto, los operadores $\Gamma$ pueden expresarse como:
+\end{align} Ya que estos operadores tienen el mismo comportamiento algebráico que el utilizado en \cite{BarberisLC}, esto puede expresarse como:
+
+\begin{equation}
+\dot{\mu} = \frac{1}{i\hbar}[\hat{H},\mu] + \frac{A_-}{2}D[\Gamma]\mu + \frac{A_+}{2}D[\Gamma^\dagger]\mu.
+\end{equation} En este caso, $\hat{H}$ es una pequeña corrección al Hamiltoniana proporcional a $\Gamma^\dagger \Gamma$ y $A_\pm$ dependen únicamente del valor de las trazas. En este caso son funcionalmente equivalentes al trabajo citado.Sin embargo, se desea estudiar el número de excitaciones del oscilador armónico, por lo que es necesario regresar a la notación de operadores usuales para oscilador armónico. Para este fin se toma la frecuencia del oscilador como una frecuencia promedio $\nu$. Con esto, los operadores $\Gamma$ pueden expresarse de la forma deseada simplemente susituyendo los operadores $x$ y $p$ por sus equivalentes en operadores de creación y aniquilación del oscilador amrónico:
+
+\begin{equation}
+\Gamma = \frac{1}{2i}(\dot{f} \frac{1}{sqrt{\nu}} (b^\dagger + b) - fi\sqrt{\nu}((b^\dagger + b))),
+\end{equation} y al insertar la solución específica del problema:
+
+\begin{equation}
+\Gamma = \frac{\omega+\nu}{2\sqrt{\nu}}e^{i\omega t}b+\frac{\omega-\nu}{2\sqrt{\nu}}e^{i\omega t}b^\dagger,
+\end{equation} y $\Gamma^\dagger$ se obtiene tomando el complejo conjugado. Para obtener el número vibracional medio se toma:
+
+\begin{equation}
+<m> = Tr[\Gamma^\dagger \Gamma \mu_{st}] = \frac{A_+}{A_+ - A_-},
+\end{equation} de acuerdo con \cite{BarberisLC}. Este número corresponde a la temperatura final del sistema. Al cambiar a los operadores usuales de oscilador, el resultado ahora es:
+
+\begin{equation}
+<m> = Tr[(\frac{(\omega + \nu )^2}{4\nu})b^\dagger b +\frac{\omega^2 - \nu^2}{4\nu}(b^\dagger b^\dagger +bb) +\frac{(\omega - \nu )^2}{4\nu}) b b^\dagger)\mu_st].
+\end{equation} Esto establece una nueva predicción para la temperatura final del sistema en el caso del enfriamiento optomecánico dependiente del tiempo.
+
+
+\chapter{Conclusiones}
+
+Se lograron los objetivos principales del trabajo, ya que se aplicó el formalismo de operadores $\Gamma$ al caso de enfriamiento optomecánico y se obtuvo una predicción distinta a las previamente obtenidas en trabajos anteriores como \cite{BarberisLC}. Se logró demostrar que la base de decaimiento resuelve la ecuación maestra correspondiente a un oscilador armónico dependiente del tiempo con pérdidas de energía si esta se expresa en los eigenestados de los operadores $\Gamma$:
+
+\begin{itemize}
+\item En el caso de la ecuación maestra correspondiente al oscilador armónico dependiente del tiempo, se mostró que se puede construir una ecuación maestra equivalente con nuevos operadores que toman en cuenta la dependencia temporal del sistema. Esta dependencia temporal se toma en cuenta cuando se realiza la aproximación de Markov, lo cual es más consistente a fin de modelar el sistema de la forma menos aproximada posible.
+
+\item Siguiendo el procedimiento establecido en \cite{BarberisLC}, se logró obtener un número promedio de ocupación para los modos vibracionales del oscilador, lo cual corresponde a una temperatura final del sistema. Al traducir este número a los operadores usuales del oscilador armónico, se encuentra un resultado distinto al obtenido en trabajos anteriores.
+
+\item Todo el trabajo específico se hizo al más bajo nivel de perturbación con respecto a la solución clásica del oscilador dependiente del tiempo. Aún cuando se muestra una nueva dinámica al hacer el tratamiento presentado en este trabajo, parece existir más dinámica si se logra tratar el problema a niveles más altos de perturbacion.
+\end{itemize}
+
 
 
 
