@@ -1,47 +1,50 @@
 \select@language {spanish}
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}
-\contentsline {chapter}{\numberline {2}Sistemas Cu\IeC {\'a}nticos Abiertos y Ecuaciones Maestras}{2}
-\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{2}
-\contentsline {section}{\numberline {2.2}Enfoque de Sistema y Ba\IeC {\~n}o}{3}
-\contentsline {subsection}{\numberline {2.2.1}Matriz Densidad}{3}
-\contentsline {section}{\numberline {2.3}Deducci\IeC {\'o}n de Ecuacion Maestra Mediante Operadores de Proyecci\IeC {\'o}n}{4}
-\contentsline {chapter}{\numberline {3}Ecuaciones Maestras: Atomo de dos Niveles, Oscilador Arm\IeC {\'o}nico y la Base de Decaimiento}{8}
-\contentsline {section}{\numberline {3.1}\IeC {\'A}tomo de dos Niveles}{9}
-\contentsline {section}{\numberline {3.2}Oscilador Arm\IeC {\'o}nico: Primer Ansatz}{11}
-\contentsline {section}{\numberline {3.3}Oscilador Arm\IeC {\'o}nico: Base de Decaimiento}{14}
-\contentsline {subsection}{\numberline {3.3.1}Estado Base}{14}
-\contentsline {section}{\numberline {3.4}Estados Duales de la base de decaimiento}{15}
-\contentsline {subsection}{\numberline {3.4.1}Estados Duales: Forma Expl\IeC {\'\i }cita}{16}
-\contentsline {subsection}{\numberline {3.4.2}Relaci\IeC {\'o}n de Recurrencia para Estados Duales}{17}
-\contentsline {chapter}{\numberline {4}Soluci\IeC {\'o}n de la Ecuaci\IeC {\'o}n Maestra Mediante Estados de Floquet}{18}
-\contentsline {section}{\numberline {4.1}Teor\IeC {\'\i }a de Floquet}{18}
-\contentsline {subsection}{\numberline {4.1.1}Propiedades B\IeC {\'a}sicas}{19}
-\contentsline {subsection}{\numberline {4.1.2}Estabilidad para Ecuaciones de Segundo Orden}{20}
-\contentsline {subsection}{\numberline {4.1.3}Estabilidad de las Soluciones de Floquet para la Ecuaci\IeC {\'o}n de Hill}{21}
-\contentsline {section}{\numberline {4.2}Estados de Floquet en Mec\IeC {\'a}nica Cu\IeC {\'a}ntica}{22}
-\contentsline {section}{\numberline {4.3}Oscilador Arm\IeC {\'o}nico Dependinte del Tiempo: Soluci\IeC {\'o}n Mediante Formalismo de Floquet}{22}
-\contentsline {section}{\numberline {4.4}Caso Cu\IeC {\'a}ntico}{23}
-\contentsline {section}{\numberline {4.5}Ecuaci\IeC {\'o}n Maestra Mejorada: Soluci\IeC {\'o}n con Base de Decaimiento}{25}
-\contentsline {chapter}{\numberline {5}Enfriamiento Optomec\IeC {\'a}nico}{28}
-\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{28}
-\contentsline {section}{\numberline {5.2}Posibles Sistemas Optomec\IeC {\'a}nicos}{29}
-\contentsline {subsection}{\numberline {5.2.1}Espejos Suspendidos}{29}
-\contentsline {subsection}{\numberline {5.2.2}Microresonadores}{29}
-\contentsline {subsection}{\numberline {5.2.3}Objetos Suspendidos o Levitados}{29}
-\contentsline {section}{\numberline {5.3}Hamiltoniano para Enfriamiento Optomec\IeC {\'a}nico}{29}
-\contentsline {chapter}{\numberline {6}Ecuaci\IeC {\'o}n Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}{33}
-\contentsline {section}{\numberline {6.1}Transformaci\IeC {\'o}n Mediante Operador de Desplazamiento}{33}
-\contentsline {section}{\numberline {6.2}Soluci\IeC {\'o}n para Oscilaciones Peque\IeC {\~n}as Respecto a una Frecuencia Promedio}{36}
-\contentsline {subsection}{\numberline {6.2.1}C\IeC {\'a}lculo de Conmutadores}{38}
-\contentsline {subsection}{\numberline {6.2.2}Coeficientes $\gamma _\pm $}{40}
-\contentsline {subsection}{\numberline {6.2.3}Operadores $\mathaccentV {dot}05F{\Gamma }$}{41}
-\contentsline {subsection}{\numberline {6.2.4}Factores del Hamiltoniano del Oscilador Dependiente del Tiempo}{42}
-\contentsline {subsection}{\numberline {6.2.5}Soluci\IeC {\'o}n para $\alpha $ y $\beta $}{43}
-\contentsline {chapter}{\numberline {7}Teor\IeC {\'\i }a del Enfriamiento Laser para sistemas Optomec\IeC {\'a}nicos}{44}
-\contentsline {section}{\numberline {7.1}Proyectores a Escalas Temporales}{44}
-\contentsline {section}{\numberline {7.2}Soluci\IeC {\'o}n para Interacci\IeC {\'o}n Optomec\IeC {\'a}nica}{47}
-\contentsline {chapter}{\numberline {A}Transformacion al Marco Desplazado}{49}
-\contentsline {section}{\numberline {A.1}T\IeC {\'e}rminos Hamiltonianos}{49}
-\contentsline {section}{\numberline {A.2}T\IeC {\'e}rminos de Lindblad}{50}
-\contentsline {section}{\numberline {A.3}Derivadas temporales de $U$ y $U^\dagger $}{51}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{3}
+\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n Experimental}{3}
+\contentsline {section}{\numberline {1.2}Formalismo Matem\IeC {\'a}tico}{3}
+\contentsline {chapter}{\numberline {2}Sistemas Cu\IeC {\'a}nticos Abiertos y Ecuaciones Maestras}{5}
+\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{5}
+\contentsline {section}{\numberline {2.2}Enfoque de Sistema y Ba\IeC {\~n}o}{6}
+\contentsline {subsection}{\numberline {2.2.1}Matriz Densidad}{6}
+\contentsline {section}{\numberline {2.3}Deducci\IeC {\'o}n de Ecuacion Maestra Mediante Operadores de Proyecci\IeC {\'o}n}{7}
+\contentsline {chapter}{\numberline {3}Ecuaciones Maestras: Atomo de dos Niveles, Oscilador Arm\IeC {\'o}nico y la Base de Decaimiento}{11}
+\contentsline {section}{\numberline {3.1}\IeC {\'A}tomo de dos Niveles}{12}
+\contentsline {section}{\numberline {3.2}Oscilador Arm\IeC {\'o}nico: Primer Ansatz}{14}
+\contentsline {section}{\numberline {3.3}Oscilador Arm\IeC {\'o}nico: Base de Decaimiento}{17}
+\contentsline {subsection}{\numberline {3.3.1}Estado Base}{17}
+\contentsline {section}{\numberline {3.4}Estados Duales de la base de decaimiento}{18}
+\contentsline {subsection}{\numberline {3.4.1}Estados Duales: Forma Expl\IeC {\'\i }cita}{19}
+\contentsline {subsection}{\numberline {3.4.2}Relaci\IeC {\'o}n de Recurrencia para Estados Duales}{20}
+\contentsline {chapter}{\numberline {4}Soluci\IeC {\'o}n de la Ecuaci\IeC {\'o}n Maestra Mediante Estados de Floquet}{21}
+\contentsline {section}{\numberline {4.1}Teor\IeC {\'\i }a de Floquet}{21}
+\contentsline {subsection}{\numberline {4.1.1}Propiedades B\IeC {\'a}sicas}{22}
+\contentsline {subsection}{\numberline {4.1.2}Estabilidad para Ecuaciones de Segundo Orden}{23}
+\contentsline {subsection}{\numberline {4.1.3}Estabilidad de las Soluciones de Floquet para la Ecuaci\IeC {\'o}n de Hill}{24}
+\contentsline {section}{\numberline {4.2}Estados de Floquet en Mec\IeC {\'a}nica Cu\IeC {\'a}ntica}{25}
+\contentsline {section}{\numberline {4.3}Oscilador Arm\IeC {\'o}nico Dependinte del Tiempo: Soluci\IeC {\'o}n Mediante Formalismo de Floquet}{25}
+\contentsline {section}{\numberline {4.4}Caso Cu\IeC {\'a}ntico}{26}
+\contentsline {section}{\numberline {4.5}Ecuaci\IeC {\'o}n Maestra Mejorada: Soluci\IeC {\'o}n con Base de Decaimiento}{28}
+\contentsline {chapter}{\numberline {5}Enfriamiento Optomec\IeC {\'a}nico}{31}
+\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{31}
+\contentsline {section}{\numberline {5.2}Posibles Sistemas Optomec\IeC {\'a}nicos}{32}
+\contentsline {subsection}{\numberline {5.2.1}Espejos Suspendidos}{32}
+\contentsline {subsection}{\numberline {5.2.2}Microresonadores}{32}
+\contentsline {subsection}{\numberline {5.2.3}Objetos Suspendidos o Levitados}{32}
+\contentsline {section}{\numberline {5.3}Hamiltoniano para Enfriamiento Optomec\IeC {\'a}nico}{32}
+\contentsline {chapter}{\numberline {6}Ecuaci\IeC {\'o}n Maestra de Enfriamiento Laser con Frecuencia Dependiente del Tiempo}{36}
+\contentsline {section}{\numberline {6.1}Transformaci\IeC {\'o}n Mediante Operador de Desplazamiento}{36}
+\contentsline {section}{\numberline {6.2}Soluci\IeC {\'o}n para Oscilaciones Peque\IeC {\~n}as Respecto a una Frecuencia Promedio}{39}
+\contentsline {subsection}{\numberline {6.2.1}C\IeC {\'a}lculo de Conmutadores}{41}
+\contentsline {subsection}{\numberline {6.2.2}Coeficientes $\gamma _\pm $}{43}
+\contentsline {subsection}{\numberline {6.2.3}Operadores $\mathaccentV {dot}05F{\Gamma }$}{44}
+\contentsline {subsection}{\numberline {6.2.4}Factores del Hamiltoniano del Oscilador Dependiente del Tiempo}{45}
+\contentsline {subsection}{\numberline {6.2.5}Soluci\IeC {\'o}n para $\alpha $ y $\beta $}{46}
+\contentsline {chapter}{\numberline {7}Teor\IeC {\'\i }a del Enfriamiento Laser para sistemas Optomec\IeC {\'a}nicos}{47}
+\contentsline {section}{\numberline {7.1}Proyectores a Escalas Temporales}{47}
+\contentsline {section}{\numberline {7.2}Soluci\IeC {\'o}n para Interacci\IeC {\'o}n Optomec\IeC {\'a}nica}{50}
+\contentsline {chapter}{\numberline {8}Conclusiones}{53}
+\contentsline {chapter}{\numberline {A}Transformacion al Marco Desplazado}{54}
+\contentsline {section}{\numberline {A.1}T\IeC {\'e}rminos Hamiltonianos}{54}
+\contentsline {section}{\numberline {A.2}T\IeC {\'e}rminos de Lindblad}{55}
+\contentsline {section}{\numberline {A.3}Derivadas temporales de $U$ y $U^\dagger $}{56}
