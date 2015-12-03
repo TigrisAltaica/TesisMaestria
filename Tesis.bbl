@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{JockelMR}
+M.~T.~Rakher A.~Jockel.
+\newblock Realization of an optomechanical interface between ultracold atoms
+  and a membrane.
+\newblock {\em Physical Review Letters}, 107, November 2011.
+
 \bibitem{SchliesserRPC}
 et~al A.~Schliesser, P. Del~Haye.
 \newblock Radiation pressure cooling of a micromechanical oscillator using
@@ -10,6 +16,11 @@ et~al A.~Schliesser, P. Del~Haye.
 et.~al Alex~Abramovici, William E.~Althouse.
 \newblock Ligo: The laser interferometer gravitational-wave observatory.
 \newblock {\em Science}, 1992.
+
+\bibitem{ChanQM}
+Jasper~Chan Amir H. Safavi-Naeini.
+\newblock Observation of quantum motion of a nanomechanical resonator.
+\newblock {\em Physical Review Letters}, 108, 2011.
 
 \bibitem{ArfkenMM}
 George~B. Arfken.
@@ -87,6 +98,11 @@ Jim~Napolitano J.~J.~Sakurai.
 Pablo Barberis-Blostein Marc~Bienert.
 \newblock Optomechanical laser cooling with mechanical modulation.
 \newblock {\em Physical Review Letters A}, 2015.
+
+\bibitem{PaschottaFP}
+R.~Paschotta.
+\newblock Fabry-perot interferometers.
+\newblock {\em Encyclopedia of Laser Physics and Technology}, October 2008.
 
 \bibitem{HanngiFM}
 Peter~H\"{a}nggi Sigmund~Kohler, Thomas~Dittrich†.

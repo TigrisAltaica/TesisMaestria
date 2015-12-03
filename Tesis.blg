@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Tesis.aux
 The style file: plain.bst
 Database file #1: Bib.bib
 Warning--can't use both author and editor fields in HanngiDQS
-You've used 24 entries,
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            626 strings with 6854 characters,
-and the built_in function-call counts, 5036 in all, are:
-= -- 476
-> -- 174
+            642 strings with 7194 characters,
+and the built_in function-call counts, 5660 in all, are:
+= -- 538
+> -- 195
 < -- 0
-+ -- 74
-- -- 50
-* -- 201
-:= -- 946
-add.period$ -- 72
-call.type$ -- 24
-change.case$ -- 90
++ -- 83
+- -- 56
+* -- 231
+:= -- 1065
+add.period$ -- 81
+call.type$ -- 27
+change.case$ -- 102
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 254
-empty$ -- 444
-format.name$ -- 50
-if$ -- 1027
+cite$ -- 28
+duplicate$ -- 284
+empty$ -- 495
+format.name$ -- 56
+if$ -- 1152
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 31
-newline$ -- 123
-num.names$ -- 48
-pop$ -- 124
+int.to.str$ -- 27
+missing$ -- 34
+newline$ -- 138
+num.names$ -- 54
+pop$ -- 132
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 82
 quote$ -- 0
-skip$ -- 161
+skip$ -- 184
 stack$ -- 0
-substring$ -- 120
-swap$ -- 25
+substring$ -- 135
+swap$ -- 28
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
+type$ -- 94
 warning$ -- 1
-while$ -- 48
-width$ -- 26
-write$ -- 242
+while$ -- 54
+width$ -- 29
+write$ -- 274
 (There was 1 warning)
