@@ -647,7 +647,7 @@ e^{\mu \tau} = e^{(\mu  +\frac{2\pi i}{\tau} )\tau}.
 
 Con estas propiedades, se puede pasar a analizar la estabilidad de las soluciones para el caso específico de ecuaciones de segundo orden.
 
-\subsection{Estabilidad para Ecuaciones de Segundo Orden}
+\subsection{Estabilidad para Ecuaciones de Segundo Orden}\label{EstabilidadSO}
 
 Si se piensa en una ecuación diferencial de segundo orden del tipo:
 
@@ -702,7 +702,7 @@ x_1^1(\tau) & x_1^2(\tau) \\
 
 \begin{equation}
 \rho = \phi \pm \sqrt{\phi^2 -1},
-\end{equation} o en términos de $mu$:
+\end{equation} o en términos de $\mu$:
 
 \begin{equation}
 cosh(\mu_1 \tau) = \phi.
@@ -711,8 +711,8 @@ cosh(\mu_1 \tau) = \phi.
 \textbf{Caso $ -1 < \phi < 1$}: En este caso, para algún valor $\sigma$ se tiene que $\phi = cos(\sigma \tau)$ por lo que:
 
 \begin{align*}
-\rho =& \phi \pm \sqrt{\phi^2 -1},//
-=& cos(\sigma \tau) \pm isen(\sigma \tau), //
+\rho =& \phi \pm \sqrt{\phi^2 -1},\\
+=& cos(\sigma \tau) \pm isen(\sigma \tau), \\
 =& e^{\pm i\sigma \tau},
 \end{align*} lo cual lleva a una solución general de tipo:
 
@@ -754,15 +754,15 @@ La ecuación de Hill es una ecuación diferencial de segundo orden con coeficien
 
 \begin{equation}
 \ddot{x}(t) + (\delta + \epsilon b(t))x = 0,
-\end{equation} nuevamente, la función $b(t)$ tiene periodo $\tau$ y se considera que $\delta$ y $\epsilon$ son constantes reales. Para el caso $\epsilon = 0$ claramente la ecuación se reduce al oscilador armónico usual y las soluciones son estables. Sin embargo, para ciertos valores de $\delta$ puede encontrarse la región donde la solución aún es periódica, esto se puede resolver para los casos $\phi = \pm 1$, a forma que se tiene soluciones estables y periódicas para los casos:
+\end{equation} nuevamente, la función $b(t)$ tiene periodo $\tau$ y se considera que $\delta$ y $\epsilon$ son constantes reales. Para el caso $\epsilon = 0$ claramente la ecuación se reduce al oscilador armónico usual y las soluciones son estables. Sin embargo, para ciertos valores de $\delta$ puede encontrarse la región donde la solución aún es periódica, esto se puede resolver para los casos $\phi = \pm 1$, donde $\phi$ es la función definida en la sección \ref{EstabilidadSO}, de forma que se tiene soluciones estables y periódicas para los casos:
 
 \begin{equation}
 \delta = (2m\frac{\pi}{\tau})^2, 
-\end{equation} que corresponde a $phi=1$ y
+\end{equation} que corresponde a $\phi=1$ y
 
 \begin{equation}
 \delta = ((2m+1)\frac{\pi}{\tau})^2,
-\end{equation} que corresponde a $phi=-1$. Estos valores representan la frontera de la región de soluciones estables, las cuales corresponden a periodo de $\tau$ y $2\tau$ respectivamente. Más adelante se buscaran soluciones en esta región para el caso donde $\epsilon \ll 1$.
+\end{equation} que corresponde a $\phi=-1$. Estos valores representan la frontera de la región de soluciones estables, las cuales corresponden a periodo de $\tau$ y $2\tau$ respectivamente. Más adelante se buscaran soluciones en esta región para el caso donde $\epsilon \ll 1$.
 
 
 \section{Estados de Floquet en Mecánica Cuántica}
@@ -775,7 +775,7 @@ H(t)=H(t+\tau).
 
 \begin{equation}
 H(x,t)=H_0(x)+V(x,t) \qquad V(x,t)=V(x,t+\tau).
-\end{equation} También se asume que el Hamiltoniano no perturbado posee un conjunto completo de eigenfuciones $\{\phi_n\}$ con eigenvalores correspondientes $E_n$. En este caso, la ecuación de Schr\"{o}dinger tiene la forma:
+\end{equation} Se utiliza que el Hamiltoniano no perturbado posee un conjunto completo de eigenfuciones $\{\phi_n\}$ con eigenvalores correspondientes $E_n$. En este caso, la ecuación de Schr\"{o}dinger tiene la forma:
 
 \begin{equation}\label{SchrodingerEQ}
 -i\hbar\dot{\Psi}(x,t) = H(x,t)\Psi(x,t).
@@ -787,7 +787,7 @@ H(x,t)=H_0(x)+V(x,t) \qquad V(x,t)=V(x,t+\tau).
 
 \begin{equation}
 H(x,t)\Phi_n(x,t)=E_n\Phi_n(x,t).
-\end{equation} Antes de buscar formas explícitas para estos estados, es necesario resolver el problema clásico correspondiente a este sistema.
+\end{equation} Antes de buscar formas explícitas para estos estados, es necesario resolver el problema clásico correspondiente a este sistema. La razón para esto se verá más adelante, y se debe sencillamente a que estas soluciones clásicas juegan un papel clave en las expresiones explícitas para los estados y operadores involucrados en la solución del problema cuántico.
 
 \section{Oscilador Armónico Dependiente del Tiempo: Solución Mediante Formalismo de Floquet}
 
@@ -797,7 +797,7 @@ En el caso clásico \cite{HanngiFM} se tiene, para un oscilador armónico unidim
 \ddot{x}+\gamma\dot{x}+\frac{k(t)}{m}x=0
 \end{equation}
 
-Se asume que la función $k(t)$ es periódica con periodo $T$ Si se utiliza la sustitución $x=ye^{-\frac{\gamma t}{2}}$, se llega a la ecuación:
+Se asume que la función $k(t)$ es periódica con periodo $T$. Si se utiliza la sustitución $x=ye^{-\frac{\gamma t}{2}}$, se llega a la ecuación:
 
 \begin{equation}
 \ddot{y} +(\frac{k(t)}{m}-\frac{\gamma^2}{4})y=0
@@ -819,7 +819,7 @@ W = \dot{E}_1(t)E_2(t)-E_1(t)\dot{E}_2(t) = 2i.
 
 \begin{equation}
 \sum_{-\infty}^\infty c_n^2(\mu + n\omega) = 1,
-\end{equation} y permite calcular las constantes de la expansión para un caso general. A continuación se trata el caso en mecánica cuántica.
+\end{equation} y permite, en teoría, calcular las constantes de la expansión para un caso general. A continuación se trata el caso en mecánica cuántica.
 
 \section{Caso Cuántico}
 
@@ -833,24 +833,24 @@ Estas soluciones tienen la forma explícita\cite{BrownPT}
 
 \begin{equation}
 \Psi_\alpha (x,t) = (\frac{\sqrt{m/\pi\hbar}}{2^\alpha n!E_1^0(t)})^{\frac{1}{2}}(\frac{E_1^0(t)}{E_2^0(t)})^\frac{\alpha}{2}H_\alpha(x\sqrt{\frac{m}{\hbar E_1^0(t) E_2^0(t)}})e^{(ix^2\frac{E_1^0(t)}{2E_2^0(t)})}
-\end{equation} donde el superíndice 0 indica que se toma el límite donde $\gamma$ tiende a cero. Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet:
+\end{equation} donde el superíndice 0 indica que se toma el límite donde $\gamma$ tiende a cero. Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet, los cuales pueden expresarse en términos de los operadores de momento y posición usuales en mecánica cuántica
+
+\begin{equation}
+\Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2}{\hbar m}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}}).
+\end{equation} Así como su complejo conjugado. Su acción sobre la base de Floquet queda definida por
 
 \begin{align*}\label{FloquetOperators}
 \Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)}, \\
 \Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}.
-\end{align*}Es importante notar que estos operadores dependen explícitamente del tiempo, en términos de los operadores de momento y posición, pueden expresarse de manera análoga a los operadores de creación y aniquilación del oscilador armónico:
-
-\begin{equation}
-\Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2}{\hbar m}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}}).
-\end{equation}Es conveniente entender el origen de estos operadores. Si se comienza con un Hamiltoniano con frecuencia dependiente del tiempo, se puede seguir el procedimiento de \cite{BrownPT}:
+\end{align*}Es importante notar que estos operadores dependen explícitamente del tiempo. Es conveniente entender el origen de estos operadores. Se toma entonces un Hamiltoniano usual de oscilador armónico, con la excepción de que la frecuencia del oscilador es una función periódica del tiempo.
 
 \begin{equation}\label{TDHO}
 H = \frac{1}{2m}p^2 + \frac{1}{2}k(t)q^2.
-\end{equation} Este lleva a la ecuación de movimiento:
+\end{equation} Este lleva a la ecuación de movimiento usual:
 
 \begin{equation}
 m\ddot{q}(t) + k(t)q(t) = 0,
-\end{equation} para el operador $q(t)$. Lo que se busca es una transformación unitaria que lleve este problema al problema usual del oscilador armónico en mecánica cuántica. Es decir, se busca $U$ tal que, trabajando en el cuadro de Heisenberg \cite{SakuraiQM}
+\end{equation} para el operador $q(t)$. Lo que se busca es una transformación unitaria que lleve este problema al problema usual del oscilador armónico en mecánica cuántica. Se trabaja en el cuadro de Heisenberg \cite{SakuraiQM}, tal que
 
 \begin{align}
 \tilde{q}(t) =& U^{-1}(t)q(t)U(t),\\
@@ -872,7 +872,7 @@ U = e^{-i\chi(t)q^2(t)},
 \begin{align}
 \tilde{q}(t)=&q(t),\\
 \tilde{p}(t)=&p(t)-2\chi(t)q(t).
-\end{align}Utilizando esto se puede escribir el Hamiltoniano en las nuevas coordenadas tomando en cuenta que $\ddot{f}= -k(t)f$ y el Wronskiano:
+\end{align}Utilizando esto se puede escribir el Hamiltoniano en las nuevas coordenadas tomando en cuenta que $\ddot{f}= -k(t)f$ y el Wronskiano, $W$:
 
 \begin{equation}
  H = \frac{1}{2m}\tilde{p}^2 + \frac{\chi(t)}{m}(\{\tilde{q},\tilde{p}\}) + \frac{mW^2}{|f|^2}k(t)\tilde{q}^2.
@@ -888,12 +888,20 @@ P=&U_2^{-1}\tilde{p}U_2 = |f|(p-2\chi q),
 \end{align} en estas variables, el Hamiltoniano es:
 
 \begin{equation}\label{QTDHO}
-\tilde{H} = \frac{1}{|f(t)|^2}(\frac{1}{2m}P^2(t)+\frac{1}{2}mW^2Q^2(t))
-\end{equation}Este Hamiltoniano es, salvo por un coeficiente general dependiente del tiempo, el Hamiltoniano usual de oscilador armónico y se puede resolver por medio de operadores de creación y aniquilación. Estos operadores son los operadores de Floquet ya mencionados.
+\tilde{H} = \frac{1}{|f(t)|^2}(\frac{1}{2m}P^2(t)+\frac{1}{2}mW^2Q^2(t)).
+\end{equation}Este Hamiltoniano es, salvo por un coeficiente general dependiente del tiempo, el Hamiltoniano usual de oscilador armónico y se puede resolver por medio de operadores de escalera:
+
+\begin{equation}
+\Gamma = \sqrt{\frac{mW}{2}}Q + i \sqrt{\frac{1}{2mW}}P.
+\end{equation} La expresión \ref{FloquetOperators} se obtiene expresando los operadores en las coordenadas usuales, no en las transformadas. Es de mas utilidad expresar este Hamiltoniano en terminos de estos operadores $\Gamma(t)$. Se obtiene
+
+\begin{equation}
+\tilde{H} = \frac{W}{|f(t)|^2}(\Gamma^\dagger(t)\Gamma(t) + \frac{1}{2}).
+\end{equation} Se puede proceder a encontrar una ecuación maestra para este tipo de sistema.
 
 \section{Ecuación Maestra Mejorada: Solución con Base de Decaimiento}
 
-Se busca obtener una mejor ecuación maestra al tomar en cuenta la dependencia temporal del Hamiltoniano antes de realizar la aproximación de Markov \cite{HanngiDQS}. Como el Hamiltoniano es explícitamente dependiente del tiempo, no pueden usarse los operadores usuales de creación y aniquilación, es aquí donde entra en juego la teoría de Floquet de la sección anterior. Utilizando dichos operadores, los elementos de matriz del operador de posición son:
+Se busca obtener una ecuación maestra mejorada al tomar en cuenta la dependencia temporal del Hamiltoniano antes de realizar la aproximación de Markov \cite{HanngiDQS}. Usualmente, esta dependencia se ignora y se toma en cuenta únicamente de forma posterior, por lo que se puede consierar que esto es insuficiente. Se busca un procedimiento que conserve esta dependencia a fin de que el modelo final también lo haga. Como el Hamiltoniano es explícitamente dependiente del tiempo, no pueden usarse los operadores usuales de creación y aniquilación, es aquí donde entra en juego la teoría de Floquet de la sección anterior. Utilizando dichos operadores, los elementos de matriz del operador de posición son:
 
 \begin{align}
 X_{\alpha \beta}(t) =& e^{i(\mu_{\alpha}-\mu_{\beta})}\Bra{\phi_{\alpha}(t)}x\Ket{\phi_{\beta}(t)},\\
@@ -929,7 +937,7 @@ X_{\alpha\beta k} = \sqrt{\frac{\hbar}{2m}}(\sqrt{\beta}c_{-k} \delta_{\alpha,\b
 \begin{align*}
 \dot{\rho}_{\alpha \beta} = \frac{\gamma}{2}&(N+1)[2\sqrt{(\alpha+1)(\beta + 1)}\rho_{\alpha+1,\beta+1} - (\alpha + \beta)\rho_{\alpha \beta}],\\
 +& N[2\sqrt{\alpha \beta}\rho_{\alpha-1,\beta-1} - (\alpha + \beta + 2)\rho_{\alpha \beta}].
-\end{align*}Utilizando las propiedades de los operadores definidos en \ref{FloquetOperators} se obtiene la ecuación en términos de operadores:
+\end{align*}Utilizando las propiedades de los operadores definidos en \eqref{FloquetOperators} se obtiene la ecuación en términos de operadores:
 
 \begin{align*}
 \dot{\rho} = -&\frac{i}{\hbar}[H_S (t),\rho] + \frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )\\
@@ -947,7 +955,7 @@ H_S = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}).
 \begin{equation} \label{GammaLindblat}
 \dot{\rho}=\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )
  + N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
-\end{equation}La cual queda formalmente resuelta mediante la base de decaimiento. En el capitulo siguiente se utilizará este resultado para modelar enfriamiento optomecánico.
+\end{equation}La cual queda formalmente resuelta mediante la base de decaimiento. En el capitulo siguiente se utilizará este resultado para modelar enfriamiento optomecánico con coeficientes dependientes del tiempo.
 
 
 \chapter{Enfriamiento Optomecánico}
