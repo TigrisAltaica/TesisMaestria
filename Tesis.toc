@@ -42,11 +42,11 @@
 \contentsline {subsection}{\numberline {6.2.3}Operadores $\mathaccentV {dot}05F{\Gamma }$}{45}
 \contentsline {subsection}{\numberline {6.2.4}Factores del Hamiltoniano del Oscilador Dependiente del Tiempo}{46}
 \contentsline {subsection}{\numberline {6.2.5}Soluci\IeC {\'o}n para $\alpha $ y $\beta $}{47}
-\contentsline {chapter}{\numberline {7}Teor\IeC {\'\i }a del Enfriamiento Laser para sistemas Optomec\IeC {\'a}nicos con Frecuencia Dependiente del Tiempo}{48}
+\contentsline {chapter}{\numberline {7}Teor\IeC {\'\i }a del Enfriamiento L\IeC {\'a}ser para sistemas Optomec\IeC {\'a}nicos con Frecuencia Dependiente del Tiempo}{48}
 \contentsline {section}{\numberline {7.1}Proyectores a Escalas Temporales}{49}
 \contentsline {section}{\numberline {7.2}Soluci\IeC {\'o}n para Interacci\IeC {\'o}n Optomec\IeC {\'a}nica}{51}
 \contentsline {chapter}{\numberline {8}Conclusiones}{54}
-\contentsline {chapter}{\numberline {A}Transformacion al Marco Desplazado}{55}
+\contentsline {chapter}{\numberline {A}Transformaci\IeC {\'o}n al Marco Desplazado}{55}
 \contentsline {section}{\numberline {A.1}T\IeC {\'e}rminos Hamiltonianos}{55}
 \contentsline {section}{\numberline {A.2}T\IeC {\'e}rminos de Lindblad}{56}
 \contentsline {section}{\numberline {A.3}Derivadas temporales de $U$ y $U^\dagger $}{57}

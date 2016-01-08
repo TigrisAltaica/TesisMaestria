@@ -24,27 +24,27 @@
 
 
 \begin{abstract}
-Se modela un sistema compuesto de un oscilador optomecánico formado por un oscilador armónico dependiente del tiempo acoplado a una cavidad óptica mediante presión de radiación. El resonador se modela como un oscilador armónico con frecuencia dependiente del tiempo, mediante el formalismo de Floquet. Se obtiene una ecuación maestra mejorada para el caso de un oscilador cuya frecuencia presenta oscilaciones periódicas pequeñas en torno a una frecuencia central. Se realiza la aproximación adiabática y se obtiene una expresión para la oscupación promdio de excitaciones para el oscilador armónico.
+Se modela un sistema compuesto de un oscilador optomecánico formado por un oscilador armónico dependiente del tiempo acoplado a una cavidad óptica mediante presión de radiación. El resonador se modela como un oscilador armónico con frecuencia dependiente del tiempo, mediante el formalismo de Floquet. Se obtiene una ecuación maestra mejorada para el caso de un oscilador cuya frecuencia presenta oscilaciones periódicas pequeñas en torno a una frecuencia central. Se realiza la aproximación adiabática y se obtiene una expresión para la ocupación promedio de excitaciones para el oscilador armónico.
 \end{abstract}
 
 \tableofcontents
 
 \chapter{Introducción}
 
-Se desea estudió el enfriamiento de un sistema mecánico macroscópico mediante métodos ópticos, cuando se involucran parámetros dependientes del tiempo. Específicamente, se estudió el enfriamiento de un oscilador armónico acoplado mediante al campo bosonico de una cavidad óptica. Típicamente \cite{BarberisLC}, la interacción entre ambos sistemas es demasiado débil para que el enfriamiento sea más rápido que la re-termalización del sistema, por lo que se recurre a un láser el cual se utiliza como bomba para aumentar la interacción. Se estudia de forma específica el caso donde la frecuencia del oscilador armónico es una función periódica del tiempo. Se toma el caso de un oscilador armónico cuya frecuencia oscila débilmente y de manera periódica en torno a una frecuencia promedio. Se busca utilizar un formalismo que tome en cuenta la dependencia temporal del sistema al hacer la aproximación de Markov a fin de obtener una ecuación maestra mejorada. El resultado se compara con \cite{BarberisLC}, donde se estudia el mismo sistema pero mediante un formalismo matemático que no toma en cuenta la dependencia temporal del sistema al deducir la aproximación maestra. Se obtiene una predicción para el número promedio de excitaciones vibracionales a fin de tener una medida final para las temperaturas del estado estacionario.
+Se estudió el enfriamiento de un sistema mecánico macroscópico mediante métodos ópticos, cuando se involucran parámetros dependientes del tiempo. Específicamente, se estudió el enfriamiento de un oscilador armónico acoplado mediante al campo bosonico de una cavidad óptica. Típicamente \cite{BarberisLC}, la interacción entre ambos sistemas es demasiado débil para que el enfriamiento sea más rápido que la re-termalización del sistema, por lo que se recurre a un láser el cual se utiliza como bomba para aumentar la interacción. Se estudia de forma específica el caso donde la frecuencia del oscilador armónico es una función periódica del tiempo. Se toma el caso de un oscilador armónico cuya frecuencia oscila débilmente y de manera periódica en torno a una frecuencia promedio. Se busca utilizar un formalismo que tome en cuenta la dependencia temporal del sistema al hacer la aproximación de Markov a fin de obtener una ecuación maestra mejorada. El resultado se compara con \cite{BarberisLC}, donde se estudia el mismo sistema pero mediante un formalismo matemático que no toma en cuenta la dependencia temporal del sistema al deducir la aproximación maestra. Se obtiene una predicción para el número promedio de excitaciones vibracionales a fin de tener una medida final para las temperaturas del estado estacionario.
 
 \section{Sistemas Optomecánicos}
 
-Se consideran sistemas donde puede existir un acoplamiento entre objetos mecánicos macroscópicos y sistemas ópticos. Un ejemplo muy sencillo es una cavidad óptica de Fabry-Perot, la cual consiste en dos espejos planos y paralelos alineados uno frente a otro. Este es un sistema lineal que se comporta como un resonador. Los espejos, hablando de manera estrícta, deben ser planos. Sin embargo, el nombre se utiliza también para cavidades con espejos curvos\cite{PaschottaFP}. Las frecuencias resonantes de la cavidad pueden ajustarse mediante su longitud. Si uno de los dos espejos no se encuentra fijo, si no más bien se encuentra acoplado a un resorte, por ejemplo, esto causaría que, si la presión de radiación debida a la luz dentro de la cavidad fuese suficiente para mover el espejo, que la longitud de la cavidad dependiese de la dinámica del espejo acoplado al resorte. Este es un sistema optomecánico. Otro posible ejemplo es una cavidad con una membrana dieléctrica reflectiva actuando como espejo \cite{JockelMR}. Este tema se discutirá con mayor detalle más adelante.
+Se consideran sistemas donde puede existir un acoplamiento entre objetos mecánicos macroscópicos y sistemas ópticos. Un ejemplo muy sencillo es una cavidad óptica de Fabry-Perot, la cual consiste en dos espejos planos y paralelos alineados uno frente a otro. Este es un sistema lineal que se comporta como un resonador. Los espejos, hablando de manera estricta, deben ser planos. Sin embargo, el nombre se utiliza también para cavidades con espejos curvos\cite{PaschottaFP}. Las frecuencias resonantes de la cavidad pueden ajustarse mediante su longitud. Si uno de los dos espejos no se encuentra fijo, si no más bien se encuentra acoplado a un resorte, por ejemplo, esto causaría que, si la presión de radiación debida a la luz dentro de la cavidad fuese suficiente para mover el espejo, que la longitud de la cavidad dependiese de la dinámica del espejo acoplado al resorte. Este es un sistema optomecánico. Otro posible ejemplo es una cavidad con una membrana dieléctrica reflectiva actuando como espejo \cite{JockelMR}. Este tema se discutirá con mayor detalle más adelante.
 
 \section{Motivación Experimental}
 
-A fin de estudiar el comportamiento cuántico de objetos macroscópicos, así como para integrar componentea macroscópicos en sistemas cuánticos, estos deben estar muy cerca de su estado base cuántico \cite{ChanQM}. Esto requiere de técnicas de enfriamiento altamente efectivas. Como se detallará en secciones más adelante, los sistemas optomecánicos proveen una solución análoga al enfriamiento láser de sistemas atómicos \cite{NooshiLC}. En este trabajo se busca estudiar el caso específico de un resonador donde la frecuencia del mismo depende del tiempo, a fin de encontrar si esto podría llevar a un mejor enfriamiento.
+A fin de estudiar el comportamiento cuántico de objetos macroscópicos, así como para integrar componentes macroscópicos en sistemas cuánticos, estos deben estar muy cerca de su estado base cuántico \cite{ChanQM}. Esto requiere de técnicas de enfriamiento altamente efectivas. Como se detallará en secciones más adelante, los sistemas optomecánicos proveen una solución análoga al enfriamiento láser de sistemas atómicos \cite{NooshiLC}. En este trabajo se busca estudiar el caso específico de un resonador donde la frecuencia del mismo depende del tiempo, a fin de encontrar si esto podría llevar a un mejor enfriamiento.
 
 
 \section{Formalismo Matemático}
 
-El trabajo desarrollado consta de varios pasos. Primero se da una breve introducción al tema de ecuaciones maestras como modelo de sistemas cuánticos abiertos. Se deduce una ecuación maestra utilizando el método de proyectores \cite{ZollerQN}, el cual se utiliza después para generar una ecuación maestra para ciertos estados únicamente, en esencia una aproximación adiabática. Ya establecido el concepto de ecuación maestra, se estudia la solución de dos posibles sistemas y se deduce también sus ecuaciones maestras correspondientes. Se estudia la solución para el átomo de dos niveles como primer ejemplo, y luego para el oscilador armónico. El segundo caso es de evidente importancia para el enfoque de este trabajo. Para resolver el caso del oscilador armónico se emplea el formalismo de la base de decaimiento \cite{EnglertDB}, la cual se estudia en detalle, y la que consiste, a grosso modo, en en una suma de distintas potencias de operadores de creación y aniquilación de oscilador armónico en ordenamiento normal. Después de esto se procede a deducir una mejor ecuación maestra siguiendo el procedimiento de \cite{HanngiFM} para el caso del oscilador armónico con frecuencia dependiente del tiempo, y se encuentra que esta ecuación queda resuelta por la misma base de decaimiento expresada en una base de estados distintos. Se establece que operadores deben utilizarse y como obtenerlos. Se da un tratamiento breve de la teoría de Floquet, la cual entra en juego debido a la dependencia temporal del Hamiltoniano. Después de deducir un Hamiltoniano para modelar el sistema, se utiliza una transformación unitaria a un marco de referencia desplazado, notando de manera especial como se debe llevar acabo el procedimiento cuando se tienen operadores con dependencia temporal explícita. Los cálculos de esta transformación se incluyen de forma detallada. Se sigue el procedimiento de \cite{BarberisLC} para llegar a un número promedio de excitaciones vibracionales para el oscilador, teniendo cuidado de regresar a los operadores usuales para el oscilador armónico. 
+El trabajo desarrollado consta de varios pasos. Primero se da una breve introducción al tema de ecuaciones maestras como modelo de sistemas cuánticos abiertos. Se deduce una ecuación maestra utilizando el método de proyectores \cite{ZollerQN}, el cual se utiliza después para generar una ecuación maestra para ciertos estados únicamente, en esencia una aproximación adiabática. Ya establecido el concepto de ecuación maestra, se estudia la solución de dos posibles sistemas y se deduce también sus ecuaciones maestras correspondientes. Se estudia la solución para el átomo de dos niveles como primer ejemplo, y luego para el oscilador armónico. El segundo caso es de evidente importancia para el enfoque de este trabajo. Para resolver el caso del oscilador armónico se emplea el formalismo de la base de decaimiento \cite{EnglertDB}, la cual se estudia en detalle, y la que consiste, a grosso modo, en en una suma de distintas potencias de operadores de creación y aniquilación de oscilador armónico en ordenamiento normal. Después de esto se procede a deducir una mejor ecuación maestra siguiendo el procedimiento de \cite{HanngiFM} para el caso del oscilador armónico con frecuencia dependiente del tiempo, y se encuentra que esta ecuación queda resuelta por la misma base de decaimiento expresada en una base de estados distintos. Se establece cuales operadores deben utilizarse y como obtenerlos. Se da un tratamiento breve de la teoría de Floquet, la cual entra en juego debido a la dependencia temporal del Hamiltoniano. Después de deducir un Hamiltoniano para modelar el sistema, se utiliza una transformación unitaria a un marco de referencia desplazado, notando de manera especial como se debe llevar acabo el procedimiento cuando se tienen operadores con dependencia temporal explícita. Los cálculos de esta transformación se incluyen de forma detallada. Se sigue el procedimiento de \cite{BarberisLC} para llegar a un número promedio de excitaciones vibracionales para el oscilador, teniendo cuidado de regresar a los operadores usuales para el oscilador armónico. 
 
 \section{Esquema de Temas}
 
@@ -277,7 +277,7 @@ A continuación se estudiaran posibles soluciones a este tipo de ecuaciones.
 
 \chapter{Ecuaciones Maestras: Átomo de dos Niveles, Oscilador Armónico y la Base de Decaimiento}
 
-Se busca poder resolver ecuaciones como las encontradas en el capitulo anterior, las cuales normalmente se escriben de la forma
+Se busca poder resolver ecuaciones como las encontradas en el capítulo anterior, las cuales normalmente se escriben de la forma
 
 \begin{equation}\label{MasterEq}
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L\rho,
@@ -305,7 +305,7 @@ c_j(t)= (\phi_j(t),\Psi(t)).
 
 \begin{align*}
 L\rho =& \lambda \rho, \\
-\check{rho} L =& \lambda \check{\rho}.
+\check{\rho} L =& \lambda \check{\rho}.
 \end{align*} Los estados que se obtienen al aplicar el superoperador por la derecha se conocen también como estados duales, se denotan por $\check{\rho}$. También es importante notar que los vectores que se obtienen al aplicar por la izquierda y por la derecha no son simplemente complejos conjugados uno del otro, se conocen como duales y son ortogonales los unos a otros bajo un producto definido mediante la traza\cite{EnglertDB}, sin embargo sus valores propios son iguales. Los vecotres obtenidos no forman necesariamente una base del espacio de operadores. 
 
 \begin{equation}
@@ -313,8 +313,8 @@ Tr[\check{\rho}_\lambda \rho_{\lambda'}] = \delta_{\lambda'\lambda}.
 \end{equation} Esto se puede emplear para obtener las constantes de la expansión
 
 \begin{equation}
-\rho(0) = \sum_{\lambda} \check{c} \rho_{\lambda}
-\end{equation}, donde
+\rho(0) = \sum_{\lambda} \check{c}_{\lambda} \rho_{\lambda},
+\end{equation} donde
 
 \begin{equation}
 \check{c}_\lambda = Tr[\check{\rho}_\lambda \rho(0)].
@@ -396,7 +396,7 @@ Tr[\sigma_0\check{\sigma_0}] =& Tr[\frac{1}{2}[I + (2s-1)\sigma_z]],\\
 
 \section{Oscilador Armónico: Primer Ansatz}
 
-Se busca modelar interacciones que involucran un campo electromagnético el cual actúa como reservorio térmico, o baño. Está interacción, con este sistema en particular corresponde a un superoperador de Lindblad de la forma \cite{EnglertDB}
+Se busca modelar interacciones que involucran un campo electromagnético el cual actúa como reservorio térmico, o baño. Esta interacción, con este sistema en particular corresponde a un superoperador de Lindblad de la forma \cite{EnglertDB}
 
 \begin{align}\label{EMField}
 L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^\dagger] \nonumber \\
@@ -405,7 +405,7 @@ L_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^
 
 \begin{equation}
  \rho^l_n = \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l},
-\end{equation} El procedimiento de nuevo es sustituir el ansatz en \eqref{EMField} para obtener un sistema de ecuaciones para los valores y vectores propios. Se trabaja primero con el primer término de \eqref{EMField}, donde se ignora el coeficiente que multiplíca los términops dentro de $[...]$ por brevedad
+\end{equation} El procedimiento de nuevo es sustituir el ansatz en \eqref{EMField} para obtener un sistema de ecuaciones para los valores y vectores propios. Se trabaja primero con el primer término de \eqref{EMField}, donde se ignora el coeficiente que multiplica los términos dentro de $[...]$ por brevedad
 
 \begin{align*}
 =&[a^\dagger a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} + \sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger a -2a\sum_{n=0}^\infty Q_n^l\Ket{n}\Bra{n+l} a^\dagger],\\
@@ -484,7 +484,7 @@ A continuación se muestra de forma explicita como calcular estos elementos.
 
 \subsection{Estado Base}
 
-Este es el estado con valor propio 0, lo cual corresponde a $n=0, \qquad l=0$. En este caso, la solución tiene la forma explícita
+Este es el estado con valor propio cero, lo cual corresponde a $n=0, \qquad l=0$. En este caso, la solución tiene la forma explícita
 
 \begin{equation}
 \frac{1}{(\nu+1)}:L_0^0[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:,
@@ -507,23 +507,23 @@ La base de decaimiento \cite{EnglertDB} definida en \ref{DefDB} corresponde a ei
 \end{equation}lo cual corresponde a una doble degeneración $\pm l$. Antes de poder realizar la expansión de estados arbitrarios en esta base es necesario conocer los eigenestados del operador dual, los cuales son aquellos que cumplen la condición\cite{EnglertDB}
 
 \begin{equation}
-\bar{\rho}_\gamma L = \gamma\bar{\rho}_\gamma.
+\check{\rho}_\gamma L = \gamma\check{\rho}_\gamma.
 \end{equation} Es decir, los eigenestados \textit{izquierdos} del operador de Lindblad. Los estados duales cumplen con
 
 \begin{equation}
-Tr[\bar{\rho}_{\gamma}\rho_{\gamma'}] = \delta_{\gamma\gamma'}.
+Tr[\check{\rho}_{\gamma}\rho_{\gamma'}] = \delta_{\gamma\gamma'}.
 \end{equation} Donde la barra denota al estado dual y $\gamma$ denota algún eigenvalor particular del problema. Bajo este producto es posible entonces resolver las ecuaciones para los coeficientes de la expansión de un estado particular en estados de la base de decaimiento
 
 \begin{equation}
-\Psi = \sum_{\gamma}\bar{c}_\gamma \rho_\gamma.
+\Psi = \sum_{\gamma}\check{c}_\gamma \rho_\gamma.
 \end{equation} Entonces
 
 \begin{equation}
-\bar{c}_\gamma = Tr[\Psi\bar{\rho}_{\gamma}].
+\check{c}_\gamma = Tr[\Psi\check{\rho}_{\gamma}].
 \end{equation} Con esto la evolución temporal del sistema queda determinada
 
 \begin{equation}
-\Psi(t) = \sum_\gamma \bar{c}_\gamma e^{\frac{-i}{\hbar} \gamma t} \rho_{\gamma}.
+\Psi(t) = \sum_\gamma \check{c}_\gamma e^{\frac{-i}{\hbar} \gamma t} \rho_{\gamma}.
 \end{equation} Se trata ahora la forma explícita de los estados duales.
 
 \subsection{Estados Duales: Forma Explícita}
@@ -582,7 +582,7 @@ Con esto se puede proceder a atacar problemas de enfriamiento optomecánico. Pri
 
 \chapter{Teoría de Floquet Clásica y Cuántica}
 
-Para resolver el problema correspondiente a un oscilador armónico amortiguado con frecuencia dependiente del tiempo, se utiliza la teoría de Floquet \cite{WardFT}y se busca una forma de la ecuación maestra expresada mediante operadores de Floquet, los cuales se definirán más adelante.
+Para resolver el problema correspondiente a un oscilador armónico amortiguado con frecuencia dependiente del tiempo, se utiliza la teoría de Floquet \cite{WardFT} y se busca una forma de la ecuación maestra expresada mediante operadores de Floquet, los cuales se definirán más adelante.
 
 \section{Teoría de Floquet}
 
@@ -594,7 +594,7 @@ x' = A(t)x,
 
 \begin{equation}\label{FloquetForm}
 x(t)=e^{\mu t}p(t).
-\end{equation} Los valores $\mu$ se conocen como los exponentes característicos o de Floquet y la función $p(t)$ es periódica con período $\tau$, es decir el mismo periodo que el coeficiente en la ecuación diferencial. Los coeficientes $\mu$ son, en general, complejos. Claramente, el hecho de que la solución tenga la forma \eqref{FloquetForm} puede llevar a que la solución se dispare con el tiempo, por lo que se desea entender el criterio de estabilidad de este tipo de soluciones. Antes de esto, es necesario establecer algunas definiciones y propiedades, las cuales se presentan sin demostración debido a que no son el enfoque principal de este trabajo. Si el lector se encuentra interesado, el tratamiento se encuentra con mayor detalle en las notas de las cuales surge la sección siguiente. \cite{WardFT}
+\end{equation} Los valores $\mu$ se conocen como los exponentes característicos o de Floquet y la función $p(t)$ es periódica con período $\tau$, es decir el mismo periodo que el coeficiente en la ecuación diferencial. Los coeficientes $\mu$ son, en general, complejos. Claramente, el hecho de que la solución tenga la forma \eqref{FloquetForm} puede llevar a que la solución se dispare con el tiempo, por lo que se desea entender el criterio de estabilidad de este tipo de soluciones. Antes de esto, es necesario establecer algunas definiciones y propiedades, las cuales se presentan sin demostración debido a que no son el enfoque principal de este trabajo. Si el lector se encuentra interesado, el tratamiento se encuentra con mayor detalle en las notas de las cuales surge la sección siguiente \cite{WardFT}.
 
 \subsection{Propiedades Básicas}
 
@@ -833,13 +833,13 @@ Estas soluciones tienen la forma explícita\cite{BrownPT}
 
 \begin{equation}
 \Psi_\alpha (x,t) = (\frac{\sqrt{m/\pi\hbar}}{2^\alpha n!E_1^0(t)})^{\frac{1}{2}}(\frac{E_1^0(t)}{E_2^0(t)})^\frac{\alpha}{2}H_\alpha(x\sqrt{\frac{m}{\hbar E_1^0(t) E_2^0(t)}})e^{(ix^2\frac{E_1^0(t)}{2E_2^0(t)})}
-\end{equation} donde el superíndice 0 indica que se toma el límite donde $\gamma$ tiende a cero. Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Foch bajo la acción de los operadores de Floquet, los cuales pueden expresarse en términos de los operadores de momento y posición usuales en mecánica cuántica
+\end{equation} donde el superíndice cero indica que se toma el límite donde $\gamma$ tiende a cero. Sin embargo, estas soluciones se comportan de manera análoga a los estados de la base de Fock bajo la acción de los operadores de Floquet, los cuales pueden expresarse en términos de los operadores de momento y posición usuales en mecánica cuántica
 
-\begin{equation}
+\begin{equation}\label{FloquetOperators}
 \Gamma(t) = \frac{1}{2i}(\hat{x}\dot{E}_1^0(t)\sqrt{\frac{2}{\hbar m}}-\hat{p}E_1^0(t)\sqrt{\frac{\hbar}{2m}}).
 \end{equation} Así como su complejo conjugado. Su acción sobre la base de Floquet queda definida por
 
-\begin{align*}\label{FloquetOperators}
+\begin{align*}
 \Gamma(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha}\Ket{\Psi_{\alpha-1} (x,t)}, \\
 \Gamma^\dagger(t) \Ket{\Psi_\alpha (x,t)} =& \sqrt{\alpha+1}\Ket{\Psi_{\alpha+1} (x,t)}.
 \end{align*}Es importante notar que estos operadores dependen explícitamente del tiempo. Es conveniente entender el origen de estos operadores. Se toma entonces un Hamiltoniano usual de oscilador armónico, con la excepción de que la frecuencia del oscilador es una función periódica del tiempo
@@ -859,7 +859,7 @@ m\ddot{q}(t) + k(t)q(t) = 0,
 
 \begin{equation}
 \tilde{H} = H + U^{-1}i\dot{U}.
-\end{equation} Para la transformación se elije
+\end{equation} Para la transformación se elige
 
 \begin{equation}
 U = e^{-i\chi(t)q^2(t)},
@@ -919,7 +919,7 @@ X_{\alpha\beta k} = \sqrt{\frac{\hbar}{2m}}(\sqrt{\beta}c_{-k} \delta_{\alpha,\b
 
 \begin{equation}
 \dot{\rho} = -\frac{i}{\hbar}[H(t)_{sis},\rho] + \frac{1}{\pi \hbar} \int_{-\infty}^\infty d\omega I(\omega)n_{th}(\omega)\int_0^\infty e^{i\omega t}[\tilde{x}(t-\tau,t)\rho,x] + C.H..
-\end{equation}Aquí $C.H.$ indica el conjugado Hermitiano de la parte disipadora y $n(\omega)$ es la ocupación térmica de los osciladores del baño. Utilizando que los estados de Floquet son la solución a la parte no disipadora, se llega a la ecuación en representación de Floquet
+\end{equation}Aquí $C.H.$ indica el conjugado hermitico de la parte disipadora y $n(\omega)$ es la ocupación térmica de los osciladores del baño. Utilizando que los estados de Floquet son la solución a la parte no disipadora, se llega a la ecuación en representación de Floquet
 
 \begin{align*}
 \dot{\rho}_{\alpha \beta} =& \frac{1}{\pi \hbar} \int_{-\infty}^\infty d\omega I(\omega)n_{th}(\omega) \int_0 ^{\infty} d\tau e^{i\omega \tau}, \\
@@ -942,7 +942,7 @@ X_{\alpha\beta k} = \sqrt{\frac{\hbar}{2m}}(\sqrt{\beta}c_{-k} \delta_{\alpha,\b
 \begin{align*}
 \dot{\rho} = -&\frac{i}{\hbar}[H_S (t),\rho] + \frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )\\
  +& N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger).
-\end{align*} Formalmente, la parte disipadora de la ecuación tiene la misma forma que la ecuación que genera la base \eqref{DefDB}, así que transformando al cuadro de interacción, donde se toma el Hamiltoniano del sistema como \eqref{QTDHO}, el cual puede expresarse como\cite{BrownPT}
+\end{align*} Formalmente, la parte disipadora de la ecuación tiene la misma forma que la ecuación que genera la base \eqref{DefDB}, así que transformando al cuadro de interacción, donde se toma el Hamiltoniano del sistema como \eqref{QTDHO}, el cual puede expresarse como\cite{BrownPT} 
 
 \begin{equation}
 H_S = \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}).
@@ -970,16 +970,16 @@ Existen muchas implementaciones posibles de acoplamientos entre elementos óptic
 
 \subsection{Espejos Suspendidos}
 
-Estos sistemas consisten en cavidades ópticas donde uno o mas de los espejos pueden cambiar de posiciona y así alteran la longitud de la cavidad. La primera realización experimental de este tipo de sistemas se debe a los primeros esfuerzos para detectar ondas gravitacionales \cite{AbramoviciLIGO}. El sistema consiste en un interferometro con los espejos fijos en masas suspendidas, a manera que una onda gravitacional, al interactuar con las masas cambiaría la posición de los espejos y así la longitud de camino óptico. El propósito de suspender las masas no es optomecánico, sin embargo, las fluctuaciones en la potencia del láser, debido a la incertidumbre en el número de fotones, son un efecto cuántico que impone un límite a la precisión de las mediciones\cite{CavesIF}. Experimentos en este tipo de sistemas han demostrado varios efectos, entre ellos el enfriamiento mediante presión de radiación \cite{CorbittOC}.
+Estos sistemas consisten en cavidades ópticas donde uno o más de los espejos pueden cambiar de posiciona y así alteran la longitud de la cavidad. La primera realización experimental de este tipo de sistemas se debe a los primeros esfuerzos para detectar ondas gravitacionales \cite{AbramoviciLIGO}. El sistema consiste en un interferometro con los espejos fijos en masas suspendidas, a manera que una onda gravitacional, al interactuar con las masas cambiaría la posición de los espejos y así la longitud de camino óptico. El propósito de suspender las masas no es optomecánico, sin embargo, las fluctuaciones en la potencia del láser, debido a la incertidumbre en el número de fotones, son un efecto cuántico que impone un límite a la precisión de las mediciones \cite{CavesIF}. Experimentos en este tipo de sistemas han demostrado varios efectos, entre ellos el enfriamiento mediante presión de radiación \cite{CorbittOC}.
 
 \subsection{Microresonadores}
 
-Otro tipo posible de sistema son los microresonador o microcavidades. En este tipo de sistemas, es posible confinar a la luz a viajar en modos \textit{Whispering Gallery}, los cuales implican que la luz es guiada a lo largo del perímetro del resonador,el cual puede tener forma esférica, circular, o toroidal\cite{VahalaOM}. Si este vibra, esto puede alterar el camino óptico de la luz y se logra un acoplamiento optomecánico. Debido a su tamaño, es posible obtener acoplamiento fuerte entre sistemas cuánticos y el resonador\cite{VerhagenMOC}.
+Otro tipo posible de sistema son los microresonador o microcavidades. En este tipo de sistemas, es posible confinar a la luz a viajar en modos \textit{whispering gallery}, los cuales implican que la luz es guiada a lo largo del perímetro del resonador,el cual puede tener forma esférica, circular, o toroidal\cite{VahalaOM}. Si este vibra, esto puede alterar el camino óptico de la luz y se logra un acoplamiento optomecánico. Debido a su tamaño, es posible obtener acoplamiento fuerte entre sistemas cuánticos y el resonador\cite{VerhagenMOC}.
 
 \subsection{Objetos Suspendidos o Levitados}
 
 En este tipo de sistemas, se considera una cavidad óptica rígida donde se coloca un objeto mecánico dentro de la cavidad. Este esquema permite el acoplamiento de objetos mecánicos de tamaños inferiores a la longitud de onda de la luz \cite{KippenberCO}, como por ejemplo una membrana dieléctrica de $SI_3N_4$ de  $1mm \times 1mm \times 50nm$
-de dimensión\cite{SankeyMC}. En ese caso, se puede observar que parámetros de la cavidad como el detuning y la finesa dependen del desplazamiento de la membrana. Otra posibilidad consiste en un nano cable de carbón, de aproximadamente $10^9$ átomos, el cual se coloca dentro de una micro cavidad de Fabri-Perot. Las propiedades de la cavidad cambian no solo dependiendo de la posición del objeto, sino también de sus modos vibracionales\cite{FaveroCR}.  
+de dimensión\cite{SankeyMC}. En ese caso, se puede observar que parámetros de la cavidad como la sintonización y la finesa dependen del desplazamiento de la membrana. Otra posibilidad consiste en un nano cable de carbón, de aproximadamente $10^9$ átomos, el cual se coloca dentro de una micro cavidad de Fabri-Perot. Las propiedades de la cavidad cambian no solo dependiendo de la posición del objeto, sino también de sus modos vibracionales\cite{FaveroCR}.  
 
 \section{Hamiltoniano para Enfriamiento Optomecánico}
 
@@ -1043,7 +1043,7 @@ H(t)_{rad} = 2ig\sqrt{\frac{\hbar^3}{2m}}  a^\dagger a[(\frac{A(t) +1}{B(t)})\Ga
 
 \begin{equation}\label{LaserCoolingHamiltonian}
 H(t) = -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) +  g'a^\dagger a[\gamma_+(t)\Gamma (t) +\gamma_-(t)\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a),
-\end{equation}, donde se hicieron las redefiniciones
+\end{equation} donde se hicieron las redefiniciones
 
 \begin{align*}
 g'=&g\sqrt{\frac{\hbar^3}{2m}},\\
@@ -1061,7 +1061,7 @@ Ahora se desea resolver la ecuación maestra correspondiente a este Hamiltoniano
 
 \section{Transformación Mediante Operador de Desplazamiento}
 
-Para poder encontrar una solución a \eqref{LCMasterEquation} es necesario eliminar los términos de tercer orden en operadores, ya que estos son no-lineales y causan dificultades. Esto puede lograrse mediante una transformación unitaria. Esta técnica es analoga a la utilizada para el enfriamiento laser optomecánico usual. Se utiliza la transformación
+Para poder encontrar una solución a \eqref{LCMasterEquation} es necesario eliminar los términos de tercer orden en operadores, ya que estos son no-lineales y causan dificultades. Esto puede lograrse mediante una transformación unitaria. Esta técnica es análoga a la utilizada para el enfriamiento láser optomecánico usual. Se utiliza la transformación
 
 \begin{equation}
 U_{a,\Gamma} = e^{(\alpha a^\dagger - \alpha^*a)}e^{(\beta \Gamma^\dagger - \beta^*\Gamma)},
@@ -1082,7 +1082,7 @@ U_{a,\Gamma} = e^{(\alpha a^\dagger - \alpha^*a)}e^{(\beta \Gamma^\dagger - \bet
 \begin{align}
  U_{a,\Gamma} \dot{\rho'} U_{a,\Gamma}^\dagger =& L[U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger] - \dot{U}_{a,\Gamma}\rho'U_{a,\Gamma}^\dagger -U_{a,\Gamma} \rho' \dot{U}_{a,\Gamma}^\dagger\\
 \dot{\rho} =& U_{a,\Gamma}^\dagger L[U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger]U_{a,\Gamma}-U_{a,\Gamma}^\dagger\dot{U}_{a,\Gamma}\rho'-\rho'\dot{U}_{a,\Gamma}^\dagger U_{a,\Gamma}.
-\end{align}A partir de este punto, se omiten los sub-índices de las transformaciones y la $'$ para el operador densidad. Para ver los cálculos de la transformación en detalle, ver los apéndices, en esta sección únicamente se ilustrara el procedimiento. Para entender el efecto de la transformación se utiliza la fórmula de Baker-Campdell-Housdorff\cite{SakuraiQM}, para dos operadores $A$ y $B$
+\end{align}A partir de este punto, se omiten los sub-índices de las transformaciones y la $'$ para el operador densidad. Para ver los cálculos de la transformación en detalle, ver los apéndices, en esta sección únicamente se ilustrara el procedimiento. Para entender el efecto de la transformación se utiliza la fórmula de Baker-Campbell-Hausdorff \cite{SakuraiQM}, para dos operadores $A$ y $B$
 
 \begin{equation}
 e^{A} B e^{-A} = B + [A,B] + \frac{1}{2}[A,[A,B]] + ... .
@@ -1100,12 +1100,12 @@ H_{cav}' =& -\hbar \delta(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|
 H_{mec}' =& \frac{W}{|f(t)|^2}(\Gamma^{\dagger}\Gamma + \beta \Gamma^{\dagger} + \beta^* \Gamma + |\beta|^2 ),\\
 H_{rad}'=&-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a + |\alpha|^2)(\gamma_-(t)(\Gamma^{\dagger}+\beta^*)+\gamma_+(t)(\Gamma+\beta))],\\
 B' =& \frac{\hbar \Omega}{2}(a^{\dagger} + a +\alpha + \alpha^*),
-\end{align}Los terminos de Lindblad que modelan el decaimiento se convierten en
+\end{align}Los términos de Lindblad que modelan el decaimiento se convierten en
 
 \begin{align}
 L_a ' =& L_a + \frac{A}{2}[(\alpha a^\dagger - \alpha^*a),\rho], \\
 L_{\Gamma}' =& L_{\Gamma} + \frac{\gamma}{2}[(\beta\Gamma^{\dagger}-\beta^* \Gamma),\rho].
-\end{align}Finalmente es necesario tomar en cuenta los términos provenientes de las derivadas temporales. Estos cálculos requieren de especial atención debido a la dependencia temporal de los operadores de Floquet. Si el lector desea ver los detalles, se encuentran en el apendice. Los términos obtenidos son
+\end{align}Finalmente es necesario tomar en cuenta los términos provenientes de las derivadas temporales. Estos cálculos requieren de especial atención debido a la dependencia temporal de los operadores de Floquet. Si el lector desea ver los detalles, se encuentran en el apéndice. Los términos obtenidos son
 
 \begin{align*}
 U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a,\\
@@ -1120,7 +1120,7 @@ C_{-+}(t) =& [\dot{\Gamma}, \Gamma^{\dagger}],\\
 C_{--}(t) =& [\dot{\Gamma}, \Gamma].
 \end{align*} 
  
-Es interesante notar que toda la dependencia relacionada con estás funciones va acompañada de coeficientes de orden $|\beta|^2$. Por el momento ests términos se traran de forma separada. Todos los demás términos se pueden expresar como conmutadores
+Es interesante notar que toda la dependencia relacionada con estas funciones va acompañada de coeficientes de orden $|\beta|^2$. Por el momento estos términos se tratarán de forma separada. Todos los demás términos se pueden expresar como conmutadores
 
 \begin{equation}
 -(U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U) = [\dot{\alpha}^*a-\dot{\alpha}a^\dagger+\dot{\beta}^*\Gamma-\dot{\beta}\Gamma^\dagger,\rho]+ [\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger,\rho],
@@ -1144,7 +1144,7 @@ a&(-\hbar\delta\alpha^* -\hbar g' \alpha^*(\gamma_-(t) \beta^* + \gamma_+(t) \be
 a^\dagger&(-\hbar\delta\alpha -\hbar g' \alpha(\gamma_-(t) \beta^* + \gamma_+(t) \beta)+ \frac{\hbar\Omega}{2} - i\hbar\dot{\alpha} +i\hbar\frac{A}{2}\alpha),\\
 \Gamma&(\frac{W}{|f(t)|^2}\beta^*-\hbar g'|\alpha|^2\gamma_- +  i\hbar\dot{\beta}^*+i\hbar\frac{\gamma}{2}\beta^*),\\
 \Gamma^\dagger&(\hbar\frac{W}{|f(t)|^2}\beta-\hbar g'|\alpha|^2\gamma_+ -  i\hbar\dot{\beta}-i\hbar\frac{\gamma}{2}\beta),
-\end{align} si se desea eliminar todos estos términos, los términos asociados a cada operador deben eliminarse de manera independiente,lo cual genera ecuaciones diferenciales independientes para los coeficientes $\alpha$ y $\beta$. Es importante notar que solo se obtienen dos ecuaciones, ya que las ecuaciones para los conjugados se obtienen al conjugar. Estas son
+\end{align} si se desea eliminar todos estos términos, los términos asociados a cada operador deben eliminarse de manera independiente, lo cual genera ecuaciones diferenciales independientes para los coeficientes $\alpha$ y $\beta$. Es importante notar que solo se obtienen dos ecuaciones, ya que dos de las ecuaciones son simplemente los complejos conjugados de las otras dos. Estas son
 
 \begin{align}
 \dot{\alpha} =& \alpha(-\frac{A}{2}+i(\delta+g'(\gamma_-(t) \beta^* + \gamma_+(t) \beta))-i\frac{\Omega}{2},\\
@@ -1180,7 +1180,7 @@ m\ddot{x} + (\nu_0 + \epsilon cos(2\omega t))x = 0,
 
 \begin{equation}
 m\omega^2\ddot{x}+(\nu_0+\epsilon cos(2t'))x=0,
-\end{equation} y se divide toda la ecuacion por $m\omega^2$. Con esto la ecuacion queda en la forma deseada si se toma $\epsilon' = \frac{\epsilon}{m\omega^2}$ y se pide $\frac{\nu_0}{m\omega^2} = n^2$, omitiendo los superindices primos por simplicidad, se tiene
+\end{equation} y se divide toda la ecuación por $m\omega^2$. Con esto la ecuación queda en la forma deseada si se toma $\epsilon' = \frac{\epsilon}{m\omega^2}$ y se pide $\frac{\nu_0}{m\omega^2} = n^2$, omitiendo las primas por simplicidad, se tiene
 
 \begin{equation} \label{MathieuEquation}
 \ddot{x} + (n^2+\epsilon cos(2t))x=0.
@@ -1198,7 +1198,7 @@ x(t)=& x_0(t) + \epsilon x_1(t) + \epsilon^2 x_2(t) + ... , \\
 
 \begin{equation}
 x_0(t) = a cos(nt) + b sin(nt),
-\end{equation}, esta solución puede sustituirse en la segunda ecuación y se obtiene que
+\end{equation} esta solución puede sustituirse en la segunda ecuación y se obtiene que
 
 \begin{equation}
 \ddot{x_1} + n^2x_1 = -\delta_1(a cos(nt) + b sin(nt)) -(a cos(nt) + b sin(nt))cos(2t),
@@ -1260,7 +1260,7 @@ C_{++}(t) =& [\dot{\Gamma}^\dagger,\Gamma]\\
 
 \begin{equation*}
 C_{--}(t) = -\epsilon\frac{i}{8}e^{4i\omega t}.
-\end{equation*} El calculo de los otros dos conmutadores es completamente análogo, y se llega a
+\end{equation*} El cálculo de los otros dos conmutadores es completamente análogo, y se llega a
 
 \begin{align}
 C_{++}(t) =& -\epsilon\frac{i}{8}e^{-4i\omega t},\\
@@ -1307,8 +1307,8 @@ B(t) = \frac{-2\omega }{sen(wt)}.
 a
 \begin{align}
 \gamma_\pm =& 2i\frac{A(t) \pm 1}{B(t)},\\
-=& 2i(\frac{i \frac{cos(\omega t)}{sin(\omega t)}\pm 1}{\frac{-2\omega }{sen(wt)}}), \\
-=& 2i(\frac{i \frac{cos(\omega t)}{sin(\omega t)}}{\frac{-2\omega }{sen(wt)}} \pm \frac{1}{\frac{-2\omega }{sen(wt)}}), \\
+=& 2i(\frac{i \frac{cos(\omega t)}{sen(\omega t)}\pm 1}{\frac{-2\omega }{sen(wt)}}), \\
+=& 2i(\frac{i \frac{cos(\omega t)}{sen(\omega t)}}{\frac{-2\omega }{sen(wt)}} \pm \frac{1}{\frac{-2\omega }{sen(wt)}}), \\
 =& 2(\frac{cos(\omega t)}{2\omega} \pm \frac{i sen(\omega t)}{-2\omega}),\\
 =& \frac{1}{\omega}e^{\mp i\omega t}.
 \end{align}
@@ -1325,12 +1325,12 @@ Dado que se tiene una forma explícita para la solución clásica, es posible da
 
 \begin{equation}
 \ddot{f} = i\omega\dot{f} - 6\omega^2\frac{\epsilon}{16} e^{3i\omega t}.
-\end{equation}Si se recuerda la expresión explícita del operador $\Gamma$ y se desprecian los terminos menores a $\epsilon$, se llega al resultado
+\end{equation}Si se recuerda la expresión explícita del operador $\Gamma$ y se desprecian los términos menores a $\epsilon$, se llega al resultado
 
 \begin{align}
 \dot{\Gamma}(t) =& i\omega \Gamma(t),\\
 \dot{\Gamma}^\dagger(t) =& -i\omega \Gamma^\dagger(t),
-\end{align} lo cual convierte el termino que depende de estas derivadas en el Hamiltoniano en
+\end{align} lo cual convierte el término que depende de estas derivadas en el Hamiltoniano en
 
 \begin{equation}
 i\hbar(\beta^*\dot{\Gamma}-\beta\dot{\Gamma}^\dagger) = \hbar\omega(\beta^*\Gamma+\beta\Gamma^{\dagger}),
@@ -1375,14 +1375,12 @@ A fin de encontrar una solución analítica, se restringe el estudio al caso est
 \begin{align}
 0 =& \alpha(-\frac{A}{2}+i\delta)-i\frac{\Omega}{2},\\
 0 =& \beta(-\frac{\gamma}{2}-i 2\omega),
-\end{align}, este sistema se puede resolver de manera sencilla
+\end{align} este sistema se puede resolver de manera sencilla
 
 \begin{align}
 \alpha_0 =& \frac{\Omega}{2\delta-iA},\\
 \beta_0 =& 0.
-\end{align}. 
-
-Trabajando con estás soluciones de orden $0$ en $g'$, el Hamiltoniano es
+\end{align} Trabajando con estás soluciones de orden cero en $g'$, el Hamiltoniano es
 
 \begin{equation}
 H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma -\hbar g'(a^{\dagger}a +\alpha_0 a^{\dagger}+\alpha^*_0 a)(\gamma_-(t)\Gamma^{\dagger}+\gamma_+(t)\Gamma)
@@ -1398,11 +1396,11 @@ H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma +\frac{\hbar g
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] +L_A\rho + L_\gamma \rho.
 \end{equation}
 
-En el siguiente capitulo se explicará de forma breve la teoría de enfriamiento laser y se aplicará para este caso particular.
+En el siguiente capitulo se explicará de forma breve la teoría de enfriamiento láser y se aplicará para este caso particular.
 
-\chapter{Teoría del Enfriamiento Laser para sistemas Optomecánicos con Frecuencia Dependiente del Tiempo}
+\chapter{Teoría del Enfriamiento Láser para sistemas Optomecánicos con Frecuencia Dependiente del Tiempo}
 
-La ecuación maestra definida en el capitulo anterior se divide naturalmente en distintas escalas de tiempo ya que $\nu$ y $A$ son normalmente del orden de mega Hertz y $\gamma$ y $\alpha$ del orden de 100 Hertz lo cual lleva a establecer una jerarquía de tiempos donde el movimiento optomecánico es mucho más rápido que la interacción optomecánica, la cual es mucho más rápida que el amortiguamiento mecánico. Se desea dividir la ecuación maestra en términos de un parámetro que se trata como parámetro perturbativo. Como parámetro se toma $\eta=\frac{g'}{4\omega}$. Esto divide la ecuación maestra en dos ordenes
+La ecuación maestra definida en el capítulo anterior se divide naturalmente en distintas escalas de tiempo ya que $\nu$ y $A$ son normalmente del orden de megahertz y $\gamma$ y $\alpha$ del orden de 100 hertz lo cual lleva a establecer una jerarquía de tiempos donde el movimiento optomecánico es mucho más rápido que la interacción optomecánica, la cual es mucho más rápida que el amortiguamiento mecánico. Se desea dividir la ecuación maestra en términos de un parámetro que se trata como parámetro perturbativo. Como parámetro se toma $\eta=\frac{g'}{4\omega}$. Esto divide la ecuación maestra en dos ordenes
 
 \begin{equation}
 L = L_0 + L_1,
@@ -1413,16 +1411,16 @@ L_0 =& L_c + L_m,\\
 L_c =& \frac{1}{i\hbar}[H_c,\cdot] + L_A,\\
 L_m =& \frac{1}{i\hbar}[H_m,\cdot] + L_\gamma,\\
 L_1 =& \frac{1}{i\hbar}[H_{int},\cdot].
-\end{align*} Es decir la evolución libre correspondiente a la cavidad y al oscilador así como los términos de lindblat correspondientes corresponden a orden 0. La interacción entre ambos sistemas ocurre a primer orden en $\eta$.
+\end{align*} El punto indica la posición de la matríz densidad al aplicar el superoperador. Es decir la evolución libre correspondiente a la cavidad y al oscilador así como los términos de Lindblat correspondientes corresponden a orden cero. La interacción entre ambos sistemas ocurre a primer orden en $\eta$.
 
 \section{Proyectores a Escalas Temporales}
 
-Ya que se desea estudiar el comportamiento del sistema en el estado estacionario, se definen proyectores independientes del tiempo tales que permitan proyectar la ecuación a dicho estado. Se debe recordar por lo visto en la sección de la base de decaimiento que el estado estacionario es el correspondiente al eigenvalor 0. Estos proyectores son
+Ya que se desea estudiar el comportamiento del sistema en el estado estacionario, se definen proyectores independientes del tiempo tales que permitan proyectar la ecuación a dicho estado. Se debe recordar por lo visto en la sección de la base de decaimiento que el estado estacionario es el correspondiente al valor propio cero. Estos proyectores son
 
 \begin{align}
 P = P_c^{\lambda_c = 0}P_m^{\lambda_m = 0},\\
 Q = 1 - P.
-\end{align} Se busca encontrar una ecuación maestra válida en el sub espacio seleccionado por $P$, el cual corresponde a las escalas de tiempo lentas, mientras que $Q$ selecciona las escalas de tiempo rápidas. Se utiliza una transformación para pasar al cuadro de decaimiento
+\end{align} Se busca encontrar una ecuación maestra válida en el subespacio seleccionado por $P$, el cual corresponde a las escalas de tiempo lentas, mientras que $Q$ selecciona las escalas de tiempo rápidas. Se utiliza una transformación para pasar al cuadro de decaimiento
 
 \begin{align*}
  \rho' =& e^{L_0t}\rho,\\
@@ -1485,7 +1483,7 @@ P e^{-L_0 t}L_1e^{L_0 t}\sum_{\lambda ,\lambda'}\int_{t-\Delta t}^{t}dt'\hat{\rh
 
 \begin{equation}
 \frac{1}{\lambda' - \lambda} [e^{\lambda' \Delta t}-e^{\lambda \Delta t}],
-\end{equation} debido a que los indices primados corresponden a los tiempos lentos, el primer factor es aproximadamente 1 y el segundo, que corresponde a tiempos rápidos, vale 0. Esto convierte a la ecuacion en
+\end{equation} debido a que los índices primados corresponden a los tiempos lentos, el primer factor es aproximadamente uno y el segundo, que corresponde a tiempos rápidos, vale cero. Esto convierte a la ecuacion en
 
 \begin{equation}
 P\dot{\rho}=\sum_{\lambda ,\lambda'} P e^{-L_0 t} L_1 \rho_{\lambda} L_1 \rho_{\lambda'} \rho(t-\Delta t)\frac{1}{\lambda' - \lambda} ,
@@ -1564,14 +1562,11 @@ Se aplicó el formalismo de operadores de Floquet al caso de enfriamiento optome
 \item Todo el trabajo específico se hizo al más bajo nivel de perturbación con respecto a la solución clásica del oscilador dependiente del tiempo. Aún cuando se muestra una nueva dinámica al hacer el tratamiento presentado en este trabajo, parece existir más dinámica si se logra tratar el problema a niveles más altos de perturbacion.
 \end{itemize}
 
-Como trabajos futuro, se busca extudiar en más detalle las soluciones de la ecuación obtenida. En especial, se buscará estudiar soluciones con menos restricciones en los valores de los parámetros y a mayores ordenes de perturbación.
-
-
-
+Como trabajos futuro, se busca extudiar en más detalle las soluciones de la ecuación obtenida. Se creará un modelo numérico a fin de poder explorar el comportamiento de la solución obtenida y compararla con las soluciones obtenidas mediante el formalismo utilizado en trabajos como \cite{BarberisLC}. Así mismo, se buscará estudiar soluciones con menos restricciones en los valores de los parámetros y a mayores ordenes de perturbación.
 
 \appendix
 
-\chapter{Transformacion al Marco Desplazado}
+\chapter{Transformación al Marco Desplazado}
 
 En este apéndice se dan los cálculos detallados para la transformación al marco desplazado. Primero se realiza la transformación del Hamiltoniano del sistema, luego se transforma los términos de Lindblad y finalmente se realizan las derivadas temporales.
 
@@ -1726,7 +1721,7 @@ U^\dagger \dot{U} \rho + \rho \dot{U}^\dagger U =& [\dot{\alpha}a^\dagger - \dot
 
 
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{Bib}
 
 
