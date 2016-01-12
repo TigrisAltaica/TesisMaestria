@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{BarberisLC}
-Pablo Barberis-Blostein Marc~Bienert.
+Marc Bienert{,}~Pablo Barberis-Blostein.
 \newblock Optomechanical laser cooling with mechanical modulation.
 \newblock {\em Physical Review Letters A}, 2015.
 
@@ -11,38 +11,26 @@ R.~Paschotta.
 \newblock {\em Encyclopedia of Laser Physics and Technology}, October 2008.
 
 \bibitem{JockelMR}
-M.~T.~Rakher A.~Jockel.
+A.~Jockel{,} M.~T. Rakher.
 \newblock Realization of an optomechanical interface between ultracold atoms
   and a membrane.
 \newblock {\em Physical Review Letters}, 107, November 2011.
 
 \bibitem{ChanQM}
-Jasper~Chan Amir H. Safavi-Naeini.
+Amir H. Safavi-Naeini {,}~Jasper Chan.
 \newblock Observation of quantum motion of a nanomechanical resonator.
 \newblock {\em Physical Review Letters}, 108, 2011.
 
 \bibitem{NooshiLC}
-N.~Nooshi I.~Wilson-Rae.
+I.~Wilson-Rae{,}~N. Nooshi.
 \newblock Theory of ground state cooling of a mechanical oscillator using
   dynamical backaction.
 \newblock {\em Physical Review Letters}, 2007.
 
-\bibitem{ZollerQN}
-Peter Zoller.
-\newblock {\em Quantum Noise:A Handbook of Markovian and Non-Markovian Quantum
-  Stochastic Methods with Applications to Quantum Optics}.
-\newblock Springer Science and Business Media, 2004.
-
 \bibitem{EnglertDB}
-Berthold-Georg~Englert Hans-Jurgen~Briegel.
+Hans-Jurgen Briegel{,} Berthold-Georg Englert.
 \newblock Quantum optical master equations: The use of damping bases.
 \newblock {\em PHYSICAL REVIEW A}, 1993.
-
-\bibitem{HanngiFM}
-Peter~H\"{a}nggi Sigmund~Kohler, Thomas~Dittrich†.
-\newblock Floquet-markov description of the parametrically driven, dissipative
-  harmonic quantum oscillator.
-\newblock {\em Phys.Rev. E55}, 30 Sep 1998.
 
 \bibitem{CarmichaelQO}
 Howard Carmichael.
@@ -54,19 +42,25 @@ Karl Blum.
 \newblock {\em Density Matrix Theory and Applications}.
 \newblock Springer, 2012.
 
+\bibitem{ZollerQN}
+Peter Zoller.
+\newblock {\em Quantum Noise:A Handbook of Markovian and Non-Markovian Quantum
+  Stochastic Methods with Applications to Quantum Optics}.
+\newblock Springer Science and Business Media, 2004.
+
 \bibitem{ArfkenMM}
 George~B. Arfken.
 \newblock {\em Mathematical Methods for Physicists, Seventh Edition: A
   Comprehensive Guide}.
-\newblock Academic Press, •.
+\newblock Academic Press, 2013.
 
 \bibitem{SakuraiQM}
-Jim~Napolitano J.~J.~Sakurai.
+J.~J. Sakurai{,}~Jim Napolitano.
 \newblock {\em Modern Quantum Mechanics}.
 \newblock Pearson, 2013.
 
 \bibitem{BarnettSD}
-Stig~Stenholm Stephen~Barnett.
+Stephen Barnett{,}~Stig Stenholm.
 \newblock Spectral decomposition of the lindblad operator.
 \newblock {\em Journal of Modern Optics}, 2000.
 
@@ -76,9 +70,15 @@ M.~Ward.
 \newblock •, •.
 
 \bibitem{HanngiDQS}
-P.~H\"{a}nggi W.Domcke and D.~Tannor.
+W.Domcke{,} P. H\"{a}nggi{,}~D. Tannor.
 \newblock {\em Driven Quantum Systems}.
 \newblock Special Issue: Chemical Physics, Vol. 217, 1997.
+
+\bibitem{HanngiFM}
+Sigmund Kohler{,} Thomas Dittrich† {,}~Peter H\"{a}nggi.
+\newblock Floquet-markov description of the parametrically driven, dissipative
+  harmonic quantum oscillator.
+\newblock {\em Phys.Rev. E55}, 30 Sep 1998.
 
 \bibitem{BrownPT}
 Lowell~S. Brown.
@@ -86,29 +86,29 @@ Lowell~S. Brown.
 \newblock {\em Physical Review Letters}, 1991.
 
 \bibitem{SchliesserRPC}
-et~al A.~Schliesser, P. Del~Haye.
+A.~Schliesser{,} P. Del~Haye{,} et~al.
 \newblock Radiation pressure cooling of a micromechanical oscillator using
   dynamical backaction.
 \newblock {\em Physical Review Letters}, 2006.
 
 \bibitem{KippenberCO}
-Markus~Aspelmeyer Thomas J.~Kippenberg, Thomas~Marquardt.
+Thomas J. Kippenberg{,} Thomas Marquardt{,}~Markus Aspelmeyer.
 \newblock Cavity optomechanics.
 \newblock {\em Review of Modern Physics}, 2013.
 
 \bibitem{LCNooshi}
-et~al I~Wilson-Rae, N.~Nooshi.
+I~Wilson-Rae{,} N.~Nooshi{,} et~al.
 \newblock Cavity-assisted back action cooling of mechanical resonators.
 \newblock {\em New Journal of Physics}, 2008.
 
 \bibitem{MarquardtSC}
-Joe P.~Chen Florian~Marquardt.
+Florian Marquardt{,} Joe~P. Chen.
 \newblock Quantum theory of cavity-assisted sideband cooling of mechanical
   motion.
 \newblock {\em Physical Review Letters}, 2007.
 
 \bibitem{AbramoviciLIGO}
-et.~al Alex~Abramovici, William E.~Althouse.
+Alex Abramovici{,} William E.~Althouse{,} et~al.
 \newblock Ligo: The laser interferometer gravitational-wave observatory.
 \newblock {\em Science}, 1992.
 
@@ -119,7 +119,7 @@ Carlton~M. Caves.
 \newblock {\em Physical Review Letters}, 1980.
 
 \bibitem{CorbittOC}
-et~al Thomas~Corbitt, Christopher~Wipf.
+Thomas Corbitt{,} Christopher~Wipf{,} et~al.
 \newblock Optical dilution and feedback cooling of a gram-scale oscillator to
   6.9 mk.
 \newblock {\em Physical Review Letters}, 2007.
@@ -130,19 +130,19 @@ Kerry~J. Vahala.
 \newblock {\em Nature}, 2003.
 
 \bibitem{VerhagenMOC}
-et~al E.~Verhagen.
+E.~Verhagen{,} et~al.
 \newblock Quantum-coherent coupling of a mechanical oscillator to an optical
   cavity mode.
 \newblock {\em Nature}, 2012.
 
 \bibitem{SankeyMC}
-et~al J.~C.~Sankey.
+J.~C.~Sankey{,} et~al.
 \newblock Strong and tunable nonlinear optomechanical coupling in a low-loss
   system.
-\newblock {\em •}, •.
+\newblock {\em Nature Physics}, 2010.
 
 \bibitem{FaveroCR}
-et~al Ivan~Favero.
+Ivan~Favero{,} et~al.
 \newblock Fluctuating nanomechanical system in a high finesse optical
   microcavity.
 \newblock {\em Optics Express}, 2009.

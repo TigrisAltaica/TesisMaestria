@@ -6,15 +6,15 @@ Database file #1: Bib.bib
 Warning--can't use both author and editor fields in HanngiDQS
 You've used 27 entries,
             1791 wiz_defined-function locations,
-            590 strings with 6718 characters,
-and the built_in function-call counts, 3659 in all, are:
-= -- 307
-> -- 112
+            592 strings with 6784 characters,
+and the built_in function-call counts, 3641 in all, are:
+= -- 306
+> -- 108
 < -- 0
-+ -- 55
-- -- 28
-* -- 94
-:= -- 657
++ -- 54
+- -- 27
+* -- 92
+:= -- 654
 add.period$ -- 81
 call.type$ -- 27
 change.case$ -- 20
@@ -22,8 +22,8 @@ chr.to.int$ -- 0
 cite$ -- 28
 duplicate$ -- 230
 empty$ -- 414
-format.name$ -- 28
-if$ -- 812
+format.name$ -- 27
+if$ -- 808
 int.to.chr$ -- 0
 int.to.str$ -- 27
 missing$ -- 34
@@ -33,7 +33,7 @@ pop$ -- 104
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 76
+skip$ -- 75
 stack$ -- 0
 substring$ -- 0
 swap$ -- 28

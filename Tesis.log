@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  8 JAN 2016 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  12 JAN 2016 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,7 +511,7 @@ Cap\'{\i }tulo 1.
 [3
 
 ]
-Overfull \hbox (4.51164pt too wide) in paragraph at lines 54--55
+Overfull \hbox (4.51164pt too wide) in paragraph at lines 50--51
 []\OT1/cmr/bx/n/10 Sistemas Cu^^Santi-cos Abier-tos y Ecua-cio-nes Maes-tras\OT
 1/cmr/m/n/10 : En es-te cap^^S^^Ptu-
  []
@@ -525,25 +525,26 @@ Cap\'{\i }tulo 3.
 [12
 
 ] [13] [14] [15]
-Overfull \hbox (41.73271pt too wide) in paragraph at lines 415--415
+Overfull \hbox (43.40747pt too wide) in paragraph at lines 416--416
 [] 
  []
 
 
-Overfull \hbox (1.01714pt too wide) detected at line 419
-\OT1/cmr/m/n/10 = [[] \OML/cmm/m/it/10 Q[]\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 n 
-\OT1/cmr/m/n/10 + \OML/cmm/m/it/10 l \OT1/cmr/m/n/10 + 2) [] [] \OMS/cmsy/m/n/1
-0 ^^@ \OT1/cmr/m/n/10 2 [] []\OML/cmm/m/it/10 Q[] [] []\OT1/cmr/m/n/10 ]\OML/cm
-m/m/it/10 :
+Overfull \hbox (100.40625pt too wide) detected at line 420
+\OML/cmm/m/it/10 aa[]^^Z[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Z[]aa[] \OMS/cm
+sy/m/n/10 ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 a[]^^Z[]a \OT1/cmr/m/n/10 = [[]
+ \OML/cmm/m/it/10 Q[]\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + \OM
+L/cmm/m/it/10 l \OT1/cmr/m/n/10 + 2) [] [] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10
+ 2 [] []\OML/cmm/m/it/10 Q[] [] []\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (16.00902pt too wide) in paragraph at lines 424--424
+Overfull \hbox (16.00902pt too wide) in paragraph at lines 425--425
 [] 
  []
 
 [16] [17] [18] [19] [20]
-Overfull \hbox (64.68532pt too wide) in paragraph at lines 578--578
+Overfull \hbox (64.68532pt too wide) in paragraph at lines 579--579
 [] 
  []
 
@@ -553,40 +554,34 @@ Cap\'{\i }tulo 4.
 
 ] [23] [24] [25] [26] [27] [28] [29] [30] [31]
 Cap\'{\i }tulo 5.
-
-Overfull \hbox (5.66725pt too wide) in paragraph at lines 965--966
-[]\OT1/cmr/m/n/10 Se des-cri-be un sis-te-ma op-to-mec^^Sani-co don-de un os-ci
--la-dor arm^^Soni-co ma-crosc^^Sopi-
- []
-
 [32
 
 ]
-Overfull \hbox (16.83282pt too wide) in paragraph at lines 984--984
+Overfull \hbox (16.83282pt too wide) in paragraph at lines 985--985
 []\OT1/cmr/bx/n/14.4 Hamiltoniano pa-ra En-fria-mien-to Op-to-mec^^Sani-
  []
 
 [33] [34] [35] [36]
 Cap\'{\i }tulo 6.
 
-Overfull \hbox (2.02132pt too wide) in paragraph at lines 1062--1062
+Overfull \hbox (2.02132pt too wide) in paragraph at lines 1063--1063
 []\OT1/cmr/bx/n/14.4 Transformaci^^Son Me-dian-te Ope-ra-dor de Des-
  []
 
 [37
 
 ]
-Overfull \hbox (4.61255pt too wide) in paragraph at lines 1114--1114
+Overfull \hbox (4.61255pt too wide) in paragraph at lines 1115--1115
 [] 
  []
 
 [38] [39] [40] [41]
-Overfull \hbox (79.92294pt too wide) in paragraph at lines 1246--1246
+Overfull \hbox (79.92294pt too wide) in paragraph at lines 1247--1247
 [] 
  []
 
 [42] [43]
-Overfull \hbox (39.60854pt too wide) detected at line 1274
+Overfull \hbox (39.60854pt too wide) detected at line 1275
 \OML/cmm/m/it/10 C\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/
 m/it/10 ^^Z \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^O[]e[
 ]^^Z \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^L\OMS/cmsy/m/n/10 j
@@ -598,7 +593,7 @@ m/n/10 + (\OML/cmm/m/it/10 ^^L[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ^^O[]e[]^^Z
  []
 
 [44] [45]
-Overfull \hbox (1.4139pt too wide) in paragraph at lines 1339--1339
+Overfull \hbox (1.4139pt too wide) in paragraph at lines 1340--1340
 []\OT1/cmr/bx/n/12 Factores del Ha-mil-to-niano del Os-ci-la-dor De-pen-dien-
  []
 
@@ -607,7 +602,7 @@ Cap\'{\i }tulo 7.
 [48
 
 ]
-Overfull \hbox (24.53583pt too wide) detected at line 1450
+Overfull \hbox (24.53583pt too wide) detected at line 1451
 \OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = \OML
 /cmm/m/it/10 PL[]Q^^Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^@ \
 OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 PL[] [
@@ -620,7 +615,7 @@ cmr/m/n/10 (\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 ^^A\OML/cmm
  []
 
 [49] [50]
-Overfull \hbox (15.26967pt too wide) in paragraph at lines 1514--1514
+Overfull \hbox (15.26967pt too wide) in paragraph at lines 1515--1515
 [] 
  []
 
@@ -633,33 +628,30 @@ Ap\'{e}ndice A.
 [55
 
 ]
-Overfull \hbox (3.3938pt too wide) in paragraph at lines 1649--1649
+Overfull \hbox (3.3938pt too wide) in paragraph at lines 1650--1650
 [] 
  []
 
 [56] [57]
-Overfull \hbox (6.2531pt too wide) in paragraph at lines 1705--1705
+Overfull \hbox (6.2531pt too wide) in paragraph at lines 1706--1706
 [] 
  []
 
 [58] (./Tesis.bbl [59]
-Underfull \hbox (badness 1067) in paragraph at lines 31--35
+Underfull \hbox (badness 1067) in paragraph at lines 46--50
 []\OT1/cmr/m/n/10 Peter Zo-ller.  \OT1/cmr/m/it/10 Quan-tum Noi-se:A Hand-book 
 of Mar-ko-vian and Non-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 70.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
  [60
 
-]
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
-) [61]
+]) [61]
 (./Tesis.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
@@ -667,13 +659,13 @@ LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 4075 strings out of 494353
- 53110 string characters out of 6163061
+ 4071 strings out of 494353
+ 53050 string characters out of 6163061
  128464 words of memory out of 5000000
- 7249 multiletter control sequences out of 15000+600000
+ 7245 multiletter control sequences out of 15000+600000
  15249 words of font info for 58 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 38i,15n,30p,2321b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,30p,2304b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -694,7 +686,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Tesis.pdf (62 pages, 384807 bytes).
+Output written on Tesis.pdf (62 pages, 385076 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams
