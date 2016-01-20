@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  12 JAN 2016 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  20 JAN 2016 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,7 +544,7 @@ Overfull \hbox (16.00902pt too wide) in paragraph at lines 425--425
  []
 
 [16] [17] [18] [19] [20]
-Overfull \hbox (64.68532pt too wide) in paragraph at lines 579--579
+Overfull \hbox (64.68532pt too wide) in paragraph at lines 574--574
 [] 
  []
 
@@ -557,31 +557,31 @@ Cap\'{\i }tulo 5.
 [32
 
 ]
-Overfull \hbox (16.83282pt too wide) in paragraph at lines 985--985
+Overfull \hbox (16.83282pt too wide) in paragraph at lines 980--980
 []\OT1/cmr/bx/n/14.4 Hamiltoniano pa-ra En-fria-mien-to Op-to-mec^^Sani-
  []
 
 [33] [34] [35] [36]
 Cap\'{\i }tulo 6.
 
-Overfull \hbox (2.02132pt too wide) in paragraph at lines 1063--1063
+Overfull \hbox (2.02132pt too wide) in paragraph at lines 1058--1058
 []\OT1/cmr/bx/n/14.4 Transformaci^^Son Me-dian-te Ope-ra-dor de Des-
  []
 
 [37
 
 ]
-Overfull \hbox (4.61255pt too wide) in paragraph at lines 1115--1115
+Overfull \hbox (4.61255pt too wide) in paragraph at lines 1110--1110
 [] 
  []
 
 [38] [39] [40] [41]
-Overfull \hbox (79.92294pt too wide) in paragraph at lines 1247--1247
+Overfull \hbox (79.92294pt too wide) in paragraph at lines 1242--1242
 [] 
  []
 
 [42] [43]
-Overfull \hbox (39.60854pt too wide) detected at line 1275
+Overfull \hbox (39.60854pt too wide) detected at line 1270
 \OML/cmm/m/it/10 C\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/
 m/it/10 ^^Z \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 ^^L[]^^O[]e[
 ]^^Z \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^L\OMS/cmsy/m/n/10 j
@@ -593,7 +593,7 @@ m/n/10 + (\OML/cmm/m/it/10 ^^L[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ^^O[]e[]^^Z
  []
 
 [44] [45]
-Overfull \hbox (1.4139pt too wide) in paragraph at lines 1340--1340
+Overfull \hbox (1.4139pt too wide) in paragraph at lines 1335--1335
 []\OT1/cmr/bx/n/12 Factores del Ha-mil-to-niano del Os-ci-la-dor De-pen-dien-
  []
 
@@ -602,7 +602,7 @@ Cap\'{\i }tulo 7.
 [48
 
 ]
-Overfull \hbox (24.53583pt too wide) detected at line 1451
+Overfull \hbox (24.53583pt too wide) detected at line 1446
 \OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = \OML
 /cmm/m/it/10 PL[]Q^^Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^@ \
 OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 PL[] [
@@ -615,7 +615,7 @@ cmr/m/n/10 (\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 ^^A\OML/cmm
  []
 
 [49] [50]
-Overfull \hbox (15.26967pt too wide) in paragraph at lines 1515--1515
+Overfull \hbox (15.26967pt too wide) in paragraph at lines 1510--1510
 [] 
  []
 
@@ -628,12 +628,12 @@ Ap\'{e}ndice A.
 [55
 
 ]
-Overfull \hbox (3.3938pt too wide) in paragraph at lines 1650--1650
+Overfull \hbox (3.3938pt too wide) in paragraph at lines 1645--1645
 [] 
  []
 
 [56] [57]
-Overfull \hbox (6.2531pt too wide) in paragraph at lines 1706--1706
+Overfull \hbox (6.2531pt too wide) in paragraph at lines 1701--1701
 [] 
  []
 
@@ -686,7 +686,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Tesis.pdf (62 pages, 385076 bytes).
+Output written on Tesis.pdf (62 pages, 385270 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams

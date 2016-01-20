@@ -15,11 +15,11 @@
 \contentsline {section}{\numberline {3.3}Oscilador Arm\IeC {\'o}nico: Base de Decaimiento}{18}
 \contentsline {subsection}{\numberline {3.3.1}Estado Base}{18}
 \contentsline {section}{\numberline {3.4}Estados Duales de la base de decaimiento}{19}
-\contentsline {subsection}{\numberline {3.4.1}Estados Duales: Forma Expl\IeC {\'\i }cita}{20}
-\contentsline {subsection}{\numberline {3.4.2}Relaci\IeC {\'o}n de Recurrencia para Estados Duales}{21}
+\contentsline {subsection}{\numberline {3.4.1}Estados Duales: Forma Expl\IeC {\'\i }cita}{19}
+\contentsline {subsection}{\numberline {3.4.2}Relaci\IeC {\'o}n de Recurrencia para Estados Duales}{20}
 \contentsline {chapter}{\numberline {4}Teor\IeC {\'\i }a de Floquet Cl\IeC {\'a}sica y Cu\IeC {\'a}ntica}{22}
 \contentsline {section}{\numberline {4.1}Teor\IeC {\'\i }a de Floquet}{22}
-\contentsline {subsection}{\numberline {4.1.1}Propiedades B\IeC {\'a}sicas}{22}
+\contentsline {subsection}{\numberline {4.1.1}Propiedades B\IeC {\'a}sicas}{23}
 \contentsline {subsection}{\numberline {4.1.2}Estabilidad para Ecuaciones de Segundo Orden}{24}
 \contentsline {subsection}{\numberline {4.1.3}Estabilidad de las Soluciones de Floquet para la Ecuaci\IeC {\'o}n de Hill}{25}
 \contentsline {section}{\numberline {4.2}Estados de Floquet en Mec\IeC {\'a}nica Cu\IeC {\'a}ntica}{26}
