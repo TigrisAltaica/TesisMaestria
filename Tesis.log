@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  20 JAN 2016 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.4)  22 JAN 2016 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,12 +643,12 @@ Underfull \hbox (badness 1067) in paragraph at lines 46--50
 of Mar-ko-vian and Non-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 70.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 77.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
  [60
 
 ]) [61]
@@ -659,10 +659,10 @@ LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 4071 strings out of 494353
- 53050 string characters out of 6163061
+ 4070 strings out of 494353
+ 53036 string characters out of 6163061
  128464 words of memory out of 5000000
- 7245 multiletter control sequences out of 15000+600000
+ 7244 multiletter control sequences out of 15000+600000
  15249 words of font info for 58 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
  38i,15n,30p,2304b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -686,7 +686,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Tesis.pdf (62 pages, 385270 bytes).
+Output written on Tesis.pdf (62 pages, 385237 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams

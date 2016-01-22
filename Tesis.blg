@@ -3,33 +3,35 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Tesis.aux
 The style file: unsrt.bst
 Database file #1: Bib.bib
+Warning--empty publisher in WardFT
+Warning--empty year in WardFT
 Warning--can't use both author and editor fields in HanngiDQS
 You've used 27 entries,
             1791 wiz_defined-function locations,
             592 strings with 6784 characters,
-and the built_in function-call counts, 3641 in all, are:
-= -- 306
+and the built_in function-call counts, 3638 in all, are:
+= -- 303
 > -- 108
 < -- 0
 + -- 54
 - -- 27
-* -- 92
-:= -- 654
-add.period$ -- 81
+* -- 97
+:= -- 651
+add.period$ -- 80
 call.type$ -- 27
 change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 28
+cite$ -- 30
 duplicate$ -- 230
 empty$ -- 414
 format.name$ -- 27
-if$ -- 808
+if$ -- 805
 int.to.chr$ -- 0
 int.to.str$ -- 27
 missing$ -- 34
-newline$ -- 138
+newline$ -- 137
 num.names$ -- 27
-pop$ -- 104
+pop$ -- 106
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
@@ -41,8 +43,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
+warning$ -- 3
 while$ -- 27
 width$ -- 29
-write$ -- 274
-(There was 1 warning)
+write$ -- 271
+(There were 3 warnings)

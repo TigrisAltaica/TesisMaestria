@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Presentacion.aux
+The style file: unsrt.bst
+Database file #1: Bib.bib
+Warning--empty publisher in WardFT
+Warning--empty year in WardFT
+You've used 3 entries,
+            1791 wiz_defined-function locations,
+            461 strings with 3933 characters,
+and the built_in function-call counts, 421 in all, are:
+= -- 31
+> -- 12
+< -- 0
++ -- 6
+- -- 3
+* -- 16
+:= -- 77
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 26
+empty$ -- 48
+format.name$ -- 3
+if$ -- 89
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 17
+num.names$ -- 3
+pop$ -- 15
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 8
+stack$ -- 0
+substring$ -- 0
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 3
+width$ -- 4
+write$ -- 29
+(There were 2 warnings)

@@ -1,0 +1,113 @@
+\documentclass[11pt]{beamer}
+\usetheme{Berkeley}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\author{Pablo Enrique Yanes Thomas}
+\title{Enfriamiento Optomecánico con Parámetros Dependientes del Tiempo}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{Objeto de Estudio}
+
+Se estudió el enfriamiento de un sistema optomecánico compuesto por un tambor mecánico acoplado a una cavidad optica mediante un laser. En particular se trató el caso donde la frecuencia natural del tambor es una función periódica del tiempo.
+
+\end{frame}
+
+\begin{frame}{Sistemas Optomecánicos}
+Interacción entre un sistema mecánico y un sistema óptico, hay varios tipos posibles:
+
+\begin{itemize}
+\item Espejos suspendidos
+\item Microresonadores
+\item Objetos Suspendidos
+\end{itemize}
+
+Se trató con un sistema del primer tipo.
+
+\end{frame}
+
+\begin{frame}{El Sistema}
+
+Se estudió un sistema equivalente a una cavidad de Fabry-Perót con uno de los espejos sujetos a un resorte. Este se acopla de manera paramétrica al campo electromagnético de la cavidad. Se estudió un régimen donde el acoplamiento es débil.
+
+\end{frame}
+
+\begin{frame}{Estudios Anteriores}
+
+El sitema se ha estudiado antes \cite{BarberisLC}, sin embargo la dependencia temporal no se tomó en cuenta durante la aproximación de Markov. Existe un procedimiento que sí toma esto en cuenta y lleva a una mejor descripción \cite{HanngiFM}. Se siguió este procedimeitno y se llegó a una mejor ecuación maestra para describir este sistema particular.
+
+\end{frame}
+
+\begin{frame}{Disipación para Oscilador Dependiente del Tiempo}
+
+\textbf{Base de Decaimiento}
+
+Base de vectores propios del operador de Lindblad que se obtiene en la ecuación:
+
+\begin{align}\label{OsciladorLindblad}
+\textbf{L}_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^\dagger] \nonumber \\
+ &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a^\dagger\rho a].
+\end{align} Estos son de la forma:
+\begin{align}\label{DampingBasis}
+&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:\quad l \geq 0, \\
+&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad l \leq 0,
+\end{align}
+\end{frame}
+
+\begin{frame}
+\textbf{Oscilador Armónico Dependiente del Tiempo}
+
+Se resuelve clásicamente mediante teoría de Floquet\cite{WardFT}. En este trabajo se trató el caso donde la frecuencia natural es de la forma:
+\begin{equation}
+k(t) = \nu_0 + \epsilon cos(2\omega t).
+\end{equation} La solución clásica es
+\begin{equation}
+f(t)= e^{i\omega t} + \frac{\epsilon}{16} e^{3i\omega t}
+\end{equation}
+
+\end{frame}
+
+
+\begin{frame}
+\textbf{Operadores de Floquet}
+
+Equivalentes a los operadores de escalera del oscilador armónico para el caso donde la frecuencia natural del oscilador es una función periódica del tiempo. Dependen de la solución clásica del oscilador mecánico dependiente del tiempo. Estos son
+
+\begin{equation}
+\Gamma(t) = \frac{1}{2i}(\dot{f}(t)\sqrt{\frac{2}{\hbar m}}\hat{x}-f(t)\sqrt{\frac{\hbar}{2m}}\hat{p}),
+\end{equation} y su complejo conjugado
+
+\end{frame}
+
+\begin{frame}
+Se tiene un mejor modelo de disipación al sustituir operadores de Floquet en la ecuación \eqref{OsciladorLindblad} y por tener la misma algebra esta queda resuelta por la base \eqref{DampingBasis}. La ecuación resultante es
+
+\begin{equation} \label{GammaLindblat}
+\dot{\rho}=\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )
+ + \frac{\gamma}{2}N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
+\end{equation}
+\end{frame}
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{Bib}
+
+\end{document}

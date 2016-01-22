@@ -1,0 +1,3 @@
+\select@language {spanish}
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
