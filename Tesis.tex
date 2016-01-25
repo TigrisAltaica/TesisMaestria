@@ -1107,7 +1107,7 @@ L_{\Gamma}' =& L_{\Gamma} + \frac{\gamma}{2}[(\beta\Gamma^{\dagger}-\beta^* \Gam
 U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a,\\
 &+ \dot{\beta}\Gamma^{\dagger}\rho + \rho\dot{\beta}^*\Gamma-(\dot{\beta}^*\Gamma + \beta^*\dot{\Gamma})\rho - \rho(\dot{\beta} \Gamma^{\dagger} + \beta \dot{\Gamma}^{\dagger}) +\beta \dot{\Gamma}^{\dagger} + \rho\beta^* \dot{\Gamma},\\
 &+3(\beta^*)^2C_{--}(t)\rho + |\beta|^2(C_{+-}(t) - C_{-+}(t))\rho -  \beta^2 C_{++}(t)\rho,
-\end{align*} donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos, en general, no son nulos
+\end{align*}  donde las funciones $C_{\pm \pm}(t)$ son los conmutadores entre los operadores de Floquet y sus derivadas temporales, ya que estos, en general, no son nulos
 
 \begin{align*}
 C_{++}(t) =& [\dot{\Gamma}^{\dagger}, \Gamma^{\dagger}],\\
@@ -1490,7 +1490,7 @@ P\dot{\rho} = PL_1 \frac{Q}{\lambda_m-L_0}L_1\rho_{st}\mu,
 \end{equation} donde se ha asumido que $\rho(t-\Delta t)=rho_{st} \otimes Tr_c[P\rho]$, es decir que los estados iniciales son separables. $\mu$ representa a $Tr_c[P\rho]$. Para obtener la ecuación deseada simplemente se traza sobre los grados de libertad de la cavidad, y así se obtiene una ecuación proyectada a los estados deseados, sobre las variables del oscilador. A continuación se trata el caso específico para la interacción que se ha utilizado hasta ahora. vale la pena recordar
 
 \begin{equation}
-L_1\rho= \frac{g'}{i\hbar}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\Gamma(t)+e^{i\omega t}\Gamma(t)^{\dagger}),\rho]
+L_1\rho= \frac{g'}{i\hbar \omega}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\Gamma(t)+e^{i\omega t}\Gamma(t)^{\dagger}),\rho]
 \end{equation} 
  
 \section{Solución para Interacción Optomecánica}
@@ -1498,13 +1498,13 @@ L_1\rho= \frac{g'}{i\hbar}[(\alpha_0 a^{\dagger}+ \alpha_0^* a)(e^{-i\omega t}\G
 Hasta ahora, salvo por las consideraciones de la dependencia temporal de $L_1$, el tratamiento ha sido general. Para poder continuar, se debe tomar en cuenta la forma de la interacción. Por simplicidad se denota $L_1=Fx$ donde $F$ corresponde a la parte de la interacción que opera sobre estados de la cavidad y $x$ a la parte que opera sobre el oscilador. Se tiene entonces
 
 \begin{align*}
-=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}L_1 \rho_{st}\mu],\\
-=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}[Fx, \rho_{st}\mu]],\\
-=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}(Fx\rho_{st}\mu-\rho_{st}\mu Fx)],\\
-=&\frac{-g'^2}{\hbar^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu \rho_{st}F],\\
-=&\frac{-g'^2}{\hbar^2} Tr_c[[Fx,x\mu]\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[[Fx,\mu x]\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
-=&\frac{-g'^2}{\hbar^2} Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
-=&\frac{-g'^2}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]xx\mu+\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]x\mu x\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}L_1 \rho_{st}\mu],\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}[Fx, \rho_{st}\mu]],\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}(Fx\rho_{st}\mu-\rho_{st}\mu Fx)],\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[L_1\frac{1}{\lambda_m - L_0}x\mu \rho_{st}F],\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[[Fx,x\mu]\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[[Fx,\mu x]\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0} F\rho_{st}]+\frac{1}{\hbar^2}Tr_c[(Fxx\mu-x\mu Fx)\frac{1}{\lambda_m - L_0}\rho_{st}F],\\
+=&\frac{-g'^2}{\hbar^2\omega^2} Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]xx\mu+\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}F\rho_{st}]x\mu x\\
  &+\frac{1}{\hbar^2} Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]x\mu x-\frac{1}{\hbar^2}Tr_c[F\frac{1}{\lambda_m - L_0}\rho_{st}F]\mu xx,\\
 =&-T_1xx\mu+T_1x\mu x + T_2x\mu x - T_2\mu xx.
 \end{align*} Se debe de calcular los términos con operadores fuera de la traza
