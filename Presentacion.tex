@@ -1,4 +1,4 @@
-\documentclass[11pt]{beamer}
+\documentclass[10pt]{beamer}
 \usetheme{Berkeley}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -11,7 +11,7 @@
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
 %\logo{} 
-%\institute{} 
+\institute{IIMAS} 
 %\date{} 
 %\subject{} 
 \begin{document}
@@ -27,32 +27,19 @@
 \begin{frame}{Resumen}
 
 \begin{itemize}
-\item Se modeló el enfriamiento de un tambor mecánico con frecuencia natural dependiente del timpo acoplado al campo electromagnético de una cavidad óptica
+\item Se modeló el enfriamiento de un tambor mecánico con frecuencia natural dependiente del timpo acoplado al campo electromagnético de una cavidad óptica.
 
 \item Se encontró un mejor modelo de disipación.
 
 \item Se dedujo una mejor ecuación maestra para modelar el sistema bajo la aproximación adiabática.
 
-\item Se hizo una predicción para el número promedio de excitaciones del tambor.
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Aproximaciones}
-\begin{itemize}
-\item Acoplamiento débil
-
-\item Proceso Markoviano
-
-\item Frecuencia natural del tambor oscila poco en torno a una frecuencia central
-
-\item Interacción mucho más lenta que evolución libre
+\item Se encontró una expresión analítica para el número promedio de excitaciones del tambor.
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Sistemas Optomecánicos}
-Interacción entre un sistema mecánico y un sistema óptico, hay varios tipos posibles:
+Interacción entre un sistema mecánico cuántico y el campo electromagnético, hay varios tipos posibles:
 
 \begin{itemize}
 \item Espejos suspendidos
@@ -66,120 +53,113 @@ Se trató con un sistema del primer tipo.
 
 \begin{frame}{El Sistema}
 
-Se estudió un sistema equivalente a una cavidad de Fabry-Perót con uno de los espejos sujetos a un resorte. Este se acopla de manera paramétrica al campo electromagnético de la cavidad. Se estudió un régimen donde el acoplamiento es débil.
+\includegraphics[scale=1]{Sistema_Espejo_Laser.png} 
 
 \end{frame}
 
 \begin{frame}{Estudios Anteriores}
 
-El sitema se ha estudiado antes \cite{BarberisLC}, sin embargo la dependencia temporal no se tomó en cuenta durante la aproximación de Markov. Existe un procedimiento que sí toma esto en cuenta y lleva a una mejor descripción \cite{HanngiFM}. Se siguió este procedimeitno y se llegó a una mejor ecuación maestra para describir este sistema particular.
+\begin{itemize}
+\item Se resolvió el sistema sin realmente tomar en cuenta la dependencia temporal del oscilador.
+
+\item Existe un procedimiento que lleva a una mejor ecuación maestra para el sistema que sí toma en cuenta esta dependencia.
+
+\item Se requiere la base propia del Hamiltoniano libre.
+
+\end{itemize}
 
 \end{frame}
 
-\begin{frame}{Disipación para Oscilador Dependiente del Tiempo}
+\begin{frame}{Disipación para Oscilador Armónico Dependiente del Tiempo}
 
-\textbf{Base de Decaimiento}
+Modelo usual para la disipación en un oscilador armónico dependiente del tiempo
 
-Base de vectores propios del operador de Lindblad que se obtiene en la ecuación:
-
-\begin{align}\label{OsciladorLindblad}
-\textbf{L}_a \rho =& - \frac{A}{2}(\nu + 1)[a^\dagger a\rho + \rho a^\dagger a -2a\rho a^\dagger] \nonumber \\
- &- \frac{A}{2}(\nu)[ aa^\dagger\rho + \rho  aa^\dagger -2a^\dagger\rho a].
-\end{align} Estos son de la forma:
-\begin{align}\label{DampingBasis}
-&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:\quad l \geq 0, \\
-&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad l \leq 0,
-\end{align}
-\end{frame}
-
-\begin{frame}
-\textbf{Oscilador Armónico Dependiente del Tiempo}
-
-Se resuelve clásicamente mediante teoría de Floquet\cite{WardFT}. En este trabajo se trató el caso donde la frecuencia natural es de la forma:
-\begin{equation}
-k(t) = \nu_0 + \epsilon cos(2\omega t).
-\end{equation} La solución clásica es
-\begin{equation}
-f(t)= e^{i\omega t} + \frac{\epsilon}{16} e^{3i\omega t}
-\end{equation}
+\begin{align*}
+\textbf{L}_a \rho =& \frac{\gamma}{2}(N + 1)[2a\rho a^\dagger -a^\dagger a\rho - \rho a^\dagger a ] \nonumber \\
+ &+ \frac{\gamma}{2}(N)[2a^\dagger\rho a -aa^\dagger\rho - \rho  aa^\dagger ].
+\end{align*} 
 
 \end{frame}
-
 
 \begin{frame}
 \textbf{Operadores de Floquet}
 
-Equivalentes a los operadores de escalera del oscilador armónico para el caso donde la frecuencia natural del oscilador es una función periódica del tiempo. Dependen de la solución clásica del oscilador mecánico dependiente del tiempo. Estos son
+\begin{itemize}
+\item Misma regla de conmutación que operadores usuales del oscilador
 
-\begin{equation}
+\item Dependen de la solución clásica
+\end{itemize}
+
+\begin{equation*}
 \Gamma(t) = \frac{1}{2i}(\dot{f}(t)\sqrt{\frac{2}{\hbar m}}\hat{x}-f(t)\sqrt{\frac{\hbar}{2m}}\hat{p}),
-\end{equation} y su complejo conjugado
+\end{equation*} y su complejo conjugado
 
 \end{frame}
 
 \begin{frame}
-Se tiene un mejor modelo de disipación al sustituir operadores de Floquet en la ecuación \eqref{OsciladorLindblad} y por tener la misma algebra esta queda resuelta por la base \eqref{DampingBasis}. La ecuación resultante es
+Se tiene un mejor modelo de disipación al sustituir operadores de Floquet en el modelo usual para la disipación
 
-\begin{equation} \label{GammaLindblat}
-\dot{\rho}=\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )
- + \frac{\gamma}{2}N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
-\end{equation}
+\begin{align*} 
+L_\Gamma \dot{\rho}=&\frac{\gamma}{2}(N+1)(2\Gamma\rho\Gamma^\dagger - \Gamma^\dagger\Gamma \rho - \rho \Gamma^\dagger \Gamma )\\
+ &+ \frac{\gamma}{2}N(2\Gamma^\dagger \rho \Gamma - \Gamma \Gamma^\dagger \rho - \rho \Gamma\Gamma^\dagger)
+\end{align*}
 \end{frame}
+
 
 \begin{frame}{Hamiltoniano de Enfriamiento Laser}
-Se expresó el Hamiltoniano utilizado en \cite{BarberisLC} para modelar un tambor mecánico interactuando con el campo electromagnético de una cavidad óptica mediante presión de radiación
+Se utilizó el Hamitloniano empleado en el estudio anterior del problema
 
-\begin{equation}
+\begin{equation*}
 H(t) = -\hbar \delta a^\dagger a + \frac{p^2}{2m} + \frac{1}{2}m \nu (t) x^2 -\hbar g a^\dagger a x + \hbar\frac{\Omega}{2}(a^\dagger + a)
-\end{equation}
+\end{equation*}
 
-Y se pasó al formalismo de los operadores de Floquet
+Y se pasó a operadores de Floquet
 
 \end{frame}
 
 \begin{frame}
-\begin{align}
-H(t) &= \nonumber -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) \\
+\begin{align*}
+H(t) &= -\hbar \delta a^\dagger a + \frac{W}{|f(t)|^2}(\Gamma^\dagger \Gamma + \frac{1}{2}) \\
 &+  g'a^\dagger a[\gamma_+(t)\Gamma (t) +\gamma_-(t)\Gamma^\dagger (t)] + \hbar\frac{\Omega}{2}(a^\dagger + a)
-\end{align} y se obtuvo así una nueva ecuación maestra de enfriamiento laser
+\end{align*} y se obtuvo así una nueva ecuación maestra de enfriamiento laser. Se asumió acoplamiento débil entre la cavidad y el tambor y se realizó aproximación de Markov.
 
-\begin{equation}
+\begin{equation*}
 \dot{\rho} = \frac{1}{i\hbar}[H,\rho] + L_a\rho + L_\Gamma \rho
-\end{equation}
+\end{equation*}
 \end{frame}
 
 \begin{frame}{Transformación al Marco Desplazado}
-Se utilizó una transformación unitaria a un marco de referencia desplzado para eliminar los términos de tercer orden en operadores ya que estos son no lineales
+Se utilizó una transformación unitaria a un marco de referencia desplazado para eliminar los términos de tercer orden en operadores ya que estos son no lineales
 
-\begin{equation}
+\begin{equation*}
 U_{a,\Gamma} = e^{(\alpha(t) a^\dagger - \alpha(t)^*a)}e^{(\beta(t) \Gamma^\dagger - \beta(t)^*\Gamma)},
-\end{equation} para aplicar la transformación se utiliza
+\end{equation*} para aplicar la transformación se utiliza
 
-\begin{equation}
+\begin{equation*}
 e^{A} B e^{-A} = B + [A,B] + \frac{1}{2}[A,[A,B]] + ... .
-\end{equation}
+\end{equation*}
 \end{frame}
 
 \begin{frame}
 Con esto se obtuvieron las formas transformadas de los operadores
 
-\begin{align}
+\begin{align*}
 U^{\dagger} a U =& a + \alpha, \\
 U^{\dagger} a^{\dagger} U =& a^{\dagger} + \alpha^*, \\
 U^{\dagger} \Gamma U =& \Gamma + \beta, \\
 U^{\dagger} \Gamma^{\dagger} U =& \Gamma^{\dagger} + \beta^*, 
-\end{align} 
+\end{align*} 
 
 sin embargo la ecuación trasnformada es
 
-\begin{equation}
+\begin{equation*}
 \dot{\rho} = U_{a,\Gamma}^\dagger L[U_{a,\Gamma} \rho' U_{a,\Gamma}^\dagger]U_{a,\Gamma}-U_{a,\Gamma}^\dagger\dot{U}_{a,\Gamma}\rho'-\rho'\dot{U}_{a,\Gamma}^\dagger U_{a,\Gamma}
-\end{equation}
+\end{equation*}
 
 \end{frame}
 
 \begin{frame}
-Se prestó especial atención a los términos que involucraban derivadas temporales ya que en este caso algunos operadores dependen explícitamente del tiempo. Esto generó términos involucrando los conmutadores entre los operadores de Floquet y sus derivadas temporales
+La dependencia temporal de los operadores generó términos involucrando los conmutadores entre los operadores de Floquet y sus derivadas temporales
 
 \begin{align*}
 U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\dot{\alpha}a^{\dagger}) + \dot{\alpha}a^{\dagger}\rho + \rho \dot{\alpha}^*a,\\
@@ -192,70 +172,82 @@ U^{\dagger}\dot{U}\rho + \rho \dot{U}^\dagger U =& -(\dot{\alpha}a \rho + \rho\d
 \begin{frame}
 Se agruparon los términos con un solo operador y se factorizaron para obtener ecuaciones diferenciales para $\alpha(t)$ y $\beta(t)$
 
-\begin{align}
+\begin{align*}
 \dot{\alpha} =& \alpha(-\frac{A}{2}+i(\delta+g'(\gamma_-(t) \beta^* + \gamma_+(t) \beta))-i\frac{\Omega}{2},\\
 \dot{\beta} =& \beta(-\frac{\gamma}{2}-i\frac{W}{|f(t)|^2})+ig'|\alpha|^2\gamma_+(t),
-\end{align}
-
-
+\end{align*}
 \end{frame}
 
 \begin{frame}
 Se pidió que se cumplieran estas ecuaciones y se obtuvo un nuevo Hamiltoniano en el Marco Desplazado
 
-\begin{align}
+\begin{align*}
 H'=& \nonumber -\hbar \delta' a^\dagger a + \frac{W}{|f(t)|^2}\Gamma \Gamma^\dagger + i\hbar(\beta^*\dot{\Gamma} - \beta \dot{\Gamma}^\dagger) \\
 &-\hbar g'[(a^{\dagger}a +\alpha a^{\dagger}+\alpha^* a)(\gamma_-(t)\Gamma^{\dagger}+\gamma_+(t)\Gamma)]
-\end{align}
+\end{align*}
 \end{frame}
 
-\begin{frame}{Cálculo de Factores Dependientes del Tiempo}
-Se utilizó la solución obtenida para el oscilador dependiente del tiempo para obtener expresiones explícitas para los distintos factores con dependencia temporal que aparecen en la ecuación maestra. Comenzando con los conmutadores
+\begin{frame}{Caso de Oscilaciones Pequeñas}
 
-\begin{align}
+Se resuelve clásicamente mediante teoría de Floquet. En este trabajo se trató el caso donde la frecuencia natural es de la forma:
+
+\begin{equation*}
+k(t) = \nu_0 + \epsilon cos(2\omega t).
+\end{equation*} La solución a primer orden en $\epsilon$ es
+\begin{equation*}
+f(t)= e^{i\omega t} + \frac{\epsilon}{16} e^{3i\omega t}
+\end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+Para los conmutadores
+
+\begin{align*}
 C_{++}(t) =& -\epsilon\frac{i}{8}e^{-4i\omega t},\\
 C_{--}(t) =& -\epsilon\frac{i}{8}e^{4i\omega t},\\
 C_{+-}(t) =& i [1 -\frac{\epsilon}{16}e^{2i\omega t}-\frac{6\epsilon}{16}e^{-2i\omega t}],\\
 C_{-+}(t) =& i [1 -\frac{\epsilon}{16}e^{-2i\omega t}-\frac{6\epsilon}{16}e^{2i\omega t}].
-\end{align}
+\end{align*}
 
 \end{frame}
 
 \begin{frame}
 Los coeficientes $\gamma_\pm$
 
-\begin{equation}
+\begin{equation*}
 \gamma_\pm= \frac{1}{\omega}e^{\mp i\omega t},
-\end{equation}
+\end{equation*}
 
 Los operadores $\dot{\Gamma}$
 
-\begin{align}
+\begin{align*}
 \dot{\Gamma}(t) =& i\omega \Gamma(t),\\
 \dot{\Gamma}^\dagger(t) =& -i\omega \Gamma^\dagger(t),
-\end{align}
+\end{align*}
 
 Y el factor del Hamiltoniano de Oscilador Armónico Dependiente del Tiempo
 
-\begin{equation}
+\begin{equation*}
 \frac{W}{|f|^2} = \omega.
-\end{equation}
+\end{equation*}
 
 \end{frame}
 
 \begin{frame}
 Y finalmente soluciones para $\alpha(t)$ y $\beta(t)$
 
-\begin{align}
+\begin{align*}
 \alpha_0 =& \frac{\Omega}{2\delta-iA},\\
 \beta_0 =& 0.
-\end{align}
+\end{align*}
 
-Lo cual lleva al Hamiltoniano final para el caso de pequeñas oscilaciones en torno a una frecuencia central, a primer orden de perturbación
+Lo cual lleva al Hamiltoniano final para el caso de pequeñas oscilaciones en torno a una frecuencia central, a primer orden de perturbación. Se asumió $\Omega$ grande para despreciar el término sin $\alpha$ 
 
-\begin{equation}
+\begin{equation*}
 H = -\hbar \delta a^{\dagger}a +\hbar\omega\Gamma^{\dagger}\Gamma +\frac{\hbar g'}{\omega}(\alpha_0 a^{\dagger}+\alpha^*_0 a)(e^{i\omega t}\Gamma^{\dagger}+e^{-i\omega t}\Gamma)
-\end{equation}
+\end{equation*}
 \end{frame}
 
 \begin{frame}{Escalas Temporales}
@@ -269,55 +261,100 @@ L_m =& \frac{1}{i\hbar}[H_m,\cdot] + L_\gamma,\\
 L_1 =& \frac{1}{i\hbar}[H_{int},\cdot].
 \end{align*}
 
-El movimiento optomecánico es mucho más rápido que la interacción.
+El movimiento optomecánico es mucho más rápido que la interacción, por lo que se utilizó la aproximación adiabática.
 
 
 \end{frame}
 
 \begin{frame}
- Se tomó como parámetro perturbativo $\eta=\frac{g'}{\omega}$.Se proyectó la ecuación al subespacio correspondiente al estado estacionario y se obtuvo
+Se tomó como parámetro perturbativo $\eta=\frac{g'}{\omega}$.Se proyectó la ecuación al subespacio correspondiente al estado estacionario
+
+\begin{align*}
+P = P_c^{\lambda_c = 0}P_m^{\lambda_m = 0},\\
+Q = 1 - P.
+\end{align*}
+
+Se obtuvieron dos ecuaciones acopladas
+
+\begin{align*}
+P\dot{\rho}=& PL_1Q\rho, \\
+Q\dot{\rho}=& QLQ\rho + QLP\rho.
+\end{align*}
+\end{frame}
+
+\begin{frame}
+Se resolvió para $Q$
+
+\begin{align*}
+Q\rho =& Q\rho(t_0) + \int_{t_0}^{t}dt' QL(t')P\rho(t')+\int_{t_0}^{t}dt'QL(t')Q\rho(t'),\\
+\simeq & Q\rho(t_0) + \int_{t_0}^{t}dt' QL_1(t')P\rho(t_0)+\int_{t_0}^{t}dt'QL_1(t')Q\rho(t_0)+O(\eta^2),
+\end{align*} y se sustituyó en la ecuación para $P$
+
+\begin{align*}
+P\dot{\rho}(t) =& PL_1Q\rho(t-\Delta t) + PL_1\int_{t_0}^{t}dt' QL_1(t')P\rho(t-\Delta t)\\
+ &+ PL_1\int_{t_0}^{t}dt'QL_1(t')Q\rho(t-\Delta t),
+\end{align*} 
+
+\end{frame}
+
+\begin{frame}
+Para poder aplicar los proyectores estos se desarrollaron en la base que el oscilador armónico con intercambios de energía, la base de decaimiento
+
+\begin{align*}
+&a^{\dagger l}\frac{(-1)^n}{(\nu+1)^{l+1}}:L_n^l[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:\quad l \geq 0, \\
+&\frac{(-1)^n}{(\nu+1)^{|l|+1}}:L_n^{|l|}[\frac{a^\dagger a}{\nu+1}]e^{-[\frac{a^\dagger a}{\nu+1}]}:a^{|l|}\quad l \leq 0,
+\end{align*}
+\end{frame}
+
+\begin{frame}
+Y se llegó, despues de trazar sobre los estaos de la cavidad a
 
 \begin{equation}
-P\dot{\rho} = PL_1 \frac{Q}{\lambda_m-L_0}L_1\rho_{st}\mu,
+\dot{\mu} = PL_1 \frac{Q}{\lambda_m-\lambda_c}L_1\rho_{st}\mu,
 \end{equation}
 
-$\mu$ representa a $Tr_c[P\rho]$
+$\mu$ representa la solución en el espacio $P$ después de trazar sobre los estados de la cavidad. 
 \end{frame}
 
 \begin{frame}
 
-Al desarrollar los conmutadores involucrados en $L_1$ se obtiene una ecuación con la misma estructura que en \cite{BarberisLC} y se llega a
+Al desarrollar los conmutadores involucrados en $L_1$ se obtuvo una ecuación con la misma estructura algebráica que en trabajos anteriores, por lo que se conserva la estructura de la solución
 
-\begin{equation}
+\begin{equation*}
 \dot{\mu} = \frac{1}{i\hbar}[\hat{H},\mu] + \frac{A_-}{2}D[\Gamma]\mu + \frac{A_+}{2}D[\Gamma^\dagger]\mu.
-\end{equation}
+\end{equation*}
 
 En este caso, $\hat{H}$ es una pequeña corrección al Hamiltoniana proporcional a $\Gamma^\dagger \Gamma$ y $A_\pm$ dependen únicamente del valor de las trazas.
 
 \end{frame}
 
 \begin{frame}{Excitaciones Promedio}
-Por el trabajo citado previamente, el número de excitaciones promedio del tambor mecánico es
+En los estudios anteriores, el número de excitaciones promedio del tambor mecánico es
 
-\begin{equation}
+\begin{equation*}
 <m> = Tr[\Gamma^\dagger \Gamma \mu_{st}] = \frac{A_+}{A_+ - A_-},
-\end{equation}
+\end{equation*}
 
-y regresando a los operadores usuales de oscilador da una nueva predicción
+y regresando a los operadores usuales de oscilador da una nueva expresión
 
-\begin{equation}
+\begin{equation*}
 <m> = Tr[(\frac{(\omega + \nu )^2}{4\nu})b^\dagger b +\frac{\omega^2 - \nu^2}{4\nu}(b^\dagger b^\dagger +bb) +\frac{(\omega - \nu )^2}{4\nu}) b b^\dagger)\mu_st].
-\end{equation}
+\end{equation*}
 
 \end{frame}
 
 \begin{frame}{Conclusiones}
 
+\begin{itemize}
+\item Se obtuvo un mejor modelo para la disipación para un oscilador armónico con frecuencia natural dependiente del tiempo.
+
+\item A futuro se estudiará la solución con un modelo numérico, así como estudiar los cambios en la disipación de la cavidad
+
+\item La solución obtenida depende fuertemente de la solución clásica del oscilador armónico con frecuencia natural dependiente del tiempo.
+\end{itemize}
 
 
 \end{frame}
 
-\bibliographystyle{unsrt}
-\bibliography{Bib}
 
 \end{document}
