@@ -299,17 +299,16 @@ Q\dot{\rho}=& QLQ\rho + QLP\rho.
 \end{frame}
 
 \begin{frame}
-Se resolvió para $Q$
 
-\begin{align*}
-Q\rho =& Q\rho(t_0) + \int_{t_0}^{t}dt' QL(t')P\rho(t')+\int_{t_0}^{t}dt'QL(t')Q\rho(t'),\\
-\simeq & Q\rho(t_0) + \int_{t_0}^{t}dt' QL_1(t')P\rho(t_0)+\int_{t_0}^{t}dt'QL_1(t')Q\rho(t_0)+O(\eta^2),
-\end{align*} y se sustituyó en la ecuación para $P$
+El proceso consistió en
 
-\begin{align*}
-P\dot{\rho}(t) =& PL_1Q\rho(t-\Delta t) + PL_1\int_{t_0}^{t}dt' QL_1(t')P\rho(t-\Delta t)\\
- &+ PL_1\int_{t_0}^{t}dt'QL_1(t')Q\rho(t-\Delta t),
-\end{align*} 
+\begin{itemize}
+\item Pasar a cuadro de decaimiento.
+\item Resolver para $Q\rho$.
+\item Sustituir en la ecuación para $P$.
+\item Desarrollar los proyectores en la base de $L_0$.
+\item Hacer las integrales temporales.
+\end{itemize}
 
 \end{frame}
 
@@ -326,7 +325,7 @@ Para poder aplicar los proyectores estos se desarrollaron en la base que el osci
 Y se llegó, despues de trazar sobre los estaos de la cavidad a
 
 \begin{equation*}
-\dot{\mu} = PL_1 \frac{Q}{\lambda_m-\lambda_c}L_1\rho_{st}\mu,
+\dot{\mu} = PL_1 \frac{Q}{\lambda_m-L_0}L_1\rho_{st}\mu,
 \end{equation*}
 
 $\mu$ representa la solución en el espacio $P$ después de trazar sobre los estados de la cavidad. 
@@ -364,7 +363,7 @@ y regresando a los operadores usuales de oscilador da una nueva expresión
 \begin{itemize}
 \item Se obtuvo un mejor modelo para la disipación para un oscilador armónico con frecuencia natural dependiente del tiempo.
 
-\item A futuro se estudiará la solución numericamente, así como estudiar los cambios en la disipación de la cavidad
+\item A futuro se estudiará la solución numericamente, así como estudiar los cambios en la disipación de la cavidad.
 
 \item La solución obtenida depende fuertemente de la solución clásica del oscilador armónico con frecuencia natural dependiente del tiempo.
 \end{itemize}
